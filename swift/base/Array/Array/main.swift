@@ -24,9 +24,28 @@ print(intArray.isEmpty)
 intArray.removeFirst()  //各种删除的方法
 intArray.removeLast()
 intArray.removeAll()
-intArray.removeAtIndex(0)  //注意，这里会报错，因为前面已经调用了removeAll
+//intArray.removeAtIndex(0)  //注意，这里会报错，因为前面已经调用了removeAll
 
 print(intArray)
+
+
+intArray.append(1)
+intArray.append(2)
+intArray.append(3)
+
+//interation
+
+for number in intArray {
+    print(number)
+}
+
+for (index,value) in intArray.enumerate(){
+    print("index @ \(index) valuse= \(value)")
+}
+
+
+
+
 
 
 
