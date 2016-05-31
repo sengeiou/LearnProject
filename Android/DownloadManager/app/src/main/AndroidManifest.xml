@@ -20,10 +20,6 @@
         <service
             android:name=".update.DownloadService"
             android:exported="true" />
-
-        <service
-            android:name=".update.DownloadService2"
-            android:exported="true" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

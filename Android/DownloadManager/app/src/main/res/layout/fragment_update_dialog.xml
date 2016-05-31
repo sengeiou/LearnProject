@@ -7,15 +7,15 @@
     android:background="#ffffff"
     android:orientation="vertical"
     >
-    
+
     <TextView
-        android:text="@string/update_title"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textColor="#4a4a4a"
-        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/update_title"
+        android:textColor="#4a4a4a"
+        android:textSize="16sp"/>
 
     <View
         android:layout_width="match_parent"
@@ -23,12 +23,47 @@
         android:background="#cdcdcd"/>
 
 
+    <ProgressBar
+        android:id="@+id/update_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:max="100"
+        android:visibility="gone"
+        />
+
+
     <TextView
-        android:layout_margin="10dp"
-        android:textSize="14sp"
-        android:textColor="#5f5f5f"
         android:id="@+id/update_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="#5f5f5f"
+        android:textSize="14sp"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/update_cancle"
+            android:text="@string/update_cancle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+
+        <Button
+            android:id="@+id/update_update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/update_update"/>
+
+
+    </LinearLayout>
+
+
 </LinearLayout>

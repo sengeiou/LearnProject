@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">DownloadManager</string>
+    <string name="update_update">更新</string>
+    <string name="update_updating">更新中</string>
+    <string name="update_cancle">下次再说</string>
     <string name="update_title">更新提示</string>
     <string name="update_success">更新完成</string>
     <string name="update_progress">更新进度</string>
+    <string name="update_no_newversion">当前已是最新版本！</string>
+    <string name="update_is_download">已下载%s</string>
 </resources>

@@ -2,26 +2,28 @@ package dm.cocoa.com.downloadmanager.update;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.lang.reflect.Field;
 
 import dm.cocoa.com.downloadmanager.R;
-import dm.cocoa.com.downloadmanager.VersionUtil;
+import dm.cocoa.com.downloadmanager.update.bean.UpdateBo;
+import dm.cocoa.com.downloadmanager.update.util.TextUtil;
 
 /**
  * 在此写用途
@@ -31,14 +33,28 @@ import dm.cocoa.com.downloadmanager.VersionUtil;
  * @author: shenjun@kuaiqiangche.com
  * @date: 2016-05-19 14:24
  */
-public class UpdateFragment extends DialogFragment {
+public class UpdateFragment extends DialogFragment implements View.OnClickListener {
 
-    public static final String URL = "http://120.55.185.35:8080/old.apk";
 
     public static final String CACHR_NAME = "VersionSP";
     public static final String CACHR_KEY = "VersionJSON";
     private boolean force = false;
+    private UpdateBo mUpdateBo;
+    private String url;
+    private ProgressBar updateProgress;
+    private TextView updateUpdate;
+    private TextView updateCancle;
 
+    private DownloadReceiver mDownloadReceiver = new DownloadReceiver();
+
+    public static UpdateFragment getInstance(UpdateBo updateBo) {
+        UpdateFragment f = new UpdateFragment();
+        f.mUpdateBo = updateBo;
+        f.url = updateBo.getApp_url();
+        f.force = Constants.UPDATE_FORCE.equals(updateBo.getApp_force());
+        f.force = true;
+        return f;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -47,94 +63,130 @@ public class UpdateFragment extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.fragment_update_dialog, null);
         TextView updateContent = (TextView) view.findViewById(R.id.update_content);
-        updateContent.setText("1.更新了什什么什么什么什么么 \n2.更新了什么 \n3.更新了什么什么什么什么什么什么什么什么什么什么什么什么什么什么什么什么");
+        updateProgress = (ProgressBar) view.findViewById(R.id.update_progress);
+        updateUpdate = (TextView) view.findViewById(R.id.update_update);
+        updateCancle = (TextView) view.findViewById(R.id.update_cancle);
+        updateContent.setText(mUpdateBo.getApp_desc());
 
-        builder.setView(view)
-                // Add action buttons
-                .setPositiveButton("更新",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                 goToDownload(URL);
-
-                            }
-                        });
-
+        updateUpdate.setOnClickListener(this);
+        updateCancle.setOnClickListener(this);
+        getActivity().registerReceiver(mDownloadReceiver, new IntentFilter("com.cocoa.update"));
         if (force) {
             this.setCancelable(false);
-        } else {
-            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-
-
-                    File dir = StorageUtils.getCacheDirectory(getActivity());
-                    String apkName=URL.substring(URL.lastIndexOf("/")+1, URL.length());
-                    File apkFile = new File(dir, apkName);
-
-
-
-                    Intent it = new Intent(Intent.ACTION_VIEW);
-                    it.setDataAndType(Uri.fromFile(apkFile),
-                            "application/vnd.android.package-archive");
-
-                    startActivity(it);
-
-                }
-            });
+            updateCancle.setVisibility(View.GONE);
         }
 
+        builder.setView(view);
         Dialog dialog = builder.create();
         return dialog;
     }
 
 
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    private void unregisterReceiver() {
+        try {
+            if (mDownloadReceiver != null) {
+                getActivity().unregisterReceiver(mDownloadReceiver);
+            }
+        } catch (Exception E) {
+
+        }
+    }
+
     private void goToDownload(String url) {
-        Intent intent=new Intent(getActivity().getApplicationContext(),DownloadService2.class);
+        String parentFile = Environment.getExternalStorageDirectory().getAbsolutePath();
+        Intent intent = new Intent(getActivity().getApplicationContext(), DownloadService.class);
         intent.putExtra(Constants.APK_DOWNLOAD_URL, url);
+        intent.putExtra(Constants.APK_DOWNLOAD_NAME, parseName(url));
+        intent.putExtra(Constants.APK_DOWNLOAD_FILE, parentFile);
         getActivity().startService(intent);
-    }
-
-
-
-    public void show(Dialog dialog, boolean show) throws NoSuchFieldException, IllegalAccessException {
-        Field field = dialog.getClass().getSuperclass().getDeclaredField("mShowing");
-        field.setAccessible(true);
-        field.set(dialog, show); // false - 使之不能关闭(此为机关所在，其它语句相同)
-    }
-
-    /**
-     * 检测是否需要更新
-     *
-     * @param urlP     检测的url
-     * @param contextP Context
-     * @return
-     */
-    public boolean checkVersion(String urlP, Context contextP) throws JSONException {
-
-        String json = "";
-
-        JSONObject updateBo = new JSONObject(json);
-
-        if (updateBo == null) {
-            return false;
-        }
-        int currntVersionCode = VersionUtil.getVersionCode(contextP);
-        int serverVersionCode = updateBo.optInt("code");
-
-        if (serverVersionCode > 0 && currntVersionCode > 0 && serverVersionCode > currntVersionCode) {
-            saveData(contextP, json);
-            return true;
-        }
-        return false;
     }
 
 
     private void saveData(Context context, String json) {
         SharedPreferences sp = context.getSharedPreferences(CACHR_NAME, Context.MODE_PRIVATE);
         sp.edit().putString(CACHR_KEY, json).commit();
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.update_cancle:
+                this.dismiss();
+                break;
+            case R.id.update_update:
+                goToDownload(url);
+                if (!force) {   //不是强制更新，则可以关闭对话框
+                    this.dismiss();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    class DownloadReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            int progress = intent.getIntExtra("data", 0);
+            String file = intent.getStringExtra("file");
+            Log.d("-------", "--data--------" + progress);
+            if (progress > 0 && progress <= 100) {
+                updateProgress.setVisibility(View.VISIBLE);
+                updateProgress.setProgress(progress);
+            }
+//            if (progress == 100 ) {
+//                unregisterReceiver();
+//            }
+            if (file != null && file.length() > 0) {
+                installAPK(new File(file));
+//                unregisterReceiver();
+            }
+
+        }
+    }
+
+    private String parseName(String url) {
+        if (TextUtil.isEmpty(url)) {
+            return null;
+        }
+        int positon = url.lastIndexOf("/") + 1;
+        int length = url.length();
+        if (positon < length - 1) {
+            return url.substring(positon,length);
+        }
+        return null;
+    }
+
+
+    private void installAPK(File file) {
+        Intent it = new Intent(Intent.ACTION_VIEW);
+        it.setDataAndType(Uri.fromFile(file),
+                "application/vnd.android.package-archive");
+        startActivity(it);
+    }
+
+    private void installAPK(String file, String name) {
+        File apkFile = new File(file, name);
+        Intent it = new Intent(Intent.ACTION_VIEW);
+        it.setDataAndType(Uri.fromFile(apkFile),
+                "application/vnd.android.package-archive");
+        startActivity(it);
     }
 
 
