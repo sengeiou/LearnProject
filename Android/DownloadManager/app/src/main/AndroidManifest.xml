@@ -20,6 +20,11 @@
         <service
             android:name=".update.DownloadService"
             android:exported="true" />
+
+        <meta-data android:name="dm.cocoa.com.downloadmanager.GlideConfiguration"
+                   android:value="GlideModule"/>
+
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

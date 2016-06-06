@@ -14,7 +14,7 @@ public class Test1 {
 
     public static void main(String args[]){
 
-          File file =new File("src/com/cocoa/test/Main.java");
+            File file =new File("src/com/cocoa/test/Main.java");
 
             System.out.println(file.getName());
             System.out.println(file.getAbsolutePath());

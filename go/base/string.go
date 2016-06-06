@@ -2,19 +2,12 @@ package main
 
 import (
 	"fmt"
-	
+
 )
 
 /*
 1.go语言使用8位来表示没一个字符
 2
-
-
-
-
-
-
-
 */
 func main() {
 
