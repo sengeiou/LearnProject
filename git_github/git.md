@@ -29,3 +29,15 @@ git 命令
 
 // git merge conflict   git合并冲突的问题
 ## git mergetool
+
+
+
+// git tag
+
+
+## git tag  //list all tag
+## git tag -l 'v1.0.*'      //list match 'v1.0.*' tags
+## git tag -a v1.0 -m  "tag 1.0 "  // create tag (annotated  be command)    simple like:   git tag -a v1.4 -m 'my version 1.4'
+## git show v1.0   //show tag info
+## git push origin v1.0   //push tag
+## git push origin --tags  //push some tag

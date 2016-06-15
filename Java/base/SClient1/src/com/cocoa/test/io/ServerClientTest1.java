@@ -8,10 +8,10 @@ import java.net.Socket;
 public class ServerClientTest1 {
 
     public static void main(String[] args) {
-
-
-        System.out.println("1".equals(null));
-
+        TinyNetImg img  =new TinyNetImg(200,200,90);
+        System.out.println(img.tiny("http://img.kuaiqiangche.com/data/attachment/2016-05-11/o_1aifkndob1fcc1sid19d819q7u0k7.jpg"));
+        img.setHeight(10000);
+        System.out.println(img.tiny("http://img.kuaiqiangche.com/data/attachment/2016-05-11/o_1aifkndob1fcc1sid19d819q7u0k7.jpg"));
 
 
 
