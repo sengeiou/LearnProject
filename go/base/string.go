@@ -20,6 +20,6 @@ func main() {
 
 	fmt.Println(str)
 	fmt.Println(str1)
-	fmt.Println(testText)
+	// fmt.Println(testText)
 
 }
