@@ -11,7 +11,7 @@ go 数组
 
 */
 
-func main() {
+func main1() {
 
 	fmt.Print("123 \n")
 
