@@ -17,23 +17,33 @@ public static final int PORT = 6666;
 
 
 public static void main(String[] args){
+        try{
+                ServerSocket mServerSocket = new ServerSocket(PORT);
+                while(true) {
+                        Socket mSocket = mServerSocket.accept();
+                        handConnection(mSocket);
+                }
+        }catch (Exception e) {
 
+        }
+}
+
+
+public static void handConnection(Socket pSocket){
+  new Thread(new Runnable() {
+            public void run() {
 
         try{
 
-                ServerSocket mServerSocket = new ServerSocket(PORT);
+                InputStream mInputStream  = pSocket.getInputStream();
 
-                Socket mSocket = mServerSocket.accept();
-
-                InputStream mInputStream  = mSocket.getInputStream();
-
-                OutputStream mOutputStream = mSocket.getOutputStream();
+                OutputStream mOutputStream = pSocket.getOutputStream();
 
                 InputStreamReader mInputStreamReader = new InputStreamReader(mInputStream);
 
                 BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
 
-                PrintWriter   mPrintWriter = new PrintWriter(mOutputStream);
+                PrintWriter mPrintWriter = new PrintWriter(mOutputStream);
 
 
                 while (true) {
@@ -46,17 +56,20 @@ public static void main(String[] args){
                         }
 
                         mPrintWriter.println("you send server "+s);
-                        mPrintWriter.flush();  
+                        mPrintWriter.flush();
 
                 }
                 System.out.println(".......");
 
-                mSocket.close();
-                mServerSocket.close();
+
 
         }catch(IOException e) {
-              System.out.println(e.getMessage());
+                System.out.println(e.getMessage());
         }
+}}).start();
 
 }
+
+
+
 }
