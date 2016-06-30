@@ -36,9 +36,19 @@ public class HashMapTest {
         hashMap.put(s1,s1);
 
 
+        double b = 10.0;
+        Integer i = 10;
 
 
 
+//        test(0);
+
+
+    }
+
+
+    public static void test(byte b){
+        System.out.println(b);
     }
 
 

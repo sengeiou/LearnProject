@@ -11,7 +11,7 @@ go 数组
 
 */
 
-func main() {
+func main1() {
 
 	fmt.Print("123 \n")
 
@@ -23,13 +23,9 @@ func main() {
 
 	a := [...]int{1, 1, 1} //数组的定义2
 	var b = [10]int{1, 2}  //数组的定义3
-	var cc = [...]int{10: 10}   //创建数组，第11位为10 别的都为int 初始值 ,数组长度为10
 
 	fmt.Print(a) // 输出为[1,1,1]
 	fmt.Print(b) // 输出为[1,2,0,0,0,0,0,0,0,0]
-	fmt.Print(cc) // 输出为 [0 0 0 0 0 0 0 0 0 0 10]
-
-
 
 	//test2(a)   这里不能这么调用  : cannot use a (type [3]int) as type [10]int in argument to test2
 
@@ -44,18 +40,10 @@ func main() {
 		fmt.Println(b[i])
 	}
 
-	//遍历数组2
-	for index, value := range b {
-		fmt.Println(index, value)
-	}
-
-	var t1 = [2]int{1,2}
-	var t2 = [2]int{1,2}
-
-	fmt.Println(t1==t2)   //输出为true
-
-
-
+  //遍历数组2
+  for index,value := range b{
+    fmt.Println(index,value)
+  }
 
 
 
