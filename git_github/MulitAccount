@@ -1,0 +1,5 @@
+# ssh-keygen -t rsa -C "new email"
+# change Key Name  simple like  /c/Users/Administrator/.ssh/id_rsa_cocoa
+# add zhe new key ssh-add id_rsa_cocoa
+#  if you see this "Could not open a connection to your authentication agent"
+#  ssh-agent bash then add
