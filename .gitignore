@@ -81,7 +81,5 @@ captures/
 *.iml
 
 
-
-
-
-
+#C
+*.out
