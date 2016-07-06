@@ -5,7 +5,7 @@
 int main(){
 
         int i ;
-        int *p ;
+        int *p = 0;
 
 
         return 0;
