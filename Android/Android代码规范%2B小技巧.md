@@ -13,9 +13,9 @@
 					fragment_home.xml       //fragment
 			        item_adapter_order.xml   // adapter
 
- - 在xml使用xmlns:tools=http://schemas.android.com/tools ，方便调试，开发
+ - 在xml使用xmlns:tools=http://schemas.android.com/tools ，方便调试，开发，  除了text之外，还可以使用visiable等属性
  ![除了text之外，还可以使用visiable等属性](http://img.blog.csdn.net/20151118153134632)
-  除了text之外，还可以使用visiable等属性
+
 
 
  - xml控件规范  	
@@ -30,8 +30,10 @@
  - xml的根目录为<FrameLayout>时，可以用 merge代替，因为activity的父元素就是FrameLayout。当Inflate以 merge 开头的布局文件时，必须指定一个父ViewGroup，并且必须设定attachToRoot为true（参看inflate(int,android.view.ViewGroup, Boolean)方法）
 
 ### 代码篇
+ -  代码中，尽量少用反射相关的，少用枚举
 
-
+ -  TextUtils
+一个字符串处理的工具类。比如空判断TextUtils.isEmpty, 文本拼接TextUtils.concat, 统计字符串除去空格的长度TextUtils.getTrimmedLength 等等，没必要自己再写个类去实现了
 
  - 不要将Context 变量设置为static
 
