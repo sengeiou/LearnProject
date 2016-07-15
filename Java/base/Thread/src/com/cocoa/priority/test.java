@@ -15,7 +15,7 @@ public class test {
 
     public static void main(String[] args) {
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 22; i++) {
             Thread50 thread50 = new Thread50();
             thread50.setName("thread" + i);
             thread50.setPriority(i);
