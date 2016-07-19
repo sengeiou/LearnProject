@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Thread50.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Thread50.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cocoa/priority/Thread50.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.405">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -68,14 +68,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/cocoa/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.68384403">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/com/cocoa/_synchronized/NameThread.java" />
         <option value="$PROJECT_DIR$/src/com/cocoa/_synchronized/Person.java" />
         <option value="$PROJECT_DIR$/src/com/cocoa/_synchronized/test.java" />
-        <option value="$PROJECT_DIR$/src/com/cocoa/test.java" />
         <option value="$PROJECT_DIR$/src/com/cocoa/priority/test.java" />
+        <option value="$PROJECT_DIR$/src/com/cocoa/test.java" />
       </list>
     </option>
   </component>
@@ -197,8 +195,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,7 +236,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,7 +247,7 @@
       <recent name="D:\my_github\LearmProject\Java\base\Thread\src\com\cocoa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.test (2)">
+  <component name="RunManager" selected="Application.test (4)">
     <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -781,8 +779,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.test (2)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.test (4)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.test (4)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.test (2)" />
         <item index="2" class="java.lang.String" itemvalue="Application.test" />
         <item index="3" class="java.lang.String" itemvalue="Application.test (3)" />
         <item index="4" class="java.lang.String" itemvalue="Application.test (1)" />
@@ -804,15 +802,16 @@
       <workItem from="1468563087115" duration="1103000" />
       <workItem from="1468577103163" duration="137000" />
       <workItem from="1468577259214" duration="1635000" />
+      <workItem from="1468919079995" duration="370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19284000" />
+    <option name="totallyTimeSpent" value="19654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -821,7 +820,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31827956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19139785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -938,9 +937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -956,7 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1119" column="35" selection-start-line="1119" selection-start-column="35" selection-end-line="1119" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,9 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1119" column="35" selection-start-line="1119" selection-start-column="35" selection-end-line="1119" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1119" column="35" selection-start-line="1119" selection-start-column="35" selection-end-line="1119" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1119" column="35" selection-start-line="1119" selection-start-column="35" selection-end-line="1119" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,16 +1229,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cocoa/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,8 +1266,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cocoa/priority/Thread50.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.405">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cocoa/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68384403">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
