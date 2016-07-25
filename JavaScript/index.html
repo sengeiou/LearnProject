@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Document</title>
-<script type="text/javascript">
-    function aabb(){
-      alert(1);
-    }
+
+    <script>
+    </script>
 
 
-    window.onload =function(){
+    <script type="text/javascript">
+        var x = document.getElementById("demo");
 
-      aabb();
-    }
+        function getLocation() {
+          alert(1);
+            if (navigator.geolocation) {
+              alert(2);
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "该浏览器不支持获取地理位置。";
+            }
+        }
 
-</script>
+        function showPosition(position) {
+
+          alert(3);
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+
+        // function aabb(){
+        //   alert(1);
+        // }
+        //
+        //
+        window.onload =function(){
+
+          getLocation();
+        }
+    </script>
 
 </head>
+
 <body>
 
 
 
+<div id="demo">111</div>
+
+
 
 </body>
+
 </html>

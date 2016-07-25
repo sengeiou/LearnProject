@@ -11,7 +11,7 @@ void swapUsePointer(int *x ,int *y){
     int *p =  x;
     x = y;
     y = p ;
-    printf("x= %d   y=%d \n ",*x,*y );
+    printf("x= %d   y=%d \n ",*x,*y);
     printf("x= %p   y=%p \n ",x,y );
 }
 
