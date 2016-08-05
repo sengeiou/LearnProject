@@ -87,12 +87,77 @@ public final Buffer rewind() {
 }
 ```
 
-##### 这里主要测试调用两次flip 会发生什么事
+##### 这里主要测试调用两次flip,编译运行后发现，报错，原来，两次调用flip方法后，limit 和position都变成了0，尝试对缓冲区上位置和上界都为0的get()操作会导致BufferUnderflowException异常。而put()则会导致BufferOverflowException异常，这里要特别注意
 
 ```
 // mIntBuffer.flip();
 // mIntBuffer.flip();
 // mIntBuffer.put(4);
 // System.out.println(mIntBuffer.get());
+```
+
+##### 接着撸，遍历buffer的时候，可以借助hasRemaining 和 remaining 函数;hasRemaining主要返回position是否小于limit ,remaining 返回 limit - position
 
 ```
+for (int i = 0; buffer.hasRemaining( ), i++) {
+  myByteArray [i] = buffer.get( );
+}
+
+int count = buffer.remaining( );
+  for (int i = 0; i < count, i++) {
+    myByteArray [i] = buffer.get( );
+  }
+```
+
+##### 然后看下clear()与compact()方法，数据被读完好，就要使用这两个方法，告诉buffer准备好，等待再次被写入
+
+ * 首先来看下clear()，查看源码发现，position = 0， limit = capacity ，mark = -1 ,几乎就是初始化了所有变量，和buffer 刚创建时一样，唯一的区别是buffer中的数据还是的的确确存在的，调用clear函数后，你将无法区分哪些数据是被读取过了，哪些是没有读取的，有多少可用数据, 如果buffer中还有未读数据，后续你还要这些数据，只是暂时你要做写入数据的操作，那么你就要使用compact方法
+
+```
+/**
+     * Clears this buffer.  The position is set to zero, the limit is set to
+     * the capacity, and the mark is discarded.
+     *
+     * <p> Invoke this method before using a sequence of channel-read or
+     * <i>put</i> operations to fill this buffer.  For example:
+     *
+     * <blockquote><pre>
+     * buf.clear();     // Prepare buffer for reading
+     * in.read(buf);    // Read data</pre></blockquote>
+     *
+     * <p> This method does not actually erase the data in the buffer, but it
+     * is named as if it did because it will most often be used in situations
+     * in which that might as well be the case. </p>
+     *
+     * @return  This buffer
+     */
+    public final Buffer clear() {
+        position = 0;
+        limit = capacity;
+        mark = -1;
+        return this;
+    }
+
+```
+
+ * 再来看下 compact方法,compact方法讲所有未读的数据拷贝到buffer的起始处，然后将怕position 设置最后一个为未读数据的后面，limit设置为capacity 一样，这样，你就可以做写入的操作，来看下源码吧
+
+
+ ```
+ 这里hb就是真正存储数据的数组
+
+
+
+ public ByteBuffer compact() {
+       System.arraycopy(hb, ix(position()), hb, ix(0), remaining());  
+       position(remaining());
+       limit(capacity());
+       discardMark();  // 就是把mark = -1;
+       return this;
+   }
+
+ ```
+
+
+
+##### mark()与reset()方法， 调用mark的时候，position将被赋值给mark ，调用reset时，将会把mark赋值给position ，在调用reset前，必须要调用mark()方法，不然是会报InvalidMarkException，由于比较简单，就不贴出源码了

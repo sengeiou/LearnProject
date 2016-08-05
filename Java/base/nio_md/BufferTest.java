@@ -28,17 +28,17 @@ public static void main(String[] args){
         mIntBuffer.put(3);
         mIntBuffer.put(4);
 
-      //  mIntBuffer.limit(mIntBuffer.position()).position(0);
-      //  System.out.println(String.format("the buffer capactiy is %s",mIntBuffer.capacity()));  //----> 12
+        // mIntBuffer.limit(mIntBuffer.position()).position(0);
+        System.out.println(String.format("the buffer capactiy is %s",mIntBuffer.capacity()));  //----> 12
 
-      //  System.out.println(String.format("the buffer position is %s",mIntBuffer.position()));    //----> 0
+        System.out.println(String.format("the buffer position is %s",mIntBuffer.position()));    //----> 0
 
-    //    System.out.println(String.format("the buffer limit is %s",mIntBuffer.limit())); //----> 4
+        System.out.println(String.format("the buffer limit is %s",mIntBuffer.limit())); //----> 4
 
       mIntBuffer.flip();
       mIntBuffer.flip();
       mIntBuffer.put(4);
-      System.out.println(mIntBuffer.get());
+       System.out.println(mIntBuffer.get());
 
 
 
