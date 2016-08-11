@@ -27,7 +27,7 @@ public static void main(String[] args) throws Exception {
 
 public static void simpleScatterGather()  {
         try{
-// gather
+// gather get the data from buffers
 
                 ByteBuffer buffer1 = ByteBuffer.allocate(10);
                 ByteBuffer buffer2 = ByteBuffer.allocate(20);
@@ -64,7 +64,7 @@ public static void simpleScatterGather()  {
                 mRandomAccessFile  = new RandomAccessFile(new File(fileStr),"rw");
                 fileChannel =  mRandomAccessFile.getChannel();
 
-                //scatter
+                //scatter  set date into buffers
 
                 ByteBuffer buffer3 = ByteBuffer.allocate(10);
                 ByteBuffer buffer4 = ByteBuffer.allocate(20); // change <10 ? try
@@ -77,7 +77,7 @@ public static void simpleScatterGather()  {
                 System.out.println(buffer4.position());
 
 
-
+                // change to read model
                 buffer3.flip();
                 while(buffer3.hasRemaining()) {
                         System.out.println((char)buffer3.get());

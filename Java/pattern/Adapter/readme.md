@@ -6,3 +6,8 @@
  * Adapter 适配器模式的核心角色, 用来把adaptee 转换为 target  (一般都是集成adaptee然后实现target)
 
 > android 中的 listview和adapter 中就用到了适配器模式，http://blog.csdn.net/tianfeng701/article/details/8775225
+
+
+### 主要优点
+ *  让两个没有关系的类在一起运行
+ *  灵活性好

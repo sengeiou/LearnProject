@@ -21,6 +21,29 @@
 #### channel可以使用阻塞和非阻塞的模式，但是只有面向流的Channel才能使用非阻塞的模式，比如sockets和pipes
 
 
-#### Scatter/Gather
- * 分散（scatter）从Channel中读取是指在读操作时将读取的数据写入多个buffer中。因此，Channel将从Channel中读取的数据“分散（scatter）”到多个Buffer中。
- * 聚集（gather）写入Channel是指在写操作时将多个buffer的数据写入同一个Channel，因此，Channel 将多个Buffer中的数据“聚集（gather）”后发送到Channel。
+#### Scatter/Gather(demo 见simpleScatterGather)
+ * 分散（scatter）从Channel中读取是指在读操作时将读取的数据写入多个buffer中。(调用channel 的read方法) , 因此 , Channel将从Channel中读取的数据“分散（scatter）”到多个Buffer中。
+ * 聚集（gather）写入Channel是指在写操作时将多个buffer的数据写入同一个Channel，(调用channel 的wirte() 方法) , 因此 , Channel 将多个Buffer中的数据“聚集（gather）”后发送到Channel。
+
+
+
+
+#### FileChannel
+ * 文件通道总是阻塞的, 在上面也提到过了
+ * FileChannel 不能直接创建,要依赖（RandomAccessFile、FileInputStream或FileOutputStream）的getChannel 方法创建
+ * FileChannel 是线程安全的(thread-safe), 多个进程可以在同一个实例上并发调用方法而不会引起任何问题，不过并非所有的操作都是多线程的（multithreaded）。影响通道位置或者影响文件大小的操作都是单线程（single-threaded）
+
+
+#### SocketChannel
+ * socket通道可以运行阻塞和非阻塞模式，并且是可以选择的，非阻塞这个点非常重要，即不需要为每个socket连接创建一个线程
+ * SocketChannel 主要有以下的三个类组成：DatagramChannel、SocketChannel和ServerSocketChannel
+
+##### 非阻塞模式
+ * 在jdk 中，非阻塞模式.主要是在SelectableChannel 类中实现,其中最主要的就是下面三个方法
+```
+abstract Object	blockingLock()// 还没来得及搞懂
+abstract SelectableChannel	configureBlocking(boolean block)
+abstract boolean	isBlocking()   
+```
+开发者可以直接调用configureBlocking 来配置,如果传入true 为阻塞模式，传入false ，则为非阻塞模式
+然后可以通过isBlocking 来判断当前的channel处于什么模式下
