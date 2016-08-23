@@ -3,7 +3,7 @@ import java.nio.*;
 import java.io.*;
 import java.net.*;
 /**
-simple ServerSocketChannel 
+simple ServerSocketChannel
 
 */
 public class ServerSCTest{
@@ -16,11 +16,13 @@ public class ServerSCTest{
 //mServerSocket
       ssc.configureBlocking(false);
       while(true){
-        SocketChannel  sc = ssc.accept();
+          SocketChannel  sc = ssc.accept();
 
           if( sc == null ){
             System.out.println("no client connection");
           }else{
+            Socket  socket   = sc.socket();
+            System.out.println(socket.getPort()+"---port--");
             System.out.println("listen 1234 has client connection");
           }
 

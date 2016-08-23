@@ -6,14 +6,13 @@ import (
 
 /**
 go 数组
-
+数组的申明， var identifier [len]type    fo emample  var placeArray [5]string
 
 
 */
 
 func main() {
 
-	fmt.Print("123 \n")
 
 	//定义一个长度为4的int 数组
 	var intArray [4]int //数组的定义1
@@ -28,7 +27,6 @@ func main() {
 	fmt.Print(a) // 输出为[1,1,1]
 	fmt.Print(b) // 输出为[1,2,0,0,0,0,0,0,0,0]
 	fmt.Print(cc) // 输出为 [0 0 0 0 0 0 0 0 0 0 10]
-
 
 
 	//test2(a)   这里不能这么调用  : cannot use a (type [3]int) as type [10]int in argument to test2
@@ -55,9 +53,15 @@ func main() {
 	fmt.Println(t1==t2)   //输出为true
 
 
+	// other day
 
+	aaa := [2]int{1,1}
 
+	fmt.Println(aaa)
 
+	bbb := [2]int{1:2}
+
+	fmt.Println(bbb)
 
 }
 
