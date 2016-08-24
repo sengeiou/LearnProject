@@ -1,0 +1,10 @@
+<config>
+
+<api id="login">
+  <params id="username"></params>
+  <params id="password"></params>
+  <params id="from">android</params>
+</api>
+
+
+</config>
