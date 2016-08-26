@@ -7,10 +7,10 @@ public class Person {
 
     private String name;
 
-    public  void changeName(String pname ){
-
+    public synchronized void changeName(String pname ){
+        //String name = "";
         if("1".equals(pname)){
-            this.name = pname;
+            name = pname;
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -18,12 +18,10 @@ public class Person {
             }
 
         }else{
-            this.name = pname;
-
-
+            name = pname;
         }
 
-        System.out.println(this.name);
+        System.out.println(name);
 
 
     }

@@ -1,7 +1,10 @@
 package com.cocoa;
 
 /**
- * Created by Administrator on 2016/7/14.
+ *  本项目的代码基于 java多线程编程核心技术
+ *
+ *
+ *
  */
 public class test {
 
