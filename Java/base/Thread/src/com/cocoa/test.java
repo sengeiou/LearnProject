@@ -1,5 +1,7 @@
 package com.cocoa;
 
+import java.util.Random;
+
 /**
  *  本项目的代码基于 java多线程编程核心技术
  *
@@ -31,6 +33,13 @@ public class test {
 //        for(Field f: fields){
 //            System.out.println(f.toString());
 //        }
+
+        Random random = new Random();
+
+
+        for (int i = 0; i < 100 ; i++) {
+            System.out.println((char) (random.nextInt(100)+40));
+        }
 
 
     }
