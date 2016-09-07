@@ -71,11 +71,83 @@ for (index , value ) in array3.enumerated(){
 // sets 集合
 
 var set1 = Set<Int>()
+//create set with an array
 var set2 : Set<Double> = [11.11,12.11]
+// 或者可以简写成  ,swift 自动推断set3 的类型 Set<String>
+var set3 : Set = ["123","123","123"]
+
 
 
 // add item 
 set1.insert(1)
+set1.insert(2)
+
+// check  set count is equals to  0
+print(set1.isEmpty)
+
+// remove item 
+set1.remove(1)
+
+print(set1)
+
+//check set contains item 
+
+print(set1.contains(2))
+print(set1.contains(122))
+
+//iterator set
+//just like array 
+
+set1.insert(1)
+for setItem in set1.sorted() {
+    print(setItem)
+}
+
+
+
+
+//Dictionary
+//swift 的Dictionary 是无序的
+// create dictionary
+
+var d1 = [Int : String]()
+var d2 = [1: 1 , 2 : 2]
+var d3 : [String : String] = ["1" : "1" ,"2":"2"]
+
+d1 [0] = "china"
+
+
+d1 = [:]    // 在这里d1 又成了一个空字典
+// 实际中用playground 中查看刚创建的空字典d1 ，也是[:]的类型
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
