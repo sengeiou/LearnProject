@@ -1,5 +1,6 @@
 package com.cocoa;
 
+import java.io.File;
 import java.util.Random;
 
 /**
@@ -34,17 +35,66 @@ public class test {
 //            System.out.println(f.toString());
 //        }
 
-        Random random = new Random();
+//        Random random = new Random();
 
 
-        for (int i = 0; i < 100 ; i++) {
-            System.out.println((char) (random.nextInt(100)+40));
-        }
+//        for (int i = 1; i < 100 ; i++) {
+////            System.out.println((char) i);
+
+//        }
+
+//           System.out.println(File.separator);
+//        downloadPatch("http://www.baidu.com/asjdkas/dasd/aa.apatch");
+//        downloadPatch("http://www.baidu.com/bb.apatch");
+//        downloadPatch("http://www.baidu.com/asda/bb.apatch");
+
+
+        ThreadLocal<String>  threadLocal = new ThreadLocal<String>(){
+
+            @Override
+            protected String initialValue() {
+                return Thread.currentThread().getName();
+            }
+        };
+
+//        threadLocal.set("main");
+        String result  = threadLocal.get();
+
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                String result  = threadLocal.get();
+                System.out.println(result+"at child thread");
+            }
+        }.start();
+
+        System.out.println(result+"at main thread");
+
+
 
 
     }
 
+    public  static  void downloadPatch(String patchUrl) {
+        if ( TextUtils.isEmpty(patchUrl)) {
+            return;
+        }
 
+        String[] patchNameArray = patchUrl.split("\\/");
+
+        if (patchNameArray == null || patchNameArray.length < 2) {
+            return;
+        }
+
+        String patchName = patchNameArray[patchNameArray.length - 1];
+
+        if (TextUtils.isEmpty(patchName)) {
+            return;
+        }
+
+        System.out.println(patchUrl +"-----"+ patchName);
+    }
 
 
 
