@@ -14,18 +14,23 @@ type A struct {
 3 接收者类型只能是 T  或  *T ，（T是类型）
 */
 func main() {
-	a := A{}
+	a := A{Name : "AAAA"}
 	a.Print()
+	fmt.Println(a.Name)
 
-	b := 1
-	//  b.Test()    这样写是错误的
+
+	b :=A{Name :"BBBB"}
+	b.Test()
+	fmt.Println(b.Name)
 
 }
 
 func (a A) Print() {
+	a.Name = "asd"
 	fmt.Println("-------------Print----------")
 }
 
-func (a int) Test() {
+func (a *A) Test() {
+	a.Name = "ASD"
 	fmt.Println("-------------Test----------")
 }
