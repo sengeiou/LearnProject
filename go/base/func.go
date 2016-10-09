@@ -27,7 +27,32 @@ func main() {
 	f1 := closure(10)
 	fmt.Println(f1(10))
 
+	v1,v2 :=  closure1();
+	fmt.Println(v1)
+	fmt.Println(v2(1))
 
+
+	//
+	// everyType(1,2);
+	// everyType("shen","12312","12312");
+
+	fmt.Println(test())
+
+}
+
+func test() int{
+		a := 10;
+		a++;
+		return a;
+}
+
+
+
+
+func everyType(a ...interface{}){  // 多参数类型，  interface{}  表示任何类型
+		for item := range a{
+			fmt.Println(item)
+		}
 }
 
 func add(x int, y int) (int, bool) { // 可以返回多个值，这里返回int和布尔类型，也可以无返回值，一个返回值时，可以不用写（）
@@ -53,4 +78,11 @@ func closure(x int) func(int) int {
 	return func(y int) int {
 		return x + y
 	}
+}
+
+func closure1() (int , func(int) int){
+	return 1, func (y int)int {
+		return  y
+	}
+
 }

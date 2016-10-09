@@ -37,7 +37,9 @@ func main(){
   v :=  map1["01"]
   fmt.Println(v)
 
-
+  for index,value := range map1 {
+      fmt.Println(index, value)
+  }
 
 
 

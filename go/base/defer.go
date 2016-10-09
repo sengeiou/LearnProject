@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 /**
@@ -22,19 +23,28 @@ func main() {
 	for i := 0; i < 3; i++ {
 		defer func() {
 			fmt.Println(i)
-		}()// 观察这里的输出
+		}() // 观察这里的输出
 	}
 
+	fmt.Println("test result", test())
+	math.Abs(-12)
 }
 
-func A(){
-  fmt.Println("FUNC A")
+func test() (result int) { //这个函数返回2
+	defer func() {
+		result++
+	}()
+	return 1
 }
 
-func B(){
-  panic("FUNC A")
+func A() {
+	fmt.Println("FUNC A")
 }
 
-func C(){
-  fmt.Println("FUNC C")
+func B() {
+	panic("FUNC A")
+}
+
+func C() {
+	fmt.Println("FUNC C")
 }
