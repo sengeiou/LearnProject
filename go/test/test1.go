@@ -2,7 +2,6 @@ package main
 
 import(
   "fmt"
-  "test"
 )
 
 
@@ -28,6 +27,5 @@ func main(){
   fmt.Printf("Hello, world.  Sqrt(2) = %v\n", test.Sqrt(2))
 
   fmt.Println(A,B,C)
-
 
 }
