@@ -1,1 +1,3 @@
-123.txt
+<h1><a href="intent://main/#Intent;scheme=kqc;package=com.kqc.b2b;S.msg={clazz:com.kqc.b2b.ui.logic.LogisticWebViewActivity,params:[{hint:www.baidu.com,key:url,type:java.lang.String},{hint:0,key:requestCode,type:java.lang.Integer},{hint:title,key:title,type:java.lang.String}]};end">物流详情</a></h1>
+
+<h1><a href="intent://main/#Intent;scheme=kqc;package=com.kqc.b2b;S.msg={clazz:com.kqc.b2b.ui.news.CarNewsActivity};end">车市头条详情（填的数据多，暂不做）</a></h1>

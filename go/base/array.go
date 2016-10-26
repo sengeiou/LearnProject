@@ -63,6 +63,10 @@ func main() {
 
 	fmt.Println(bbb)
 
+test1(aaa)
+test2(aaa)
+	
+
 }
 
 //定义方法的型参数

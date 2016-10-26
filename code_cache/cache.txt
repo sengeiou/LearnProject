@@ -1,0 +1,130 @@
+private void log(String activityname) {
+        try {
+
+            String fileName = Environment.getExternalStorageDirectory() + "/kqc.txt";
+            File file = new File(fileName);
+            if (!file.exists()) {
+                file.createNewFile();
+            } else {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+
+                StringBuilder sb = new StringBuilder();
+                String str = "";
+                while ((str = reader.readLine()) != null) {
+                    sb.append(str);
+                }
+                Log.e("ititit", str);
+
+            }
+
+            FileOutputStream fileOutputStream = new FileOutputStream(file, true);
+            BufferedOutputStream buff = new BufferedOutputStream(fileOutputStream);
+
+
+            Intent it = getIntent();
+
+            String className = "";
+
+            Class clazzIt = it.getClass();
+            Field[] fsIT = clazzIt.getDeclaredFields();
+            if (fsIT != null) {
+                for (Field f : fsIT) {
+                    f.setAccessible(true);
+                    if ("mComponent".equals(f.getName())) {
+                        try {
+                            ComponentName componentName = (ComponentName) f.get(it);
+
+                            className = componentName.flattenToShortString().replace("/", "");
+
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+            Log.e("itititit", activityname + "--" + className);
+
+            if (TextUtils.isEmpty(activityname)) {
+                activityname = "添加activity的标题";
+            }
+
+            List<AnalyActivity> allList = new ArrayList<>();
+            AnalyActivity activity = new AnalyActivity();
+            activity.setActivityClass(className);
+            activity.setActivityName(activityname);
+
+            Bundle b = it.getExtras();
+            List<Params> list = new ArrayList<>();
+            if (b != null) {
+                Class clazz = b.getClass();
+                Field[] fs = clazz.getDeclaredFields();
+                if (fs != null) {
+                    for (Field f : fs) {
+                        f.setAccessible(true);
+                        if ("mMap".equals(f.getName())) {
+
+
+                            ArrayMap<String, Object> mMap = (ArrayMap<String, Object>) f.get(b);
+
+                            Set<String> keys = mMap.keySet();
+                            Params p = null;
+                            for (String s : keys) {
+
+                                p = new Params();
+                                p.setKeyName(s);
+                                p.setKeyType(mMap.get(s).getClass().getName());
+                                p.setKeyDescribe("写下对该参数的描述");
+
+                                if (p.getKeyType().startsWith("com.kqc.b2b")) {
+                                    List<Params> mList = new ArrayList<>();
+                                    Class modelClass = Class.forName(p.getKeyType());
+                                    Field[] modelFidlds = modelClass.getDeclaredFields();
+                                    Params mParms = null;
+                                    for (Field ff : modelFidlds) {
+                                        ff.setAccessible(true);
+                                        mParms = new Params();
+                                        mParms.setKeyDescribe("写下对该参数的描述");
+                                        mParms.setKeyName(ff.getName());
+                                        mParms.setKeyType(ff.getType().toString());
+                                        mList.add(mParms);
+                                    }
+                                    p.setKeyValue(mList);
+                                }
+
+                                list.add(p);
+                            }
+
+
+                        }
+                    }
+                }
+            }
+
+            activity.setParams(list);
+            allList.add(activity);
+
+            buff.write(JSON.toJSONString(allList).getBytes());
+
+
+            buff.flush();
+            buff.close();
+
+
+        } catch (Exception e) {
+
+            Log.e("itititit", e.toString() + e.getLocalizedMessage());
+        }
+
+
+    }
+
+
+    public boolean isRunningForeground(Context context){
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        ComponentName cn = am.getRunningTasks(1).get(0).topActivity;
+        String currentPackageName = cn.getPackageName();
+        if(currentPackageName != null && currentPackageName.equals(getPackageName())){
+            return true;
+        }
+        return false;
+    }  

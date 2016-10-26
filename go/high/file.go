@@ -8,6 +8,7 @@ import(
 "fmt"
 "os"
 "bufio"
+"io"
 )
 
 func main(){
@@ -19,8 +20,14 @@ func main(){
 
   inputReader :=  bufio.NewReader(file)
 
+  for{
+      readStr,readError :=  inputReader.ReadString('\n')
+      if  readError == io.EOF {
+          return
+      }
+      fmt.Println(readStr)
+  }
 
 
-  fmt.Println(file)
 
 }

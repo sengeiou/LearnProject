@@ -1,0 +1,2454 @@
+{
+  "data": [
+    {
+      "activityClass": "com.kqc.b2b.ui.splash.SplashActivity",
+      "activityName": "添加activity的标题",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.main.MainActivity",
+      "activityName": "添加activity的标题",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "jump",
+          "type": "java.lang.Boolean"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.main.FindCarActivity",
+      "activityName": "户准寻车",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.login.LoginActivity",
+      "activityName": "登录",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.auction.quote.QuoteActivity",
+      "activityName": "我的报价",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bidding_id",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "ACTIVITY_FROM",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.WalletActivity",
+      "activityName": "我的钱包",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.setting.SettingActivity",
+      "activityName": "设置",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.main.home.article.ArticleListActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "type",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.info.UserInfoActivity",
+      "activityName": "详细资料",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarDetailActivity",
+      "activityName": "车辆详情",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "sid",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.baclog.BackLogActivity",
+      "activityName": "待办事项",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.message.MessageListActivity",
+      "activityName": "消息",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.baclog.BackOrderDetailActivity",
+      "activityName": "订单详情",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "tid",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "type",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "position",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.DealDetailActivity",
+      "activityName": "查看订单合同",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "orderNum",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.filter1.CarSourceActivity",
+      "activityName": "添加activity的标题",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ENTRY_TYPE",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_CHANNEL_ID",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_KEYWORD",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_SERIES_ID",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.search.CarSearchActivity",
+      "activityName": "添加activity的标题",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "search_content",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.SwichOlderPagerActivity",
+      "activityName": "我的订单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activities.BuyerOrdersActivity",
+      "activityName": "我的买车订单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.carRes.CarResourceManagerActivity",
+      "activityName": "车源管理",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.business.BusinessInfoActivity",
+      "activityName": "商家信息",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "dealerId",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.publish.publish.PublishCarActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "CAR_DETAIL",
+          "type": "com.kqc.b2b.io.http.model.car.resp.CarDetail",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "bname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_image",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_image_old",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "url",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "shelves_at_date",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "csname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "extra_path",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "extra_path_old",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fdbk",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tax_price2",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tax_price1",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "myself",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "ctype",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "pick_region",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "invoice_type2",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "procedure",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "production_date",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_car_time",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "company_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "sale_region",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "cnum",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "invoice_type1",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "type_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "user_id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "PUBLISH_TYPE",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_ID",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_TYPE",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.news.CarNewsActivity",
+      "activityName": "车源宝公测",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.approve.CompanyIdentificationActivity",
+      "activityName": "企业认证",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.approve.PersonalIdentificationActivity",
+      "activityName": "个人实名认证",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.MainBrandActivity",
+      "activityName": "主营品牌",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand",
+          "type": "java.util.ArrayList"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.setting.ChangePwdActivity",
+      "activityName": "修改密码",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.setting.FeedbackActivity",
+      "activityName": "意见反馈",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.user.info.InvitationFriendActivity",
+      "activityName": "邀请好友",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.recharge.ReChargeActivity",
+      "activityName": "充值",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "balance",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.withdraw.WithdrawDepositActivity",
+      "activityName": "提现",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "balance",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "balance_flag",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.bank.MineBankCardActivity",
+      "activityName": "我的银行卡",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.withdraw.AccountBillActivity",
+      "activityName": "账单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.password.SecuritySettingActivity",
+      "activityName": "安全设置",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.password.forget.ForgetPasswordMsgActivity",
+      "activityName": "忘记支付密码",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "forget",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.password.modify.OldPayPasswordActivity",
+      "activityName": "修改支付密码",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.bank.EnterBankCarPasswordActivity",
+      "activityName": "修改支付密码",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_SUB_TITLE",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_TITLE",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.wallet.bank.BindBankCardActivity",
+      "activityName": "绑定银行卡",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_BIND_TYPE",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.main.PubFindCarEntranceActivity",
+      "activityName": "添加activity的标题",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.normal.publish.PubNormalFindActivity",
+      "activityName": "车源宝公测",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.BrandActivity",
+      "activityName": "选择品牌",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "history_type",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "show_history",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "alp_brand",
+          "type": "com.kqc.b2b.io.http.model.source.source.Brand",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_list",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "image_src",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "isSeled",
+              "type": "boolean"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarModelActivity",
+      "activityName": "选择车型",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_name",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bname",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.color.ColorSelectActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "show_un_limit",
+          "type": "java.lang.Boolean"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.support.activity.SingleSelectActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "LIST",
+          "type": "java.util.ArrayList"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "TITLE",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.auction.publish.PubAuctionFindActivity",
+      "activityName": "发布竞价寻车",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.OrderDetailBuyerActivity",
+      "activityName": "订单详情",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "coming",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "buy_or_seal",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "key",
+          "type": "com.kqc.b2b.io.http.model.myorder.BuyAndSaleOrderInfo$BuyAndSaleItemInfo",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_brand_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_series_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_id",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "province_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "city_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "created_at",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "day",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_no",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_amount",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_comment",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "find_car_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fearnest_money",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "min_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "max_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "position",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_FROM_TAB",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.DealDetailActivity",
+      "activityName": "查看订单合同",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "isFinderOrder",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "orderNum",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activities.SellerOrdersActivity",
+      "activityName": "我的卖车订单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activities.FindcarOrdersActivity",
+      "activityName": "我的寻车订单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activities.BidOrdersActivity",
+      "activityName": "我的竞价订单",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.logic.MyLogisticsActivity",
+      "activityName": "我的物流",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.publish.publish.PublishCarActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_TYPE",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.logic.LogisticsMainActivity",
+      "activityName": "物流快运",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.management.EmployeeManagementActivity",
+      "activityName": "员工管理",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.management.edit.EditEmployeeActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_EMPLOYEE",
+          "type": "com.kqc.b2b.io.http.model.permission.Employee",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "CREATOR",
+              "type": "interface android.os.Parcelable$Creator"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "phone",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "role",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "state",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.management.add.AddEmployeeActivity",
+      "activityName": "添加员工",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.staff.management.add.ContactPickerActivity",
+      "activityName": "车源宝公测",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.BrandActivity",
+      "activityName": "选择品牌",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "WITHOUT_CUSTOM_CAR_MODEL",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "WITHOUT_CUSTOM_CAR_MODEL",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "alp_brand",
+          "type": "com.kqc.b2b.io.http.model.source.source.Brand",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_list",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "image_src",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "isSeled",
+              "type": "boolean"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarModelActivity",
+      "activityName": "选择车型",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_name",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "WITHOUT_CUSTOM_CAR_MODEL",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bname",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.logic.LogisticsDetailActivity",
+      "activityName": "物流快运",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "startLocal",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "carMsg",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "orderId",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "price",
+          "type": "java.lang.Double"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "CarChoiceIfoBean",
+          "type": "java.util.ArrayList"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "endLocal",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.news.article.ArticleActivity",
+      "activityName": "车源宝公测",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ARTICLE_ID",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ARTICLE_SUMMARY",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ARTICLE_COVER",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ARTICLE_TITLE",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_ARTICLE_URL",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "alp_brand",
+          "type": "com.kqc.b2b.io.http.model.source.source.Brand",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_list",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "image_src",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "isSeled",
+              "type": "boolean"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.ordered.WillOrderActivity",
+      "activityName": "我要订购",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "car_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "car_detail",
+          "type": "com.kqc.b2b.io.http.model.car.resp.CarDetail",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "bname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_image",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_image_old",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "url",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "shelves_at_date",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "csname",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "extra_path",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "extra_path_old",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fdbk",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tax_price2",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "tax_price1",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "myself",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "ctype",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "pick_region",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "invoice_type2",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "procedure",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "production_date",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_car_time",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "company_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "sale_region",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "cnum",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "invoice_type1",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "type_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "user_id",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.ImportBrandActivity",
+      "activityName": "选择品牌",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "IS_ALL_CHANNEL",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.ImportCarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "alp_brand",
+          "type": "com.kqc.b2b.io.http.model.source.source.ImportBrand",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_list",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "image_src",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.ImportCarChannelActivity",
+      "activityName": "车源选择",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "history_type",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.ImportBrandActivity",
+      "activityName": "选择品牌",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "history_type",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "IS_ALL_CHANNEL",
+          "type": "java.lang.Boolean"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.ImportCarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "alp_brand",
+          "type": "com.kqc.b2b.io.http.model.source.source.ImportBrand",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "series_list",
+              "type": "interface java.util.List"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "image_src",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "id",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.car.CustomCarTypeActivity",
+      "activityName": "自定义车型",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_name",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "SOURCE_CLS",
+          "type": "java.lang.Class"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bname",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "channel",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.screen.ScreenActivivty",
+      "activityName": "筛选",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.screen.ScreenBrandActivity",
+      "activityName": "选择品牌",
+      "params": [
+
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.screen.ScreenCarSeriesActivity",
+      "activityName": "选择车系",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bname",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.findCar.screen.ScreenCarModelActivity",
+      "activityName": "选择车型",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_name",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "series_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "brand_id",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "bname",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.LaunchContractActivity",
+      "activityName": "发起订单合同",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "coming",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "key",
+          "type": "com.kqc.b2b.io.http.model.myorder.BuyAndSaleOrderInfo$BuyAndSaleItemInfo",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_brand_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_series_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_id",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "province_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "city_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "created_at",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "day",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_no",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_amount",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_comment",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "find_car_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fearnest_money",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "min_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "max_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "position",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_FROM_TAB",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "ordernum",
+          "type": "java.lang.String"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.order.activity.CommentActivity",
+      "activityName": "评价",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_POSITION",
+          "type": "java.lang.Integer"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_CONTRACT_DETAIL",
+          "type": "com.kqc.b2b.io.http.model.myorder.BuyAndSaleOrderInfo$BuyAndSaleItemInfo",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_brand_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_series_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_id",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "province_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "city_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "created_at",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "day",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_no",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_amount",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_comment",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "find_car_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fearnest_money",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "min_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "max_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "type",
+          "type": "java.lang.String"
+        },
+        {
+          "describe": "写下对该参数的描述",
+          "key": "INTENT_FROM_TAB",
+          "type": "java.lang.Integer"
+        }
+      ]
+    },
+    {
+      "activityClass": "com.kqc.b2b.ui.logic.LogisticsMainActivity",
+      "activityName": "物流快运",
+      "params": [
+        {
+          "describe": "写下对该参数的描述",
+          "key": "carbean",
+          "type": "com.kqc.b2b.io.http.model.myorder.BuyAndSaleOrderInfo$BuyAndSaleItemInfo",
+          "value": [
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_username",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_brand_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_series_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_mobile",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_id",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "remark",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_title",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "province_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "city_name",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "created_at",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "day",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "out_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_no",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_amount",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "in_color",
+              "type": "java.lang.String"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_comment",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_value",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_type_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "deal_price",
+              "type": "double"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "find_car_id",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "fearnest_money",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_num",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "order_status",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "min_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "channel",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "put_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "max_day",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "is_special",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "seller_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "car_source_discount_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "buyer_company_type",
+              "type": "int"
+            },
+            {
+              "describe": "写下对该参数的描述",
+              "key": "status",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
