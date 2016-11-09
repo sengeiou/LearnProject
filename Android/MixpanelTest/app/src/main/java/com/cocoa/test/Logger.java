@@ -5,7 +5,7 @@ import android.util.Log;
 
 public class Logger {
 
-    public static void log(String name){
-        Log.e("------","-----"+name+"----");
+    public static void log(){
+        Log.e("------","-----onClick----");
     }
 }
