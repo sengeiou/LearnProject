@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MixpanelTest.iml" filepath="$PROJECT_DIR$/MixpanelTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plug/plug.iml" filepath="$PROJECT_DIR$/plug/plug.iml" />
     </modules>
   </component>
 </project>

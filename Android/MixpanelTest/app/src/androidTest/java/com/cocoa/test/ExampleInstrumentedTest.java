@@ -1,4 +1,4 @@
-package com.cocoa.mixpaneltest;
+package com.cocoa.test;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

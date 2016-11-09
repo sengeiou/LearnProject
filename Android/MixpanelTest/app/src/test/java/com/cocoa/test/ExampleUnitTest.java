@@ -1,4 +1,4 @@
-package com.cocoa.mixpaneltest;
+package com.cocoa.test;
 
 import org.junit.Test;
 
