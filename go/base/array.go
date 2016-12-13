@@ -13,21 +13,19 @@ go 数组
 
 func main() {
 
-
 	//定义一个长度为4的int 数组
-	var intArray [4]int //数组的定义1
+	var emeintArray [4]int //数组的定义1
 
 	// 输出为[0,0,0,0]
 	fmt.Print(intArray)
 
-	a := [...]int{1, 1, 1} //数组的定义2
-	var b = [10]int{1, 2}  //数组的定义3
-	var cc = [...]int{10: 10}   //创建数组，第11位为10 别的都为int 初始值 ,数组长度为10
+	a := [...]int{1, 1, 1}    //数组的定义2
+	var b = [10]int{1, 2}     //数组的定义3
+	var cc = [...]int{10: 10} //创建数组，第11位为10 别的都为int 初始值 ,数组长度为10
 
-	fmt.Print(a) // 输出为[1,1,1]
-	fmt.Print(b) // 输出为[1,2,0,0,0,0,0,0,0,0]
+	fmt.Print(a)  // 输出为[1,1,1]
+	fmt.Print(b)  // 输出为[1,2,0,0,0,0,0,0,0,0]
 	fmt.Print(cc) // 输出为 [0 0 0 0 0 0 0 0 0 0 10]
-
 
 	//test2(a)   这里不能这么调用  : cannot use a (type [3]int) as type [10]int in argument to test2
 
@@ -47,25 +45,23 @@ func main() {
 		fmt.Println(index, value)
 	}
 
-	var t1 = [2]int{1,2}
-	var t2 = [2]int{1,2}
+	var t1 = [2]int{1, 2}
+	var t2 = [2]int{1, 2}
 
-	fmt.Println(t1==t2)   //输出为true
-
+	fmt.Println(t1 == t2) //输出为true
 
 	// other day
 
-	aaa := [2]int{1,1}
+	aaa := [2]int{1, 1}
 
 	fmt.Println(aaa)
 
-	bbb := [2]int{1:2}
+	bbb := [2]int{1: 2}
 
 	fmt.Println(bbb)
 
-test1(aaa)
-test2(aaa)
-	
+	test1(aaa)
+	test2(aaa)
 
 }
 

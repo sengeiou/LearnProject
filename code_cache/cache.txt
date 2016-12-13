@@ -221,24 +221,17 @@ public class LuckyMoneyReceiver extends BroadcastReceiver {
 
 
 
-
+onKPayDialogDismiss
 
 
 
 
 
 {"type":"pocketMoney","money":"100","title":"\u7ea2\u5305\u6765\u4e86","text":"\u7ea2\u5305\u6765\u4e86"}
-
-onKPayDialogDismiss
-
 {"type":"voucher","number":"1","amount":"300","title":"\u4f18\u60e0\u5238\u6765\u4e86","text":"\u4f18\u60e0\u5238\u6765\u4e86"}
 
 
-
-
 String idRes = "com.kqc.b2b" + ".R$id";
-
-
 try {
     Class clazz = Class.forName(idRes);
 
@@ -276,25 +269,13 @@ try {
         }
         view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
         view.setAccessibilityDelegate(new View.AccessibilityDelegate() {
-
             public void sendAccessibilityEvent(View host, int eventType) {
-
-
                 try {
-
                     Log.e("-----", host.getClass().getName() + "-------");
-
-
                     Method[] methods = host.getClass().getMethods();
-
                     for (Method m : methods) {
-
                         if (m.getName().equals("getText")) {
-
-
                             Object oo = m.invoke(host);
-
-
                             Log.e("-----", oo.toString() + "-------");
 
                         }
@@ -320,7 +301,7 @@ try {
 
 
 
-    injectDir---------
+injectDir---------
 injectDir---------com.cocoa.mixpaneltest.AopUtil
 injectDir---------stratAop
 injectDir---------javassist.CannotCompileException: by javassist.bytecode.BadBytecode: stratAop (Ljava/lang/String;)V in com.cocoa.mixpaneltest.AopUtil: failed to resolve types
@@ -339,3 +320,50 @@ injectDir---------javassist.CannotCompileException: cannot find android.view.Vie
 injectDir---------com.cocoa.mixpaneltest.MainActivity
 injectDir---------onCreate
 injectDir---------javassist.CannotCompileException: cannot find android.os.Bundle
+
+
+
+ @Override
+            public void onActivityResumed(Activity activity) {
+                View view = activity.findViewById(R.id.title);
+                if (view != null) {
+                    TextView tv = (TextView) view;
+                    Log.e("-----", tv.getText() + "");
+                } else {
+                    Log.e("-----", "tv is null");
+                }
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+                View view = activity.findViewById(R.id.title);
+                if (view != null) {
+                    TextView tv = (TextView) view;
+                    Log.e("-----", tv.getText() + "");
+                } else {
+                    Log.e("-----", "tv is null");
+                }
+            }
+
+
+            
+        String imgUrl = null;
+
+        try {
+            Object tag = img.getTag();
+            if (tag != null) {
+                GenericRequest request = (GenericRequest) tag;
+                Class requestClass = request.getClass();
+                Field modelField = requestClass.getDeclaredField("model");
+                modelField.setAccessible(true);
+
+                imgUrl = modelField.get(request).toString();
+            }
+        } catch (Exception e) {
+            Log.e("---", e.toString());
+        }
+
+
+
+
+        
