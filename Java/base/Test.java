@@ -1,4 +1,7 @@
-public class Test implements Cloneable,TT {
+import java.io.*;
+
+
+public class Test implements Cloneable, TT {
 	public static void main(String[] args) {
 		// Test t  = new Test();
 		// Test t1 = t;
@@ -30,16 +33,19 @@ public class Test implements Cloneable,TT {
 		// System.out.println(System.currentTimeMillis() - time);
 
 
-
-		Test t = new Test();
-		t.cry();
-
+		try {
+			Test t = null;
+			Fie
+			t.cry();
+		} catch (NullPointerException | IOException e) {
+			
+		}
 
 	}
 
 
 
-	public void cry(){
+	public void cry() {
 		System.out.println("123");
 	}
 
