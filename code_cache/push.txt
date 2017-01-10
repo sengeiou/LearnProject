@@ -1,0 +1,10 @@
+{"type":"transmission","alertTitle":"xxxx","alertMessage":"xxxx","clazz": "com.kqc.b2b.ui.user.login.LoginActivity",
+"name": "登录"}
+
+
+
+Bundle[{messageid=c194d2d6-19dd-158ccc74df4-1523528832, action=10001, taskid=GT_1205_4c73302171ff31c02f922254bbb2d55d, payload=[B@3fa0d16, payloadid=c194d2d6-19dd-158ccc74df4-1523528832:GT_1205_4c73302171ff31c02f922254bbb2d55d, appid=OalkSvIzXa7oHTaAYiQzf1, packagename=com.kqc.b2b}]
+
+
+
+

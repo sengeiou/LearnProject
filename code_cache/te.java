@@ -360,3 +360,5 @@ public class SplashActivity extends BaseActivity implements SplashView, Runnable
     }
 
 }
+piccolo:inject error javassist.NotFoundException: onClick(..) is not found in com.kqc.b2b.ui.logic.palacechoice.ProvinceActivity$4$1
+piccolo:methodInstanceStr com.kqc.b2b.support.util.Logger.onItemClicked(this.this$0,intent,adapterView,view,position);

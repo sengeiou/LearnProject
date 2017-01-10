@@ -13,7 +13,7 @@ public class ServerSCTest{
       ServerSocketChannel  ssc = ServerSocketChannel.open();
       ServerSocket mServerSocket =  ssc.socket();
       mServerSocket.bind(new InetSocketAddress(1234));
-//mServerSocket
+      //mServerSocket
       ssc.configureBlocking(false);
       while(true){
           SocketChannel  sc = ssc.accept();

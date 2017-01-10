@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'plugin.test'
 
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -25,6 +26,5 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'org.javassist:javassist:3.20.0-GA'
     compile 'com.android.support:appcompat-v7:24.2.1'
 }
