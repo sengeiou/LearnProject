@@ -2,6 +2,8 @@ package com.company;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Thread{
     static File parentFile = new File("/Users/sj/Documents/kqc_pro/b2b-ii-android/app/build/intermediates/classes/dev/debug");
@@ -21,7 +23,7 @@ public class Main extends Thread{
 //            listDir(parentFile);
 //        }
 
-
+        ArrayList
 
 
 //        try {
