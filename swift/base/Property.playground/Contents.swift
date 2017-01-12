@@ -26,7 +26,7 @@ let p1 = Person(age:1)
 
 let bomei  = Dog()
 
-bomei.name = "bomei"   // 类实例在这里是不会报错的，很神奇
+bomei.name = "bomei"   // 类实例在这里是不会报错的
 
 
 
