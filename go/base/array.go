@@ -6,7 +6,7 @@ import (
 
 /**
 go 数组
-数组的申明， var identifier [len]type    fo emample  var placeArray [5]string
+数组的申明， var identifier [len]type    for example  var placeArray [5]string
 
 
 */
