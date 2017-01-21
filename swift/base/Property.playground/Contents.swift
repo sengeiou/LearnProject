@@ -67,6 +67,187 @@ manager.data.append("Some more data")
 manager.importer.fileName = "123"
 print(manager)
 
+//如果一个被标记为 lazy 的属性在没有初始化时就同时被多个线程访问，则无法保证该属性只会被初始化一次。
+
+
+
+// 计算属性 （类，结构体，枚举中都可以定义）
+// 计算属性不直接存储值，而是提供一个getter 和一个可选的setter，来间接获取和设置其他属性或变量的值
+
+// 官方demo
+
+struct Point{
+    var x = 0.0
+    var y = 0.0
+}
+struct Size {
+    var width = 0.0
+    var height = 0.0
+}
+struct Rect{
+    var origin  = Point()
+    var size  = Size()
+    var center : Point{
+        get{
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+    
+        set(newCenter){
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
+        }
+    }
+}
+
+
+
+// 看了代码还是很好理解的
+var rect = Rect(origin: Point(x:0.0,y:0.0), size: Size(width: 10.0, height: 10.0))
+
+let initCenter  = rect.center
+print(initCenter.x)
+print(initCenter.y)
+
+rect.center = Point(x: 11.0, y: 11.0)
+
+print(rect.origin.x)
+print(rect.origin.y)
+
+
+// 自己测试计算属性的demo
+
+struct Bird{
+    var x : Int
+    var age : Int {
+        get{
+            return 11
+        }
+        
+        set(newAge){
+            x = newAge
+        }
+
+    }
+
+}
+
+
+var bird  = Bird(x:10)
+bird.age = 101
+var age  = bird.age
+
+
+
+//经过自测，发现以下几点问题，
+//1.计算属性在结构体内没有逐一构造器
+//2.计算属性不能在结构体内设置默认值
+//3.计算属性值能设置成var ，即使是只读计算属性（就是只定义了get的）
+
+
+
+
+// 属性观察器
+//每次属性被设置新值的时候，就会调用属性观察器
+//除了延迟属性外，别的属性存储属性都可以添加属性观察期
+//可以添加如下的一个或多个观察器
+//1. willSet 在新值被设置前调用
+//2. didSet  在新值被设置后调用
+
+
+/**
+ willSet 观察器会将新的属性值作为常量参数传入，在 willSet 的实现代码中可以为这个参数指定一个名称，如果不指定则参数仍然可用，这时使用默认名称 newValue 表示。
+ 
+ 同样，didSet 观察器会将旧的属性值作为参数传入，可以为该参数命名或者使用默认参数名 oldValue。如果在 didSet 方法中再次对该属性赋值，那么新值会覆盖旧的值。
+ 
+ 
+ */
+
+class SetpCounter{
+    var step : Int = 0 {  //类中必须设置初始值？
+        willSet{//这里使用默认值。也可以使用willSet(newExample)来自定义
+            print("the newValue = \(newValue)")
+        }
+        didSet{
+            print("the oldValue = \(oldValue)")
+        }
+    }
+
+}
+
+var stepCounter = SetpCounter()
+
+stepCounter.step = 10
+//the newValue = 10
+//the oldValue = 0
+stepCounter.step = 101
+//the newValue = 101
+//the oldValue = 10
+
+//结果很明显，不解释了
+
+
+
+
+
+
+
+//#全局变量和局部变量
+
+
+
+//计算属性和属性观察器所描述的功能也可以用于全局变量和局部变量。（不是很理解？）
+//全局变量是在函数、方法、闭包或任何类型之外定义的变量。
+//局部变量是在函数、方法或闭包内部定义的变量。
+
+
+
+//# 类型属性（有点类似java static 变量）
+//为类型本身定义属性，无论创建了多少个该类型的实例，这些属性都只有唯一一份。这种属性就是类型属性。
+//存储型类型属性可以是变量或常量，计算型类型属性跟实例的计算型属性一样只能定义成变量属性。
+
+//使用关键字 static 来定义类型属性。在为类定义计算型类型属性时，可以改用关键字 class 来支持子类对父类的实现进行重写。
+
+
+//官方demo
+
+struct SomeStructure {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int {
+        return 1
+    }
+}
+enum SomeEnumeration {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int {
+        return 6
+    }
+}
+class SomeClass {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int {
+        return 27
+    }
+    class var overrideableComputedTypeProperty: Int {
+        return 107
+    }
+}
+
+//跟实例属性一样，类型属性也是通过点运算符来访问。但是，类型属性是通过类型本身来访问，而不是通过实例
+
+print(SomeClass.storedTypeProperty)
+
+var someClass = SomeClass()
+//print(someClass.storedTypeProperty)   // 居然是报错的
+
+
+
+
+
+
+
+
 
 
 
