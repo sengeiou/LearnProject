@@ -119,6 +119,16 @@ for thing in things{
     }
 }
 
+//Any类型可以表示所有类型的值，包括可选类型。Swift 会在你用Any类型来表示一个可选值的时候，给你一个警告。如果你确实想使用Any类型来承载可选值，你可以使用as操作符显式转换为Any，如下所示：
+
+let optionalNum : Int? = 3
+//things.append(optionalNum)  会报错
+things.append(optionalNum as Any)   // 上面说的as 是向下转换，现在成了向上，后续再来理解吧
+
+
+
+
+
 
 
 
