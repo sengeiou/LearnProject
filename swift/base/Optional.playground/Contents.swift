@@ -175,6 +175,16 @@ if let tt  = json.residence?[""]{
 //类似的，通过可选链式调用访问Int?值，依旧会返回Int?值，并不会返回Int??。
 
 
+// demo
+if let jsonStreet = json.residence?.address?.street{
+    print(jsonStreet)
+}else{
+    print("jsonStreet is nil")
+}
+
+
+// 这章节的demo 有点奇怪，不是很明白，后续再看下
+
 
 
 
