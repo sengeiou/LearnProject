@@ -1,3 +1,32 @@
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Parameter;
+
+public class Bot {
+    private final String name;
+    private final String author;
+    private final int rating;
+    private final int score;
+
+    public Bot(String name, String author, int rating, int score) {
+        this.rating = rating; // 注意这里的顺序,并非按参数顺序逐一调用
+        this.score = score;
+        this.name = name;
+        this.author = author;
+    }
+
+    public static void main(String[] args) throws NoSuchMethodException, SecurityException {
+        Class<Bot> clazz = Bot.class;
+        Constructor ctor = clazz.getConstructor(String.class, String.class, int.class, int.class);
+        Parameter[] ctorParameters = ctor.getParameters();
+        for (Parameter param: ctorParameters) {
+            System.out.println(param.isNamePresent() + ":" + param.getName());
+        }
+    }
+}
+
+
+
+
 <!--<ScrollView-->
         <!--android:id="@+id/sv_car_item_detail"-->
         <!--android:layout_width="match_parent"-->
