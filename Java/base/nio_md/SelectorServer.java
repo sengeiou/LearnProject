@@ -53,8 +53,8 @@ public class SelectorServer{
 
     public static void main(String args[]) {
 
-      try{
-      new SelectorServer().goSocket();
+    try{
+        new SelectorServer().goSocket();
     }catch(Exception e){
       System.out.println(e.toString());
     }
