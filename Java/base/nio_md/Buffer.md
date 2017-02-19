@@ -38,7 +38,7 @@
  * ByteBuffer	put(ByteBuffer src){}
  * abstract ByteBuffer	put(int index, byte b){}
 
-##### 每put一次的时候，position就会++,  如果不停的put，超过了capacity ，则会抛出BufferOverflowException(TM的,多模程序化的表述)，看源码
+##### 每put一次的时候，position就会++,  如果不停的put，超过了capacity ，则会抛出BufferOverflowException，看源码
 
 ```
 

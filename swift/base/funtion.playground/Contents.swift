@@ -2,20 +2,57 @@
 #function
 * 160821 更新函数的基本用法
  
- 
  */
 import UIKit
 
-var str = "Hello, playground"
+// # 函数（Functions）
+//
 
 
-
+//函数的定义与调用
+//当你定义一个函数时，你可以定义一个或多个有名字和类型的值，作为函数的输入，称为参数，也可以定义某种类型的值作为函数执行结束时的输出，称为返回类型。
 func sayHello(personName : String) ->String{
     return "hello"+personName
 }
 
 sayHello(personName: "12")
 
+//#函数参数和返回值
+// 可以无参 也可以多参， 可以有返回值，也可以没返回值
+
+
+//# 无参函数
+func sayHelloWorld() ->String {
+    return "HelloWorld"
+}
+sayHelloWorld()
+
+
+// #多参数函数
+
+func greet(person : String , alreadyGreeted : Bool) -> String{
+    if alreadyGreeted {
+            return person
+    }else {
+            return person+"==="
+    }
+}
+
+print(greet(person: "shenjun", alreadyGreeted: true))
+
+
+// #无返回值
+
+func  greet(person : String){
+    print("greet function")
+}
+
+greet(person: "cocoa")
+
+//严格上来说，虽然没有返回值被定义，greet(person:) 函数依然返回了值。没有定义返回类型的函数会返回一个特殊的Void值。它其实是一个空的元组（tuple），没有任何元素，可以写成()。
+
+
+// 多重返回值函数
 func minMax(array:[Int])-> (min:Int, max:Int){
    var cMin = array[0]
     var cMax = array[0]

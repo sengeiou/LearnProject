@@ -4,7 +4,7 @@
  * channel有点类似io的Stream, 但是又有不同，Stream是单向的，只能读或只能写，但是channel是双向的，既能写数据到channel中，也能从中进行数据读写
  *  channel 可以进行异步的读写
  * channel对数据的操作都要依赖buffer
-
+ * channel 的基本的两个方法， isOpen() 和 close()
 
 #### IO其实可以分为两类，File IO 和 Stream IO, 在jdk中分别对应FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
 
@@ -37,6 +37,16 @@
 #### SocketChannel
  * socket通道可以运行阻塞和非阻塞模式，并且是可以选择的，非阻塞这个点非常重要，即不需要为每个socket连接创建一个线程
  * SocketChannel 主要有以下的三个类组成：DatagramChannel、SocketChannel和ServerSocketChannel
+
+
+#### 关闭通道
+ * 通道不能被重复使用，当通道关闭时，连接就丢失了，然后通道将不在连接任何东西。
+ * 通过调用 close()方法来关闭通道，可能会造成阻塞，哪怕是非阻塞的通道
+ * 通过调用 isOpen()方法来判断通道的开放状态。 
+
+
+
+
 
 ##### 非阻塞模式
  * 在jdk 中，非阻塞模式.主要是在SelectableChannel 类中实现,其中最主要的就是下面三个方法
