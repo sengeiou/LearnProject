@@ -135,6 +135,68 @@ if let p  = Planet(rawValue : 7){   //注意这个类型，原始值类型
     print(p)
 }
 
+// 另一种写法
+if let p  = Planet(rawValue : 6){
+    switch p {
+    case .earth:
+        print("p is earth")
+    case .saturn:
+        print("p is saturn")
+    default:
+        print("p is default")
+    }
+}else {
+    print("p is nil")
+
+}
+
+
+// 递归枚举
+//递归枚举是一种枚举类型，它有一个或多个枚举成员使用该枚举类型的实例作为关联值。使用递归枚举时，编译器会插入一个间接层。你可以在枚举成员前加上indirect来表示该成员可递归。
+
+enum ArithmeticExpression{
+    case number(Int)
+    indirect case add(ArithmeticExpression,ArithmeticExpression)
+    indirect case mult(ArithmeticExpression,ArithmeticExpression)
+}
+
+// 使用
+let five = ArithmeticExpression.number(5)
+let four = ArithmeticExpression.number(4)
+
+let sum  = ArithmeticExpression.add(five, four)
+let product  = ArithmeticExpression.mult(five, four)
+
+func evaluate(_ expression: ArithmeticExpression) -> Int {
+    switch expression {
+    case let .number(value):
+        return value
+    case let .add(left, right):
+        return evaluate(left) + evaluate(right)
+    case let .mult(left, right):
+        return evaluate(left) * evaluate(right)
+    }
+}
+
+evaluate(sum)
+evaluate(four)
+evaluate(product)
+// 搞不懂，为什么要搞这么复杂，递归枚举等要用的时候再看吧
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
