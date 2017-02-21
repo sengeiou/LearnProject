@@ -6,8 +6,19 @@
  * channel对数据的操作都要依赖buffer
  * channel 的基本的两个方法， isOpen() 和 close()
 
-#### IO其实可以分为两类，File IO 和 Stream IO, 在jdk中分别对应FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
+#### IO其实可以分为两类，File IO 和 Stream IO, 相对应的两种类型的通道FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
 
+####通道可以以多种方式创建。Socket 通道有可以直接创建新 socket 通道的工厂方法。但是一个 FileChannel 对象却只能通过在一个打开的 RandomAccessFile、FileInputStream 或 FileOutputStream 对象上调用 getChannel( )方法来获取。您不能直接创建一个 FileChannel 对象。File 和 socket 通道会 在后面的章节中予以详细讨论。
+
+```
+SocketChannel sc = SocketChannel.open( );
+sc.connect (new InetSocketAddress ("somehost", someport));
+ServerSocketChannel ssc = ServerSocketChannel.open( );
+ssc.socket( ).bind (new InetSocketAddress (somelocalport));
+DatagramChannel dc = DatagramChannel.open( );
+RandomAccessFile raf = new RandomAccessFile ("somefile", "r");
+FileChannel fc = raf.getChannel( );
+```
 
 #### 分别介绍下这几个类
  * FileChannel 从文件中读写数据 , 这里要说的是 , FileChannel 不能单独创建 , 只能通过RandomAccessFile , InputStream , OutputStream 获取，这里要注意的是，虽然chanel 可以进行读写，但是还要是要依赖File文件的权限，也就是说，file本身是只读的话，对chanel 进行写操作，在编译期是会报错的
@@ -18,25 +29,44 @@
 > Channels.java simpleFileChannel方法展示了怎么使用FileChannel 读取数据，也使用到了Buffer
 
 
+
+### 使用通道
+```
+public interface ReadableByteChannel
+    extends Channel
+{
+    public int read (ByteBuffer dst) throws IOException;
+56
+}
+public interface WritableByteChannel
+    extends Channel
+{
+    public int write (ByteBuffer src) throws IOException;
+}
+public interface ByteChannel
+    extends ReadableByteChannel, WritableByteChannel
+{ }
+```
+
+#### 通道可以是单向的，也可以是双向的，通过实现ReadableByteChannel, WritableByteChannel中的一个，那么通道就是单向的，如果同时实现了这两个接口，那么这个通道就是双向的，可以双向传输数据。
+
+> 全部的file 和 socket 对象都是双向的，socket 是一定的，file则比较特殊，比如从FileInputStream获取的FileChannel对象是只读的。
+比如下面的demo:
+```
+// A ByteBuffer named buffer contains data to be written
+FileInputStream input = new FileInputStream (fileName);
+FileChannel channel = input.getChannel( );
+// This will compile but will throw an IOException
+// because the underlying file is read-only
+channel.write (buffer);
+```
+
+#### ByteChannel 的 read( ) 和 write( )方法使用 ByteBuffer 对象作为参数。两种方法均返回已传输的 字节数,可能比缓冲区的字节数少甚至可能为零。
+
+
 #### channel可以使用阻塞和非阻塞的模式，但是只有面向流的Channel才能使用非阻塞的模式，比如sockets和pipes
 
 
-#### Scatter/Gather(demo 见simpleScatterGather)
- * 分散（scatter）从Channel中读取是指在读操作时将读取的数据写入多个buffer中。(调用channel 的read方法) , 因此 , Channel将从Channel中读取的数据“分散（scatter）”到多个Buffer中。
- * 聚集（gather）写入Channel是指在写操作时将多个buffer的数据写入同一个Channel，(调用channel 的wirte() 方法) , 因此 , Channel 将多个Buffer中的数据“聚集（gather）”后发送到Channel。
-
-
-
-
-#### FileChannel
- * 文件通道总是阻塞的, 在上面也提到过了
- * FileChannel 不能直接创建,要依赖（RandomAccessFile、FileInputStream或FileOutputStream）的getChannel 方法创建
- * FileChannel 是线程安全的(thread-safe), 多个进程可以在同一个实例上并发调用方法而不会引起任何问题，不过并非所有的操作都是多线程的（multithreaded）。影响通道位置或者影响文件大小的操作都是单线程（single-threaded）
-
-
-#### SocketChannel
- * socket通道可以运行阻塞和非阻塞模式，并且是可以选择的，非阻塞这个点非常重要，即不需要为每个socket连接创建一个线程
- * SocketChannel 主要有以下的三个类组成：DatagramChannel、SocketChannel和ServerSocketChannel
 
 
 #### 关闭通道
@@ -57,3 +87,26 @@ abstract boolean	isBlocking()
 ```
 开发者可以直接调用configureBlocking 来配置,如果传入true 为阻塞模式，传入false ，则为非阻塞模式
 然后可以通过isBlocking 来判断当前的channel处于什么模式下
+
+
+
+
+
+
+
+#### Scatter/Gather(demo 见simpleScatterGather)
+ * 分散（scatter）从Channel中读取是指在读操作时将读取的数据写入多个buffer中。(调用channel 的read方法) , 因此 , Channel将从Channel中读取的数据“分散（scatter）”到多个Buffer中。
+ * 聚集（gather）写入Channel是指在写操作时将多个buffer的数据写入同一个Channel，(调用channel 的wirte() 方法) , 因此 , Channel 将多个Buffer中的数据“聚集（gather）”后发送到Channel。
+
+
+
+
+#### FileChannel
+ * 文件通道总是阻塞的, 在上面也提到过了
+ * FileChannel 不能直接创建,要依赖（RandomAccessFile、FileInputStream或FileOutputStream）的getChannel 方法创建
+ * FileChannel 是线程安全的(thread-safe), 多个进程可以在同一个实例上并发调用方法而不会引起任何问题，不过并非所有的操作都是多线程的（multithreaded）。影响通道位置或者影响文件大小的操作都是单线程（single-threaded）
+
+
+#### SocketChannel
+ * socket通道可以运行阻塞和非阻塞模式，并且是可以选择的，非阻塞这个点非常重要，即不需要为每个socket连接创建一个线程
+ * SocketChannel 主要有以下的三个类组成：DatagramChannel、SocketChannel和ServerSocketChannel
