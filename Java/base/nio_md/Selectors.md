@@ -147,13 +147,6 @@ SelectionKey key =
 
    选择器维护着注册过的通道的集合，并且这写注册关系中的任意一个都是封装在SelectionKey对象中的， 每一个Selector对象维护三个键的集合：
  
- * 已注册的键的集合 (Registered key set)		
- * 已选择的键的集合 (Selected key set)
- * 已取消的键的集合 (cancelled key set)
-
-
-
-
 ```
 public abstract class Selector
 {
@@ -166,6 +159,17 @@ public abstract class Selector
         public abstract void wakeup( );
 }
 ```
+
+ * 已注册的键的集合 (Registered key set)  调用keys()返回这个集合，可能为空	
+ * 已选择的键的集合 (Selected key set)    调用selectedKeys() ，可能为空
+ * 已取消的键的集合 (cancelled key set)   已注册的键的集合的子集,这个集合包含了 cancel( )方法被调用过的键
+
+ #### 在刚初始化Selector 对象时，3个集合都是空的。
+
+ > Selector 类的核心是选择过程。这个名词您已经在之前看过多次了——现在应该解释一下 了。基本上来说,选择器是对select( )、poll( )等本地调用(native call)或者类似的操作系统特定的系 统调用的一个包装。但是 Selector 所作的不仅仅是简单地向本地代码传送参数。它对每个选择 操作应用了特定的过程。对这个过程的理解是合理地管理键和它们所表示的状态信息的基础。
+
+ 
+
 
 
 
