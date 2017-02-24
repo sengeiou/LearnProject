@@ -55,38 +55,43 @@ public static void simpleScatterGather()  {
 
                 FileChannel fileChannel =  mRandomAccessFile.getChannel();
 
-
-                fileChannel.write(bArray);
-                fileChannel.close();
-
-
-
-                mRandomAccessFile  = new RandomAccessFile(new File(fileStr),"rw");
-                fileChannel =  mRandomAccessFile.getChannel();
-
-                //scatter  set date into buffers
-
-                ByteBuffer buffer3 = ByteBuffer.allocate(10);
-                ByteBuffer buffer4 = ByteBuffer.allocate(20); // change <10 ? try
-
-                ByteBuffer[] scatterArray = {buffer3,buffer4};
-
-                fileChannel.read(scatterArray);
-
-                System.out.println(buffer3.position());
-                System.out.println(buffer4.position());
+                ByteBuffer b = ByteBuffer.allocate(100);
+                fileChannel.read(b);        
+                System.out.println("byteBuffer. position()"+b.position());        
+                System.out.println("fileChannel . position()"+fileChannel.position());
 
 
-                // change to read model
-                buffer3.flip();
-                while(buffer3.hasRemaining()) {
-                        System.out.println((char)buffer3.get());
-                }
+                // fileChannel.write(bArray);
+                // fileChannel.close();
 
-                buffer4.flip();
-                while(buffer4.hasRemaining()) {
-                        System.out.println((char)buffer4.get());
-                }
+                // fileChannel.write        
+
+                // mRandomAccessFile  = new RandomAccessFile(new File(fileStr),"rw");
+                // fileChannel =  mRandomAccessFile.getChannel();
+
+                // //scatter  set date into buffers
+
+                // ByteBuffer buffer3 = ByteBuffer.allocate(10);
+                // ByteBuffer buffer4 = ByteBuffer.allocate(20); // change <10 ? try
+
+                // ByteBuffer[] scatterArray = {buffer3,buffer4};
+
+                // fileChannel.read(scatterArray);
+
+                // System.out.println(buffer3.position());
+                // System.out.println(buffer4.position());
+
+
+                // // change to read model
+                // buffer3.flip();
+                // while(buffer3.hasRemaining()) {
+                //         System.out.println((char)buffer3.get());
+                // }
+
+                // buffer4.flip();
+                // while(buffer4.hasRemaining()) {
+                //         System.out.println((char)buffer4.get());
+                // }
 
 
         }catch(Exception e) {
