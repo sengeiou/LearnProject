@@ -22,7 +22,7 @@ public class SocketClient{
 			ByteBuffer b = ByteBuffer.allocate(10);
 
 
-			while ( !sc.finishConnect( )) {
+			while ( !sc.finishConnect()) {
 				
 				sc.read(b);
 				System.out.println(b.position());
