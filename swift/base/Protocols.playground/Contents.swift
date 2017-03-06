@@ -32,10 +32,11 @@ class SomeClass : SomeProtocol{
 
 protocol FullyNamed{
     var fullName : String { get }
-}
+    }
 
 struct Person : FullyNamed{
-    var fullName: String
+    
+    internal var fullName: String
     var age  : Int
 }
 
@@ -43,6 +44,10 @@ var john = Person(fullName: "john", age :12)
 
 john.age = 13
 john.fullName = "Sam"
+
+// 测试 类型属性
+
+
 
 
 

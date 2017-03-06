@@ -8,15 +8,5 @@ import UIKit
 
 //要在一个类型中嵌套另一个类型，将嵌套类型的定义写在其外部类型的{}内，而且可以根据需要定义多级嵌套。
 
+// 例子不是看的懂，需要打牌的技巧
 
-struct BlackjackCard{
-    //嵌套的枚举类
-    enum Suit : Character {
-        case Spades = "♠"
-        case Hearts = "♡"
-    }
-    
-    
-    
-
-}

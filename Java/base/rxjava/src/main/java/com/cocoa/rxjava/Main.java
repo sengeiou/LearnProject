@@ -15,33 +15,40 @@ public class Main {
 
     public static void main(String[] args) {
 
+//
+//        Observable.create(new ObservableOnSubscribe() {
+//            public void subscribe(ObservableEmitter e) throws Exception {
+//
+//                    e.onNext(1);
+//                    e.onNext(2);
+////                    e.onError(new Throwable("hjahjah"));
+//                    e.onComplete();
+//            }
+//        }).subscribe(new Observer<Object>() {
+//            public void onSubscribe(Disposable d) {
+//                System.out.println("onSubscribe");
+//            }
+//
+//            public void onNext(Object o) {
+//                System.out.println(o);
+//            }
+//
+//            public void onError(Throwable e) {
+//                System.out.println(e);
+//            }
+//
+//            public void onComplete() {
+//                System.out.println("OnComplete");
+//            }
+//        });
+//
 
-        Observable.create(new ObservableOnSubscribe() {
-            public void subscribe(ObservableEmitter e) throws Exception {
 
-                    e.onNext(1);
-                    e.onNext(2);
-//                    e.onError(new Throwable("hjahjah"));
-                    e.onComplete();
-            }
-        }).subscribe(new Observer<Object>() {
-            public void onSubscribe(Disposable d) {
-                System.out.println("onSubscribe");
-            }
+        String s = new String("123");
 
-            public void onNext(Object o) {
-                System.out.println(o);
-            }
+        int code = s.hashCode();
 
-            public void onError(Throwable e) {
-                System.out.println(e);
-            }
-
-            public void onComplete() {
-                System.out.println("OnComplete");
-            }
-        });
-
+        System.out.println(code);
 
 
 
