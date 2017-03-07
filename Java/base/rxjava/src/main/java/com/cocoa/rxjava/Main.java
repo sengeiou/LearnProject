@@ -44,13 +44,15 @@ public class Main {
 //
 
 
-        String s = new String("123");
+        double money = 1470;
 
-        int code = s.hashCode();
+        for (int i = 0; i < 120; i++) {
+            money = (money * 1.0015);
+            System.out.println("第" + i + "个月,利息本金=" + money);
+            money = (money + 1470.00);
+        }
 
-        System.out.println(code);
-
-
+        System.out.println(money);
 
     }
 
