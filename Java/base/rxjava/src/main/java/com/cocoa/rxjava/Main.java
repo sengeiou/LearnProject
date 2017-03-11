@@ -15,35 +15,44 @@ public class Main {
 
     public static void main(String[] args) {
 
+//
+//        Observable.create(new ObservableOnSubscribe() {
+//            public void subscribe(ObservableEmitter e) throws Exception {
+//
+//                    e.onNext(1);
+//                    e.onNext(2);
+////                    e.onError(new Throwable("hjahjah"));
+//                    e.onComplete();
+//            }
+//        }).subscribe(new Observer<Object>() {
+//            public void onSubscribe(Disposable d) {
+//                System.out.println("onSubscribe");
+//            }
+//
+//            public void onNext(Object o) {
+//                System.out.println(o);
+//            }
+//
+//            public void onError(Throwable e) {
+//                System.out.println(e);
+//            }
+//
+//            public void onComplete() {
+//                System.out.println("OnComplete");
+//            }
+//        });
+//
 
-        Observable.create(new ObservableOnSubscribe() {
-            public void subscribe(ObservableEmitter e) throws Exception {
 
-                    e.onNext(1);
-                    e.onNext(2);
-//                    e.onError(new Throwable("hjahjah"));
-                    e.onComplete();
-            }
-        }).subscribe(new Observer<Object>() {
-            public void onSubscribe(Disposable d) {
-                System.out.println("onSubscribe");
-            }
+        double money = 1470;
 
-            public void onNext(Object o) {
-                System.out.println(o);
-            }
+        for (int i = 0; i < 120; i++) {
+            money = (money * 1.0015);
+            System.out.println("第" + i + "个月,利息本金=" + money);
+            money = (money + 1470.00);
+        }
 
-            public void onError(Throwable e) {
-                System.out.println(e);
-            }
-
-            public void onComplete() {
-                System.out.println("OnComplete");
-            }
-        });
-
-
-
+        System.out.println(money);
 
     }
 

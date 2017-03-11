@@ -142,11 +142,37 @@ extension Int{
 
 // # 嵌套类型 扩展可以为已有的类、结构体和枚举添加新的嵌套类型：
 
-// 有点不明白，下次再看
+extension Int{
+    enum Kind{
+        case Negative ,Zero ,Positive
+    }
+    
+    var kind : Kind{
+        switch self {
+        case 0:
+            return .Zero
+        case let x where x > 0:
+            return .Positive
+        default:
+            return .Negative
+        }
+    }
+}
 
+func printIntegerKind(array : [Int]) {
+    for  a in array{
+        switch a.kind {
+        case .Negative:
+            print("Negative")
+        case .Zero:
+            print("Zero")
+        default:
+            print("Positive")
+        }
+    }
+}
 
-
-
+printIntegerKind(array: [1,2,3,0,-1])
 
 
 
