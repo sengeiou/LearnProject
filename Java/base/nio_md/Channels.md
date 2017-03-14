@@ -1,14 +1,15 @@
 # channels
 
-### channels 的基本概念.
+## channels 的基本概念.
  * channel有点类似io的Stream, 但是又有不同，Stream是单向的，只能读或只能写，但是channel是双向的，既能写数据到channel中，也能从中进行数据读写
  *  channel 可以进行异步的读写
  * channel对数据的操作都要依赖buffer
  * channel 的基本的两个方法， isOpen() 和 close()
 
-#### IO其实可以分为两类，File IO 和 Stream IO, 相对应的两种类型的通道FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
 
-####通道可以以多种方式创建。Socket 通道有可以直接创建新 socket 通道的工厂方法。但是一个 FileChannel 对象却只能通过在一个打开的 RandomAccessFile、FileInputStream 或 FileOutputStream 对象上调用 getChannel( )方法来获取。您不能直接创建一个 FileChannel 对象。File 和 socket 通道会 在后面的章节中予以详细讨论。
+IO其实可以分为两类，File IO 和 Stream IO, 相对应的两种类型的通道FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
+
+通道可以以多种方式创建。Socket 通道有可以直接创建新 socket 通道的工厂方法。但是一个 FileChannel 对象却只能通过在一个打开的 RandomAccessFile、FileInputStream 或 FileOutputStream 对象上调用 getChannel( )方法来获取。您不能直接创建一个 FileChannel 对象。File 和 socket 通道会 在后面的章节中予以详细讨论。
 
 ```
 SocketChannel sc = SocketChannel.open( );
@@ -124,7 +125,7 @@ public interface GatheringByteChannel
 
 
 
-#### FileChannel
+## FileChannel
  * 文件通道总是阻塞的, 在上面也提到过了
  * FileChannel 不能直接创建,要依赖（RandomAccessFile、FileInputStream或FileOutputStream）的getChannel 方法创建
  * FileChannel 是线程安全的(thread-safe), 多个进程可以在同一个实例上并发调用方法而不会引起任何问题，不过并非所有的操作都是多线程的（multithreaded）。影响通道位置或者影响文件大小的操作都是单线程（single-threaded）
@@ -169,17 +170,54 @@ fileChannel.position (200);
 System.out.println ("file pos: " + randomAccessFile.getFilePointer( ));
 ```
 
-##### 类似于缓冲区的 get( ) 和 put( )方法,当字节被 read( )或 write( )方法传输时,文件 position 会 自动更新。如果 position 值达到了文件大小的值(文件大小的值可以通过 size( )方法返回),read( ) 方法会返回一个文件尾条件值(-1)。可是,不同于缓冲区的是,如果实现 write( )方法时 position 前进到超过文件大小的值,该文件会扩展以容纳新写入的字节。
+### 类似于缓冲区的 get( ) 和 put( )方法,当字节被 read( )或 write( )方法传输时,文件 position 会 自动更新。如果 position 值达到了文件大小的值(文件大小的值可以通过 size( )方法返回),read( ) 方法会返回一个文件尾条件值(-1)。可是,不同于缓冲区的是,如果实现 write( )方法时 position 前进到超过文件大小的值,该文件会扩展以容纳新写入的字节。
 
-##### 同样类似于缓冲区,也有带 position 参数的绝对形式的 read( )和 write( )方法。这种绝对形式 的方法在返回值时不会改变当前的文件 position。由于通道的状态无需更新,因此绝对的读和写可 能会更加有效率,操作请求可以直接传到本地代码。更妙的是,多个线程可以并发访问同一个文件 而不会相互产生干扰。这是因为每次调用都是原子性的(atomic),并不依靠调用之间系统所记住 的状态。
-
-
+### 同样类似于缓冲区,也有带 position 参数的绝对形式的 read( )和 write( )方法。这种绝对形式 的方法在返回值时不会改变当前的文件 position。由于通道的状态无需更新,因此绝对的读和写可 能会更加有效率,操作请求可以直接传到本地代码。更妙的是,多个线程可以并发访问同一个文件 而不会相互产生干扰。这是因为每次调用都是原子性的(atomic),并不依靠调用之间系统所记住 的状态。
 
 
-#### 文件锁定
+
+### 文件锁定
 
 
-#### 内存映射文件
+
+## 内存映射文件
+
+新的 FileChannel 类提供了一个名为 map() 的方法，该方法可以在一个打开的文件和一个特殊类型的 ByteBuffer 之间建立以个虚拟内存映射.
+
+通过内存映射机制来访问一个文件会比使用常规方法读写高效得多,甚至比使用通道的效率都高。
+
+```
+    public abstract MappedByteBuffer More ...map(MapMode mode,
+                                         long position, long size)
+ 
+    public static class MapMode {
+
+         public static final MapMode READ_ONLY
+             = new MapMode("READ_ONLY");
+
+         public static final MapMode READ_WRITE
+             = new MapMode("READ_WRITE");
+
+         public static final MapMode PRIVATE
+             = new MapMode("PRIVATE");
+    }
+
+```
+
+```
+//要映射 100 到 299(包 含 299)位置的字节,可以使用下面的代码:
+buffer = fileChannel.map (FileChannel.MapMode.READ_ONLY, 100, 200);
+//如果要映射整个文件则使用:
+buffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, fileChannel.size());
+```
+
+同常规的文件句柄类似,文件映射可以是可写的或只读的。前两种映射模式 MapMode.READ_ONLY 和 MapMode.READ_WRITE 意义是很明显的,它们表示您希望获取的映射 只读还是允许修改映射的文件。请求的映射模式将受被调用 map( )方法的 FileChannel 对象的访问 权限所限制。如果通道是以只读的权限打开的而您却请求 MapMode.READ_WRITE 模式,那么 map( )方法会抛出一个 NonWritableChannelException 异常;如果您在一个没有读权限的通道上请求 MapMode.READ_ONLY 映射模式,那么将产生 NonReadableChannelException 异常。不过在以 read/write 权限打开的通道上请求一个 MapMode.READ_ONLY 映射却是允许的。MappedByteBuffer 对象的可变性可以通过对它调用 isReadOnly( )方法来检查。
+
+
+第三种模式 MapMode.PRIVATE 表示您想要一个写时拷贝(copy-on-write)的映射。这意味着 您通过 put( )方法所做的任何修改都会导致产生一个私有的数据拷贝并且该拷贝中的数据只有 MappedByteBuffer 实例可以看到。该过程不会对底层文件做任何修改,而且一旦缓冲区被施以垃圾 收集动作(garbage collected),那些修改都会丢失。尽管写时拷贝的映射可以防止底层文件被修 改,您也必须以 read/write 权限来打开文件以建立 MapMode.PRIVATE 映射。只有这样,返回的 MappedByteBuffer 对象才能允许使用 put( )方法。
+
+
+
 
 
 #### SocketChannel
