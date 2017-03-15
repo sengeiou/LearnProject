@@ -94,6 +94,24 @@ Comparable和Comparator区别比较
 　　两种方法各有优劣， 用Comparable 简单， 只要实现Comparable 接口的对象直接就成为一个可以比较的对象，但是需要修改源代码。 用Comparator 的好处是不需要修改源代码， 而是另外实现一个比较器， 当某个自定义的对象需要作比较的时候，把比较器和对象一起传递过去就可以比大小了， 并且在Comparator 里面用户可以自己实现复杂的可以通用的逻辑，使其可以匹配一些比较简单的对象，那样就可以节省很多重复劳动了。
 
 
+Q: Switch能否用string做参数？
+A: 在Thinking in Java 中，作者说只能使用整形变量，放byte，short，char也是可以的, 因为他们会自动提升为int，但是在jdk1.7版本后，支持了用string 做参数
+
+Q: String StringBuilder StringBuffer区别
+A: 
+1. StringBuilder 和 StringBuffer 底层实现几乎一致，唯一区别是StringBuilder是非线程安全的，StringBuffer则是线程安全的，StringBuffer的方法几乎都加上了synchronized，效率上来说，StringBuilder比StringBuffer要高很多，单线程处理大量的字符可以用StringBuilder , Stringbuffer 和StringBuilder都继承了AbstractStringBuilder ，而StringBuilder , Stringbuffer的大部分操作都是调用了父类的方法来完成的（模板方法模式），唯一区别就是上面说到的，Stringbuffer在调用父类方法时增加了synchronized修饰符.
+
+
+
+Q: Java中 static 的作用
+A: 
+ * 被static修饰的成员变量和成员方法独立于该类的任何对象。也就是说，它不依赖类特定的实例，被类的所有实例共享。
+ 
+ * 只要类被加载，虚拟机就能根据类名在运行时数据区的方法去内找到他们，static对象 可以在任何对象创建以前访问，所以，static 环境中不能访问 非static 的变量，方法，也不能出现this 和 super 关键字.
+ 
+ * 被 static 修饰的变量在内存中只有一个拷贝，虚拟机只会分配一次内存； 而实例变量则是每创建一个实例，就为实例变量分配一次内存。
+
+ * 用static修饰的代码块表示静态代码块，当Java虚拟机（JVM）加载类时，就会执行该代码块，如果static代码块有多个，JVM将按照它们在类中出现的先后顺序依次执行它们，每个代码块只会被执行一次。
 
 
 
@@ -101,10 +119,4 @@ Q: 内部类访问外部的参数时，为什么要把参数设置为 final
 A:
 
 
-
-http://item.taobao.com/item.htm?id=536205638706&spm=2014.21600712.0.0  829
-
-https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4004-15821673508.10.vgnxkd&id=520556761227   套餐五  1229 
-https://item.jd.com/2121097.html    DDR4 8G   479 
-https://item.jd.com/779351.html     ssd   419 
 
