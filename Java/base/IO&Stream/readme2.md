@@ -46,6 +46,11 @@
 
 // 书中的代码不是很实用，自己创建了java 对象直接存储到文件中
 
+> 详细代码查看 ObjectOutputStream.java
 
 
 
+## 字符集
+在 Java SE 1.4 中引入的 java.nio 包用Charset 类统一了对字符集的转换。
+
+字符集建立了两字节 Unicode 码元序列与使用本地字符编码方式的字节序列之间的映射，
