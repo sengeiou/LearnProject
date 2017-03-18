@@ -145,6 +145,73 @@ func someFunc<T : SomeClass , U : SomeProtocol> (someT : T , someU : U){
 
 
 // 类型约束实践
+// 这里不写demo 了。比较重要的是Equatable 的运用
+
+func test< T : Equatable > (into : [T], temp : T){
+    for a in into{
+        print(a==temp)
+    }
+}
+
+class ttt {
+}
+
+var  ab : [ttt] = [];
+
+//cannot convert value of type '[ttt]' to expected argument type '[_]'
+//test(into : ab ,temp : ttt());   会报错
+
+var testInt : [Int] = [1,2,3]
+
+test( into : testInt, temp : 1)   // Int遵循Equatable 协议
+
+// 如果要让 数组[ttt] 放到 test 方法中，就必须遵循Equatable 协议
+// 后面要自己实现下
+
+
+
+// # 关联类型
+
+// 定义一个协议时，有的时候声明一个或多个关联类型作为协议定义的一部分将会非常有用。关联类型为协议中的某个类型提供了一个占位名（或者说别名），其代表的实际类型在协议被采纳时才会被指定。你可以通过 associatedtype 关键字来指定关联类型。
+
+// 不知道啥意思
+
+
+
+// # 并联类型实践
+
+protocol Container{
+    associatedtype ItemType
+    mutating func append(_ item : ItemType)
+    var count : Int { get }
+    subscript ( i : Int ) -> ItemType { get }
+}
+
+
+// 太神奇了
+// 用 上面的 Stack 去实现 Container 协议。swift 会推断 Element 类型就是 ItemType 类型
+
+
+
+// # 通过扩展一个存在的类型来制定关联类型
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
