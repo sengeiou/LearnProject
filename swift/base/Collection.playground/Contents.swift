@@ -68,6 +68,89 @@ for (index , value ) in array3.enumerated(){
 }
 
 
+// ****** swift 高级 Array 用法
+// 在 swift 中，不建议用下标去访问, 比如
+
+//array3[100]  调用这个语句会直接报错，因为 array3 根本没有100个元素
+// 除非调用者手动去检查数组,
+array3[array3.endIndex - 1]
+// 用 type 去查看 返回的类型
+
+type( of : array3[array3.endIndex - 1]) // 发现是Strting 类型，并不是optionals
+
+//此外，在别的操作中也可以看出   
+
+type ( of : array3.remove(at: 0) )  // 也是String 类型
+
+type ( of : array3.popLast() )     // Optional
+
+// 那么，其实也就是swift 不建议你去使用这些， 而是有用一些更加高级的操作去   advance
+
+//比如，现在有一个数组 advancedArray ，我们要输出数组上的每个值的平方
+//那么我们可以这么做
+ let advancedArray =  [0, 1, 2, 3, 4, 5]
+var result : [Int] = []
+//
+for value in advancedArray{
+    result.append(value * value)
+}
+
+print (result)
+// 如果，我们将 result 定义为 let ，那么这样的操作根本不可能实现
+// 因为 swift 中 array 的可变和不可变，是由 let 和 var 取决的
+// 更高级的操作是
+
+let advancedResult  = advancedArray.map { $0 * $0 }
+
+print(advancedResult)  // 结果是一样的
+type ( of : advancedResult )
+
+let two  = advancedArray.map ({ $0 * 2})
+print(two)
+
+// 通过扩展 自己来实现下 map 方法
+// 通过这个扩展的方法，也可以知道闭包和泛型的强大
+extension Array {
+    func myMap <T> (_ tran : (Element) -> T ) ->[T] {
+        var temp : [T] = []
+        
+        for value in self {
+            temp.append(tran(value))
+        }
+        return temp
+    }
+}
+
+let myMapArray = advancedArray.myMap({ $0 * $0 })
+print(myMapArray)
+
+// swift 还给我们定义很多这样的函数
+// 如果 数组中元素都遵循了 Equaltable 协议 , 那么你还可以这么操作
+
+advancedArray.min()
+advancedArray.max()
+
+type( of : advancedArray.max() )  // 而且返回的是很安全的 optional 类型
+
+// 过滤器方法
+// 我们尝试来过滤掉数组中奇数,
+let even  = advancedArray.filter({ $0 % 2 == 0 })
+print(even)  // [0,2,4]  超级方便
+
+// 还有很多这样的方法   elementsEqual()  starts() forEach()  sorted  
+
+let sortedArray = advancedArray.sorted( by : { $0 > $1 })
+print(sortedArray)  // [5,4,3,2,1,0]
+
+
+
+
+
+
+
+
+
+
 // sets 集合
 
 var set1 = Set<Int>()

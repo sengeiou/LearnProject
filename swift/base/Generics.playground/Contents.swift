@@ -182,7 +182,7 @@ test( into : testInt, temp : 1)   // Int遵循Equatable 协议
 
 protocol Container{
     associatedtype ItemType
-    mutating func append(_ item : ItemType)
+    mutating func append_(_ item : ItemType)
     var count : Int { get }
     subscript ( i : Int ) -> ItemType { get }
 }
@@ -194,6 +194,50 @@ protocol Container{
 
 
 // # 通过扩展一个存在的类型来制定关联类型
+extension Array : Container{
+    mutating internal func append_(_ item: Element) {
+    
+    }
+}
+
+var aaa : [Int] = []
+
+aaa.append_(1)
+
+print(aaa)
+
+// 上面的不是很理解，代码也没完善
+
+
+// 泛型 where 语句
+
+// 类型约束让你能够为泛型函数或泛型类型的类型参数定义一些强制要求
+
+// 为关联类型定义约束也是非常有用的。
+
+
+
+//理解不了，跳过
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
