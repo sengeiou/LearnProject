@@ -1,0 +1,4 @@
+@InheritedAnnotation
+public class AnnotationSuperClass{
+
+}
