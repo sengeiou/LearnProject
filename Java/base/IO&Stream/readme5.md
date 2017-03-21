@@ -34,3 +34,37 @@ ac ed
 
 
 ## 修改默认的序列化机制 
+某些数据是不可以序列化的，那么这类数据就需要被标记成 transient ，类也是这样。
+
+序列化机制为单个的类提供了一种方式，去向默认的读写行为添加验证或任何其他想要的行为，可序列化的类可以定义具有下列签名的方法
+
+```
+private void readObject(InputStream in) throws IOException ,ClassNotFoundException
+
+private void writeObject(OutputStream out) throws IOException
+
+```
+
+之后，数据域就再也不会被自动化序列，取而代之的是调用这些方法
+
+开发者可以给某个变量加上 transient 的修饰，然后重写 readObject  和 writeObject 
+> 查看ChangeDefualtSerializ 下的代码，查看怎么重写这两个方法
+
+
+
+
+##序列化单例和类型安全的枚举
+
+在序列化和反序列化时，如果目标对象是唯一的, 那么久要小心处理了，通常这类问题会出现在单例和类型安全的枚举时发生。
+
+如果使用 enum 结构，则不需要担心这个问题
+
+但是看下面的代码  base/IO&Stream/singleton 下
+
+
+## 版本管理  
+
+
+
+sjdhfjsdhf
+序列化单例和类型安全的枚举  还有文字描述要补全下
