@@ -142,11 +142,9 @@ print(even)  // [0,2,4]  超级方便
 let sortedArray = advancedArray.sorted( by : { $0 > $1 })
 print(sortedArray)  // [5,4,3,2,1,0]
 
-
-
-
-
-
+for value in advancedArray where value % 2 == 0{ // for 循环的条件判断，很实用
+    print("for in where ------\(value)")
+}
 
 
 
