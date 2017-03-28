@@ -189,6 +189,30 @@ if let jsonStreet = json.residence?.address?.street{
 
 
 
+// optional advance
+
+
+func arrayProcess(array : [Int]) {
+    if let first = array.first{
+        // 只能在这个作用域使用first
+         print(first)
+    }
+    
+    
+    // 如果在这里要访问array的第一个元素，需要  if let first = array.first
+}
+
+//如果碰到上面的问题，可以用 guard 来解决
+
+
+func arrayProcessGuard(array : [Int]){
+    guard let first = array.first else{  // else{ 后的内容必须另起一行
+        return
+    }
+    print(first)
+}
+
+
 
 
 
