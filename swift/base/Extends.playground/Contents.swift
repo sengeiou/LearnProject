@@ -113,7 +113,7 @@ mCar.description
 // 如果在类前面添加final ，那么这个类就不能被继承
 
 
-
+//类型方法可以用static或者class来修饰，如果父类的类型方法使用static修饰的话，子类不能重写；如果父类的类型方法使用class修饰的话，子类能够重写。但是如果父类的类型方法是同时使用final class修饰的话，子类就不能重写。也就是说，static自带final性质，希望子类能够重写使用class修饰，不希望子类重写使用static修饰，final class修饰看起来别扭，因为一个允许重写（class），另一个不允许重写（final）。
 
 
 

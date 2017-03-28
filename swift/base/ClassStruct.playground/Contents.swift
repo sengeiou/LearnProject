@@ -5,19 +5,19 @@ import UIKit
 
 // class 和 struct 的定义
 class Person1{
-    var name = ""
-    var age : Int = 0
+    var name : String = "cocoa"
+    var age : Int = 13
 }
 
 struct Person2{
-    var height = 10
-    var width  = 10
+    var height : Int
+    var width  : Int
 }
 
 
 // class 和 struct 的创建和调用，语法都是一致的
 let p1  = Person1()
-let p2  = Person2()
+let p2  = Person2(height: 10, width: 19)
 
 print("person age is \(p1.age)")
 print(p2.height)
@@ -29,6 +29,7 @@ let p22 = Person2(height:1000,width:10000)
 print(p22.height)
 
 // 结构体和枚举是值类型
+//实际上，在 Swift 中，所有的基本类型：整数（Integer）、浮点数（floating-point）、布尔值（Boolean）、字符串（string)、数组（array）和字典（dictionary），都是值类型，并且在底层都是以结构体的形式所实现。
 // 值类型在进行传递的时候会被复制
 // 这里我们将p22赋值给一个新的变量p33，然后改变p33的height
 
