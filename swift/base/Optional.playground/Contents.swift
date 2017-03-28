@@ -211,6 +211,60 @@ func arrayProcessGuard(array : [Int]){
     }
     print(first)
 }
+arrayProcessGuard(array: [10,10])
+
+// 或者用另一个方法
+func arrayProcessElse (array : [Int]){
+    let index : Int
+    if let ind = array.first{
+        index  = ind
+    } else {
+        return
+    }
+    print(index)
+}
+
+arrayProcessElse(array: [11,2,3,])
+
+// 转换
+var swift : String? = "swift"
+let up_swift : String?
+let low_swift : String?
+
+up_swift = swift?.uppercased()  // 可以直接这么使用
+low_swift = swift?.uppercased().lowercased()   // 加上uppercased 只是为了说明可以这么串式的调用
+// 如果，uppercased 返回的是optional 类型，则要像swift后面那样跟上问好，像这样 uppercased()?.
+
+
+
+// 比如下面的例子
+
+extension String{
+
+    func toUppercased() -> String? {
+        if self.isEmpty {
+            return nil
+        }
+        return self.uppercased()
+    }
+}
+
+// 注意看 toUppercased 后面的问号  ，试着去掉看看
+let other : String? = swift?.toUppercased()?.lowercased()
+
+// 另一种在字典中的写法
+
+let numbers = [ "aa" : [0,1] ]
+numbers["aa"]?[0]
+
+// optional 默认值
+var userInput : String? = nil
+
+//不建议这么写
+let name =  userInput == nil ? "cocoa" : userInput  // 在swift 中不建议这么写了
+
+let userName  = userInput ?? "cocoa"
+print(userName)
 
 
 
