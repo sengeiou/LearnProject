@@ -27,6 +27,7 @@ shenjun.age = 12
 
 // #常量结构体的存储属性，
 // 如果创建了一个结构体的实例并将其赋值给一个常量，则无法修改该实例的任何属性，即使有属性被声明为变量也不行：
+// array 就是用 let 和 var 来区分不可变和可变的
 // 结构体是值类型，当结构体被申明为常量的时候，它的属性也就成了常量
 // class 则不一样，把一个class的引用赋值给一个常量时，仍然可以修改这个实例的变量
 
@@ -196,10 +197,31 @@ stepCounter.step = 101
 
 //结果很明显，不解释了
 
+class PParent{
+    var age : Int {
+        willSet{
+            print("PParent willSet  \(newValue)")
 
+        }
+        didSet{
+            print("PParent didset  \(oldValue)")
+        }
+        
+    }
+    init(age : Int) {
+        self.age  = age
+    }
+    
+}
 
+class CC : PParent{
+       override init(age: Int) {
+            super.init(age: age)
+            self.age = age
+       }
+}
 
-
+var cc = CC(age: 10)
 
 
 //#全局变量和局部变量
@@ -244,12 +266,21 @@ class SomeClass {
     }
 }
 
+
+
+
+
+
+
 //跟实例属性一样，类型属性也是通过点运算符来访问。但是，类型属性是通过类型本身来访问，而不是通过实例
 
 print(SomeClass.storedTypeProperty)
 
 var someClass = SomeClass()
-//print(someClass.storedTypeProperty)   // 居然是报错的
+//print(someClass.storedTypeProperty)   //  居然是报错的
+// swift 中类型属性只能由类去获取，并不能由类实例去获取
+
+
 
 
 

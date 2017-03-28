@@ -6,25 +6,3 @@ https://developer.apple.com/library/prerelease/content/documentation/Swift/Conce
 http://wiki.jikexueyuan.com/project/swift/
 
 
-
-leftStatusImg.setText(formatDisText(loanOrderDetail.getOrder_no())); // 申请状态图片
-         leftStatusText.setText(formatDisText(loanOrderDetail.getOrder_no()));  // 申请状态文字
-         rightTextTel.setText(formatDisText(loanOrderDetail.getOrder_no()));// 电话
-         tOrderNo.setText(formatDisText(loanOrderDetail.getOrder_no()));// 订单号
-         tApplyDate.setText(formatDisText(loanOrderDetail.getOrder_no()));// 申请时间
-         tLoanProduct.setText(formatDisText(loanOrderDetail.getOrder_no())); // 贷款产品
-         tLoanInstitution.setText(formatDisText(loanOrderDetail.getOrder_no()));// 贷款机构
-         tCarInfo.setText(formatDisText(loanOrderDetail.getOrder_no()));// 车辆信息
-         tBillPrice.setText(formatDisText(loanOrderDetail.getOrder_no()));//开票价格
-         tLoanMoney.setText(formatDisText(loanOrderDetail.getOrder_no()));// 贷款金额
-         tRepaymentLimitYear.setText(formatDisText(loanOrderDetail.getOrder_no()));// 还款年限
-         tName.setText(formatDisText(loanOrderDetail.getOrder_no()));// 姓名
-         tAge.setText(formatDisText(loanOrderDetail.getOrder_no()));// 年龄
-         tId.setText(formatDisText(loanOrderDetail.getOrder_no()));// 身份证号
-         tPhone.setText(formatDisText(loanOrderDetail.getOrder_no()));// 手机号码
-         tAddress.setText(formatDisText(loanOrderDetail.getOrder_no()));// 所在地点
-         tProfession.setText(formatDisText(loanOrderDetail.getOrder_no()));// 职业
-         tEducation.setText(formatDisText(loanOrderDetail.getOrder_no()));// 学历
-         tMarriage.setText(formatDisText(loanOrderDetail.getOrder_no()));// 婚姻状况
-         tHouseProperty.setText(formatDisText(loanOrderDetail.getOrder_no()));// 房产信息
-         tHomeIncome.setText(formatDisText(loanOrderDetail.getOrder_no()));// 家庭收入
