@@ -11,7 +11,7 @@ import java.nio.channels.SelectionKey;
 /**
  * Created by sj on 17/2/8.
  */
-public class Main {
+public class Main  extends Thread{
 
     public static void main(String[] args) {
 
@@ -44,18 +44,41 @@ public class Main {
 //
 
 
-        double money = 1470;
+//        double money = 1470;
+//
+//        for (int i = 0; i < 120; i++) {
+//            money = (money * 1.0015);
+//            System.out.println("第" + i + "个月,利息本金=" + money);
+//            money = (money + 1470.00);
+//        }
+//
+//        System.out.println(money);
 
-        for (int i = 0; i < 120; i++) {
-            money = (money * 1.0015);
-            System.out.println("第" + i + "个月,利息本金=" + money);
-            money = (money + 1470.00);
+        Main t  = new Main();
+        t.start();
+
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-        System.out.println(money);
 
     }
 
+
+    @Override
+    public void run() {
+        super.run();
+        try {
+            int i = 10;
+            while( i > 5) {
+                i--;
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 // 02-27 14:51:57.385 11010-11041/com.cocoa.rxjava.rxjava D/MainActivity: Observable thread is : RxNewThreadScheduler-1
 // 02-27 14:51:57.385 11010-11041/com.cocoa.rxjava.rxjava D/MainActivity: emit 1
