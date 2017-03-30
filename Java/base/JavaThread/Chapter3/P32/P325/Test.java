@@ -27,6 +27,13 @@ public class Test extends Thread{
 // 1271        }
 // 1272    }
 
+
+//  join 和 sleep 有什么区别    
+//  join 具有释放锁的特点
+//  sleep 则不会释放所 
+// 查看 demo1 和 demo2 代码   
+
+
 	public static void main(String[] args)  {
         try {
 
@@ -40,6 +47,7 @@ public class Test extends Thread{
         }catch (Exception e){
             System.out.println(e.toString());
         }
+
     }
 
     public synchronized  void lock() throws InterruptedException {
