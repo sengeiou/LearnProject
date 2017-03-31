@@ -1,4 +1,3 @@
-
 import java.net.Socket;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,64 +9,64 @@ public class Client {
 
 
 
-public static final int PORT = 6666;
-public static final String ADDRESS = "127.0.0.1";
+        public static final int PORT = 6666;
+        public static final String ADDRESS = "127.0.0.1";
 
 
-public static void main(String[] args){
+        public static void main(String[] args) {
 
 
-        Socket mSocket = null;
+                Socket mSocket = null;
 
-        try{
+                try {
 
-                mSocket = new Socket(ADDRESS,PORT);
+                        mSocket = new Socket(ADDRESS, PORT);
 
-                InputStream mInputStream =  mSocket.getInputStream();
+                        InputStream mInputStream =  mSocket.getInputStream();
 
-                OutputStream mOutputStream  = mSocket.getOutputStream();
-
-
-                PrintWriter mPrintWriter  =  new PrintWriter(mOutputStream);
-
-                InputStreamReader mInputStreamReader  = new InputStreamReader(mInputStream);
-
-                BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
+                        OutputStream mOutputStream  = mSocket.getOutputStream();
 
 
-                int i  = 0;
+                        PrintWriter mPrintWriter  =  new PrintWriter(mOutputStream);
 
-                while(true) {
+                        InputStreamReader mInputStreamReader  = new InputStreamReader(mInputStream);
 
-                        mPrintWriter.println(i+"");
-                        mPrintWriter.flush();
-                        i++;
+                        BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
 
-                        Thread.sleep(1000);
 
-                        if(i==10) {
-                                mPrintWriter.println("bye");
+                        int i  = 0;
+
+                        while (true) {
+
+                                mPrintWriter.println(i + "");
                                 mPrintWriter.flush();
-                                break;
+                                i++;
+
+                                Thread.sleep(1000);
+
+                                if (i == 10) {
+                                        mPrintWriter.println("bye");
+                                        mPrintWriter.flush();
+                                        break;
+                                }
+
+                                String serverMsg = mBufferedReader.readLine();
+                                System.out.println(serverMsg);
+
                         }
 
-                        String serverMsg = mBufferedReader.readLine();
-                        System.out.println(serverMsg);
 
-                }
+                } catch (Exception e) {
+                        System.out.println(e.getMessage());
 
+                } finally {
+                        try {
+                                mSocket.close();
+                        } catch (Exception e) {
 
-        }catch(Exception e) {
-                System.out.println(e.getMessage());
-
-        }finally{
-                try{
-                        mSocket.close();
-                }catch (Exception e) {
+                        }
 
                 }
 
         }
-
-}
 }
