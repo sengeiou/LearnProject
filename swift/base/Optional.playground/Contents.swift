@@ -26,15 +26,20 @@ class Residence{
 }
 
 var john = Person()
+ john.residence = Residence()
 //let num = john.residence!.nuumberOfRooms  // 运行时错误
 
 
 //可选链式调用提供了另一种访问numberOfRooms的方式，使用问号（?）来替代原来的叹号（!）：
 if let roomCount = john.residence?.nuumberOfRooms{
     print(roomCount)
+    
 } else {
     print("the residence is nil")
 }
+
+let aa  = john.residence?.nuumberOfRooms
+type( of : aa )   // 这里注意， 是 Optional 类型
 
 
 // 通过赋值来改变
@@ -234,7 +239,7 @@ let low_swift : String?
 up_swift = swift?.uppercased()  // 可以直接这么使用
 low_swift = swift?.uppercased().lowercased()   // 加上uppercased 只是为了说明可以这么串式的调用
 // 如果，uppercased 返回的是optional 类型，则要像swift后面那样跟上问好，像这样 uppercased()?.
-
+// optional chaining
 
 
 // 比如下面的例子
@@ -265,6 +270,13 @@ let name =  userInput == nil ? "cocoa" : userInput  // 在swift 中不建议这�
 
 let userName  = userInput ?? "cocoa"
 print(userName)
+
+
+
+// 双层嵌套的 optional
+
+
+
 
 
 
