@@ -104,12 +104,7 @@ let y  = try? someThrowingFunction(p: false)
 //    }
 //}
 
-// 个人觉得 defer 类似于 java 中 finally，会在最下面的代码测试
-
-
-
-
-
+// 个人觉得 defer 类似于 java 中 finally，用来处理资源的清理很合适，稍后会在最下面的代码测试
 
 
 
