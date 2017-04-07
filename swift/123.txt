@@ -6,3 +6,7 @@ https://developer.apple.com/library/prerelease/content/documentation/Swift/Conce
 http://wiki.jikexueyuan.com/project/swift/
 
 
+http://www.appcoda.com/learnswift/get-started.html
+
+
+哨兵值(sentinel value)

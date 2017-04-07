@@ -1,1 +1,14 @@
 123.txt
+just play , have fun , enjoy the game
+
+
+
+// type annotation
+var message  = "Hello , Swift"
+print(message)
+
+let applePrice : Doubel  = 10.61
+let age : Int = 1
+
+
+
