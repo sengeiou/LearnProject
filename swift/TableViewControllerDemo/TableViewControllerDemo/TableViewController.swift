@@ -46,10 +46,37 @@ class TableViewController: UITableViewController {
         let cell : RestraurantTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestraurantTableViewCell
         
         cell.IMG?.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.IMG.layer.cornerRadius = 30.0
+        cell.IMG.clipsToBounds = true
+    
         cell.label?.text =  restaurantNames [indexPath.row]
         return cell
     }
- 
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let alertController  = UIAlertController(title: "hahah", message: "what do you want?", preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "123123", style: .cancel, handler:
+                    {(action: UIAlertAction!) -> Void in
+                         let alertMsg = UIAlertController(title: "call phone", message: "13656657389", preferredStyle: .alert)
+                        
+                         alertMsg.addAction(UIAlertAction(title: "CANCEL", style: .cancel , handler: nil))
+                        
+                         self.present(alertMsg, animated: true, completion: nil)
+                        
+                    }
+        ))
+
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func test() {
+        print("test")
+    }
 
     /*
     // Override to support conditional editing of the table view.
