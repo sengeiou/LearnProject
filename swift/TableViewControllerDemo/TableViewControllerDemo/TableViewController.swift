@@ -31,7 +31,6 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -74,10 +73,44 @@ class TableViewController: UITableViewController {
         
     }
     
-    func test() {
-        print("test")
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if( editingStyle == .delete ){
+//            restaurantNames.remove(at: indexPath.row)
+//            restaurantImages.remove(at: indexPath.row)
+//        }
+//        tableView.deleteRows(at: [indexPath], with: .bottom)
+//    }
+    
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: {(action,indexPath) -> Void in
+           
+            let defaultText = "Just checking in at " +
+                self.restaurantNames[indexPath.row]
+            let activityController = UIActivityViewController(activityItems:
+                [defaultText], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        
+        })
+        
+        shareAction.backgroundColor = UIColor.orange
+        
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action,indexPath) -> Void in
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        })
+        
+        
+        return [shareAction,deleteAction]
     }
-
+    
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
