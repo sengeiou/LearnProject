@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334769B31EA88A0C0098BE28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334769B21EA88A0C0098BE28 /* DetailViewController.swift */; };
 		336715641E9E18B30056FAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336715631E9E18B30056FAB1 /* AppDelegate.swift */; };
 		336715691E9E18B30056FAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336715671E9E18B30056FAB1 /* Main.storyboard */; };
 		3367156B1E9E18B30056FAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3367156A1E9E18B30056FAB1 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		334769B21EA88A0C0098BE28 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		336715601E9E18B30056FAB1 /* TableViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336715631E9E18B30056FAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		336715681E9E18B30056FAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				3367156F1E9E18B30056FAB1 /* Info.plist */,
 				336715751E9E20C50056FAB1 /* TableViewController.swift */,
 				336715771E9E2AE20056FAB1 /* RestaurantTableViewCell.swift */,
+				334769B21EA88A0C0098BE28 /* DetailViewController.swift */,
 			);
 			path = TableViewControllerDemo;
 			sourceTree = "<group>";
@@ -99,6 +102,7 @@
 				TargetAttributes = {
 					3367155F1E9E18B30056FAB1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9SKDGJS28P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -142,6 +146,7 @@
 				336715641E9E18B30056FAB1 /* AppDelegate.swift in Sources */,
 				336715781E9E2AE20056FAB1 /* RestaurantTableViewCell.swift in Sources */,
 				336715761E9E20C50056FAB1 /* TableViewController.swift in Sources */,
+				334769B31EA88A0C0098BE28 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = TableViewControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.TableViewControllerDemo;
@@ -274,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = TableViewControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.TableViewControllerDemo;
@@ -301,6 +308,7 @@
 				336715741E9E18B30056FAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -55,21 +55,21 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let alertController  = UIAlertController(title: "hahah", message: "what do you want?", preferredStyle: .actionSheet)
-        
-        alertController.addAction(UIAlertAction(title: "123123", style: .cancel, handler:
-                    {(action: UIAlertAction!) -> Void in
-                         let alertMsg = UIAlertController(title: "call phone", message: "13656657389", preferredStyle: .alert)
-                        
-                         alertMsg.addAction(UIAlertAction(title: "CANCEL", style: .cancel , handler: nil))
-                        
-                         self.present(alertMsg, animated: true, completion: nil)
-                        
-                    }
-        ))
-
-        present(alertController, animated: true, completion: nil)
+//        
+//        let alertController  = UIAlertController(title: "hahah", message: "what do you want?", preferredStyle: .actionSheet)
+//        
+//        alertController.addAction(UIAlertAction(title: "123123", style: .cancel, handler:
+//                    {(action: UIAlertAction!) -> Void in
+//                         let alertMsg = UIAlertController(title: "call phone", message: "13656657389", preferredStyle: .alert)
+//                        
+//                         alertMsg.addAction(UIAlertAction(title: "CANCEL", style: .cancel , handler: nil))
+//                        
+//                         self.present(alertMsg, animated: true, completion: nil)
+//                        
+//                    }
+//        ))
+//
+//        present(alertController, animated: true, completion: nil)
         
     }
     
@@ -109,6 +109,16 @@ class TableViewController: UITableViewController {
     
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "showDetail"{
+            if  let indexPath = tableView.indexPathForSelectedRow {
+                
+                let destinationController = segue.destination as! DetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+                
+            }
+        }
+    }
     
     
     /*

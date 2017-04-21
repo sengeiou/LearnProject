@@ -5,9 +5,7 @@
  *  channel 可以进行异步的读写
  * channel对数据的操作都要依赖buffer
  * channel 的基本的两个方法， isOpen() 和 close()
- * 通道只能在字节缓冲区上操作，本质上操作系统都是以字节的形式实现底层 I/0 操作 的。channel
-
-
+ * 通道只能在字节缓冲区上操作
 
 IO其实可以分为两类，File IO 和 Stream IO, 相对应的两种类型的通道FileChannel 和 ServerSocketChannel, SocketChannel, DatagramChannel,这四个类特别重要,也是平时最多能使用到的
 

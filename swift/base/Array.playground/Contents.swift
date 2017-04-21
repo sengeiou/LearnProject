@@ -8,6 +8,11 @@ var array1 : Array<Int>  = Array<Int>()
 var array2 : [Int] = []
 var array3 = array2
 
+var arrayTest : [()] = []
+print(arrayTest.count)
+
+
+
 //initialization with values
 
 var threeDoubles  = Array(repeating:1.1 , count :3)
