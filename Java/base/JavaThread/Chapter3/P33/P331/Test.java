@@ -1,61 +1,55 @@
-public class Test{
-	
+public class Test implements Runnable {
 
-	public static ThreadLocal<String> t1 = new ThreadLocal<String>();
+	public static ThreadLocal<String> t1 = new ThreadLocal<String>() {
+		// 通过重写 initialValue 方法，改变默认值
+		@Override 
+		protected String initialValue() {
+			return "DEFAULT";
+		}
+
+}
+		;
 
 
-	public static void main(String[] args){
+		/**
+		* P331  P332  P333 P334 合在了一起 ，主要介绍了 ThreadLocal 的基本使用 和 线程变量的隔离性
+		*
+		*
+		*
+		*
+		*  ThreadLocal 主要用来让每个线程都是属于自己的值。可以把它比喻成全局存放数据的盒子，盒子中可以存储每个线程的私有数据。
+		*  1. ThreadLocal的基本使用
+		*  使用起来非常简单，创建 ——》  set  ——》 get
+		*  如果当前线程没有对 ThreadLocal 对象设置过值，那么获取到的值就是null, 除非你重写的初始值
+		*
+		*  2. 重写 protected T initialValue() 方法来设置 ThreadLocal 的默认值。
+		*
+		*
+		*
+		*
+		*
+		*
+		*/
+		public static void main(String[] args) {
 
-		t1.set("test value");
+			t1.set(Thread.currentThread().getName());
 
-		System.out.println(t1.get());
+			System.out.println(t1.get());
+
+			new Thread(new Test()).start();
+
+		}
+
+
+		@Override
+		public void run() {
+
+			// 通过线程测试 ThreadLocal 的隔离性
+			System.out.println(t1.get());
+			t1.set(Thread.currentThread().getName());
+			System.out.println(t1.get());
+		}
+
 
 	}
-}
 
-
-
-
-
-
-
-
-// 首页搜索
-StatisticalEvent{id='2131624963', text='null', img='null', path='', idx='', view_type='FrameLayout', occurred_time=1490955008048, user_id='', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-
-// 车源  id  view_type
-StatisticalEvent{id='2131624564', text='', img='', path='', idx='', view_type='RadioButton', occurred_time=1490955182610, user_id='', app_build='3.1.0', app_version='22', net='wifi', event_type=1}------
-
-
-// 寻车  id  view_type
-StatisticalEvent{id='2131624565', text='', img='', path='', idx='', view_type='RadioButton', occurred_time=1490955233728, user_id='', app_build='3.1.0', app_version='22', net='wifi', event_type=1}------
-
-
-//物流
-点击
-StatisticalEvent{id='2131625430', text='null', img='null', path='', idx='', view_type='LinearLayout', occurred_time=1490955391690, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-进入
-StatisticalEvent{id='', text='', img='', path='com.kqc.b2b.ui.logic.LogisticsMainActivity@42ff6850', idx='', view_type='Activity', occurred_time=1490955391845, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=2}
-添加车辆
-StatisticalEvent{id='2131624221', text='', img='', path='', idx='', view_type='RadioButton', occurred_time=1490955998783, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-马上查询
-StatisticalEvent{id='2131624556', text='马上查询', img='null', path='', idx='', view_type='AppCompatTextView', occurred_time=1490956019323, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-
-
-
-// 急速发车
-点击
-StatisticalEvent{id='2131625430', text='null', img='null', path='', idx='', view_type='LinearLayout', occurred_time=1490955545428, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-进入
-StatisticalEvent{id='', text='', img='', path='com.kqc.b2b.ui.shareassistant.ShareAssistantMainActivity@42b913f0', idx='', view_type='Activity', occurred_time=1490955545537, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=2}
-
-//金融
-StatisticalEvent{id='', text='', img='', path='com.kqc.b2b.ui.financial.CarFinancialMainActivity@4318da28', idx='', view_type='Activity', occurred_time=1490955643036, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=2}
-//见车付款
-StatisticalEvent{id='2131624568', text='null', img='null', path='', idx='', view_type='LinearLayout', occurred_time=1490955922672, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-//汽车按揭
-StatisticalEvent{id='2131624570', text='null', img='null', path='', idx='', view_type='LinearLayout', occurred_time=1490955941783, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}
-
-
-// 发布车源
-StatisticalEvent{id='2131625430', text='null', img='null', path='', idx='', view_type='LinearLayout', occurred_time=1490955688545, user_id='13656657386', app_build='3.1.0', app_version='22', net='wifi', event_type=1}

@@ -12,6 +12,7 @@
 		33053AF31E9769F8007459F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33053AF11E9769F8007459F8 /* Main.storyboard */; };
 		33053AF51E9769F8007459F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33053AF41E9769F8007459F8 /* Assets.xcassets */; };
 		33053AF81E9769F8007459F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33053AF61E9769F8007459F8 /* LaunchScreen.storyboard */; };
+		336715381E9DDD170056FAB1 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336715371E9DDD170056FAB1 /* ViewController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		33053AF41E9769F8007459F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33053AF71E9769F8007459F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33053AF91E9769F8007459F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		336715371E9DDD170056FAB1 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController1.swift; path = ../ViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		33053AEC1E9769F8007459F8 /* UIStackViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				336715371E9DDD170056FAB1 /* ViewController1.swift */,
 				33053AED1E9769F8007459F8 /* AppDelegate.swift */,
 				33053AEF1E9769F8007459F8 /* ViewController.swift */,
 				33053AF11E9769F8007459F8 /* Main.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336715381E9DDD170056FAB1 /* ViewController1.swift in Sources */,
 				33053AF01E9769F8007459F8 /* ViewController.swift in Sources */,
 				33053AEE1E9769F8007459F8 /* AppDelegate.swift in Sources */,
 			);

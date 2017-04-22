@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tsm-Dl-N9F">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--123-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIStackViewTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NHl-hc-6rq">
-                                <rect key="frame" x="107" y="60" width="200" height="80.333333333333343"/>
+                                <rect key="frame" x="107" y="104.00000000000001" width="200" height="80.333333333333357"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大白痴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehk-Fb-rjV">
                                         <rect key="frame" x="24.666666666666657" y="0.0" width="150.66666666666666" height="60"/>
@@ -61,6 +61,13 @@
                                     <constraint firstAttribute="width" secondItem="VoS-0z-xNA" secondAttribute="height" multiplier="375:338" id="laX-Pm-a1D"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-NV-TWf">
+                                <rect key="frame" x="184" y="686" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="RQh-ay-2CJ" kind="show" id="L8x-Kh-mX9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,12 +75,64 @@
                             <constraint firstItem="NHl-hc-6rq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="CKG-Uu-Fi3"/>
                             <constraint firstItem="NHl-hc-6rq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nk0-Qm-aT2"/>
                             <constraint firstItem="VoS-0z-xNA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QBD-C4-hxd"/>
+                            <constraint firstItem="ueh-NV-TWf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fub-nJ-eyn"/>
                             <constraint firstItem="VoS-0z-xNA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ubj-qO-Jyu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ueh-NV-TWf" secondAttribute="bottom" constant="20" id="xCB-Fr-RBQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="123" id="4HW-RU-Yq5">
+                        <barButtonItem key="backBarButtonItem" title="11" id="Dts-jC-3oe"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1026.0869565217392" y="124.72826086956523"/>
+        </scene>
+        <!--View Controller1-->
+        <scene sceneID="w1m-g8-FxS">
+            <objects>
+                <viewController id="RQh-ay-2CJ" customClass="ViewController1" customModule="UIStackViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NMW-9c-o6H"/>
+                        <viewControllerLayoutGuide type="bottom" id="ySU-tQ-S2i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QR5-LC-Im5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0l-eL-fzY">
+                                <rect key="frame" x="116" y="262" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="hao:" destination="RQh-ay-2CJ" eventType="touchUpInside" id="5Hi-Ha-hj2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJ8-9J-WsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="131.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qbg-qR-Hgu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tsm-Dl-N9F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AHS-sH-zYo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Es8-ZP-WGy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSR-l2-bp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.84057971014494" y="773.64130434782612"/>
         </scene>
     </scenes>
     <resources>
