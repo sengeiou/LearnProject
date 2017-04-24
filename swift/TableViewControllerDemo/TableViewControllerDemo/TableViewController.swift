@@ -8,24 +8,84 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats",
-        "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina",
-        "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-    
-    var restaurantImages = ["cafedeadend.jpg", "homei.jpg", "teakha.jpg",
-                            "cafeloisl.jpg", "petiteoyster.jpg", "forkeerestaurant.jpg", "posatelier.jpg",
-                            "bourkestreetbakery.jpg", "haighschocolate.jpg", "palominoespresso.jpg",
-                            "upstate.jpg", "traif.jpg", "grahamavenuemeats.jpg", "wafflewolf.jpg",
-                            "fiveleaves.jpg", "cafelore.jpg", "confessional.jpg", "barrafina.jpg",
-                            "donostia.jpg", "royaloak.jpg", "caskpubkitchen.jpg"]
+class TableViewController: UITableViewController , UISearchResultsUpdating {
+    var restaurantsData:[Restaurant] = [
+        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "HongKong", image: "cafedeadend.jpg", isVisited: false),
+            Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image:
+                "homei.jpg", isVisited: false),
+            Restaurant(name: "Teakha", type: "Tea House", location: "Hong Kong", image:
+                "teakha.jpg", isVisited: false),
+            Restaurant(name: "Cafe loisl", type: "Austrian / Causual Drink", location:
+                "Hong Kong", image: "cafeloisl.jpg", isVisited: false),
+            Restaurant(name: "Petite Oyster", type: "French", location: "Hong Kong",
+                       image: "petiteoyster.jpg", isVisited: false),
+            Restaurant(name: "For Kee Restaurant", type: "Bakery", location: "HongKong", image: "forkeerestaurant.jpg", isVisited: false),
+                Restaurant(name: "Po's Atelier", type: "Bakery", location: "Hong Kong",
+                           image: "posatelier.jpg", isVisited: false),
+                Restaurant(name: "Bourke Street Backery", type: "Chocolate", location:
+                    "Sydney", image: "bourkestreetbakery.jpg", isVisited: false),
+                Restaurant(name: "Haigh's Chocolate", type: "Cafe", location: "Sydney",
+                           image: "haighschocolate.jpg", isVisited: false),
+                Restaurant(name: "Palomino Espresso", type: "American / Seafood", location:
+                    "Sydney", image: "palominoespresso.jpg", isVisited: false),
+                Restaurant(name: "Upstate", type: "American", location: "New York", image:
+                    "upstate.jpg", isVisited: false),
+                Restaurant(name: "Traif", type: "American", location: "New York", image:
+                    "traif.jpg", isVisited: false),
+                Restaurant(name: "Graham Avenue Meats", type: "Breakfast & Brunch",
+                           location: "New York", image: "grahamavenuemeats.jpg", isVisited: false),
+                Restaurant(name: "Waffle & Wolf", type: "Coffee & Tea", location: "NewYork", image: "wafflewolf.jpg", isVisited: false),
+                    Restaurant(name: "Five Leaves", type: "Coffee & Tea", location: "New York",
+                               image: "fiveleaves.jpg", isVisited: false),
+                    Restaurant(name: "Cafe Lore", type: "Latin American", location: "New York",
+                               image: "cafelore.jpg", isVisited: false),
+                    Restaurant(name: "Confessional", type: "Spanish", location: "New York",
+                               image: "confessional.jpg", isVisited: false),
+                    Restaurant(name: "Barrafina", type: "Spanish", location: "London", image:
+                        "barrafina.jpg", isVisited: false),
+                    Restaurant(name: "Donostia", type: "Spanish", location: "London", image:
+                        "donostia.jpg", isVisited: false),
+                    Restaurant(name: "Royal Oak", type: "British", location: "London", image:
+                        "royaloak.jpg", isVisited: false),
+                    Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "London",
+                               image: "caskpubkitchen.jpg", isVisited: false)
+        ]
+        
 
-    
+    var restaurants:[Restaurant]  = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        restaurants = restaurantsData
+        
+        let serchController =  UISearchController(searchResultsController: nil)
+        serchController.searchResultsUpdater = self
+        definesPresentationContext = true
+        serchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = serchController.searchBar
+        serchController.loadViewIfNeeded()
     }
-
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        print("123123")
+        
+        if let text = searchController.searchBar.text
+        {
+            filterContent(key: text)
+            tableView.reloadData()
+            print(restaurants.count)
+        }
+    }
+    
+    
+    func filterContent(key : String){
+        restaurants = restaurantsData.filter({
+            $0.name.localizedCaseInsensitiveContains(key)
+        })
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -38,17 +98,17 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurantNames.count
+        return restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : RestraurantTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestraurantTableViewCell
         
-        cell.IMG?.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.IMG?.image = UIImage(named: restaurants[indexPath.row].image)
         cell.IMG.layer.cornerRadius = 30.0
         cell.IMG.clipsToBounds = true
     
-        cell.label?.text =  restaurantNames [indexPath.row]
+        cell.label?.text =  restaurants [indexPath.row].name
         return cell
     }
     
@@ -87,7 +147,7 @@ class TableViewController: UITableViewController {
         let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: {(action,indexPath) -> Void in
            
             let defaultText = "Just checking in at " +
-                self.restaurantNames[indexPath.row]
+                self.restaurants[indexPath.row].name
             let activityController = UIActivityViewController(activityItems:
                 [defaultText], applicationActivities: nil)
             self.present(activityController, animated: true, completion: nil)
@@ -98,8 +158,8 @@ class TableViewController: UITableViewController {
         
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action,indexPath) -> Void in
-            self.restaurantNames.remove(at: indexPath.row)
-            self.restaurantImages.remove(at: indexPath.row)
+            self.restaurants.remove(at: indexPath.row)
+            self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         })
         
@@ -114,7 +174,7 @@ class TableViewController: UITableViewController {
             if  let indexPath = tableView.indexPathForSelectedRow {
                 
                 let destinationController = segue.destination as! DetailViewController
-                destinationController.restaurantImage = restaurantImages[indexPath.row]
+                destinationController.restaurantImage = restaurants[indexPath.row].image
                 
             }
         }
