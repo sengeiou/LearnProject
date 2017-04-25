@@ -19,7 +19,7 @@ public class Test1 {
             System.out.println(file.getName());
             System.out.println(file.getAbsolutePath());
 
-        try {
+        try1 {
             RandomAccessFile mRandomAccessFile = new RandomAccessFile("src/com/cocoa/test/Main.java","rw");
 
             FileChannel fileChannel =  mRandomAccessFile.getChannel();

@@ -53,12 +53,13 @@ class TableViewController: UITableViewController , UISearchResultsUpdating {
         
 
     var restaurants:[Restaurant]  = []
+    var serchController : UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         restaurants = restaurantsData
         
-        let serchController =  UISearchController(searchResultsController: nil)
+        serchController =  UISearchController(searchResultsController: nil)
         serchController.searchResultsUpdater = self
         definesPresentationContext = true
         serchController.dimsBackgroundDuringPresentation = false
@@ -67,13 +68,9 @@ class TableViewController: UITableViewController , UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        print("123123")
-        
-        if let text = searchController.searchBar.text
-        {
+        if let text = searchController.searchBar.text{
             filterContent(key: text)
             tableView.reloadData()
-            print(restaurants.count)
         }
     }
     
