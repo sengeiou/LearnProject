@@ -15,8 +15,6 @@ public class ServerSocketChannelTest {
 		ssc.configureBlocking(false);
 		ssc.bind(new InetSocketAddress(PORT));
 		
-
-
 		while (true) {
 			SocketChannel  sc = ssc.accept();
 			if (sc == null) {

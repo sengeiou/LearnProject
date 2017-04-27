@@ -15,6 +15,7 @@
 		3367156E1E9E18B30056FAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3367156C1E9E18B30056FAB1 /* LaunchScreen.storyboard */; };
 		336715761E9E20C50056FAB1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336715751E9E20C50056FAB1 /* TableViewController.swift */; };
 		336715781E9E2AE20056FAB1 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336715771E9E2AE20056FAB1 /* RestaurantTableViewCell.swift */; };
+		33ED6E891EB19D3F00E8645D /* Tabbar2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED6E881EB19D3F00E8645D /* Tabbar2Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3367156F1E9E18B30056FAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336715751E9E20C50056FAB1 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		336715771E9E2AE20056FAB1 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		33ED6E881EB19D3F00E8645D /* Tabbar2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabbar2Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				336715771E9E2AE20056FAB1 /* RestaurantTableViewCell.swift */,
 				334769B21EA88A0C0098BE28 /* DetailViewController.swift */,
 				332080E21EADE9310093F625 /* Restaurant.swift */,
+				33ED6E881EB19D3F00E8645D /* Tabbar2Controller.swift */,
 			);
 			path = TableViewControllerDemo;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				332080E31EADE9310093F625 /* Restaurant.swift in Sources */,
 				336715641E9E18B30056FAB1 /* AppDelegate.swift in Sources */,
+				33ED6E891EB19D3F00E8645D /* Tabbar2Controller.swift in Sources */,
 				336715781E9E2AE20056FAB1 /* RestaurantTableViewCell.swift in Sources */,
 				336715761E9E20C50056FAB1 /* TableViewController.swift in Sources */,
 				334769B31EA88A0C0098BE28 /* DetailViewController.swift in Sources */,

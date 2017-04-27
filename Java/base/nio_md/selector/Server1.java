@@ -8,33 +8,50 @@ public class Server1 {
 	public static void main(String[] args) {
 		try {
 			ServerSocketChannel channel  = ServerSocketChannel.open();
-			channel.bind(new InetSocketAddress(8899));
-			Selector selector = Selector.open();
-
+			
 			channel.configureBlocking(false);
-			channel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_CONNECT);
+			channel.socket().bind(new InetSocketAddress(8888));
+
+			Selector selector = Selector.open();
+			System.out.println(channel.toString());
+			System.out.println(channel);
+			
+			channel.register(selector, SelectionKey.OP_ACCEPT );
 
 			while (true) {
 				int readyChannels = selector.select();
 				if (readyChannels == 0) continue;
+
+				Thread.sleep(1000);
+
 				Set<SelectionKey> selectedKeys = selector.selectedKeys();
 				Iterator<SelectionKey> keyIterator = selectedKeys.iterator();
 				while (keyIterator.hasNext()) {
 					SelectionKey key = keyIterator.next();
 					if (key.isAcceptable()) {
-						System.out.print("isAcceptable");
+
+						ServerSocketChannel  scc = (ServerSocketChannel)key.channel();		
+						System.out.println(scc.toString());
+						System.out.println(scc);
+						System.out.println("isAcceptable");
+
+						SocketChannel sc = scc.accept();
+          				sc.configureBlocking( false );
+						sc.register(selector, SelectionKey.OP_READ );
+
+
 					} else if (key.isConnectable()) {
-						System.out.print("isConnectable");
+						System.out.println("isConnectable");
 					} else if (key.isReadable()) {
-						System.out.print("isReadable");
+						System.out.println("isReadable");
 					} else if (key.isWritable()) {
-						System.out.print("isWritable");
+						System.out.println("isWritable");
 					}
 					keyIterator.remove();
 				}
 			}
 		} catch (Exception e) {
-			System.out.print(e.toString());
+			System.out.println(e.toString());
 		}
 
 	}

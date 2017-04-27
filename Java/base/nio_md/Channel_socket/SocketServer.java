@@ -7,7 +7,7 @@ public class SocketServer{
 
 	public static void main(String[] args) throws Exception{
 		SocketServer ss = new SocketServer();
-		ss.bind(8888);
+		ss.bind(8899);
 	}
 
 	public void bind(int port) throws Exception{

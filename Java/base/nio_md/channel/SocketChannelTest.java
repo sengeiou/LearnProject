@@ -7,7 +7,7 @@ public class SocketChannelTest {
 
 	public static final String HOST = "127.0.0.1";
 
-	public static final int PORT = 8789;
+	public static final int PORT = 8888;
 
 	public static void main(String[] args)  {
 		try {
