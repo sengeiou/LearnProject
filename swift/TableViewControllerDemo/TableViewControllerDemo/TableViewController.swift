@@ -151,13 +151,12 @@ class TableViewController: UITableViewController , UISearchResultsUpdating {
         
         })
         
+    
         shareAction.backgroundColor = UIColor.orange
         
-        
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action,indexPath) -> Void in
-            self.restaurants.remove(at: indexPath.row)
-            self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
+            self.restaurants.remove(at: indexPath.row)
         })
         
         

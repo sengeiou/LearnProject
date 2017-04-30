@@ -235,15 +235,15 @@ while currentValue != 0 {
     currentValue = moveNearerToZero(currentValue)
 }
 
+func calc(_ a: Int) -> (Int) -> Int{
+    func iner(b: Int) -> Int{
+        return a - b
+    }
+    return iner
+}
 
-
-
-
-
-
-
-
-
+var c = calc(10)
+print(c(5))
 
 
 
