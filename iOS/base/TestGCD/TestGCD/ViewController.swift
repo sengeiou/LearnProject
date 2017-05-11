@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBAction func clickButton(_ sender: Any) {
         
        // Thread.sleep(forTimeInterval: 5)
-        
+        // 方法一
         let queue  = OperationQueue()
 //        queue.addOperation {
 //            
@@ -35,11 +35,20 @@ class ViewController: UIViewController {
         let thread1 = BlockOperation{
             print("thread1 start")
             Thread.sleep(forTimeInterval: 3)
+
+        }
+        queue.maxConcurrentOperationCount = 5
+        
+        
+        queue.addOperation {
             
+            // at child thread
+            Thread.sleep(forTimeInterval: 5)
             OperationQueue.main.addOperation({
                 print("thread1 ok")
             })
         }
+            
         thread1.completionBlock = {
             print("thread1 is complete")
         }

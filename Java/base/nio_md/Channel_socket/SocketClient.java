@@ -28,7 +28,6 @@ public class SocketClient{
 				System.out.println(b.position());
 				sc.close();
 
-
 			}
 
 	}

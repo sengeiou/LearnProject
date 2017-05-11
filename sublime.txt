@@ -2,4 +2,5 @@
 2-Emmet
 3-GoSublime
 4-java_import
-
+5-AutoPep8   python
+6-SublimeCodeIntel python
