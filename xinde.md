@@ -27,3 +27,33 @@ ml
 
 PubCarSuccessFragment
 RecFindCarAdapter
+
+item_pubcar_list
+
+
+ShareDialog  dialog = ShareDialog.newInstance("test","testesttesttestt");
+                    dialog.show(getSupportFragmentManager(),"test11");
+                    dialog.setSharedClickListener(new ShareDialog.SharedClickListener() {
+                        @Override
+                        public void onCloseClicked(View view) {
+
+                        }
+
+                        @Override
+                        public void onFriendClicked(View view) {
+                            dialog.dismiss(); 
+                             if (iShareToWeChart != null) {
+                    iShareToWeChart.sharePlatformToFriend();
+                }
+                        }
+
+                        @Override
+                        public void onCircleClicked(View view) {
+                            dialog.dismiss();
+                            if (iShareToWeChart != null) {
+                    			iShareToWeChart.sharePlatformToCircle();
+                			}
+                        }
+                    });
+
+
