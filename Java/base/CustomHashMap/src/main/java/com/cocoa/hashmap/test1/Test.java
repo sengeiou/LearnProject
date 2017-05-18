@@ -1,5 +1,7 @@
 package com.cocoa.hashmap.test1;
 
+
+
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Objects;
@@ -8,6 +10,7 @@ import java.util.Objects;
  * Created by sj on 17/5/18.
  */
 public class Test {
+
 
     private String name;
     private int age;
@@ -134,7 +137,35 @@ public class Test {
             System.out.println("---"+(i %15));
         }
 
+        // 下面来看tableSizeFor
+        // 这个方法会 在构造方法 HashMap(int initialCapacity, float loadFactor) 时调用，用来手动设置 数组长度和负载因子
+        // 因为上面讲到了initialCapacity 长度必须是2的整数幂 ，那玩意有人传错了，比如传了个15 进来，
+        // tableSizeFor 的作用就来了，返回一个大于或等于cap的最小的2的N次幂
+        // 有点拗口，比如 cap =16 则返回16  cap =17 则返回32  cap =66 则返回128  ，大致应该懂意思了吧
+        // 下面来看这个方法的实现   以 cap = 17 为例
+        // 看下面 tableSizeFor 的方法注释
+        // 这几次的 或操作 加 无符号右移的操作，使得N 在最后一定变成全为1
+        // 然后  11111 + 00001   就一定是 100000  ，称为2的N次幂
+        // 换言之 你传入的 cap 决定了位数X，然后或操作加无符号右移的操作，使得这个X为数字全部成为1 。最后加1，就OK 了
+        // 比如  17 = 10001 什么都不管，先变成=> 11111 再加 00001
+        // 位操作简直太神奇了，至于10001 会变成 11111 的原理，还没搞太明白
+
+        tableSizeFor(17);
+        System.out.println(31>>>8);
+
     }
+
+    static final int MAXIMUM_CAPACITY = 1 << 30;
+    static final int tableSizeFor(int cap) {
+        int n = cap - 1;  //16
+        n |= n >>> 1;    // 16 | 16 >>> 1 =  10000 | 01000  = 11000 =   24
+        n |= n >>> 2;    // 24 | 24 >>> 2 =  11000 | 01100  = 11110 = 30
+        n |= n >>> 4;    // 30 | 30 >>> 4 =  11110 | 00001  = 11111 = 31
+        n |= n >>> 8;    // 31 | 31 >>> 8 =  11111 | 00000  = 31
+        n |= n >>> 16;   // 31 | 31 >>> 16 =  11111 | 00000  = 31
+        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    }
+
 
 /**
  自定义对象重写 equals 和 hashCode 的例子 ，这是neetty 的源码XmlAttribute
