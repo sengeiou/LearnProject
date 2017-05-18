@@ -7,7 +7,11 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
- * Created by sj on 17/5/18.
+ * HashMap 深度研究
+ *
+ * 参考：
+ * https://zhuanlan.zhihu.com/p/26831284
+ *
  */
 public class Test {
 
