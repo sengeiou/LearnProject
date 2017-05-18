@@ -21,6 +21,22 @@ class ViewController: UIViewController {
        // Thread.sleep(forTimeInterval: 5)
         // 方法一
         let queue  = OperationQueue()
+//        queue.addOperation {
+//            
+//            // at child thread
+//            Thread.sleep(forTimeInterval: 5)
+//            let text  = "changed"
+//            OperationQueue.main.addOperation{
+//                print(text)
+//            }
+//            
+//        }
+        
+        let thread1 = BlockOperation{
+            print("thread1 start")
+            Thread.sleep(forTimeInterval: 3)
+
+        }
         queue.maxConcurrentOperationCount = 5
         
         
@@ -28,62 +44,39 @@ class ViewController: UIViewController {
             
             // at child thread
             Thread.sleep(forTimeInterval: 5)
-            let text  = "changed"
-            OperationQueue.main.addOperation{
-                print(text)
-            }
-            
+            OperationQueue.main.addOperation({
+                print("thread1 ok")
+            })
         }
-        
-        // 方法二
-        let thread1 = BlockOperation{
-            // child thread
-        
-            print("thread1 child thread")
             
-            OperationQueue.main.addOperation{
-                // UI thread
-                print("thread1 UI thread")
-            }
-            
-        }
         thread1.completionBlock = {
-            print("thread1 ok")
+            print("thread1 is complete")
         }
         
-        let thread2 = BlockOperation {
-            // child thread
-            
-            print("thread2 child thread")
-            
-            OperationQueue.main.addOperation{
-                // UI thread
-                print("thread2 UI thread")
-            }
-            
-        }
-        thread2.completionBlock = {
-            print("thread2 ok")
+        let thread2  = BlockOperation{
+            print("thread2 start")
+            Thread.sleep(forTimeInterval: 3)
+            OperationQueue.main.addOperation({
+                print("thread2 ok")
+            })
         }
         
-        thread1.addDependency(thread2)
-    
+        thread2.addDependency(thread1)
         
         queue.addOperation(thread1)
         queue.addOperation(thread2)
-
         
+        
+        // cancel task
+//        Thread.sleep(forTimeInterval: 1)
+//        queue.cancelAllOperations()
+        
+
     }
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-    
-
 }
 
