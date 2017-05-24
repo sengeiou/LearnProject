@@ -157,6 +157,11 @@ public class Test {
         tableSizeFor(17);
         System.out.println(31>>>8);
 
+
+        int result = 32 & (32 + 1);
+        System.out.println(result);
+
+
     }
 
     static final int MAXIMUM_CAPACITY = 1 << 30;
