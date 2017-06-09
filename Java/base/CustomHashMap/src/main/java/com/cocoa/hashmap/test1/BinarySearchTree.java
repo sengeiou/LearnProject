@@ -37,12 +37,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         System.out.println(bst.min());
         System.out.println(bst.max());
 
-        String creatAt = "5/27";
-        if (creatAt.contains("/")) {
-            String[] monthDay = creatAt.split("/");
-            System.out.println(monthDay[0]);
-        }
-
 
     }
 

@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * 参考：
  * https://zhuanlan.zhihu.com/p/26831284
- *
+ * http://www.importnew.com/7099.html
  */
 public class Test {
 
@@ -213,7 +213,7 @@ public class Test {
 从而得到更好的性能。说到这里你可能已经想到了：31 * num 等价于(num << 5) – num，
 左移5位相当于乘以2的5次方再减去自身就相当于乘以31，现在的VM都能自动完成这个优化。
 
-*/
+
  @Override public int hashCode() {
  int result = type != null ? type.hashCode() : 0;
  result = 31 * result + name.hashCode();
