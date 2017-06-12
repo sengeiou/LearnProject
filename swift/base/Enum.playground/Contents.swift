@@ -75,7 +75,7 @@ case .upc(let num1, let num2, let num3, let num4):
         print(num1)
 case .qrcode(let qrcode):
         print(qrcode)
-default:
+default://当不需要匹配每个枚举成员的时候，你可以提供一个default分支来涵盖所有未明确处理的枚举成员  这里会出现黄色感叹号是因为我们的switch 已经匹配了所有的情况，不会到这个default中了
     print("default")
 }
 
@@ -134,6 +134,10 @@ if let c = CompassPoint2(rawValue:"north1"){
 if let p  = Planet(rawValue : 7){   //注意这个类型，原始值类型
     print(p)
 }
+
+// 根据 rawValue 生成的 enum 是一个 Optional 类型
+print( type(of: Planet(rawValue : 112)))
+
 
 // 另一种写法
 if let p  = Planet(rawValue : 6){
