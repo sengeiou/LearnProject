@@ -29,10 +29,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         bst.put(3, "3");
         bst.put(4, "4");
         bst.put(5, "57");
-<<<<<<< HEAD
         bst.put(1, "1");
-            
-=======
+
 
         System.out.println(bst.get(5));
         System.out.println(bst.get(2));
@@ -56,7 +54,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         }
         return min(node.getLeft());
     }
->>>>>>> e99c40dbea8665f834315919f56605bbd0ca6e03
 
     // 最大值
     public Node max(){

@@ -1,17 +1,19 @@
 package com.cocoa.hashmap.test1;
 
 
-
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Objects;
 
 /**
  * HashMap 深度研究
+ * 本文基于  JDK 1.8.0_131-b11 编写， 与别的版本可能有出入，请仔细查看源码和注释
  *
- * 参考：
+ * <p>
+ * 参考：本文的参考文章地址
  * https://zhuanlan.zhihu.com/p/26831284
  * http://www.importnew.com/7099.html
+ * http://blog.csdn.net/anxpp/article/details/51234835
  */
 public class Test {
 
@@ -50,13 +52,13 @@ public class Test {
         System.out.println(Objects.hashCode(o2));
         System.out.println(Objects.hashCode(o3));
         System.out.println(Objects.hashCode(o4));
-        System.out.println(Objects.hashCode(new Test("--",12)));
+        System.out.println(Objects.hashCode(new Test("--", 12)));
 
 
         // 下面这个例子很奇怪， Test 并没有重写 hashCode 但是调用Objects.hashCode 竟然能算出hashCode
         // 而且 Test 类能直接做HashMap 的key 使用，有点奇怪
-        Test t = new Test("t",12);
-        Test t1 = new Test("t1",11);
+        Test t = new Test("t", 12);
+        Test t1 = new Test("t1", 11);
 
         HashMap<Test, String> tHashMap = new HashMap<>();
         tHashMap.put(t, "t");
@@ -72,7 +74,7 @@ public class Test {
         // 这就是为什么同一个对象的存取，是正常的，即使没有重写 equals 和 hashCode
         // 还有一点，猜测，如果自定义的对象如果不重写hashCode , 用Object 的 hashCode 算法，则会出现很高的碰撞率
         // 重写 equals 和 hashCode 的方法， 见本文最下端
-        System.out.println(tHashMap.get(new Test("t",12)));  // 取出的是null
+        System.out.println(tHashMap.get(new Test("t", 12)));  // 取出的是null
 
         // 反射获取 Node 数组 ，好像没什么用
         HashMap<Integer, Integer> intHashMap = new HashMap<>();
@@ -110,7 +112,7 @@ public class Test {
         // 转成二进制后，发现15 == 1111 ； 31 ==11111 ； 63 == 111111 ； 127 =1111111
         //  128 & (16-1)   ==  1000 0000 & 0000 1111  == 0000 0000 = 0
         //  66 & (16-1)   ==  0100 0010 & 0000 1111  == 0000 0010  = 2
-//        http://tool.lu/hexconvert/
+        //        http://tool.lu/hexconvert/
 
 
         long time = System.currentTimeMillis();
@@ -134,16 +136,33 @@ public class Test {
         // 这样的算法就大大增加了碰撞的几率，会直接影响 hashMap 的获取效率
 
         for (int i = 0; i < 65; i++) {
-            System.out.println("---"+(i & (15-1)));
+            System.out.println("---" + (i & (15 - 1)));
         }
         // 而取模操作则不会出现上述的情况
         for (int i = 0; i < 65; i++) {
-            System.out.println("---"+(i %15));
+            System.out.println("---" + (i % 15));
         }
 
+
+        // 首先来看下  hashmap 的初始化
+//        public HashMap(int initialCapacity, float loadFactor) {
+//            if (initialCapacity < 0)
+//                throw new IllegalArgumentException("Illegal initial capacity: " +
+//                        initialCapacity);
+//            if (initialCapacity > MAXIMUM_CAPACITY)
+//                initialCapacity = MAXIMUM_CAPACITY;
+//            if (loadFactor <= 0 || Float.isNaN(loadFactor))
+//                throw new IllegalArgumentException("Illegal load factor: " +
+//                        loadFactor);
+//            this.loadFactor = loadFactor;
+//            this.threshold = tableSizeFor(initialCapacity);
+//        }
+
+
+        // 并没有什么特别的，其中最主要的方法是tableSizeFor
         // 下面来看tableSizeFor
         // 这个方法会 在构造方法 HashMap(int initialCapacity, float loadFactor) 时调用，用来手动设置 数组长度和负载因子
-        // 因为上面讲到了initialCapacity 长度必须是2的整数幂 ，那玩意有人传错了，比如传了个15 进来，
+        // 因为上面讲到了initialCapacity 长度必须是2的整数幂 ，那万一有人传错了，比如传了个15 进来，
         // tableSizeFor 的作用就来了，返回一个大于或等于cap的最小的2的N次幂
         // 有点拗口，比如 cap =16 则返回16  cap =17 则返回32  cap =66 则返回128  ，大致应该懂意思了吧
         // 下面来看这个方法的实现   以 cap = 17 为例
@@ -155,16 +174,83 @@ public class Test {
         // 位操作简直太神奇了，至于10001 会变成 11111 的原理，还没搞太明白
 
         tableSizeFor(17);
-        System.out.println(31>>>8);
+        System.out.println(31 >>> 8);
 
 
         int result = 32 & (32 + 1);
         System.out.println(result);
 
+        //  接着看，还有个神奇的方法， hash（Object key）
+        String testHashStr = "123";
+        // 以 string 为例， 调用 string 的 hashCode 和 用 hash 方法 ，发现结果是一样的
+        System.out.println(testHashStr.hashCode());
+        System.out.println(hash(testHashStr));
+
+
+//        static final int hash(Object key) {
+//            int h;
+//            return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+//        }
+
+        // 很奇怪 ，为什么结果是一样， 为什么 hash 方法还要多此一举呢
+        // 参考： http://blog.csdn.net/anxpp/article/details/51234835
+        // 首先我们来看 hash 方法的注释
+        // 大致翻译就是：
+/**
+ * Computes key.hashCode() and spreads (XORs) higher bits of hash
+ * to lower.  Because the table uses power-of-two masking, sets of
+ * hashes that vary only in bits above the current mask will
+ * always collide. (Among known examples are sets of Float keys
+ * holding consecutive whole numbers in small tables.)  So we
+ * apply a transform that spreads the impact of higher bits
+ * downward. There is a tradeoff between speed, utility, and
+ * quality of bit-spreading. Because many common sets of hashes
+ * are already reasonably distributed (so don't benefit from
+ * spreading), and because we use trees to handle large sets of
+ * collisions in bins, we just XOR some shifted bits in the
+ * cheapest possible way to reduce systematic lossage, as well as
+ * to incorporate impact of the highest bits that would otherwise
+ * never be used in index calculations because of table bounds.
+ */
+        // 然后直接从代码角度理解，向右移动16 位 ，其实就是 小于 2的16次方的数， 都会变成 0
+        //  65536 == 10000000000000000  向右移16位 空位用 0 补齐，正好是1
+        System.out.println(65536 >>> 16);  // ->   1
+
+        // 再用 异或运算符  （两个操作数的位中，相同则结果为0，不同则结果为1。）
+        // 比如 199 = 11000111   11000111 ^ 00000000  那么得到的一定是它的本身
+        // 这就解释了 testHashStr 为什么用两种方法得到的都是一样的结果
+        // 换言之，只要对象的hashCode不大于 65536 （2的16次方） ，那么 hash（） == hashcode()
+
+        // 接着来看，万一hashCode 大于 65536 呢？
+
+        System.out.println((65537 >>> 16) ^ 65537);// ->   65536
+        System.out.println((100000 >>> 16) ^ 100000);// ->   100001
+        System.out.println((99999 >>> 16) ^ 99999);// ->   99998
+
+        // 发现什么规律了没？ 好像都是元数的 +1 或 -1
+        // 其实最神奇的就是下面这个测试
+        System.out.println("----------");
+        for (int i = 0; i < 20; i++) {
+            int a = i << 16;
+//            a = (a >>> 16) ^ a;   // 打开这行看下，输出是0 -15 ，关闭这行，则输出全是0
+            System.out.println(a+"----"+(a & (16 - 1)));
+        }
+
+        // 到此为止，全都明白了， 当 hash 值大于65536 的情况下，用 (hash & (arraySize - 1) 方法取模， 则会出现很大几率的碰撞
+        // 上面这个循环就是很好的例子，全部 输出为0
+        // 为什么 hash 值大于65536 ，就会出现这么糟糕的情况呢？
+
 
     }
 
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
+
     static final int MAXIMUM_CAPACITY = 1 << 30;
+
     static final int tableSizeFor(int cap) {
         int n = cap - 1;  //16
         n |= n >>> 1;    // 16 | 16 >>> 1 =  10000 | 01000  = 11000 =   24
@@ -177,7 +263,7 @@ public class Test {
 
 
 /**
- 自定义对象重写 equals 和 hashCode 的例子 ，这是neetty 的源码XmlAttribute
+ 自定义对象重写 equals 和 hashCode 的例子 ，这是netty 的源码XmlAttribute
  重写  hashCode  的方法 ： 对于对象中每个关键域f，为该域计算int类型的散列码c，result = 31 * result + c
 
  private final String type;
@@ -202,16 +288,16 @@ public class Test {
  return true;
  }
 
-/**
-答： 2 << 3（左移3位相当于乘以2的3次方，右移3位相当于除以2的3次方）。
+ /**
+ 答： 2 << 3（左移3位相当于乘以2的3次方，右移3位相当于除以2的3次方）。
 
-补充：我们为编写的类重写hashCode方法时，
-可能会看到如下所示的代码，
-其实我们不太理解为什么要使用这样的乘法运算来产生哈希码（散列码），
-而且为什么这个数是个素数，为什么通常选择31这个数？
-前两个问题的答案你可以自己百度一下，选择31是因为可以用移位和减法运算来代替乘法，
-从而得到更好的性能。说到这里你可能已经想到了：31 * num 等价于(num << 5) – num，
-左移5位相当于乘以2的5次方再减去自身就相当于乘以31，现在的VM都能自动完成这个优化。
+ 补充：我们为编写的类重写hashCode方法时，
+ 可能会看到如下所示的代码，
+ 其实我们不太理解为什么要使用这样的乘法运算来产生哈希码（散列码），
+ 而且为什么这个数是个素数，为什么通常选择31这个数？
+ 前两个问题的答案你可以自己百度一下，选择31是因为可以用移位和减法运算来代替乘法，
+ 从而得到更好的性能。说到这里你可能已经想到了：31 * num 等价于(num << 5) – num，
+ 左移5位相当于乘以2的5次方再减去自身就相当于乘以31，现在的VM都能自动完成这个优化。
 
 
  @Override public int hashCode() {
