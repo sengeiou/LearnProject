@@ -1,3 +1,232 @@
+
+https://github.com/Naoki2015/CircleDemo
+
+cyb-app/src/main/res/mipmap-xxhdpi/call.png 
+
+cyb-app/src/main/res/mipmap-xxhdpi/message.png
+ recycleView = (RecyclerView) findViewById(R.id.recycleView);
+        mList = new ArrayList<>();
+
+        CommCircle commCircle = new CommCircle();
+        commCircle.setType(CommCircleAdapter.ITEM_HEAD);
+        mList.add(commCircle);
+
+
+         commCircle = new CommCircle();
+        List<String> list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setPicture(list);
+
+        mList.add(commCircle);
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/duorouzhiwutupian.jpg");
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        list.add("https://img6.bdstatic.com/img/image/smallpic/weijutupianpaishe.jpg");
+
+        commCircle.setImgs(list);
+
+        mList.add(commCircle);
+
+
+
+
+
+        commCircle = new CommCircle();
+        list = new ArrayList<>();
+        list.add("https://img6.bdstatic.com/img/image/smallpic/dongmantuphenxiaozhi.jpg");
+        commCircle.setImgs(list);
+        mList.add(commCircle);
+
+        mList.add(new CommCircle());
+        adapter  = new CommCircleAdapter(this,mList);
+        recycleView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        recycleView.setAdapter(adapter);
+
+ 
+    private String name;//张光博", //个人信息
+    private String company_name;//温州江南皮革厂",//个人信息
+    private String head_img;//image.kuaiqiangche.cc2017-05-19/44a2ecfba2fe7190ad22bd53a3e9014f.jpeg",//个人信息头像
+    private int is_auth;// 1,//认证状态
+    private int type;// 0,//公司类型0:4S店,1:展厅, 2:资源,-1代表无公司'
+    private String mobile;//13645818963",//个人信息
+    private int total;// 23,
+    private int per_page;// 10,
+    private int current_page;// 1,
+    private int last_page;// 3,
+    private String next_page_url;//http://api.b2b.kqc.dev/business_circle/list?page=2",
+
+
+
+ ViewTreeObserver vto = tv1.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener(){
+            @Override
+            public void onGlobalLayout() {
+                tv1.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+
+               int measuredWidth  =  tv1.getMeasuredWidth() ;
+
+                TextPaint newPaint = new TextPaint();
+                float textSize = getResources().getDisplayMetrics().scaledDensity * 15;
+                newPaint.setTextSize(textSize);
+                float newPaintWidth = newPaint.measureText(text);
+
+                Log.e("++", newPaintWidth + "=====");
+                Log.e("++", measuredWidth + "=====");
+                float temp = newPaintWidth / measuredWidth;
+                Log.e("++", temp + "===temp==");
+
+
+                if (temp > 1) {
+                    float v = text.length() / temp;
+                    Log.e("++", text.length() + "=====");
+                    Log.e("++", v + "=====");
+
+                    String result = text.substring(0, (int) v);
+                    Log.e("++", result + "=====");
+                    tv1.setText(result);
+                }
+            }
+        });
+
+
+
 private void log(String activityname) {
         try {
 

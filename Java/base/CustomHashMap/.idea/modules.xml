@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap_main.iml" group="hashMap" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap_main.iml" group="hashMap" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap_test.iml" group="hashMap" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hashMap_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hashMap_test.iml" group="hashMap" />
     </modules>
   </component>

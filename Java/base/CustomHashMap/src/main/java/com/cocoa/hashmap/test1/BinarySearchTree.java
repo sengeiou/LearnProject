@@ -13,6 +13,10 @@ package com.cocoa.hashmap.test1;
  * 若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；
  * 3 ： 每个节点包括一个键和值 （K V）
  * 4 :  节点可以为 null 或指向别的节点
+ * 5 ： 如果一个根节点没有左子树，则根节点的key就是这个二叉树的最小值，如果存在左子树，那么最小值就是左子树的左子节点 ，见方法 min
+ * 6 ： 如果一个根节点没有右子树，则根节点的key就是这个二叉树的最大值，如果存在右子树，那么最大值就是左子树的右子节点 ，见方法 max
+ *
+ *
  */
 public class BinarySearchTree<K extends Comparable<K>, V> {
 
@@ -20,23 +24,75 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         BinarySearchTree<Integer, String> bst = new BinarySearchTree<>();
 
         bst.put(5, "5");
+        bst.put(1, "1");
         bst.put(2, "2");
         bst.put(3, "3");
         bst.put(4, "4");
         bst.put(5, "57");
+<<<<<<< HEAD
         bst.put(1, "1");
             
+=======
+
+        System.out.println(bst.get(5));
+        System.out.println(bst.get(2));
+
+
+        System.out.println(bst.min());
+        System.out.println(bst.max());
+
 
     }
 
-    private Node root;
+    private Node<K, V> root;
+
+    // 最小值
+    public Node min(){
+        return  min(root);
+    }
+    public Node min(Node node){
+        if(node.getLeft()==null){
+            return node;
+        }
+        return min(node.getLeft());
+    }
+>>>>>>> e99c40dbea8665f834315919f56605bbd0ca6e03
+
+    // 最大值
+    public Node max(){
+        return  max(root);
+    }
+    public Node max(Node node){
+        if(node.getRight()==null){
+            return node;
+        }
+        return max(node.getRight());
+    }
 
 
+
+    // 搜索方法
+    public V get(K key) {
+        return get(root, key);
+    }
+
+
+    public V get(Node<K, V> node, K key) {
+        int t = key.compareTo(node.getKey());
+        if (t == 0) {
+            return node.getValue();
+        } else if (t < 0) {
+            return get(node.getLeft(), key);
+        } else if (t > 0) {
+            return get(node.getRight(), key);
+        }
+        return null;
+    }
 
 
     // 插入方法
     public void put(K key, V value) {
-        if(root == null){
+        if (root == null) {
             root = put(root, key, value);
         }
         put(root, key, value);
@@ -89,7 +145,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
             this.value = value;
         }
 
-        public Node getLeft() {
+        public Node<K, V> getLeft() {
             return left;
         }
 
@@ -97,7 +153,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
             this.left = left;
         }
 
-        public Node getRight() {
+        public Node<K, V> getRight() {
             return right;
         }
 
@@ -111,6 +167,18 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
         public void setN(int n) {
             this.n = n;
+        }
+
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "key=" + key +
+                    ", value=" + value +
+                    ", left=" + left +
+                    ", right=" + right +
+                    ", n=" + n +
+                    '}';
         }
     }
 

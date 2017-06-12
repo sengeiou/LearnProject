@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * 参考：
  * https://zhuanlan.zhihu.com/p/26831284
- *
+ * http://www.importnew.com/7099.html
  */
 public class Test {
 
@@ -201,6 +201,18 @@ public class Test {
 
  return true;
  }
+
+/**
+答： 2 << 3（左移3位相当于乘以2的3次方，右移3位相当于除以2的3次方）。
+
+补充：我们为编写的类重写hashCode方法时，
+可能会看到如下所示的代码，
+其实我们不太理解为什么要使用这样的乘法运算来产生哈希码（散列码），
+而且为什么这个数是个素数，为什么通常选择31这个数？
+前两个问题的答案你可以自己百度一下，选择31是因为可以用移位和减法运算来代替乘法，
+从而得到更好的性能。说到这里你可能已经想到了：31 * num 等价于(num << 5) – num，
+左移5位相当于乘以2的5次方再减去自身就相当于乘以31，现在的VM都能自动完成这个优化。
+
 
  @Override public int hashCode() {
  int result = type != null ? type.hashCode() : 0;
