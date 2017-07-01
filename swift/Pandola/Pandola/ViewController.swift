@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var p: Pandola!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        p.backgroundColor = UIColor.red
+        
     }
 
     override func didReceiveMemoryWarning() {

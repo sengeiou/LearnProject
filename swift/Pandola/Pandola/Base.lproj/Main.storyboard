@@ -29,11 +29,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="igL-hI-qZG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gj0-Rg-4dj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igL-hI-qZG" secondAttribute="bottom" id="JHc-HG-k5k"/>
                             <constraint firstItem="igL-hI-qZG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="M4Y-bQ-iyR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igL-hI-qZG" secondAttribute="bottom" id="fUI-f4-QX5"/>
                             <constraint firstAttribute="trailing" secondItem="igL-hI-qZG" secondAttribute="trailing" id="nzQ-z2-iA0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="p" destination="igL-hI-qZG" id="DYd-iT-MSo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
