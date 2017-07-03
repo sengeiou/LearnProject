@@ -22,7 +22,7 @@ git 命令
 //在master分支下，合并test分支到master
 ## git merge  test
 
-
+##  git reset --hard <git版本号>
 
 
 // git merge conflict   git合并冲突的问题
