@@ -14,17 +14,52 @@
 			<p v-if="seen">kande dao</p>		
 		</div>
 
+		<div id="template">
+							
+		</div>
+		<div id = "tt">
+			<button v-on:click = "doThis" >dothis</button>
+		</div>
+
 
 </body>
 <script type="text/javascript">
 		var app = new Vue({
 			el: '#app',
 			data:{
-				message : 'Hello',
+				message : 'Hello bind data',
 				seen : false
 			}
 		})
 
-	</script>
+		console.log(app.$data);
+
+
+
+		var template = new Vue({
+			el : '#template',
+			template : '<p>Hello Template and Hello {{name}}</p>',
+			data:{
+				name : 'cocoa'
+			}
+		});
+
+		var tt = new Vue({
+			el : '#tt',
+			data : {
+				name : 'cocoa'
+			},
+			methods : {
+				doThis : function(event){
+					 alert('Hello ' + this.name + '!')
+      					// `event` 是原生 DOM 事件
+      					if (event) {
+        					alert(event.target.tagName)
+      					}
+				}
+			}
+		})
+
+</script>
 </html>
 

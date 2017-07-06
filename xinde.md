@@ -23,37 +23,12 @@ ml
 
 
 
+Node.js was installed at
 
+   /usr/local/bin/node
 
-PubCarSuccessFragment
-RecFindCarAdapter
+npm was installed at
 
-item_pubcar_list
+   /usr/local/bin/npm
 
-
-ShareDialog  dialog = ShareDialog.newInstance("test","testesttesttestt");
-                    dialog.show(getSupportFragmentManager(),"test11");
-                    dialog.setSharedClickListener(new ShareDialog.SharedClickListener() {
-                        @Override
-                        public void onCloseClicked(View view) {
-
-                        }
-
-                        @Override
-                        public void onFriendClicked(View view) {
-                            dialog.dismiss(); 
-                             if (iShareToWeChart != null) {
-                    iShareToWeChart.sharePlatformToFriend();
-                }
-                        }
-
-                        @Override
-                        public void onCircleClicked(View view) {
-                            dialog.dismiss();
-                            if (iShareToWeChart != null) {
-                    			iShareToWeChart.sharePlatformToCircle();
-                			}
-                        }
-                    });
-
-
+Make sure that /usr/local/bin is in your $PATH.
