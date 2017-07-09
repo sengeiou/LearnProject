@@ -56,7 +56,25 @@ class RestaurantTVC: UITableViewController {
         return cell
     }
  
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let optionMenu = UIAlertController(title: "Hello", message: "What do you want to do?", preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: { (UIAlertAction)-> Void in
+               print("cancel")
+        })
+        optionMenu.addAction(cancelAction)
+        
+        let addAction = UIAlertAction(title: "add", style: .default, handler: {(action : UIAlertAction!) -> Void in
+            print("add")
+            
+        })
+        optionMenu.addAction(addAction)
+        
+        present(optionMenu, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

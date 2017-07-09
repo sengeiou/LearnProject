@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script type="text/javascript" src="vue.js"></script>
-	
+	<!-- <script type="text/javascript" src="vue.js"></script> -->
+	<script src="https://unpkg.com/vue"></script>
 
 </head>
 <body>
@@ -19,6 +19,12 @@
 		</div>
 		<div id = "tt">
 			<button v-on:click = "doThis" >dothis</button>
+		</div>
+
+
+		<div id ="app5">
+			<p >{{ message }}</p>		
+			<button v-on:click= "reverseMessage">rever</button>
 		</div>
 
 
@@ -59,6 +65,22 @@
 				}
 			}
 		})
+
+		var app5 = new Vue({
+			el : '#app5',
+			data : {
+				message : "Hello Vue. js"
+			},
+			methods:{
+				reverseMessage : function(){
+					this.message = "cocoa change the message"
+				}
+			}
+
+		})
+
+
+
 
 </script>
 </html>
