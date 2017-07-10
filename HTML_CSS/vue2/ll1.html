@@ -5,7 +5,7 @@
 	<title>Document</title>
 	<!-- <script type="text/javascript" src="vue.js"></script> -->
 	<script src="https://unpkg.com/vue"></script>
-
+	
 </head>
 <body>
 
@@ -27,7 +27,19 @@
 			<button v-on:click= "reverseMessage">rever</button>
 		</div>
 
+		<div id="app6" >
+			<div v-html="tt"></div>	
+			<button v-bind:id = "id" v-bind:disabled="isDisabled" v-on:click="test">button</button>
+		</div>
 
+		<div id="app7">
+			<div>{{message}}</div>
+			<div>{{reverseMessage}}</div>
+			<button v-on:click="change">change</button>
+		</div>
+
+
+			
 </body>
 <script type="text/javascript">
 		var app = new Vue({
@@ -66,6 +78,8 @@
 			}
 		})
 
+		// 生病周期 和 事件
+		console.log('app5');
 		var app5 = new Vue({
 			el : '#app5',
 			data : {
@@ -76,10 +90,52 @@
 					this.message = "cocoa change the message"
 				}
 			}
+			,
+			created: function(){
+				console.log('created');
+			}
 
 		})
 
+		//bind 属性demo	
+		var app6 = new Vue({
+			el:'#app6',
+			data:{
+				tt:'hahah',
+				isDisabled : true,
+				id:"name"
+			}
+			,
+			methods:{
+				test : function(){
+					alert(123);	
+				}
+			}
+		})
 
+		//计算属性的demo
+		var app7  = new Vue({
+			el:'#app7',
+			data:{
+				message:"Hrllo"
+			},
+			computed:{
+				reverseMessage : {
+					get:function (){
+					  	return this.message.split('').reverse().join('')
+					},
+					set:function(newValue){
+						console.log("set newValue "+newValue);	
+					}	
+				}
+			},
+			methods:{
+				change : function(){
+					this.message = "cocoa"
+					this.reverseMessage = "cocoa"	
+				}
+			}
+		})
 
 
 </script>

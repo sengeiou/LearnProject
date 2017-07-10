@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app1" class="tt" v-bind:class="{active: isActive, 'text-danger': hasError }">
+		
+	</div>
+	
+
+
+</body>
+
+<script type="text/javascript">
+	var app1 = new Vue({
+		el:'#app1',
+		data:{
+			isActive:true,
+			hasError:true
+		}
+	})
+
+
+
+</script>
+
+</html>
