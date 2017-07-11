@@ -4,6 +4,7 @@ import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.internal.util.StringUtils;
 
+
 /**
  * Created by sj on 17/7/3.
  */
@@ -22,7 +23,5 @@ public class IteamCats {
         req.setParentCid(50011999L);
         ItemcatsGetResponse rsp = client.execute(req);
         System.out.println(rsp.getBody());
-
-
     }
 }
