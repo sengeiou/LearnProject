@@ -15,13 +15,13 @@ public class IteamCats {
         String appkey ="23222740";
         String secret ="36b68bc26780160e5d80a129666dcc7f";
 
-        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
-        ItemcatsGetRequest req = new ItemcatsGetRequest();
-        req.setCids("18957,19562");
-        req.setDatetime(StringUtils.parseDateTime("2000-01-01 00:00:00"));
-        req.setFields("cid,parent_cid,name,is_parent");
-        req.setParentCid(50011999L);
-        ItemcatsGetResponse rsp = client.execute(req);
-        System.out.println(rsp.getBody());
+//        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
+//        ItemcatsGetRequest req = new ItemcatsGetRequest();
+//        req.setCids("18957,19562");
+//        req.setDatetime(StringUtils.parseDateTime("2000-01-01 00:00:00"));
+//        req.setFields("cid,parent_cid,name,is_parent");
+//        req.setParentCid(50011999L);
+//        ItemcatsGetResponse rsp = client.execute(req);
+//        System.out.println(rsp.getBody());
     }
 }

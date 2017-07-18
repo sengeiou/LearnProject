@@ -3,12 +3,13 @@ package com.cocoa.hashmap.test1;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  * HashMap 深度研究
  * 本文基于  JDK 1.8.0_131-b11 编写， 与别的版本可能有出入，请仔细查看源码和注释
- *
+ * <p>
  * <p>
  * 参考：本文的参考文章地址
  * https://zhuanlan.zhihu.com/p/26831284
@@ -183,8 +184,8 @@ public class Test {
         //  接着看，还有个神奇的方法， hash（Object key）
         String testHashStr = "123";
         // 以 string 为例， 调用 string 的 hashCode 和 用 hash 方法 ，发现结果是一样的
-        System.out.println(testHashStr.hashCode());
-        System.out.println(hash(testHashStr));
+        System.out.println("hashCode()===>" + testHashStr.hashCode());
+        System.out.println("hash(Object key)===>" + hash(testHashStr));
 
 
 //        static final int hash(Object key) {
@@ -233,12 +234,75 @@ public class Test {
         for (int i = 0; i < 20; i++) {
             int a = i << 16;
 //            a = (a >>> 16) ^ a;   // 打开这行看下，输出是0 -15 ，关闭这行，则输出全是0
-            System.out.println(a+"----"+(a & (16 - 1)));
+            System.out.println(a + "----" + (a & (16 - 1)));
         }
 
         // 到此为止，全都明白了， 当 hash 值大于65536 的情况下，用 (hash & (arraySize - 1) 方法取模， 则会出现很大几率的碰撞
         // 上面这个循环就是很好的例子，全部 输出为0
         // 为什么 hash 值大于65536 ，就会出现这么糟糕的情况呢？
+
+
+//---------------------------------------------
+
+//        HashMap 构造方法
+//
+//        public HashMap(int initialCapacity, float loadFactor) {
+//            if (initialCapacity < 0)
+//                throw new IllegalArgumentException("Illegal initial capacity: " +
+//                        initialCapacity);
+//            if (initialCapacity > MAXIMUM_CAPACITY)
+//                initialCapacity = MAXIMUM_CAPACITY;
+//            if (loadFactor <= 0 || Float.isNaN(loadFactor))
+//                throw new IllegalArgumentException("Illegal load factor: " +
+//                        loadFactor);
+//            this.loadFactor = loadFactor;    //负载因子，默认为0.75
+//            this.threshold = tableSizeFor(initialCapacity);  // 取模数组长度，可能为0 ，默认为16
+//        }
+
+//---------------------------------------------
+//        /**
+//         * Implements Map.putAll and Map constructor   就是在putAll(evict = true)， 构造hashMap， clone 时，会调用这个方法
+//         * 可以认为是通过一个map ，构造一个hashMap
+//         * @param m the map
+//         * @param evict false when initially constructing this map, else    暂时没看动，跳过
+//         * true (relayed to method afterNodeInsertion).
+//         */
+//        final void putMapEntries(Map<? extends K, ? extends V> m, boolean evict) {
+//            int s = m.size();
+//            if (s > 0) {   不用自己去判断
+//                if (table == null) { // pre-size
+//                    //数组还没初始化，就根据m 的长度 和负载因子去计算，这里可以看出，负载因子小于1，则  threshold 越大
+//                    float ft = ((float)s / loadFactor) + 1.0F;
+//                    int t = ((ft < (float)MAXIMUM_CAPACITY) ?
+//                            (int)ft : MAXIMUM_CAPACITY);
+//                    if (t > threshold)
+//                        threshold = tableSizeFor(t);
+//                }
+//                else if (s > threshold)   // 这里没看懂，为什么是拿 size 和 threshold 比
+//                    resize();             // 重新计算 当前 hashmap 的参数，后续在看
+//                for (Map.Entry<? extends K, ? extends V> e : m.entrySet()) {   // 循环添加
+//                    K key = e.getKey();
+//                    V value = e.getValue();
+//                    putVal(hash(key), key, value, false, evict);   //** 很重要，后期看
+//                }
+//            }
+//        }
+
+
+        // for test
+        HashMap<String, String> map1 = new HashMap<>(16,0.5F);  // 很奇怪，我以为 算出的threshold 会是64，没想到还是32
+        HashMap<String, String> map2 = new HashMap<>();
+        for (int i = 0; i < 20; i++) {
+            map1.put(i+"",""+i);
+            map2.put(i+"",""+i);
+        }
+        map1.putAll(map2);
+
+
+//---------------------------------------------
+
+
+
 
 
     }
