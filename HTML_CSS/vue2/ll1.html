@@ -5,7 +5,8 @@
 	<title>Document</title>
 	<!-- <script type="text/javascript" src="vue.js"></script> -->
 	<script src="https://unpkg.com/vue"></script>
-	
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
 </head>
 <body>
 
@@ -125,7 +126,7 @@
 					  	return this.message.split('').reverse().join('')
 					},
 					set:function(newValue){
-						console.log("set newValue "+newValue);	
+						alert("set newValue "+newValue);	
 					}	
 				}
 			},

@@ -3,17 +3,46 @@ package com.cococa.source;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private String[] activitys = {
             "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.recyclerview.RecyclerViewActivity",
     };
     MainAdapter mainAdapter;
+    List<MainItem> itemList = new ArrayList<>();
 
     private RecyclerView recyclerView;
 
@@ -21,12 +50,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        for (int i = 0; i < activitys.length; i++) {
+            MainItem item = new MainItem();
+            if (i == 0 || i == 7) {
+                item.type = MainItem.TYPE_TITLE;
+            }
+            itemList.add(item);
+        }
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mainAdapter = new MainAdapter(activitys, this, this);
+        mainAdapter = new MainAdapter(itemList, activitys, this, this);
         recyclerView.setAdapter(mainAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
+        final GridLayoutManager manager = new GridLayoutManager(this, 4);
+        recyclerView.setLayoutManager(manager);
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (itemList.get(position).type == MainItem.TYPE_TITLE) {
+                    return manager.getSpanCount();
+                }
+                return 1;
+            }
+        });
 
 
     }
