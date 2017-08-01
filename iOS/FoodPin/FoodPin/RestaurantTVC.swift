@@ -53,27 +53,40 @@ class RestaurantTVC: UITableViewController {
                 cell.location.text = restaurantLocations[indexPath.row]
                 cell.type.text = restaurantTypes[indexPath.row]
         cell.img.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.accessoryType = .checkmark
+        
+        
         return cell
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let optionMenu = UIAlertController(title: "Hello", message: "What do you want to do?", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: { (UIAlertAction)-> Void in
-               print("cancel")
-        })
-        optionMenu.addAction(cancelAction)
-        
-        let addAction = UIAlertAction(title: "add", style: .default, handler: {(action : UIAlertAction!) -> Void in
-            print("add")
-            
-        })
-        optionMenu.addAction(addAction)
-        
-        present(optionMenu, animated: true, completion: nil)
+//        let optionMenu = UIAlertController(title: "Hello", message: "What do you want to do?", preferredStyle: .actionSheet)
+//        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: { (UIAlertAction)-> Void in
+//               print("cancel")
+//        })
+//        optionMenu.addAction(cancelAction)
+//
+//        let addAction = UIAlertAction(title: "add", style: .default, handler: {(action : UIAlertAction!) -> Void in
+//            print("add")
+//
+//        })
+//        optionMenu.addAction(addAction)
+//
+//        present(optionMenu, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    
+    // pass data use segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailIdentifier"{
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let detailController = segue.destination as! RestaurantDetailController
+                detailController.restaurantImage = restaurantImages[indexPath.row]
+                
+            }
+        }
+    }
     
     /*
     // Override to support conditional editing of the table view.

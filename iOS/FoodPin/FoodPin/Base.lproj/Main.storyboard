@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="esJ-Ji-c27">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XEU-vZ-Bjk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RestaurantTVC-->
+        <!--MainTable-->
         <scene sceneID="CyA-Rp-4RV">
             <objects>
                 <tableViewController id="esJ-Ji-c27" customClass="RestaurantTVC" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,6 +74,7 @@
                                     <outlet property="location" destination="Kh4-ku-aDE" id="QtX-cf-H1l"/>
                                     <outlet property="name" destination="k7g-P8-kwb" id="e9q-Aq-f1L"/>
                                     <outlet property="type" destination="YLd-xS-FdP" id="STv-HN-2az"/>
+                                    <segue destination="GWG-Xd-Mey" kind="show" identifier="detailIdentifier" id="WAP-i1-5jc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,10 +83,61 @@
                             <outlet property="delegate" destination="esJ-Ji-c27" id="jUJ-NK-PIj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="MainTable" id="1U1-0X-o7b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESm-IT-jvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="33.733133433283363"/>
+            <point key="canvasLocation" x="849" y="33"/>
+        </scene>
+        <!--Restaurant Detail Controller-->
+        <scene sceneID="8zX-5D-gqt">
+            <objects>
+                <viewController id="GWG-Xd-Mey" customClass="RestaurantDetailController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aMZ-r9-78h"/>
+                        <viewControllerLayoutGuide type="bottom" id="ipr-QA-Ghz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1yv-wa-ER3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pi0-Yp-dWI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pi0-Yp-dWI" firstAttribute="top" secondItem="aMZ-r9-78h" secondAttribute="bottom" id="14N-qJ-jD8"/>
+                            <constraint firstAttribute="trailing" secondItem="pi0-Yp-dWI" secondAttribute="trailing" id="CuA-ud-dtY"/>
+                            <constraint firstItem="pi0-Yp-dWI" firstAttribute="leading" secondItem="1yv-wa-ER3" secondAttribute="leading" id="baf-H2-Jws"/>
+                            <constraint firstItem="ipr-QA-Ghz" firstAttribute="top" secondItem="pi0-Yp-dWI" secondAttribute="bottom" id="oFx-Re-gGE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="pi0-Yp-dWI" id="BUw-Ps-hm0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdW-Oz-tV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="31"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="py6-JA-K1p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XEU-vZ-Bjk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oej-7v-Jxc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="esJ-Ji-c27" kind="relationship" relationship="rootViewController" id="REz-Kz-lve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITx-Xc-BmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.2" y="33.283358320839582"/>
         </scene>
     </scenes>
 </document>

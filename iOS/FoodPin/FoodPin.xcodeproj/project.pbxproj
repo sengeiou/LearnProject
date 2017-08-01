@@ -13,6 +13,7 @@
 		CC42FFF51F10B02100B446B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC42FFF31F10B02100B446B7 /* LaunchScreen.storyboard */; };
 		CC42FFFD1F10B1C300B446B7 /* RestaurantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42FFFC1F10B1C300B446B7 /* RestaurantTVC.swift */; };
 		CC42FFFF1F10C15E00B446B7 /* RestaurantViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42FFFE1F10C15E00B446B7 /* RestaurantViewCell.swift */; };
+		CCC216E91F238CDD00A264C3 /* RestaurantDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC216E81F238CDD00A264C3 /* RestaurantDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CC42FFF61F10B02100B446B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC42FFFC1F10B1C300B446B7 /* RestaurantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTVC.swift; sourceTree = "<group>"; };
 		CC42FFFE1F10C15E00B446B7 /* RestaurantViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewCell.swift; sourceTree = "<group>"; };
+		CCC216E81F238CDD00A264C3 /* RestaurantDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CC42FFF31F10B02100B446B7 /* LaunchScreen.storyboard */,
 				CC42FFF61F10B02100B446B7 /* Info.plist */,
 				CC42FFFE1F10C15E00B446B7 /* RestaurantViewCell.swift */,
+				CCC216E81F238CDD00A264C3 /* RestaurantDetailController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				CC42FFFF1F10C15E00B446B7 /* RestaurantViewCell.swift in Sources */,
 				CC42FFFD1F10B1C300B446B7 /* RestaurantTVC.swift in Sources */,
+				CCC216E91F238CDD00A264C3 /* RestaurantDetailController.swift in Sources */,
 				CC42FFEB1F10B02100B446B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +279,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = FoodPin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cococao.test.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -290,11 +294,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = FoodPin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cococao.test.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
