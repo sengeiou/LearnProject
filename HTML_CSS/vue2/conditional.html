@@ -9,6 +9,23 @@
 	<div id="app1" v-if="ok">
 		<h5 v-if="ok">true</h5>
 		<h5 v-else>false</h5>
+		
+		<template v-if="ok">
+			<h1>title</h1>		
+		</template>
+		
+	</div>
+
+	<div id="app2">
+		<div v-if="type === 'A'">
+			A
+		</div>
+		<div v-else-if="type === 'B'">
+			B
+		</div>
+		<div v-else>
+			C
+		</div>
 	</div>
 
 	
@@ -21,6 +38,11 @@ var app1 = new Vue({
 	}
 })
 
-
+var app2 = new Vue({
+	el:"#app2",
+	data:{
+		type:'C'
+	}
+});
 </script>
 </html>

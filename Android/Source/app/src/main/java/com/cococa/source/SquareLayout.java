@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
  * 在此写用途
  *
  * @version V1.0 <描述当前版本功能>
- * @FileName: com.cococa.source.xx
+ * @FileName:
  * @author: shenjun@kuaiqiangche.com
  * @date: 17/7/21 17:2 */
 public class SquareLayout extends LinearLayout {

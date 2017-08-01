@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+	<div id="app1">
+		<button v-on:click = "test1('cocoa')" >内联处理器方法</button>
+	</div>
+
+
+
+	
+</body>
+<script type="text/javascript">
+var app1  = new Vue({
+	el:"#app1",
+	methods:{
+		test1:function(params){
+			alert(params); //内联处理器方法
+		}
+	}
+});
+
+
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>	
+	<div id="app1">
+		<button v-on:click = "appendList">append list</button>
+		<li v-for="(item, index) in items">
+			{{item}}---index{{index+1}}
+		</li>
+	</div>
+	</br>
+	</br>	
+	<div id="app2">
+		<li v-for="(value ,key , index) in person">
+			{{value}} ---{{key}} --- {{index}}
+		</li>
+	</div>
+	</br>
+	</br>
+	</br>
+	<div id="app3">
+		
+		<li v-for="index in 5">
+			index--{{index}}
+		</li>
+	</div>
+
+</body>
+<script type="text/javascript">
+	var app1 =new Vue({
+		el:"#app1",
+		data:{
+			items:[
+				"123",
+				"223",
+				"323"
+			]	
+		},
+		methods:{
+			appendList: function(){
+				this.items.push("new list");
+			}
+		}
+	});
+
+	var app2 = new Vue({
+		el:"#app2",
+		data:{
+			person:{
+				name:"cocoa",
+				age:"30",
+				str:"123123"
+			}
+		}
+	});
+
+	var app3 = new Vue({
+		el:"#app3",
+		
+	});
+
+</script>
+</html>
