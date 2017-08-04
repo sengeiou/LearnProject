@@ -18,10 +18,14 @@ class RestaurantTVC: UITableViewController {
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(self.tableView.constraints.count)
+        for a in self.tableView.constraints{
+            print(a)
+            print("-------")
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
