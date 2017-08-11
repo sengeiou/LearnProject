@@ -7,15 +7,15 @@ import com.taobao.api.response.TbkItemGetResponse;
 
 public class Main {
 
-    public static void main(String[] args) throws  Exception {
+    public static void main(String[] args) throws Exception {
 //        正式环境	http://gw.api.taobao.com/router/rest	https://eco.taobao.com/router/rest
 //        沙箱环境	http://gw.api.tbsandbox.com/router/rest	https://gw.api.tbsandbox.com/router/rest
 
-        String url ="http://gw.api.taobao.com/router/rest";
-        String appkey ="23222740";
-        String secret ="36b68bc26780160e5d80a129666dcc7f";
+        String url = "http://gw.api.taobao.com/router/rest";
+        String appkey = "23222740";
+        String secret = "36b68bc26780160e5d80a129666dcc7f";
 
-        System.out.println(Long.toBinaryString(10));
+        System.out.println(Long.toBinaryString(16));
 
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkItemGetRequest req = new TbkItemGetRequest();
@@ -31,7 +31,7 @@ public class Main {
 //        req.setStartTkRate(123L);
 //        req.setEndTkRate(123L);
 //        req.setPlatform(1L);
-//        req.setPageNo(123L);
+        req.setPageNo(2L);
 //        req.setPageSize(20L);
         TbkItemGetResponse rsp = client.execute(req);
         System.out.println(rsp.getBody());

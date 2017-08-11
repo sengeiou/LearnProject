@@ -10,30 +10,12 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private String[] activitys = {
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.permission.PermissionActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
@@ -84,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Class activityClass = Class.forName(classStr);
                 Intent it = new Intent(this, activityClass);
                 startActivity(it);
-
             } catch (ClassNotFoundException e) {
 
             }
