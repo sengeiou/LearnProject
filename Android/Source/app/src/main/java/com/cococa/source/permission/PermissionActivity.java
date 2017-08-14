@@ -28,11 +28,14 @@ import permissions.dispatcher.RuntimePermissions;
  * @author: shenjun@kuaiqiangche.com
  * @date: 17/8/10 13:51
  */
+
 @RuntimePermissions
 public class PermissionActivity extends AppCompatActivity {
 
     private String sdPath;//SD卡的路径
     private String picPath;//图片存储路径
+
+    public static final int REQUEST_CUST_CAMERA = 0X12;
 
 
     @Override
@@ -42,14 +45,48 @@ public class PermissionActivity extends AppCompatActivity {
         findViewById(R.id.readSDCard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PermissionActivityPermissionsDispatcher.showReadFileWithCheck(PermissionActivity.this);
+                PermissionActivityPermissionsDispatcher.showCameraWithCheck(PermissionActivity.this);
             }
         });
     }
 
 
+//    // 原生的permission check
+//    public void checkPermission(String permission) {
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+//                // 这里很奇怪，基本进不到这步
+//                Toast.makeText(this, "show permission detail", Toast.LENGTH_SHORT).show();
+//
+//            } else {
+//                ActivityCompat.requestPermissions(this, new String[]{permission}, REQUEST_CUST_CAMERA);
+//
+//            }
+//        } else {
+//            showCamera();
+////            Toast.makeText()
+//        }
+//    }
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == REQUEST_CUST_CAMERA) {
+//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                showCamera();
+//            } else {
+//                //用户取消了授权
+//                // 用户在安全中心关闭了权限（小米手机）
+//                Toast.makeText(PermissionActivity.this, "permission denied", Toast.LENGTH_SHORT).show();
+//                // 如果实在很重要，可以引导用户去设置界面，开启
+//            }
+//        }
+//    }
+
+
     @NeedsPermission(Manifest.permission.CAMERA)
-    void showReadFile() {
+    void showCamera() {
         sdPath = Environment.getExternalStorageDirectory().getPath();
         picPath = sdPath + "/" + "temp.png";
 
@@ -58,6 +95,24 @@ public class PermissionActivity extends AppCompatActivity {
         //为拍摄的图片指定一个存储的路径
         intent2.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         startActivityForResult(intent2, 0x12);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // NOTE: delegate the permission handling to generated method
+        PermissionActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+    }
+
+
+    @OnPermissionDenied(Manifest.permission.CAMERA)
+    void showDeniedForRead() {
+        Toast.makeText(this, "showDeniedForRead", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnNeverAskAgain(Manifest.permission.CAMERA)
+    void showNeverAskForRead() {
+        Toast.makeText(this, "showNeverAskForRead", Toast.LENGTH_SHORT).show();
     }
 
 //    @OnShowRationale(Manifest.permission.CAMERA)
@@ -78,30 +133,6 @@ public class PermissionActivity extends AppCompatActivity {
 //                })
 //                .show();
 //    }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        // NOTE: delegate the permission handling to generated method
-//        MainActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
-//    }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
-    }
-
-    @OnPermissionDenied(Manifest.permission.CAMERA)
-    void showDeniedForRead() {
-        Toast.makeText(this, "showDeniedForRead", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnNeverAskAgain(Manifest.permission.CAMERA)
-    void showNeverAskForRead() {
-        Toast.makeText(this, "showNeverAskForRead", Toast.LENGTH_SHORT).show();
-    }
 
 
 }
