@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String[] activitys = {
             "com.cococa.source.permission.PermissionActivity",
-            "com.cococa.source.recyclerview.RecyclerViewActivity",
+            "com.cococa.source.glide.GlideActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
             "com.cococa.source.recyclerview.RecyclerViewActivity",
