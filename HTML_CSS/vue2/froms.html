@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+
+<div id = "app1">
+<div>test1</div>
+<input v-model="message" placeholder="enter message" />
+<p>Message is : {{ message }} </p>
+</div>
+<br>
+<br>
+
+
+<div id="app2">
+<div>test2</div>
+<input type="checkbox" v-model="checked">
+<label for="checkbox"> {{ checked }} </label>
+</div>
+<br>
+<br>
+
+<div id = "app3">
+<div>test3</div>
+<input type="checkbox" v-model="toggle" v-bind:true-value="A" v-bind:false-value="B" />
+<h1>{{ toggle }} </h1>	
+</div>
+
+
+	
+</body>
+<script type="text/javascript">
+var app1  = new Vue({
+	el:"#app1",
+	data:{
+		message : ''
+	}
+
+});
+var app2 = new Vue({
+	el:"#app2",
+	data:{
+		checked : false
+	}
+})
+
+var app3 = new Vue({
+	el:"#app3",
+	data : {
+		toggle : "",
+		A: "A",
+		B: "B"
+	}
+})
+
+
+
+
+</script>
+</html>

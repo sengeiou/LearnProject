@@ -87,7 +87,12 @@ class RestaurantTVC: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let detailController = segue.destination as! RestaurantDetailController
                 detailController.restaurantImage = restaurantImages[indexPath.row]
+                let restaurant = Restaurant()
+                restaurant.location = restaurantLocations[indexPath.row]
+                restaurant.type = restaurantTypes[indexPath.row]
+                restaurant.name = restaurantNames[indexPath.row]
                 
+                detailController.restaurant  = restaurant
             }
         }
     }
