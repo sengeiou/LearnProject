@@ -5,15 +5,13 @@ import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkItemGetRequest;
 import com.taobao.api.response.TbkItemGetResponse;
 
-public class Main {
+public class Main extends BaseMain{
 
     public static void main(String[] args) throws Exception {
 //        正式环境	http://gw.api.taobao.com/router/rest	https://eco.taobao.com/router/rest
 //        沙箱环境	http://gw.api.tbsandbox.com/router/rest	https://gw.api.tbsandbox.com/router/rest
 
-        String url = "http://gw.api.taobao.com/router/rest";
-        String appkey = "23222740";
-        String secret = "36b68bc26780160e5d80a129666dcc7f";
+
 
         System.out.println(Long.toBinaryString(16));
 

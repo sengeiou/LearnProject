@@ -34,7 +34,10 @@ public class Test2 {
                 e.onNext(223);
                 System.out.println(Thread.currentThread().getName());
             }
-        }).subscribeOn(Schedulers.newThread()).map(new Function<Integer, String>() {
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .map(new Function<Integer, String>() {
             @Override
             public String apply(Integer integer) throws Exception {
                 return integer+"----";

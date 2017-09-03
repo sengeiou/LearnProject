@@ -8,6 +8,11 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
+ * RxJava 2.0有什么不同(译)
+ * http://blog.csdn.net/qq_35064774/article/details/53045298?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
+ *
+ * https://www.slideshare.net/ssuser72c3b0/rxjava-20
+ *
  * Created by sj on 17/5/17.
  * 参考：https://github.com/ReactiveX/RxJava
  * http://www.jianshu.com/p/464fa025229e
@@ -32,7 +37,7 @@ import io.reactivex.disposables.Disposable;
  * 最为关键的是onComplete和onError必须唯一并且互斥, 即不能发多个onComplete, 也不能发多个onError, 也不能先发一个onComplete, 然后再发一个onError, 反之亦然
  *
  *
- * 接下来介绍Disposable, 这个单词的字面意思是一次性用品,用完即可丢弃的. 那么在RxJava中怎么去理解它呢,
+ * 接下来介绍Disposable, 取消订阅。 这个单词的字面意思是一次性用品,用完即可丢弃的. 那么在RxJava中怎么去理解它呢,
  * 对应于上面的水管的例子, 我们可以把它理解成两根管道之间的一个机关, 当调用它的dispose()方法时,
  * 它就会将两根管道切断, 从而导致下游收不到事件. （但是被观察者还是会继续发送事件，只是观察者不接收了）
  *
@@ -49,7 +54,7 @@ public class Test1 {
             e.onNext("1");
             e.onNext("2");
             e.onNext("3");
-//            e.onError(new Throwable("123"));
+            e.onError(new Throwable("123"));
             e.onComplete();
         }
     });
@@ -67,11 +72,12 @@ public class Test1 {
         public void onNext(Object o) {
             System.out.println("observer onnext "+ Thread.currentThread().getName());
             System.out.println(o);
-            disposable.dispose();
+//            disposable.dispose();
         }
 
         @Override
         public void onError(Throwable e) {
+            System.out.println("onError");
             System.out.println(e);
         }
 
