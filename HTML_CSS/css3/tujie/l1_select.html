@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		* {
+			margin: 10px;
+			padding: 20px;
+			background-color: #ffffff;
+		}
+
+		div {
+			border: 1px solid #ccc;
+		}
+
+		div div {  // 后代选择器，只有div 下面的div 才会被选择
+			background-color: orange;
+		}
+
+	body > div {  // 子选择器
+		background-color: green;
+	}
+
+
+	.active + div { // 相邻兄弟选择器       E 和 F是同辈元素，F元素在E 元素后面，并且相邻，就可以使用E+ F{} 来选择F
+		background-color: red;
+	
+	}
+
+	// 动态伪类选择器  语法  E:pseudo-class { property : value }
+	// E为元素 pseudo-class 为伪类的名字     后面是属性 ： 值
+	
+	
+	
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div class= "active">1  </div>
+	<div>2  </div>
+	<div>3  </div>
+	<div>4 
+		<div>5  </div>
+	<div>6 </div>
+	 </div>
+	<div>7 <div>8  <div>9  <div>10  </div></div></div> </div>
+	
+
+	
+</body>
+</html>

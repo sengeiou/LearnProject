@@ -87,11 +87,16 @@ print(favoriteGenres)
 
 print(type(of: favoriteGenres.remove("eggs")))
 
-if let result = favoriteGenres.remove("milk123"){
-    print("the \(result) has been removed")
+
+// value binding
+// optional
+if let removeResult = favoriteGenres.remove("milk123"){
+    print("the \(removeResult) has been removed")
 }else{
     print("remove filed")
 }
+
+
 
 
 
