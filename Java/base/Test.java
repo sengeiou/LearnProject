@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 
 
 public class Test implements Cloneable, TT {
@@ -33,18 +34,31 @@ public class Test implements Cloneable, TT {
 		// System.out.println(System.currentTimeMillis() - time);
 
 
-		try {
-			Test t = null;
-			Fie
-			t.cry();
-		} catch (NullPointerException | IOException e) {
+		// try {
+		// 	Test t = null;
+		// 	Fie
+		// 	t.cry();
+		// } catch (NullPointerException | IOException e) {
 			
-		}
+		// }
+
+
+		String t1 = "123123";
+		Map<String,String> hashMap = new HashMap<String,String>();
+		hashMap.put(t1,"000");
+
+		System.out.println(t1.hashCode());
+		System.out.println(hashMap.get(t1));  // 000 
+
+		t1 =  "1ahdjhajd";
+
+		System.out.println(t1.hashCode());
+		System.out.println(hashMap.get(t1));  // null
 
 	}
 
 
-
+og
 	public void cry() {
 		System.out.println("123");
 	}

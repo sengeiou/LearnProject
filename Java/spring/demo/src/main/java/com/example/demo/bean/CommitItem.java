@@ -1,5 +1,9 @@
 package com.example.demo.bean;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import java.util.Date;
 
 /**
@@ -30,7 +34,7 @@ import java.util.Date;
 //        `item_id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
 //        PRIMARY KEY (`id`)
 //        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
+@org.hibernate.annotations.Entity
 public class CommitItem {
 
     private String item_url;//private String http:\/\/item.taobao.com\/item.htm?id=43189047510",
@@ -48,6 +52,8 @@ public class CommitItem {
     private int sales;
     private Date sales_update_time  ;
     private Date create_time ;
+    @Id
+    @GeneratedValue
     private String item_id;  // 商品id
 
 
