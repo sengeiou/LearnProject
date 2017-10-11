@@ -1,44 +1,73 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style type="text/css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        padding: 10px;
+        margin: 10px;
+    }
 
-		* {
-			padding: 10px;
-			margin: 10px;
-		}
-
-		.test1{
-			border: 3px solid #123;
-		}
-
-
-		.test2{
-			border-style: solid dotted;  
-			border-width: 1px;
-			-webkit-border-top-color : #ccc #222 #333 #444 #555;
-		}
+    .test1 {
+        border: 3px solid #123;
+    }
 
 
+    .test2 {
+        border-style: solid dotted;
+        border-width: 1px;
+        -webkit-border-top-color: #ccc #222 #333 #444 #555;
+    }
 
-		.test3{
-			
-		}
+    .test3 {
+        border-color: red;
+        border-width: 1px;
+        border-radius: 15px 0 15px 0;
+        border-style: solid;
+    }
 
+    .test4 {
+        border: 27px double orange;
+        border-image: url(https://www.w3.org/TR/css3-background/border.png) 27 round stretch;
+        -webkit-border-image: url(https://www.w3.org/TR/css3-background/border.png) 27 round stretch;
+    }
 
-	</style>
+    .border-image-btn {
+    	margin-top: 30px;
+        border: 18px solid green;
+        border-width: 0 18px;
+        -webkit-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 0 18 50 18;
+        -moz-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 0 18 50 18;
+        -o-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 0 18 50 18;
+        border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 0 18 50 18;
+        padding: 13px 10px 17px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 15px;
+    }
 
-
+    .border-image-btn:hover {
+        -webkit-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 50 18 0 18;
+        -moz-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 50 18 0 18;
+        -o-border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 50 18 0 18;
+        border-image: url("http://www.w3cplus.com/sites/default/files/button_sprite.png") 50 18 0 18;
+        color: #000;
+        border-color: yellow;
+        text-decoration: none;
+    }
+    </style>
 </head>
+
 <body>
-	
-	<div class = "test1"> test1</div>
-	<div class = "test2"> test2</div>
-	<div class = "test3"> test3</div>
+    <div class="test1"> test1</div>
+    <div class="test2"> test2</div>
+    <div class="test3"> test3</div>
+   
+    <a href="" class="border-image-btn">Border-image Button</a>
 
-
-	
+     <div class="test4"> test4</div>
 </body>
+
 </html>

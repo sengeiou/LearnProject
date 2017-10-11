@@ -4,3 +4,4 @@
 4-java_import
 5-AutoPep8   python
 6-SublimeCodeIntel python
+7-html-css-js prettify
