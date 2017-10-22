@@ -18,7 +18,7 @@ public class LinkedListTest{
 		System.out.println(mList.toString());
 
 
-		mList.addAll(1,        mList);	
+		mList.addAll(1,mList);	
 		System.out.println(mList.toString());
 
 		
