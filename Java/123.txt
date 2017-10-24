@@ -9,6 +9,3 @@ print(message)
 
 let applePrice : Doubel  = 10.61
 let age : Int = 1
-
-
-

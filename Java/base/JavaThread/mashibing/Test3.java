@@ -23,7 +23,7 @@ public class Test3 extends Thread {
 				System.out.println(Thread.currentThread().getName());
 				Thread.sleep(1000);	
 			} catch (Exception e) {
-
+					
 			} finally {
 				lock.unlock();
 			}
