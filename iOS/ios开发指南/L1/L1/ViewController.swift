@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         // 清除的按钮
         textField!.clearButtonMode = .always
         textField!.backgroundColor = UIColor.red
+        textField!.font =  UIFont.systemFont(ofSize:CGFloat(40))
         
         textField!.textAlignment = .center
         self.view.addSubview(textField!)
@@ -33,12 +34,13 @@ class ViewController: UIViewController {
         self.view.addSubview(button!)
     }
     @objc func test(_ sender : UIButton){
+        if let labelMsg = sender.titleLabel?.text {
+            print(labelMsg)
+        }
         let message = textField?.text
         if let result = message {
             print(result)
         }
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
