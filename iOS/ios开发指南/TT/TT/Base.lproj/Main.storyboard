@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMM-mN-h88">
+                                <rect key="frame" x="42" y="20" width="155" height="716"/>
+                                <color key="backgroundColor" red="1" green="0.260110791868985" blue="0.98953483538223463" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-sn-Wz0">
+                                <rect key="frame" x="231" y="20" width="155" height="716"/>
+                                <color key="backgroundColor" red="1" green="0.39408372139793402" blue="0.30146410405098178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KhH-sn-Wz0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6HH-B1-5yT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KhH-sn-Wz0" secondAttribute="bottom" id="BAn-Kd-Sli"/>
+                            <constraint firstItem="KhH-sn-Wz0" firstAttribute="leading" secondItem="zMM-mN-h88" secondAttribute="trailing" constant="34" id="Mvb-Md-wjl"/>
+                            <constraint firstItem="zMM-mN-h88" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ums-iR-okE"/>
+                            <constraint firstAttribute="trailing" secondItem="KhH-sn-Wz0" secondAttribute="trailing" constant="28" id="WnQ-qF-ONe"/>
+                            <constraint firstItem="KhH-sn-Wz0" firstAttribute="width" secondItem="zMM-mN-h88" secondAttribute="width" id="kgn-6T-ol4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zMM-mN-h88" secondAttribute="bottom" id="oqN-CY-eJ0"/>
+                            <constraint firstItem="zMM-mN-h88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="42" id="u33-95-Eqz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.25" y="122.5"/>
+        </scene>
+    </scenes>
+</document>
