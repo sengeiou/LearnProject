@@ -8,7 +8,7 @@
 public class Test extends Thread {
 
 	public void run() {
-		for (int i = 0 ; i < 39999; i++) {
+		for (int i = 0 ; i < 99; i++) {
 			System.out.println(i);
 		}
 	}
