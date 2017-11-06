@@ -1,24 +1,49 @@
+/**
+ * 模块内的 gradle 文件支队该模块起作用
+ *
+ *
+ *
+ */
+
+// 这里用来定义 Android 应用插件， 这个插件主要用来执行关于 Android 依赖的构建，打包和测试。
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "27.0.0"
+    // android 下面两个属性是必须的
+    compileSdkVersion 26    // 编译 app 时， 你想使用到的 api 的版本
+    buildToolsVersion "27.0.0"  // 构建工具的版本号
+
+    //defaultConfig方法包含了该app的核心属性，该属性会重写在AndroidManifest.xml中的对应属性。
     defaultConfig {
-        applicationId "com.cococa.gradle.testgradle"
-        minSdkVersion 15
+        applicationId "com.cococa.gradle.testgradle"  // 这个属性会重写 AndroidManifest 中的  package name
+        minSdkVersion 15  // 定义为最小支持api。
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 1   //将会作为版本号标示
+        versionName "1.0" // 资料上显示毫无作用，但是其实还是有用的，就是版本号的直观显示方式
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    // 方法定义了如何构建不同版本的app
     buildTypes {
         release {
+            resValue "string", "AppName", "app1"   // 见 readme.md
+            buildConfigField "boolean", "LOG_DEBUG", "false"  // 见 readme.md
+            buildConfigField "String","appurl","www.baidu.com"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug{
+            resValue "string", "AppName", "app1"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "appurl", "www.qq.com"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
     }
 }
 
+//依赖模块，为你的app定义了所有的依赖包。默认情况下，我们依赖了所有在libs文件下的jar文件，同时包含了AppCompat这个aar文件。
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
