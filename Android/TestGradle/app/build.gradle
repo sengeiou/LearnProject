@@ -15,6 +15,7 @@ android {
 
     //defaultConfig方法包含了该app的核心属性，该属性会重写在AndroidManifest.xml中的对应属性。
     defaultConfig {
+        // http://blog.csdn.net/maosidiaoxian/article/details/41719357
         applicationId "com.cococa.gradle.testgradle"  // 这个属性会重写 AndroidManifest 中的  package name
         minSdkVersion 15  // 定义为最小支持api。
         targetSdkVersion 26
@@ -22,25 +23,77 @@ android {
         versionName "1.0" // 资料上显示毫无作用，但是其实还是有用的，就是版本号的直观显示方式
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    // 必须在 buildTypes 前申明
+    signingConfigs {
+        // debug 可以不用申明，会有默认的签名
+        // dev 用了 debug 的签名
+        dev.initWith(signingConfigs.debug)
+
+        // 申明 release 的签名信息
+        release {
+            storeFile file("../store/kqc.keystore")
+            storePassword "kqc8888"
+            keyAlias "kqc"
+            keyPassword "kqc8888"
+            v2SigningEnabled true
+        }
+    }
+
+
     // 方法定义了如何构建不同版本的app
     buildTypes {
         release {
-            resValue "string", "AppName", "app1"   // 见 readme.md
+            resValue "string", "appName", "release_appname"   // 见 readme.md
             buildConfigField "boolean", "LOG_DEBUG", "false"  // 见 readme.md
-            buildConfigField "String","appurl","www.baidu.com"
+            buildConfigField "String","appurl","\"http://www.release.com\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release  // release 必须要加上这一句
         }
 
         debug{
-            resValue "string", "AppName", "app1"
+            resValue "string", "appName", "debug_appname"
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "String", "appurl", "www.qq.com"
+            buildConfigField "String", "appurl", "\"http://www.debug.com\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
+        dev{
+            applicationIdSuffix ".dev"   // 这样的application id 就是 com.cococa.gradle.testgradle.dev , 可以用来区分正式和测试包，很有用
+            resValue "string", "appName", "dev_appname"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "appurl", "\"http://www.developer.com\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.dev
+        }
     }
+
+    productFlavors {
+        free {
+            // 类似 buildType
+            buildConfigField "String", "pf_buildConfigField", "\"free_build\""
+            resValue "string", "pf_value", "free"
+            // 配置manifest 的 meta
+            manifestPlaceholders = [
+                    "NAME"      : "free123"
+            ]
+        }
+
+        paid {
+            // 类似 buildType
+            buildConfigField "String", "pf_buildConfigField", "\"paid_build\""
+            resValue "string", "pf_value", "paid"
+            // 配置manifest 的 meta
+            manifestPlaceholders = [
+                    "NAME"     : "paid123"
+            ]
+        }
+
+    }
+
 }
 
 //依赖模块，为你的app定义了所有的依赖包。默认情况下，我们依赖了所有在libs文件下的jar文件，同时包含了AppCompat这个aar文件。
