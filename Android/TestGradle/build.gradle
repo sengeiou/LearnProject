@@ -33,3 +33,20 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+class Person{
+    String name
+}
+// https://segmentfault.com/a/1190000004276167
+task taskTest << {
+    println "cocoa test"
+
+    def name1 = "cocoa"
+    println "$name1"
+
+    def cocoa = new Person()
+    cocoa.name = "$name1"
+    println cocoa.getName()
+
+}
