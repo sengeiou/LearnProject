@@ -38,15 +38,45 @@ task clean(type: Delete) {
 class Person{
     String name
 }
+
+def square(def num){
+    num * num
+}
+
+
+
+
 // https://segmentfault.com/a/1190000004276167
 task taskTest << {
-    println "cocoa test"
+    println "cocoa test"// 基本的输出
 
-    def name1 = "cocoa"
-    println "$name1"
+    def name1 = "cocoa"  // 动态类型
+    println "$name1"     // $必须是字符串中使用
 
-    def cocoa = new Person()
+    def cocoa = new Person()  // 创建对象
     cocoa.name = "$name1"
-    println cocoa.getName()
+//    cocoa.setName()
+    println cocoa.getName()  // 自动生成的get set 方法
+
+    println square(10)
+
+    List list = [1,2,3,4,5]
+    list.each (){ element ->
+        println element
+    }
+
+
+}
+
+taskTest  {
+    println "config"
+
+    doLast {
+        println "im doLast"
+    }
+
+    doFirst{
+        println "im doFirst"
+    }
 
 }
