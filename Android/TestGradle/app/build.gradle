@@ -7,6 +7,8 @@
 
 // 这里用来定义 Android 应用插件， 这个插件主要用来执行关于 Android 依赖的构建，打包和测试。
 apply plugin: 'com.android.application'
+apply plugin: RunPlugin
+
 
 android {
     // android 下面两个属性是必须的
@@ -106,4 +108,52 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':mylibrary')
 }
+
+// 动态的修改 apk 的名字
+//android.applicationVariants.all { variant ->
+//    variant.outputs.each { output ->
+//        def file = output.outputFile
+//        output.outputFile = new File(file.parent, file.name.replace(".apk","-V${variant.versionName}"+"-"+new Date().format("yyMMdd-HH:mm")+".apk"))
+//        //app-free-release-1.0-171114-10:31.apk  当然你也可以替换掉 app-free-release 这一部分
+//    }
+//}
+
+
+// 动态创建新的任务
+//android.applicationVariants.all { variant ->
+//    println variant.install
+//    if (variant.install){
+//        tasks.create(name : "run${variant.name.capitalize()}",
+//            dependsOn: variant.install){
+//            description "install the ${variant.description} and runs the main launcher activity."
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

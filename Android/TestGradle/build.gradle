@@ -80,3 +80,26 @@ taskTest  {
     }
 
 }
+
+
+task getReleasePassword << {
+    if(rootProject.file('private.properties').exists()){
+        java.util.Properties properties = new Properties();
+        properties.load(rootProject.file('private.properties').newDataInputStream())
+        def passwordTemp = properties.getProperty('release.password')
+
+//        if(!passwordTemp?.trim()){  //
+//
+//        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
