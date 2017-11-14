@@ -13,7 +13,7 @@ public class Test{
 		Thread.sleep(3000);
 		myService.signalAll_A();
    
-		// 在这个demo 中，只有线程 a 被唤醒了		
+		// 在这个demo 中，只有线程 a 被唤醒了P		
 
 
 	}
