@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +50,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JYO-Bp-c3w">
                     <connections>
-                        <action selector="dismissKBWithSender:" destination="BYZ-38-t0r" id="9uu-Eb-5sv"/>
+                        <action selector="dismissKBWithSender:" destination="BYZ-38-t0r" id="B7I-o7-vxJ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

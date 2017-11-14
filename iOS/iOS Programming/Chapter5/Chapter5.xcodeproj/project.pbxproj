@@ -12,6 +12,7 @@
 		CC85153A1FAF031A00FAC30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8515381FAF031A00FAC30A /* Main.storyboard */; };
 		CC85153C1FAF031A00FAC30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC85153B1FAF031A00FAC30A /* Assets.xcassets */; };
 		CC85153F1FAF031A00FAC30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC85153D1FAF031A00FAC30A /* LaunchScreen.storyboard */; };
+		CC85154D1FAF599800FAC30A /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85154C1FAF599800FAC30A /* MapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CC85153B1FAF031A00FAC30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC85153E1FAF031A00FAC30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC8515401FAF031A00FAC30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC85154C1FAF599800FAC30A /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 			children = (
 				CC8515331FAF031A00FAC30A /* Chapter5 */,
 				CC8515321FAF031A00FAC30A /* Products */,
+				CC8515461FAF536600FAC30A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +63,16 @@
 				CC85153B1FAF031A00FAC30A /* Assets.xcassets */,
 				CC85153D1FAF031A00FAC30A /* LaunchScreen.storyboard */,
 				CC8515401FAF031A00FAC30A /* Info.plist */,
+				CC85154C1FAF599800FAC30A /* MapController.swift */,
 			);
 			path = Chapter5;
+			sourceTree = "<group>";
+		};
+		CC8515461FAF536600FAC30A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8515371FAF031A00FAC30A /* ViewController.swift in Sources */,
+				CC85154D1FAF599800FAC30A /* MapController.swift in Sources */,
 				CC8515351FAF031A00FAC30A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +281,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = Chapter5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cococao.test.Chapter5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -282,7 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SKDGJS28P;
 				INFOPLIST_FILE = Chapter5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cococao.test.Chapter5;
 				PRODUCT_NAME = "$(TARGET_NAME)";

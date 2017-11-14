@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func dismissKB (sender : AnyObject){
         print("123")
+        self.view.endEditing(true)
         textField.resignFirstResponder()
     }
     
