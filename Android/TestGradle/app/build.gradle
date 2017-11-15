@@ -7,7 +7,6 @@
 
 // 这里用来定义 Android 应用插件， 这个插件主要用来执行关于 Android 依赖的构建，打包和测试。
 apply plugin: 'com.android.application'
-apply plugin: RunPlugin
 
 
 android {

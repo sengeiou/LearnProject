@@ -17,10 +17,13 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url uri('./FinalRun')  //加入本地的依赖
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
-
+        classpath 'com.cocoa.runplug:runplug:1.0.0'
     }
 }
 
@@ -33,6 +36,11 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+
+
+// ------- 下面 是一些测试，不是必要的 ---------
 
 
 class Person{
