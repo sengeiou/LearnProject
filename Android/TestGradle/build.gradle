@@ -1,0 +1,113 @@
+/**
+ *
+ * 这个文件是定义在这个工程下的所有模块的公共属性，默认包含两个方法
+ *
+ * 1.1 buildscript 方法定义了全局的相关属性，repositories 定义了 jcenter 作为仓库，
+ * 一个仓库代表着依赖包的来源， 比如 maven ，
+ *
+ * 1.2 dependencies 用来定义构建过程，在这里定义 Android 的插件
+ *
+ * 2 allprojects 方法用来定义各个模块的默认属性，你可以不仅仅局限于默认的配置，未来你可以自己创造tasks在allprojects方法体内，
+ *  这些tasks将会在所有模块中可见。
+ *
+ *
+ *
+ *
+ */
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url uri('./FinalRun')  //加入本地的依赖
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.cocoa.runplug:runplug:1.0.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+
+
+// ------- 下面 是一些测试，不是必要的 ---------
+
+
+class Person{
+    String name
+}
+
+def square(def num){
+    num * num
+}
+
+
+
+
+// https://segmentfault.com/a/1190000004276167
+task taskTest << {
+    println "cocoa test"// 基本的输出
+
+    def name1 = "cocoa"  // 动态类型
+    println "$name1"     // $必须是字符串中使用
+
+    def cocoa = new Person()  // 创建对象
+    cocoa.name = "$name1"
+//    cocoa.setName()
+    println cocoa.getName()  // 自动生成的get set 方法
+
+    println square(10)
+
+    List list = [1,2,3,4,5]
+    list.each (){ element ->
+        println element
+    }
+
+
+}
+
+taskTest  {
+    println "config"
+
+    doLast {
+        println "im doLast"
+    }
+
+    doFirst{
+        println "im doFirst"
+    }
+
+}
+
+
+task getReleasePassword << {
+    if(rootProject.file('private.properties').exists()){
+        java.util.Properties properties = new Properties();
+        properties.load(rootProject.file('private.properties').newDataInputStream())
+        def passwordTemp = properties.getProperty('release.password')
+
+//        if(!passwordTemp?.trim()){  //
+//
+//        }
+
+    }
+}
+
+
+
+
+
+
+
+
+

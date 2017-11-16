@@ -1,1 +1,1 @@
-string.go
+/Users/sj/Library/Android/sdk

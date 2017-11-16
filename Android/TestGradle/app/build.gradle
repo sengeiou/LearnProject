@@ -1,0 +1,158 @@
+/**
+ * 模块内的 gradle 文件支队该模块起作用
+ *
+ *
+ *
+ */
+
+// 这里用来定义 Android 应用插件， 这个插件主要用来执行关于 Android 依赖的构建，打包和测试。
+apply plugin: 'com.android.application'
+
+
+android {
+    // android 下面两个属性是必须的
+    compileSdkVersion 26    // 编译 app 时， 你想使用到的 api 的版本
+    buildToolsVersion "27.0.0"  // 构建工具的版本号
+
+    //defaultConfig方法包含了该app的核心属性，该属性会重写在AndroidManifest.xml中的对应属性。
+    defaultConfig {
+        // http://blog.csdn.net/maosidiaoxian/article/details/41719357
+        applicationId "com.cococa.gradle.testgradle"  // 这个属性会重写 AndroidManifest 中的  package name
+        minSdkVersion 15  // 定义为最小支持api。
+        targetSdkVersion 26
+        versionCode 1   //将会作为版本号标示
+        versionName "1.0" // 资料上显示毫无作用，但是其实还是有用的，就是版本号的直观显示方式
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    // 必须在 buildTypes 前申明
+    signingConfigs {
+        // debug 可以不用申明，会有默认的签名
+        // dev 用了 debug 的签名
+        dev.initWith(signingConfigs.debug)
+
+        // 申明 release 的签名信息
+        release {
+            storeFile file("../store/kqc.keystore")
+            storePassword "kqc8888"
+            keyAlias "kqc"
+            keyPassword "kqc8888"
+            v2SigningEnabled true
+        }
+    }
+
+
+    // 方法定义了如何构建不同版本的app
+    buildTypes {
+        release {
+            resValue "string", "appName", "release_appname"   // 见 readme.md
+            buildConfigField "boolean", "LOG_DEBUG", "false"  // 见 readme.md
+            buildConfigField "String","appurl","\"http://www.release.com\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release  // release 必须要加上这一句
+        }
+
+        debug{
+            resValue "string", "appName", "debug_appname"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "appurl", "\"http://www.debug.com\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        dev{
+            applicationIdSuffix ".dev"   // 这样的application id 就是 com.cococa.gradle.testgradle.dev , 可以用来区分正式和测试包，很有用
+            resValue "string", "appName", "dev_appname"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "appurl", "\"http://www.developer.com\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.dev
+        }
+    }
+
+    productFlavors {
+        free {
+            // 类似 buildType
+            buildConfigField "String", "pf_buildConfigField", "\"free_build\""
+            resValue "string", "pf_value", "free"
+            // 配置manifest 的 meta
+            manifestPlaceholders = [
+                    "NAME"      : "free123"
+            ]
+        }
+
+        paid {
+            // 类似 buildType
+            buildConfigField "String", "pf_buildConfigField", "\"paid_build\""
+            resValue "string", "pf_value", "paid"
+            // 配置manifest 的 meta
+            manifestPlaceholders = [
+                    "NAME"     : "paid123"
+            ]
+        }
+
+    }
+
+}
+
+//依赖模块，为你的app定义了所有的依赖包。默认情况下，我们依赖了所有在libs文件下的jar文件，同时包含了AppCompat这个aar文件。
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    testCompile 'junit:junit:4.12'
+    compile project(':mylibrary')
+}
+
+// 动态的修改 apk 的名字
+//android.applicationVariants.all { variant ->
+//    variant.outputs.each { output ->
+//        def file = output.outputFile
+//        output.outputFile = new File(file.parent, file.name.replace(".apk","-V${variant.versionName}"+"-"+new Date().format("yyMMdd-HH:mm")+".apk"))
+//        //app-free-release-1.0-171114-10:31.apk  当然你也可以替换掉 app-free-release 这一部分
+//    }
+//}
+
+
+// 动态创建新的任务
+//android.applicationVariants.all { variant ->
+//    println variant.install
+//    if (variant.install){
+//        tasks.create(name : "run${variant.name.capitalize()}",
+//            dependsOn: variant.install){
+//            description "install the ${variant.description} and runs the main launcher activity."
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
