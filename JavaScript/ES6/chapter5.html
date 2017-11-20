@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数值的扩展</title>
+</head>
+<body>
+	
+</body>
+	<script type="text/javascript">
+			// es6 为 Number 对象提供了两个新方法   isFinite inNaN
+			// 和传统方法的区别在于，传统方法先将非数值的值转为数值，在进行判断
+			// 新方法只对数值有效, 对非数值的操作全部返回 false
+
+			console.log( isFinite("1"));
+			console.log( isFinite(1));
+			console.log(Number.isFinite("1"));  // false
+			console.log(Number.isFinite(1));
+
+
+			console.log( isNaN("NaN"));
+			console.log( isNaN(NaN));
+			console.log( Number.isNaN(NaN));
+			console.log( Number.isNaN("NaN"));  // false
+
+
+
+			// 全局的 parseInt 和 parseFloat 则放到了 Number 下，为的是减少全局方法， 模块化
+
+			console.log(Number.parseInt("23"));
+
+
+			// Number.isInteger  和安全整数
+			// isInteger 来判断一个数是否为整数， 在js 内部，整数和浮点数，所以3和 3.0 被视为一个值
+
+			console.log(Number.isInteger(1));    // true
+			console.log(Number.isInteger(1.0));  // true
+			console.log(Number.isInteger(1.1 ));   // false
+
+
+
+
+			// isSafeInteger 则用来判断一个整数是否在整数的范围内（正负2的53次方）  			
+			// 最大为  Number.MAX_SAFE_INTGER  最小则。。。
+			console.log("--isSafeInteger----");
+			console.log(Number.isSafeInteger(Number.MAX_SAFE_INTGER+1));  // false
+			console.log(Number.isSafeInteger(11));  // true
+
+
+			console.log("----Math.trunc 去除小数部分，返回整数部分-----");
+
+			console.log(Math.trunc(4.1));
+			console.log(Math.trunc(-4.1));
+
+	</script>
+</html>

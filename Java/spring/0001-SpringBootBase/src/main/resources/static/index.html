@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        img.normal {
+            width: 15px;
+            height: 15px;
+        }
+        img.large{
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <title>天行车位分布</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+</head>
+<body>
+
+<audio style="display:none; height: 0" id="bg-music" preload="auto"
+       src="http://other.web.ra01.sycdn.kuwo.cn/resource/n3/128/30/81/1690801239.mp3" loop="loop"></audio>
+
+<!--<audio controls="true" autoplay="autoplay">-->
+<!--<source src="yongqi.mp3" type="audio/mp3">-->
+<!--&lt;!&ndash; If no support at all. &ndash;&gt;-->
+<!--HTML5 audio not supported-->
+<!--</audio>-->
+
+<div id="allmap"></div>
+
+</body>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rDGIyaYIUFQjry5G3ZCsXRe8C2ESqjlX"></script>
+
+<script type="text/javascript">
+    //    http://api.map.baidu.com/lbsapi/getpoint/index.html
+    //http://lbsyun.baidu.com/
+    // bg music
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                },
+                false);
+        }
+
+        audioAutoPlay();
+    });
+
+    // defined constanct
+    var map = new BMap.Map("allmap");
+    var duration = 7000;
+    var locationDuration = 5000;
+    var strokeWeight = 3;
+    const strokeOpacity = 0.5;
+    const strokeColor = "red";
+    const toastBgColor = "#1AAD19";
+
+
+    map.centerAndZoom(new BMap.Point(120.11253, 30.310092), 13);
+
+
+    var locations = [
+        {
+            "center": {"x": 120.113475, "y": 30.311853},
+            "range": {
+                "tl": {"x": 120.113008, "y": 30.311717}, "tr": {"x": 120.113008, "y": 30.311588},
+                "br": {"x": 120.114005, "y": 30.312029}, "bl": {"x": 120.113911, "y": 30.312075}
+            },
+            "des": '<h3>方家花苑西苑商铺口</h3>理论上免费，有空位就可以停，得靠点运气  <img class="normal" src="https://raw.githubusercontent.com/PangHaHa12138/TestChatdemo/master/app/src/main/res/drawable-hdpi/azy.png"/>',
+            "bgColor": '#1AAD19',
+            "time": 8000
+        },
+        {
+            "center": {"x": 120.114145, "y": 30.310809}, "range": {
+            "tl": {"x": 120.11304, "y": 30.311335}, "tr": {"x": 120.114207, "y": 30.311795},
+            "br": {"x": 120.11595, "y": 30.309624}, "bl": {"x": 120.113116, "y": 30.308681}
+        }, "des": '<h3>方家花苑西苑</h3>8块一天，不对外，找个理由就行',
+            "bgColor": '#1AAD19', "time": 8000
+        },
+        {
+            "center": {"x": 120.115703, "y": 30.311366}, "range": {
+            "tl": {"x": 120.114131, "y": 30.312114}, "tr": {"x": 120.11555, "y": 30.312773},
+            "br": {"x": 120.117612, "y": 30.310368}, "bl": {"x": 120.116206, "y": 30.309757}
+        }, "des": '<h3>方家花苑东苑</h3>8块一天，不对外，找个理由就行，看朋友。。',
+            "bgColor": '#1AAD19', "time": 8000
+        },
+        {
+            "center": {"x": 120.113561, "y": 30.314568}, "range": {
+            "tl": {"x": 120.113134, "y": 30.314517}, "tr": {"x": 120.113722, "y": 30.314755},
+            "br": {"x": 120.113875, "y": 30.314587}, "bl": {"x": 120.113251, "y": 30.314416}
+        }, "des": '<h3>申花壹号</h3>暂时空闲的车位，基本都能停，离公司几分钟的步行路程',
+            "bgColor": '#1AAD19', "time": 8000
+        },
+        {}
+    ];
+
+
+    for (var i = 0; i < locations.length; i++) {
+
+        if (i == (locations.length - 1)) {
+            setTimeout(function () {
+
+                var topTips = weui.topTips('<h2>没了，闪了！</h2> <img class="large" src="https://github.com/PangHaHa12138/TestChatdemo/blob/master/app/src/main/res/drawable-hdpi/azw.png?raw=true"/>', {
+                    duration: duration * 100,
+                    className: 'xxx',
+                    callback: function () {
+                        map.clearOverlays();
+                    }
+                });
+                topTips.style.backgroundColor = toastBgColor;
+
+                for (var i = 0; i < locations.length-1; i++) {
+                    let loc = locations[i];
+                    // center point
+                    var point = new BMap.Point(loc.center.x, loc.center.y);
+                    var marker = new BMap.Marker(point);
+                    map.addOverlay(marker);
+                    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+                    // range
+                    var polygon = new BMap.Polygon([
+                        new BMap.Point(loc.range.tl.x, loc.range.tl.y),
+                        new BMap.Point(loc.range.tr.x, loc.range.tr.y),
+                        new BMap.Point(loc.range.br.x, loc.range.br.y),
+                        new BMap.Point(loc.range.bl.x, loc.range.bl.y)
+                    ], {strokeColor: strokeColor, strokeWeight: strokeWeight, strokeOpacity: strokeOpacity});  //创建多边形
+                    map.addOverlay(polygon);
+                }
+
+            }, (i + 1) * 7000);
+        } else {
+            let loc = locations[i];
+            setTimeout(function () {
+                map.setZoom(18);
+
+                // center point
+                var point = new BMap.Point(loc.center.x, loc.center.y);
+                var marker = new BMap.Marker(point);
+                map.addOverlay(marker);
+                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+                // move
+                map.panTo(point, false); // false = anim move
+
+                // range
+                var polygon = new BMap.Polygon([
+                    new BMap.Point(loc.range.tl.x, loc.range.tl.y),
+                    new BMap.Point(loc.range.tr.x, loc.range.tr.y),
+                    new BMap.Point(loc.range.br.x, loc.range.br.y),
+                    new BMap.Point(loc.range.bl.x, loc.range.bl.y)
+                ], {strokeColor: strokeColor, strokeWeight: strokeWeight, strokeOpacity: strokeOpacity});  //创建多边形
+                map.addOverlay(polygon);
+
+                // toast msg
+                var topTips = weui.topTips(loc.des, {
+                    duration: duration,
+                    className: 'xxx',
+                    callback: function () {
+                        map.clearOverlays();
+                    }
+                });
+                topTips.style.backgroundColor = loc.bgColor;
+
+            }, (i + 1) * loc.time);
+        }
+    }
+</script>
+</html>
