@@ -1,7 +1,5 @@
-package com.cococa.shiji.commit_bean;
+package com.cocoa.taobao.product_server.bean;
 
-import com.cococa.shiji.resp_bean.RespSmallImage;
-import com.cococa.shiji.resp_bean.RespTaoItem;
 
 import java.util.Date;
 
@@ -63,32 +61,6 @@ public class CommitItem {
 
     }
 
-    public CommitItem(RespTaoItem respTaoItem) {
-        this.item_url = respTaoItem.getItem_url();
-        this.nick = respTaoItem.getNick();
-        this.num_iid = respTaoItem.getNum_iid();
-        this.pict_url = respTaoItem.getPict_url();
-        this.provcity = respTaoItem.getProvcity();
-        this.reserve_price = respTaoItem.getReserve_price();
-        this.seller_id = respTaoItem.getSeller_id();
-
-        RespSmallImage img = respTaoItem.getSmall_images();
-        if (img != null) {
-            String[] imgArray = img.getString();
-            if (imgArray != null && imgArray.length > 0) {
-                StringBuilder sb = new StringBuilder();
-                for (String str : imgArray) {
-                    sb.append(str).append("@@");
-                }
-                this.small_img = sb.substring(0, sb.length() - 1);
-            }
-        }
-
-        this.title = respTaoItem.getTitle();
-        this.user_type = respTaoItem.getUser_type();
-        this.volume = respTaoItem.getVolume();
-        this.zk_final_price = respTaoItem.getZk_final_price();
-    }
 
 
     public String getItem_url() {
