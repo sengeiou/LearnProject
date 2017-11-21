@@ -1,6 +1,10 @@
 package com.cocoa.taobao.product_server.bean;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -32,28 +36,59 @@ import java.util.Date;
 //        PRIMARY KEY (`id`)
 //        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+
+@Table(name = "taobao_item")
+@Entity
 public class CommitItem {
 
+    @Id
+    private long id;
+    @Column(name = "item_url")
     private String item_url;//private String http:\/\/item.taobao.com\/item.htm?id=43189047510",
+    @Column(name = "nick")
     private String nick;//private String 双钱旗舰店",
+    @Column(name = "num_iid")
     private String num_iid;// 43189047510,
+    @Column(name = "pict_url")
     private String pict_url;//private String http:\/\/img1.tbcdn.cn\/tfscom\/i2\/2355948914\/TB1R_QWKFXXXXXUXXXXXXXXXXXX_!!0-item_pic.jpg",
+    @Column(name = "provcity")
     private String provcity;//private String 广西 梧州",
+    @Column(name = "reserve_price")
     private String reserve_price;//private String 69.00",
+    @Column(name = "seller_id")
     private String seller_id;// 2355948914,
+    @Column(name = "small_images")
     private String small_img = "";// {
+    @Column(name = "title")
     private String title;//private String 双钱龟苓膏原味易拉罐礼盒|7月生产|250克X12罐",
+    @Column(name = "user_type")
     private String user_type;// 1,
+    @Column(name = "volume")
     private String volume;// 3153,
+    @Column(name = "zk_final_price")
     private String zk_final_price;//private String 41.80"
+    @Column(name = "sales")
     private int sales;
+    @Column(name = "sales_update_time")
     private Date sales_update_time;
+    @Column(name = "create_time")
     private Date create_time;
+    @Column(name = "item_id")
     private String item_id;  // 商品id
 
+    @Column(name="status")
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public Object[] getSqlParams() {
-        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, item_id};
+        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, item_id,status};
     }
 
 
@@ -61,7 +96,13 @@ public class CommitItem {
 
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getItem_url() {
         return item_url;
