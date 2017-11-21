@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style type="text/css">
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+
+        ul{
+            width: 100%;
+        }
+        ul .li {
+            width: 50%;
+            float: left;
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="item">
+    <button v-on:click="getData">getData</button>
+    <ul>
+    <li v-for="it in items">
+        <img v-bind:src="it.pict_url" />
+        {{ it.title }}
+    </li>
+    </ul>
+</div>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+    var example1 = new Vue({
+        el: '#item',
+        data: {
+            items: [],
+        },
+        methods: {
+            getData : function (){
+                var vm  = this;
+                axios.get('/product/server/getItems?status=0').then(function (response) {
+                    vm.items = response.data
+                })
+            }
+        }
+    });
+
+</script>
+
+</html>
