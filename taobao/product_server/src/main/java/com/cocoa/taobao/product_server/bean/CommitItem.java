@@ -15,7 +15,7 @@ import java.util.Date;
  * @author: shenjun@kuaiqiangche.com
  * @date: 17/8/23 11:49
  */
-//CREATE TABLE `taobao_item` (
+// CREATE TABLE `taobao_item` (
 //        `id` int(11) NOT NULL,
 //        `item_url` varchar(120) COLLATE utf8_bin DEFAULT NULL,
 //        `nick` varchar(80) COLLATE utf8_bin DEFAULT NULL,
@@ -33,6 +33,7 @@ import java.util.Date;
 //        `sales_update_time` datetime DEFAULT NULL,
 //        `create_time` datetime DEFAULT NULL,
 //        `item_id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+//        `status` int(11) DEFAULT 0,
 //        PRIMARY KEY (`id`)
 //        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
