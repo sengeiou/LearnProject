@@ -1,7 +1,6 @@
 package com.cocoa.taobao.product_server.controller;
 
 import com.cocoa.taobao.product_server.bean.CommitItem;
-import com.cocoa.taobao.product_server.dao.ProductDao;
 import com.cocoa.taobao.product_server.impl.ProductServiceImpl;
 import com.google.gson.Gson;
 import com.taobao.api.ApiException;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-import java.util.List;
 
 
 /**
