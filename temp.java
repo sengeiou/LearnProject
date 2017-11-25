@@ -2,16 +2,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Parameter;
 
 
-
-
-着一袭白衫
-温婉自若
-楚楚动人
-好似杯上的白色美人鱼
-
-
-
-
 public class Bot {
     private final String name;
     private final String author;
