@@ -15,6 +15,7 @@ import java.util.Date;
  * @author: shenjun@kuaiqiangche.com
  * @date: 17/8/23 11:49
  */
+
 //CREATE TABLE `taobao_item` (
 //        `id` int(11) NOT NULL AUTO_INCREMENT,
 //        `item_url` varchar(120) COLLATE utf8_bin DEFAULT NULL,
