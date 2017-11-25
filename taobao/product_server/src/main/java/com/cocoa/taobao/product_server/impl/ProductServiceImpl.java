@@ -29,7 +29,7 @@ public class ProductServiceImpl implements IProductService {
                 commitItem.getTitle(),
                 commitItem.getUser_type(),
                 commitItem.getVolume(),
-                commitItem.getVolume(),
+                commitItem.getZk_final_price(),
                 commitItem.getSales(),
                 new Date(), new Date(),
                 commitItem.getItem_id());

@@ -76,7 +76,6 @@ public class CommitItem {
     private Date create_time;
     @Column(name = "item_id")
     private String item_id;  // 商品id
-
     @Column(name="status")
     private int status;
 

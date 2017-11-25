@@ -28,33 +28,36 @@ public class ItemController {
     private ProductDao productDao;
 
     @RequestMapping(method = RequestMethod.GET, value = "/getItems")
-    public String getItemByStatus(String keywords,int status){
-
-
-        PageRequest  pageRequest = new PageRequest(1,10,Sort.Direction.DESC,"sales");
+    public String getItemByStatus(String keywords, int status, Integer size) {
+        int finalSize = 10;
+        if (size != null && size > 0) {
+            finalSize = size ;
+        }
+        long cTime = System.currentTimeMillis();
+        PageRequest pageRequest = new PageRequest(0, finalSize, Sort.Direction.DESC, "sales");
 //        productDao.findAll(new Example<>())
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("status", ExampleMatcher.GenericPropertyMatchers.exact()).
                         withIgnorePaths("id").
                         withIgnorePaths("sales").
-                        withIgnorePaths("small_img")
-                        ;
+                        withIgnorePaths("small_img");
         CommitItem commitItem = new CommitItem();
         commitItem.setStatus(status);
 
         Page<CommitItem> mList = productDao.findAll(Example.of(commitItem, matcher), pageRequest);
         List<CommitItem> resultList = new ArrayList<>();
-        for(CommitItem m : mList){
+        for (CommitItem m : mList) {
             resultList.add(m);
         }
-        return  new Gson().toJson(resultList);
+        System.out.println("----"+(System.currentTimeMillis()-cTime)+"---");
+        return new Gson().toJson(resultList);
     }
 
     @RequestMapping(value = "/update")
-    public String updateItemStatus(long id , int status){
-       int result = productDao.updateItemStatus(id,status);
-       System.out.println(result);
-       return new Gson().toJson(result);
+    public String updateItemStatus(long id, int status) {
+        int result = productDao.updateItemStatus(id, status);
+        System.out.println(result);
+        return new Gson().toJson(result);
     }
 
 
