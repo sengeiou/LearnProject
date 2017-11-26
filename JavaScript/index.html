@@ -10,33 +10,24 @@
 
 
     <script type="text/javascript">
-        var x = document.getElementById("demo");
-
-        function getLocation() {
-          alert(1);
-            if (navigator.geolocation) {
-              alert(2);
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "该浏览器不支持获取地理位置。";
-            }
+        
+        function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
         }
-
-        function showPosition(position) {
-
-          alert(3);
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
-        }
-
-        // function aabb(){
-        //   alert(1);
-        // }
-        //
-        //
+    }
+    return flag;
+}
         window.onload =function(){
 
-          getLocation();
+          alert(IsPC());
         }
     </script>
 
