@@ -1,14 +1,11 @@
 package com.cocoa.taobao.product_server.controller;
 
-import com.cocoa.taobao.product_server.bean.CommitItem;
-import com.cocoa.taobao.product_server.impl.ProductServiceImpl;
 import com.google.gson.Gson;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkItemGetRequest;
 import com.taobao.api.response.TbkItemGetResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *  ProductController -> get item from taobao
  *  when the month sales getted, save to the mysql
- *
+ * http://open.taobao.com/docs/api.htm?spm=a219a.7629065.0.0.iXAR81&apiId=24515&scopeId=11483
  */
 @RestController
-@RequestMapping("/tb")
+@RequestMapping("/product")
 public class ProductController {
     public static String url = "http://gw.api.taobao.com/router/rest";
     public static String appkey = "23222740";
@@ -40,14 +37,14 @@ public class ProductController {
         req.setQ(keywords);
 //        req.setCat("21,23");
 //        req.setItemloc("杭州");
-//        req.setSort("tk_rate_des");
+        req.setSort("total_sales");  //排序_des（降序），排序_asc（升序），销量（total_sales），淘客佣金比率（tk_rate）， 累计推广量（tk_total_sales），总支出佣金（tk_total_commi）
 //        req.setIsTmall(false);
 //        req.setIsOverseas(false);
 //        req.setStartPrice(10L);
 //        req.setEndPrice(10L);
 //        req.setStartTkRate(123L);
 //        req.setEndTkRate(123L);
-//        req.setPlatform(1L);
+//        req.setPlatform(1L);  //platform	Number	可选	1		链接形式：1：PC，2：无线，默认：１
         req.setPageNo(pageNo);
         req.setPageSize(pageSize);
         String resp = "";
@@ -57,25 +54,19 @@ public class ProductController {
         } catch (ApiException e) {
             e.printStackTrace();
         }
+
+//        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
+//        TbkItemInfoGetRequest req = new TbkItemInfoGetRequest();
+//        req.setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url");
+//        req.setPlatform(1L);
+//        req.setNumIids("123,456");
+//        TbkItemInfoGetResponse rsp = client.execute(req);
+//        System.out.println(rsp.getBody());
+//
         return resp;
     }
 
 
-    @Autowired
-    public ProductServiceImpl productService;
-
-
-    @RequestMapping(method = RequestMethod.GET, value = "/add")
-    public String insertProduct(String json) {
-//     example
-//     String json ="{\"item_url\":\"http://item.taobao.com/item.htm?id=527663335376\",\"nick\":\"尊宾家居旗舰店\",\"num_iid\":\"527663335376\",\"pict_url\":\"http://img2.tbcdn.cn/tfscom/i1/732405394/TB1BqHbcInI8KJjSspeXXcwIpXa_!!0-item_pic.jpg\",\"provcity\":\"广东 佛山\",\"reserve_price\":\"14600.00\",\"sales\":1,\"seller_id\":\"732405394\",\"small_img\":\"http://img1.tbcdn.cn/tfscom/i2/732405394/TB29ucldQ7myKJjSZFgXXcT9XXa_!!732405394.jpg@@http://img2.tbcdn.cn/tfscom/i3/732405394/TB2jTT_dTAlyKJjSZPiXXXL2VXa_!!732405394.jpg@@http://img4.tbcdn.cn/tfscom/i3/732405394/TB2S_FQca3PyuJjy1zkXXcjRFXa_!!732405394.jpg@@http://img2.tbcdn.cn/tfscom/i2/732405394/TB26UMhdNwlyKJjSZFsXXar3XXa_!!732405394.jpg@\",\"sqlParams\":[\"http://item.taobao.com/item.htm?id=527663335376\",\"尊宾家居旗舰店\",\"527663335376\",\"http://img2.tbcdn.cn/tfscom/i1/732405394/TB1BqHbcInI8KJjSspeXXcwIpXa_!!0-item_pic.jpg\",\"广东 佛山\",\"14600.00\",\"732405394\",\"http://img1.tbcdn.cn/tfscom/i2/732405394/TB29ucldQ7myKJjSZFgXXcT9XXa_!!732405394.jpg@@http://img2.tbcdn.cn/tfscom/i3/732405394/TB2jTT_dTAlyKJjSZPiXXXL2VXa_!!732405394.jpg@@http://img4.tbcdn.cn/tfscom/i3/732405394/TB2S_FQca3PyuJjy1zkXXcjRFXa_!!732405394.jpg@@http://img2.tbcdn.cn/tfscom/i2/732405394/TB26UMhdNwlyKJjSZFsXXar3XXa_!!732405394.jpg@\",\"尊宾简约现代头层真皮沙发123组合小户型中厚头层皮艺沙发L29A\",\"1\",\"0\",\"7300.00\",1,null,null,null],\"title\":\"尊宾简约现代头层真皮沙发123组合小户型中厚头层皮艺沙发L29A\",\"user_type\":\"1\",\"volume\":\"0\",\"zk_final_price\":\"7300.00\"}";
-        CommitItem commitItem = mGson.fromJson(json, CommitItem.class);
-
-        int b = productService.insertProduct(commitItem);
-        System.out.println(b);
-
-        return "{\"code\": 0 ,\"msg\":\"ok\"}";
-    }
 
 
 }
