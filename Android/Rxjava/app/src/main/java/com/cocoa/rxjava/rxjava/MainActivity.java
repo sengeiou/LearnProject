@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -11,8 +12,13 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -21,6 +27,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+//https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Buffer.html
+// https://www.imooc.com/video/15533
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private Context mContext;
@@ -32,7 +41,167 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tt = (TextView) findViewById(R.id.tt);
         mContext = this;
-//
+        tt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                range();
+            }
+        });
+
+    }
+
+    void printMsg(String s) {
+        Log.e("MainActivity", s);
+    }
+
+
+    void range(){
+        Observable.range(0,10).buffer(3).subscribe(new Observer<List<Integer>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(List<Integer> integers) {
+                printMsg(integers.size()+"");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                    printMsg("onComplete");
+            }
+        });
+
+
+
+    }
+
+
+    void interval(){
+        // 自增长
+      final Observable observable =   Observable.interval(2,TimeUnit.SECONDS);
+        observable.subscribe(new Observer() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                printMsg("onComplete");
+            }
+        });
+
+    }
+
+
+    void from() {
+        Integer[] arrayInt = {1, 2, 3, 4, 5};
+        Observable observable = Observable.fromArray(arrayInt);
+
+        observable.subscribe(new Observer() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+                printMsg(o+"");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                printMsg("onComplete");
+            }
+        });
+    }
+
+
+    void empty() {
+        Observable.empty().subscribe(new Observer() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onNext(Object s) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                printMsg(Thread.currentThread().getName());
+                printMsg("onConplete");
+            }
+        });
+
+
+    }
+
+    void create() {
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+
+                e.onNext("1");
+                e.onComplete();
+
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+                System.out.println(s);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                System.out.println("onComplete");
+            }
+        });
+
+
+    }
+
+
+    void code() {
+        //
 //        getMovie();
 
 
@@ -135,8 +304,8 @@ public class MainActivity extends AppCompatActivity {
                         new Consumer<BaseBean<Weatherinfo>>() {
                             @Override
                             public void accept(BaseBean<Weatherinfo> base) throws Exception {
-                                Log.d(TAG+"hebing", base.toString());
-                                Log.d(TAG+"hebing", base.getWeatherinfo().toString());
+                                Log.d(TAG + "hebing", base.toString());
+                                Log.d(TAG + "hebing", base.getWeatherinfo().toString());
                             }
                         }
                 ).observeOn(Schedulers.io())
@@ -149,18 +318,17 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(new Consumer<HttpResult<List<Subject>>>() {
                     @Override
                     public void accept(HttpResult<List<Subject>> listHttpResult) throws Exception {
-                        Log.d(TAG+"hebing", listHttpResult.getSubjects().get(0).toString());
+                        Log.d(TAG + "hebing", listHttpResult.getSubjects().get(0).toString());
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        Log.d(TAG+"hebing", throwable.toString());
+                        Log.d(TAG + "hebing", throwable.toString());
                     }
                 });
 
 
 //******    把获取天气和电影写在一起 用flatMap  ****************
-
     }
 
 
