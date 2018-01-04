@@ -25,8 +25,13 @@ print(threeDouble)
 
 var sixDouble = threeDouble + threeDouble
 
+sixDouble += threeDouble
+
 print(sixDouble)
 
+sixDouble[1] =  12
+
+sixDouble.endIndex
 
 // create array with literal
 var shoppingList = ["milk", "eggs"]
@@ -39,10 +44,13 @@ var firstItem = shoppingList[0]
 
 var lastItem =  shoppingList.last
 
-
 var emptyArray = [String]()
 
 emptyArray.append("sss")
+emptyArray.append("hhhh")
+emptyArray.append("hhhh")
+
+type(of: emptyArray.index(of: "hhh"))
 
 if let first = emptyArray.first {
     print(first)
@@ -61,9 +69,12 @@ for item in 0..<shoppingList.count{
     print(shoppingList[item])
 }
 
+for it in shoppingList.makeIterator() {
+    print("hahahahah\(it)")
+}
 
 
-// set
+
 class Person : Hashable, Equatable{
     var hashValue: Int {
         return 1
@@ -73,6 +84,7 @@ class Person : Hashable, Equatable{
     }
 }
 
+// set
 var strSet = Set<String>()
 
 strSet.insert("a")

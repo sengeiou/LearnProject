@@ -5,3 +5,4 @@
 5-AutoPep8   python
 6-SublimeCodeIntel python
 7-html-css-js prettify
+8-threejs-autoComplete

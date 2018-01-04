@@ -6,14 +6,10 @@
     >
 
     <TextView
-        android:id="@+id/tt"
+        android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="test" />
 
-    <Button
-        android:text="变换操作"
-        android:id="@+id/tram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 </RelativeLayout>

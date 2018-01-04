@@ -31,6 +31,9 @@ public class ProductController {
         System.out.println(keywords);
         System.out.println(pageNo);
 
+
+
+
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkItemGetRequest req = new TbkItemGetRequest();
         req.setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,seller_id,volume,nick");
