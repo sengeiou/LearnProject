@@ -171,11 +171,14 @@
             methods: {
                 getData: function () {
                     var vm = this;
-                    axios.get('/product/taobao/getItems?status=0&size=30&page=' + vm.index)
-                        .then(function (response) {
-                            vm.index++;
-                            vm.items = response.data;
-                        })
+                    vm.index = 0;
+                    vm.items = vm.itemDebug;
+
+//                    axios.get('/product/taobao/getItems?status=0&size=30&page=' + vm.index)
+//                        .then(function (response) {
+//                            vm.index++;
+//                            vm.items = response.data;
+//                        })
                 },
                 nextPage: function () {
                     var vm = this;

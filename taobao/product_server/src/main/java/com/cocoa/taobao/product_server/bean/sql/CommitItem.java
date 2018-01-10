@@ -79,17 +79,13 @@ public class CommitItem {
     private String item_id;  // 商品id
     @Column(name="status")
     private int status;
+    @Column(name="search_kw")
+    private String search_kw;
 
-    public int getStatus() {
-        return status;
-    }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public Object[] getSqlParams() {
-        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, item_id,status};
+        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, item_id,status,search_kw};
     }
 
 
@@ -231,5 +227,22 @@ public class CommitItem {
 
     public void setItem_id(String item_id) {
         this.item_id = item_id;
+    }
+
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getSearch_kw() {
+        return search_kw;
+    }
+
+    public void setSearch_kw(String search_kw) {
+        this.search_kw = search_kw;
     }
 }

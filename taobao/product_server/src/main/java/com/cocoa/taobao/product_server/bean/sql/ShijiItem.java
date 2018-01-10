@@ -58,7 +58,8 @@ public class ShijiItem {
     private String rate;
     @Column(name="status")
     private int status;
-
+    @Column(name="search_kw")
+    private String search_kw;
     public int getStatus() {
         return status;
     }
