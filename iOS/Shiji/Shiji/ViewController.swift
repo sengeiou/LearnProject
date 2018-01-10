@@ -15,7 +15,7 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     
     @IBOutlet weak var tableview: UITableView!
     
-    let url : String = "http://116.196.79.208:8080/product/server/getItems?status=0"
+    let url : String = "http://116.196.79.208:8898/product/server/getItems?status=0"
     var items : [Item]? = []
     
     override func viewDidLoad() {

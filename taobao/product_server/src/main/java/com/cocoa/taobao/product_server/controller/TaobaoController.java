@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("taobao")
 public class TaobaoController {
 
-
+    final String[] shopArray = {"百草味", "周黑鸭", "三只松鼠", "良品铺子", "天猫生鲜", "天猫超市", "天猫"};
     public static final Gson mGson = new Gson();
 
     @Autowired
@@ -28,8 +28,8 @@ public class TaobaoController {
     public TaobaoServiceImpl taobaoService;
 
 
-    public static final int DEFAULT_PAGE_SIZE =  10;
-    public static final int DEFAULT_PAGE_INDEX =  0;
+    public static final int DEFAULT_PAGE_SIZE = 10;
+    public static final int DEFAULT_PAGE_INDEX = 0;
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/getItems")
@@ -43,10 +43,10 @@ public class TaobaoController {
             finalPage = page;
         }
 
-        Page<CommitItem> mList = taobaoService.findAll(keywords,status,finalSize,finalPage);
+        Page<CommitItem> mList = taobaoService.findAll(keywords, status, finalSize, finalPage);
 
         List finLList = new ArrayList();
-        for(CommitItem commitItem : mList){
+        for (CommitItem commitItem : mList) {
             finLList.add(commitItem);
         }
 
@@ -80,7 +80,13 @@ public class TaobaoController {
     @RequestMapping(method = RequestMethod.GET, value = "/insertItem")
     public String addItem(String json) {
         CommitItem commitItem = mGson.fromJson(json, CommitItem.class);
-
+        // 大流量店铺，直接修改状态
+        for (String key : shopArray) {
+            if(commitItem.getNick().contains(key)||commitItem.getTitle().contains(key)){
+                commitItem.setStatus(TBItemStatus.IGNORE.getValue());
+                break;
+            }
+        }
         int b = taobaoService.addItem(commitItem);
         if (1 == b) {
             baseResp.setResultOK();

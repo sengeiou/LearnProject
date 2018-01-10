@@ -94,6 +94,7 @@ public class ShijiController {
                 shijiItem.setSmall_img(sb.toString().substring(0, sb.length() - 2));
                 shijiItem.setPict_url(h5apiItem.images[0]);
             }
+            shijiItem.setNick(h5data.seller.shopName);
 
             String apiStackVlaue = h5data.apiStack[0].getValue();
             H5apiStackValue h5apiStackValue = mGson.fromJson(apiStackVlaue, H5apiStackValue.class);

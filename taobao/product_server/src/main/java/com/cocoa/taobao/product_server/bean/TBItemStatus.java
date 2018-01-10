@@ -7,7 +7,8 @@ public enum TBItemStatus {
 
     NEW("new", 0),  // 刚从淘宝抓取的
     INSERTED("inserted", 1),  // 已经入了shiji库
-    DELETE("delete", -1); // 放弃不用的数据
+    DELETE("delete", -1), // 放弃不用的数据
+    IGNORE("ignore", -2); // 大流量店铺
 
     private String des;
     private int value;

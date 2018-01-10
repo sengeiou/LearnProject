@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *  ProductController -> get item from taobao
  *  when the month sales getted, save to the mysql
- * http://open.taobao.com/docs/api.htm?spm=a219a.7629065.0.0.iXAR81&apiId=24515&scopeId=11483
+ *  http://open.taobao.com/docs/api.htm?spm=a219a.7629065.0.0.iXAR81&apiId=24515&scopeId=11483
  */
 @RestController
 @RequestMapping("/product")
@@ -27,12 +27,6 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     public String getProduct(long pageSize, long pageNo, String keywords) {
-
-        System.out.println(keywords);
-        System.out.println(pageNo);
-
-
-
 
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkItemGetRequest req = new TbkItemGetRequest();
@@ -65,7 +59,6 @@ public class ProductController {
 //        req.setNumIids("123,456");
 //        TbkItemInfoGetResponse rsp = client.execute(req);
 //        System.out.println(rsp.getBody());
-//
         return resp;
     }
 
