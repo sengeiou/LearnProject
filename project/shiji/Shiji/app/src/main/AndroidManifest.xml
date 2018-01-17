@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.cococa.shiji">
+    package="com.cococa.shijitools">
 
     <application
-        android:name=".ShiApplication"
+        android:name="com.cococa.shijitools.ShiApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup"
         >
-        <activity android:name=".MainActivity">
+        <activity android:name="com.cococa.shijitools.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
         </activity>
         <meta-data android:value="23781332" android:name="com.alibaba.apmplus.app_key"></meta-data>
 
-        <service android:name=".SalesService"
+        <service android:name="com.cococa.shijitools.SalesService"
             android:label="SalesService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             >
