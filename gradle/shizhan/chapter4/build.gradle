@@ -1,0 +1,31 @@
+version = '0.0.1'
+
+
+task first << { // 简化的 doFirst
+	println 'simple do first'
+}
+
+
+task hello (dependsOn : [first] ) {
+
+	// 这句话永远在first 之前执行，这里的语句也被称为 task 配置
+	println "task peizhi ----"
+
+	doFirst{
+		println "this is doFirst"
+		logger.quiet "version $version"
+	}
+
+	doLast {
+		println "start doLast"
+		println getPath()   // :hello
+		println getName()
+		println "version $version"
+	}
+}
+
+
+
+/**
+* task doLast <<  {}
+*/

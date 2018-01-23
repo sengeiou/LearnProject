@@ -69,7 +69,8 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+
         let num_iid = items![indexPath.row].num_iid
         clk(itemId: num_iid!)
     }
@@ -79,6 +80,7 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         super.didReceiveMemoryWarning()
         
     }
+    
     
     func clk(itemId : String) {
         let page = AlibcTradePageFactory.itemDetailPage(itemId)
@@ -98,11 +100,15 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         sdk.tradeService().show(self, page: page, showParams: showParams, taoKeParams: taokeParams, trackParam: dictParams, tradeProcessSuccessCallback: success, tradeProcessFailedCallback: nil)
     }
     
-    
+    // MARK: 123
     func success(result : AlibcTradeResult? ) -> Void {
         print("--------------")
         print(result ?? "123")
     }
+    
+    
+    
+    
     
 }
 
