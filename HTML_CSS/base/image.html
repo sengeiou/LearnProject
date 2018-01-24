@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image</title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 300px;
+		}	
+
+		body{
+			background-color: #999999;
+			background-image: url('http://e.hiphotos.baidu.com/image/h%3D300/sign=8d3a9ea62c7f9e2f6f351b082f31e962/500fd9f9d72a6059099ccd5a2334349b023bbae5.jpg');
+			background-repeat: repeat-y;   
+			background-position: center top; 
+
+		}
+
+		p {
+			color : red;
+		}	
+	
+
+		.div1{
+			background-size: cover;
+			height: 300px;
+			width: 300px;
+			background-repeat: no-repeat;
+			background-image: url('http://f.hiphotos.baidu.com/image/h%3D300/sign=4a0a3dd10155b31983f9847573ab8286/503d269759ee3d6db032f61b48166d224e4ade6e.jpg');
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+<p> 使用background-position 时要注意repeat 属性</p>
+<p> 看body 样式中，	background-repeat: repeat-y;   
+			background-position: center top; 的写法，产生了居中的平铺图片的效果</p>
+<div><a href="image-attachment.html"> 固定图像的例子 </a></div>
+<div><a href="image-origin.html"> image-origin 的例子</a></div>
+
+
+<img src="http://f.hiphotos.baidu.com/image/h%3D300/sign=4a0a3dd10155b31983f9847573ab8286/503d269759ee3d6db032f61b48166d224e4ade6e.jpg" alt = "代替文本，无法显示图片时，显示次文本"/>
+<br/>
+
+<img src="http://404.jpg" alt = "代替文本，无法显示图片时，显示次文本"/>
+	
+<div class="div1"></div>
+
+	
+</body>
+</html>
