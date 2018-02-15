@@ -11,8 +11,6 @@
 // 3. shorthand argument names
 // 4. trailing closure syntax
 
-
-
 // sorted method
 
 let name = ["Chris","Alex","Ewa","Barry","Daniella"]

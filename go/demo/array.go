@@ -31,7 +31,6 @@ func main() {
 	fmt.Println(array4)
 
 	// use array
-
 	fmt.Println(array2[2])
 
 	// 把数组赋值给另一个数组
@@ -47,4 +46,15 @@ func main() {
 	mArray2 := [2][3]int{{1, 2, 3}, {22, 33, 44}}
 	fmt.Println(mArray2)
 
+	// 在函数之间传递数组
+	// 这里说明： go语言的传参是按值传递的，数组在传递的时候会被复制，可以使用指针来
+
+	change(array2)
+	fmt.Println(array2) // 这里测试，发现并没有改变array2 的值，因为发生了值拷贝
+
+}
+
+func change(array [5]int) {
+	array[0] = 1111
+	fmt.Println(array)
 }

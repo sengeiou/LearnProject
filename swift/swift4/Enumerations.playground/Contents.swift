@@ -12,12 +12,14 @@ enum someEnum{
 // you use the "case" keyword to introduce new enumneration cases.
 
 // example ,at the example ,each enum item do not implicity equal 0,1,2,3
-enum CompassPoint{
+enum CompassPoint {
     case north
     case south
     case east
     case west
 }
+
+//  CompassPoint.east.rawValue   will be error
 
 
 // multple cases can appear on a single line , separated by commas
