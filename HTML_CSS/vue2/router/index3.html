@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+	
+	<div id="app1">
+		<h1 v-on:click="test">Hello app!</h1>
+		<p>
+
+			<button value="test" v-on:click="test">test</button>
+			<router-link to="/user/123">go to foo</router-link>	
+			<router-link to="/user/111">go to bar</router-link>	
+
+		</p>
+		
+		<router-view></router-view>
+
+	</div>
+
+
+</body>
+
+
+<script type="text/javascript">
+
+	// 编程式的导航
+
+	const user = {
+		template: '<div>{{ $route.params.id }}</div>',
+		watch: { // 通过这个方法观察路由的变化
+			'$route' (to ,from ){
+				console.log(from.path);
+			}
+		}
+
+	}
+
+
+	const router = new VueRouter({
+		routes : [
+			{
+				path : '/user/:id',
+				component:user
+			}
+		]
+	})
+
+
+
+	new Vue({
+		router:router,
+		data:{
+			message : 'hello'
+		},
+		methods : {
+			test :function(){
+				//  其实就是用代码的方式去切换路由
+					router.push({ path: '/user/123123311'})
+			},
+		}
+	}).$mount("#app1")
+
+
+
+</script>
+</html>

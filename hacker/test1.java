@@ -19,7 +19,5 @@ public class test1 {
 		System.out.println(Integer.toBinaryString(a));
 
 
-
-
 	}
 }
