@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景尺寸属性</title>
+	<style type="text/css">
+	* {
+		margin: 25px ;
+	}
+		div{
+			width: 600px;
+			height: 400px;
+			border: 1px solid red;
+			background-image:url('http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg');
+			background-repeat: no-repeat;
+		}
+		.class1{
+			background-size: auto;
+		}
+		.class2 {
+			background-size: 50px 50px;
+		}
+		.class3 {
+			background-size: 200px auto;
+		}
+		.class4 {
+			background-size: 50% 50%;
+		}
+		
+		.class5 {
+			background-size: cover;			
+		}
+		.class6 {
+			background-size: cover;
+			background-position: center;
+			
+		}
+		.class7 {
+			width: 200px;
+			height: 200px;
+			background-size: contain;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<p>
+		
+	</p>
+	
+<div class="class1">
+					background-size: auto;
+
+</div>
+
+
+<div class="class2">
+				background-size: 200px 200px;
+
+</div>
+
+
+<div class="class3">
+				background-size: 200px auto;
+
+</div>
+
+
+<div class="class4">
+				background-size: 50% 50%;
+
+</div>
+<div class="class5">
+			background-size: cover;
+</div>
+<div class="class6">
+			对比上面的，这里的图片做了居中处理  <br>
+			background-position : center;  <br>
+			background-size: cover;
+</div>
+
+<div class="class7">
+			background-size: contain;
+</div>
+
+</body>
+</html>
