@@ -133,8 +133,11 @@ p1.name
 struct Cuboid {
     var width = 0.0 , height = 0.0 ,depth = 0.0
     var volume : Double{
-        return width * height * depth
+        get{
+            return width * height * depth
+        }
     }
+    
 }
 
 let cuboid  = Cuboid(width: 1.0, height: 2.0, depth: 3.0)
@@ -143,12 +146,59 @@ cuboid.volume
 
 
 
+// 只有 getter 没有 setter 的计算属性就是只读计算属性，只读计算属性只能访问， 不能设置新的值
+// 但是要注意，不能没有 getter
+//struct Square{
+//
+//    var width : Int
+//    var height : Int
+//
+//    var result : Int {
+//        set {
+//            result = newValue
+//        }
+//        get {
+//            return width * height
+//        }
+//    }
+//}
+
 // property obervers
+// 属性观察器，每次属性设置值的时候就会调用属性观察器， 即使新值和当前值相同时也回调用
+// 除了延迟存储属性外，别的属性都可以添加属性观察器
+// 观察器主要有  willSet 和 didSet
 
 
 
 // willSet is called just before the value is stored
 // didSet is called immediately after the new value is stored.
+
+//下面这个例子很奇怪，如果一旦用了属性观察器，就要设置属性的默认值，而用了默认值后，就无法 用 setter 和 getter 了
+// 属性观察期和计算属性无法一起使用
+class StepConunter {
+    var totalSteps : Int = 0  {
+//        set {
+//            totalSteps = newValue
+//        }
+//        get {
+//            return totalSteps
+//        }
+        willSet{
+            print(newValue)
+        }
+        didSet{
+            print(oldValue)
+        }
+    }
+}
+
+
+// 全局变量和局部变量
+// 计算属性和属性观察器也可以用在全局变量和局部变量中
+
+
+
+
 
 
 
