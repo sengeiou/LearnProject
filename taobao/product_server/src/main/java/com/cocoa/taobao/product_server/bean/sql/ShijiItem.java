@@ -20,7 +20,7 @@ import java.util.Date;
 
 @Table(name = "shiji_item")
 @Entity
-public class ShijiItem {
+public class ShijiItem extends BaseItem {
 
     @Id
     private long id;
@@ -60,6 +60,26 @@ public class ShijiItem {
     private int status;
     @Column(name="search_kw")
     private String search_kw;
+    @Column(name="tb_from")
+    private int tb_from;
+
+
+    public String getSearch_kw() {
+        return search_kw;
+    }
+
+    public void setSearch_kw(String search_kw) {
+        this.search_kw = search_kw;
+    }
+
+    public int getFrom() {
+        return tb_from;
+    }
+
+    public void setFrom(int tb_from) {
+        this.tb_from = tb_from;
+    }
+
     public int getStatus() {
         return status;
     }

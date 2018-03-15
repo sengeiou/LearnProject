@@ -1,10 +1,7 @@
 package com.cocoa.taobao.product_server.bean.sql;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -16,34 +13,15 @@ import java.util.Date;
  * @date: 17/8/23 11:49
  */
 
-//CREATE TABLE `taobao_item` (
-//        `id` int(11) NOT NULL AUTO_INCREMENT,
-//        `item_url` varchar(120) COLLATE utf8_bin DEFAULT NULL,
-//        `nick` varchar(80) COLLATE utf8_bin DEFAULT NULL,
-//        `num_iid` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `pict_url` varchar(120) COLLATE utf8_bin DEFAULT NULL,
-//        `provcity` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `reserve_price` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `seller_id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `small_images` varchar(400) COLLATE utf8_bin DEFAULT NULL,
-//        `title` varchar(120) COLLATE utf8_bin DEFAULT NULL,
-//        `user_type` int(11) DEFAULT NULL,
-//        `volume` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `zk_final_price` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `sales` int(11) DEFAULT NULL,
-//        `sales_update_time` datetime DEFAULT NULL,
-//        `create_time` datetime DEFAULT NULL,
-//        `item_id` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-//        `status` int(11) NOT NULL DEFAULT '0',
-//        PRIMARY KEY (`id`)
-//        ) ENGINE=InnoDB AUTO_INCREMENT=10580 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
 
 
-@Table(name = "taobao_item")
+@Table(name = "taobao_item" )
+
 @Entity
-public class CommitItem {
+public class CommitItem extends  BaseItem {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name = "item_url")
     private String item_url;//private String http:\/\/item.taobao.com\/item.htm?id=43189047510",
@@ -75,22 +53,31 @@ public class CommitItem {
     private Date sales_update_time;
     @Column(name = "create_time")
     private Date create_time;
-    @Column(name = "item_id")
-    private String item_id;  // 商品id
+    @Column(name = "rate")
+    private String rate;
     @Column(name="status")
     private int status;
     @Column(name="search_kw")
     private String search_kw;
-
+    @Column(name="tb_from")
+    private int tb_from;
 
 
     public Object[] getSqlParams() {
-        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, item_id,status,search_kw};
+        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, rate,status,search_kw};
     }
 
 
     public CommitItem() {
 
+    }
+
+    public int getFrom() {
+        return tb_from;
+    }
+
+    public void setFrom(int tb_from) {
+        this.tb_from = tb_from;
     }
 
     public long getId() {
@@ -221,14 +208,13 @@ public class CommitItem {
         this.create_time = create_time;
     }
 
-    public String getItem_id() {
-        return item_id;
+    public String getRate() {
+        return rate;
     }
 
-    public void setItem_id(String item_id) {
-        this.item_id = item_id;
+    public void setRate(String rate) {
+        this.rate = rate;
     }
-
 
     public int getStatus() {
         return status;

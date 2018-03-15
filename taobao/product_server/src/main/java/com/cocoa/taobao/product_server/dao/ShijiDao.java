@@ -13,27 +13,4 @@ public interface ShijiDao extends JpaRepository<ShijiItem, Long> {
 
 
 
-    @Transactional
-    @Modifying
-    @Query(value = "insert into shiji_item(item_url,nick, num_iid,pict_url, provcity, reserve_price, seller_id, small_images, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, rate) values(?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14,?15,?16)",nativeQuery = true)
-    int insertShiji(String item_url,
-                    String nick,
-                    String num_iid,
-                    String pict_url,
-                    String provcity,
-                    String reserve_price,
-                    String seller_id,
-                    String small_images,
-                    String title,
-                    String user_type,
-                    String volume,
-                    String zk_final_price,
-                    int sales,
-                    Date sales_update_time,
-                    Date create_time,
-                    String rate
-
-    );
-
-
 }

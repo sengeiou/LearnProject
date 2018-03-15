@@ -103,9 +103,9 @@
         methods: {
             getData : function (){
                 var vm  = this;
-                axios.get('/product/taobao/getItems?status=0&size=30')
+                axios.get('/product/shiji/getItems?status=0&size=20&page=0')
                     .then(function (response) {
-                    vm.items = response.data
+                    vm.items = response.data.data.content
                 })
             }
             ,

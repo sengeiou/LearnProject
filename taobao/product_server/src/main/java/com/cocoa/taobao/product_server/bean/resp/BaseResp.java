@@ -13,14 +13,17 @@ public class BaseResp<T> {
     private String msg = "ok";
     private T data;
 
-    public void setResultOK(){
+    public BaseResp setResultOK(){
         this.code =  DEFAULT_CODE;
         this.msg =  "ok";
+        return this;
     }
 
-    public void setError(int code, String msg){
+    public BaseResp setError(int code, String msg){
         this.code =  code;
         this.msg =  msg;
+        this.data = null;
+        return this;
     }
 
 
@@ -44,8 +47,9 @@ public class BaseResp<T> {
         return data;
     }
 
-    public void setData(T data) {
+    public BaseResp setData(T data) {
         this.data = data;
+        return this;
     }
 
 }

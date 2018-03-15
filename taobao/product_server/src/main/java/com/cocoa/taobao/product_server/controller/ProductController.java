@@ -6,11 +6,16 @@ import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkItemGetRequest;
 import com.taobao.api.response.TbkItemGetResponse;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
+//tengxun  118.126.66.230    !     2018-07   RMB120   1核2G、1M带宽
+//jd       116.196.79.208    ?      2018-09   RMB188  1核2G
+// aliyun   120.79.51.243     ?      2018-11   RMB330  1核1G
 
 /**
  *  ProductController -> get item from taobao
@@ -19,14 +24,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/product")
+@Api(value = "从淘宝客获取商品列表",
+        description = "（不进数据库，只单纯的调用淘宝Api，调用端：1.android端查询好销量后进库）"
+)
 public class ProductController {
-    public static String url = "http://gw.api.taobao.com/router/rest";
-    public static String appkey = "23222740";
-    public static String secret = "36b68bc26780160e5d80a129666dcc7f";
-    private Gson mGson = new Gson();
 
+
+    @Value("${taobao.url}")
+    public  String url ;
+    @Value("${taobao.appkey}")
+    public  String appkey ;
+    @Value("${taobao.secret}")
+    public  String secret ;
+
+    @ApiOperation(value="获取淘宝的商品", notes="根据关键字获取淘宝接口的的商品")
     @RequestMapping(method = RequestMethod.GET, value = "/list")
-    public String getProduct(long pageSize, long pageNo, String keywords) {
+    public String getProduct(long pageSize, long pageIndex, String keywords) {
 
         TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
         TbkItemGetRequest req = new TbkItemGetRequest();
@@ -42,7 +55,7 @@ public class ProductController {
 //        req.setStartTkRate(123L);
 //        req.setEndTkRate(123L);
 //        req.setPlatform(1L);  //platform	Number	可选	1		链接形式：1：PC，2：无线，默认：１
-        req.setPageNo(pageNo);
+        req.setPageNo(pageIndex);
         req.setPageSize(pageSize);
         String resp = "";
         try {
