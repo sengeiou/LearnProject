@@ -1,6 +1,7 @@
 package com.cocoa.taobao.product_server.bean.resp;
 
 import com.google.gson.Gson;
+import jdk.nashorn.internal.objects.annotations.Setter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class BaseResp<T> {
 
     public static final int DEFAULT_CODE = 0;
+
 
     private int code = DEFAULT_CODE;
     private String msg = "ok";
