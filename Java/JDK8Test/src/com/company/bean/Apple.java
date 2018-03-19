@@ -1,4 +1,4 @@
-package com.company.chapter1.bean;
+package com.company.bean;
 
 
 public class Apple{

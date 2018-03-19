@@ -2,7 +2,7 @@ package com.company.chapter1;
 
 
 import java.util.*;
-import com.company.chapter1.bean.*;
+import com.company.bean.*;
 
 
 public class Test1{
