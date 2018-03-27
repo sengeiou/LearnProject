@@ -6,7 +6,6 @@ public class Main {
 	// write your code here
 
         byte b = 50;
-        b = b * 2;
 
     }
 }

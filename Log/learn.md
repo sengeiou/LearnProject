@@ -36,17 +36,20 @@
 
 2. java编程基础 bilibili-java
 
-
+3. https://www.toutiao.com/c/user/51986973236/#mid=1562180472582145  xinlan 
+	https://www.toutiao.com/c/user/55164393491/#mid=1558400338905090 youlingwu	
+	https://www.toutiao.com/c/user/6093393054/#mid=6092543233   baiguo
 
 
 ## jvm
-
-
+1. http://www.importnew.com/28390.html
+2. 马士兵 jvm https://www.bilibili.com/video/av11226146?from=search&seid=1602006468027757593 
+3.  JVM中的G1垃圾回收器 http://www.importnew.com/15311.html?open_source=weibo_search&from=singlemessage
 
 
 ## js
 1. webpack http://www.css88.com/doc/webpack2/guides/development/
-
+            https://www.webpackjs.com/concepts/
 
 
 

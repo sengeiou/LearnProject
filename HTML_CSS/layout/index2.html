@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.parent{
+			
+		}
+
+		.child{
+			display: table;
+			margin: 0px auto;
+		}
+	</style>
+
+</head>
+<body>
+
+	<p>
+		<br>原理：先将子框设置为块级表格来显示（类似 ），再设置子框居中以达到水平居中。
+		<br>用法：对子框设置display:table，再设置margin:0 auto。
+		<br>优点：只设置了child，ie8以上都支持
+		<br>缺点：不支持ie6、ie7,将div换成table
+
+	</p>
+
+	<div class="parent">
+		<div class="child">DEMO
+		</div>	
+	</div>
+
+	
+</body>
+</html>
