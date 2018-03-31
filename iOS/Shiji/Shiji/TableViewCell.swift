@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class TableViewCell : UITableViewCell {
+    @IBOutlet weak var sales: UILabel!
+    @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var title: UILabel!

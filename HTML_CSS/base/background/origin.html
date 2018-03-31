@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>背景原点属性简介</title>
+<style type="text/css">
+
+
+div {
+	width: 600px;
+	height: 200px;
+	border: 20px dashed #cc00ff;
+	background-color: orange;
+	background-image: url('../../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 20px;
+	margin: 30px;
+}
+
+[class$=v1]{
+	background-origin: padding-box;
+}
+
+[class$=v2]{
+	background-origin: border-box;
+}
+
+[class$=v3]{
+	background-origin: content-box;
+}
+
+
+</style>
+
+</head>
+<body>
+
+	<p>
+		基本语法: background-origin:padding-box || border-box  || content-box    <br>
+		这个属性可以根据自己的需求来改变背景图片的 background-position 起始位置  <br>
+		padding-box : (默认值） 从padding 的外边缘开始显示背景图片 <br>
+		border-box : 从 border 的外边缘开始显示背景图片  <br>
+		content-box : 从 content 的外边缘开始显示背景图片  <br>
+
+		查看例子：注意看下面三个块中白色图片的位置 <br>
+	</p>
+
+<div class="div1">background-origin: padding-box;
+</div>
+
+<div class="div2">background-origin: border-box;
+</div>
+
+<div class="div3">background-origin: content-box;
+</div>
+
+
+</body>
+</html>

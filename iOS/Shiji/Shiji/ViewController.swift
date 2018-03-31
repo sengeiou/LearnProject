@@ -15,34 +15,66 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     
     @IBOutlet weak var tableview: UITableView!
     
-    let url : String = "http://116.196.79.208:8080/product/server/getItems?status=0"
-    var items : [Item]? = []
+    let url : String = "http://116.196.79.208:8898/product/server/getItems?status=0"
+    var items : [Item?] = []
     
+    // request page index
+    var pageIndex : Int = 0
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(ViewController.refresh))
+        self.tableview.mj_header = header
+        
+        let footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(ViewController.loadmore))
+        self.tableview.mj_footer = footer
+        
+        getItems()
+    }
+    
+    func getItems() {
         Alamofire.request(url).responseJSON { response in
             
+            self.stopRefresh()
+            
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                self.items =  [Item].deserialize(from: utf8Text) as! [Item]
-                self.tableview.reloadData()
+                
+                if(self.pageIndex == 0){
+                    self.items.removeAll(keepingCapacity: false)
+                }
+                if let tempItems = [Item].deserialize(from: utf8Text) {
+                    self.items += tempItems
+                    self.tableview.reloadData()
+                }
             }
         }
-        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(ViewController.refresh))
-        //        header.setRefreshingTarget(self.tableview, refreshingAction: Selector("refresh"))
-        self.tableview.mj_header = header
     }
+    
+    
     
     @objc func refresh(){
-        sleep(2)
-        print("下拉刷新")
-        self.tableview.mj_header.endRefreshing()
+        pageIndex = 0
+        getItems()
     }
     
+    
+    @objc func loadmore(){
+        pageIndex += 1
+        getItems()
+    }
+    
+    func stopRefresh(){
+        if (pageIndex == 0){
+            self.tableview.mj_header.endRefreshing()
+        }else{
+            self.tableview.mj_footer.endRefreshing()
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items!.count
+        return items.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,24 +86,35 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         let cell : TableViewCell =  tableView.dequeueReusableCell(withIdentifier: "cell")
             as! TableViewCell
-        cell.title.text = items![indexPath.row].title
-        
-        if let imgURL = items![indexPath.row].pict_url,let url = URL(string: imgURL){
-            cell.img.kf.setImage(with: url)
+        if let item =  items[indexPath.row] {
+            cell.title.text = item.title
+            
+           // let range = NSRangePointer(
+            
+//            let attributeStr = NSAttributedString(string: "¥ " + item.zk_final_price!)
+//            attributeStr.attribute(NSBackgroundColorAttributeName, at: 30, effectiveRange: )
+            
+//            cell.price.text = attributeStr.string
+            cell.sales.text  = "月销:" + item.sales!
+            if let imgURL = item.pict_url,let url = URL(string: imgURL){
+                cell.img.kf.setImage(with: url)
+            }
         }
-        
         return cell
-        
     }
+
     
+    // MARK: row height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let num_iid = items![indexPath.row].num_iid
-        clk(itemId: num_iid!)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let item = items[indexPath.row], let num_iid = item.num_iid
+        {
+            clk(itemId: num_iid)
+        }
     }
     
 
@@ -79,6 +122,7 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         super.didReceiveMemoryWarning()
         
     }
+    
     
     func clk(itemId : String) {
         let page = AlibcTradePageFactory.itemDetailPage(itemId)
@@ -98,11 +142,15 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         sdk.tradeService().show(self, page: page, showParams: showParams, taoKeParams: taokeParams, trackParam: dictParams, tradeProcessSuccessCallback: success, tradeProcessFailedCallback: nil)
     }
     
-    
+    // MARK: 123
     func success(result : AlibcTradeResult? ) -> Void {
         print("--------------")
         print(result ?? "123")
     }
+    
+    
+    
+    
     
 }
 

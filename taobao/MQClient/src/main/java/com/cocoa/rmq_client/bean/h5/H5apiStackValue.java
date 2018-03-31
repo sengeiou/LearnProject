@@ -1,0 +1,9 @@
+package com.cocoa.rmq_client.bean.h5;
+
+public class H5apiStackValue {
+    public H5apiStackDelivery delivery;
+    public H5apiStackPrice price;
+    public H5apiStackItem item;
+
+
+}

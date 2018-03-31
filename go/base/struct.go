@@ -24,12 +24,10 @@ type Books struct {
 	id     int
 }
 
-
 type SuperBooks struct {
 	title string
-	book Books
+	book  Books
 }
-
 
 func main() {
 
@@ -57,23 +55,17 @@ func main() {
 	//*************
 	//使用工厂方法创建
 	//book5 :=  NewBook(0,"123","123")   // 返回的nil
-	book5 :=  NewBook(123,"123","123")
+	book5 := NewBook(123, "123", "123")
 	fmt.Println(book5.title)
 	//*************
 
+	//*************
+	// 结构体的组合  碰到同名的参数也没关系，注意调用层级就行
+	sb := &SuperBooks{title: "sb", book: Books{"title", "author", 12}}
 
-
-//*************
-// 结构体的组合  碰到同名的参数也没关系，注意调用层级就行
-sb := &SuperBooks{title:"sb",book:Books{"title","author",12}}
-
-fmt.Println(sb.title)
-fmt.Println(sb.book.title)
-//*************
-
-
-
-
+	fmt.Println(sb.title)
+	fmt.Println(sb.book.title)
+	//*************
 
 }
 

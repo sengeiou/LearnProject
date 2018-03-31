@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景裁切属性</title>
+</head>
+	<style type="text/css">
+		*{
+			margin: 10px 0px;
+		}
+		div{
+			width :300px;
+			height : 100px;
+			border: 50px dashed #ff00ff;
+			background-image: url('../../img/bg.jpg');
+			background-color: orange;
+			background-repeat: no-repeat;
+			padding: 30px;
+			margin: 20px;
+		}
+		
+		.no-repeat{
+			background-repeat: no-repeat;
+		}
+
+		.repeat{
+			background-repeat: repeat;
+		}
+
+
+
+		[class$=box]{
+			width: 200px;
+			height: 180px;
+			border: 30px dashed red;
+			background-color :orange;
+			background-image: url('../../img/bg.jpg');
+			background-repeat: no-repeat;
+			padding: 30px
+		}
+
+		[class*=padding]{
+			background-clip:padding-box;
+		}
+		[class*=border]{
+			background-clip: border-box;
+		}
+		[class*=content]{
+			background-clip: content-box;
+		}
+
+	</style>
+<body>
+	<p>
+		背景裁切属性  <br>
+		先看下基本语法   background-clip : padding-box | border-box | content-box  <br>
+
+
+	</p>	
+	<span>下面的两个块主要介绍了 ，background-repeat 改变时， background-image的显示位置 			background-repeat: no-repeat;
+	</span>
+	<div class="no-repeat">background-repeat: no-repeat;</div>
+	<div class="repeat">background-repeat: repeat;</div>
+
+	<span>下面开始 clip 的操作</span>
+	<div class="original-box">original-box</div>
+	<div class="padding-box">padding-box</div>
+	<div class="border-box">border-box(默认值，所以和 original-box一致)</div>
+	<div class="content-box">content-box</div>
+
+</body>
+</html>

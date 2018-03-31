@@ -1,14 +1,9 @@
 package com.cocoa.rxjava.rxjava.oper;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import com.cocoa.rxjava.rxjava.Person;
-import com.cocoa.rxjava.rxjava.R;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -35,28 +30,15 @@ import io.reactivex.functions.Function;
  * Created by junshen on 2018/1/2.
  */
 
-public class TranActivity extends AppCompatActivity {
+public class TranActivity extends BaseActivity {
 
     public static final String TAG = "MainActivity";
-    private Context mContext;
     private TextView tt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tran);
-        tt = (TextView) findViewById(R.id.test);
-        mContext = this;
-        tt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                flatmap2();
-            }
-        });
-    }
 
-    void printMsg(String s) {
-        Log.e("TranActivity", s);
     }
 
     void flatmap2 (){
@@ -114,7 +96,7 @@ public class TranActivity extends AppCompatActivity {
         Flowable.create(new FlowableOnSubscribe<String>() {
             @Override
             public void subscribe(FlowableEmitter<String> e) throws Exception {
-e.onNext("");
+                e.onNext("");
             }
         }, BackpressureStrategy.ERROR).subscribe(new Subscriber<String>() {
             @Override

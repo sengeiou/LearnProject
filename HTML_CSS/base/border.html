@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border</title>
+	<style type="text/css">
+
+		div{
+			margin: 5px;
+		}
+
+		.div1{
+			border: 2px dotted red;
+			padding: 5px;
+		}
+
+		.div2 {
+			border-style: solid;
+			border-color: #360302 #006b00 ;
+		}
+
+		.div3 {
+			border: 27px double green;
+			height: 135px;
+			border-image: url('https://www.w3.org/TR/css-backgrounds-3/images/border.png') 27 repeat;
+			-webkit-border-image: url('https://www.w3.org/TR/css-backgrounds-3/images/border.png') 27 repeat;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	
+	<p>
+		border 一般有下面三个属性： <br>
+		border:width   <br> 
+		border:style  [ solid | dashed | dotted | double ]  <br>
+		border:color   <br>
+		
+		当然也可以见写成 border : width style color; <br>
+
+		其中最重要的属性就是 style ，如果不设置 style ，是没有办法显示border 的， 默认的width 为3-4px, 默认的color 是字体的颜色，默认的 style 则是 none   <br>
+
+		<br>
+		<br>
+		首先来看 css3 中的 border-color   <br>
+		1: border-color 可以拆分为   border-x-colors	[x= top|right|bottom|left]  (注意是带 s 的)  <br>
+		2: 在 css3 中 ，border-color 没有成为标准，所以要让浏览器正常工作，必须要带上前缀，可以用 webpack 自动生成 <br>
+
+<br>
+<br>
+
+		再来看 border-image   <br>
+		border-image : none | <image> [number | percentage] {1,4}     ?[ stretch | repeat |round ]  <br>	
+		1: none 表示无边框背景  <br>
+		2: image 表示背景图片，就是图片的 url  <br>
+		3: number 边框或背景图片的大小，单位是px .可以设置 1-4个值 <br>
+		4: percentage  和number 一样。单位是百分比  <br>
+		5: 铺放方式，默认是 stretch，会拉伸背景 | 重复边框背景，repeat | 平铺边框背景 round  
+	
+	</p>
+	
+	<br>
+	<br>
+	<br>
+
+	<div>example:</div>	
+
+	<div class="div1"> this is div1, the style border: 2px dotted red;  设置红色点线边框宽度2px</div>
+	
+	<div class="div2"> this is div2 , change top color </div>
+
+
+	<div class="div3"> this is div3 , use border-image </div>
+
+	
+</body>
+</html>

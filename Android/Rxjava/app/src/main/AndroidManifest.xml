@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".oper.TranActivity"/>
+        <activity android:name=".oper.CreateActivity"/>
 
     </application>
 

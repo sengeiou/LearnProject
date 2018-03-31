@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,29 +31,49 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-qk-ecY">
-                                                    <rect key="frame" x="10" y="10" width="140" height="140"/>
+                                                    <rect key="frame" x="10" y="9.5" width="140" height="140.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="140" id="4vZ-pG-Uej"/>
                                                         <constraint firstAttribute="width" constant="140" id="7dl-ys-gtG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y75-vM-iDO">
-                                                    <rect key="frame" x="160" y="18" width="205" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y75-vM-iDO" userLabel="title">
+                                                    <rect key="frame" x="160" y="21" width="205" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-Ti-035" userLabel="price">
+                                                    <rect key="frame" x="160" y="48" width="205" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-NO-pcX" userLabel="sales">
+                                                    <rect key="frame" x="160" y="79" width="205" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Ohl-Ti-035" secondAttribute="trailing" constant="10" id="1ew-tP-tBh"/>
                                                 <constraint firstItem="rtc-qk-ecY" firstAttribute="centerY" secondItem="dJn-Ri-YJN" secondAttribute="centerY" id="3Iz-kc-mX9"/>
                                                 <constraint firstAttribute="trailing" secondItem="y75-vM-iDO" secondAttribute="trailing" constant="10" id="Azn-lJ-nZO"/>
+                                                <constraint firstItem="Ohl-Ti-035" firstAttribute="top" secondItem="y75-vM-iDO" secondAttribute="bottom" constant="10" id="SXz-cc-t1m"/>
+                                                <constraint firstAttribute="trailing" secondItem="U1I-NO-pcX" secondAttribute="trailing" constant="10" id="fbC-bi-nMC"/>
+                                                <constraint firstItem="Ohl-Ti-035" firstAttribute="leading" secondItem="rtc-qk-ecY" secondAttribute="trailing" constant="10" id="gc3-AC-Cve"/>
+                                                <constraint firstItem="U1I-NO-pcX" firstAttribute="leading" secondItem="rtc-qk-ecY" secondAttribute="trailing" constant="10" id="lfU-IA-cKe"/>
                                                 <constraint firstItem="y75-vM-iDO" firstAttribute="top" secondItem="dJn-Ri-YJN" secondAttribute="topMargin" constant="10" id="p0Y-39-NzC"/>
+                                                <constraint firstItem="U1I-NO-pcX" firstAttribute="top" secondItem="Ohl-Ti-035" secondAttribute="bottom" constant="10" id="sZt-Ga-oRP"/>
                                                 <constraint firstItem="y75-vM-iDO" firstAttribute="leading" secondItem="rtc-qk-ecY" secondAttribute="trailing" constant="10" id="wt9-sg-OrH"/>
                                                 <constraint firstItem="rtc-qk-ecY" firstAttribute="leading" secondItem="dJn-Ri-YJN" secondAttribute="leading" constant="10" id="zcB-gj-wdN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="img" destination="rtc-qk-ecY" id="7Dx-i9-oHh"/>
+                                            <outlet property="price" destination="Ohl-Ti-035" id="DpS-zo-KpP"/>
+                                            <outlet property="sales" destination="U1I-NO-pcX" id="niv-De-bnH"/>
                                             <outlet property="title" destination="y75-vM-iDO" id="9HC-1Y-NJW"/>
                                         </connections>
                                     </tableViewCell>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Section</title>
+	<style type="text/css">
+			
+
+
+			div[id]{
+				font-weight: bold;
+				border-style: dotted;
+				border-width: 2px;
+				border-color: #ccc;
+			}
+			div[class="large"]{
+				font-size: 50px;
+			}
+			
+			div[class~="red"]{
+				color:red;
+			}
+
+
+			/*123*/
+			[id=section1 ]{
+				background-color: red;
+			}
+			[ id*=section1]{
+				background-color : yellow;
+			}
+
+			[id^=sub]{
+				background-color: green;
+			}
+
+			[id$=on1]{
+				font-size: 40px;
+			}
+
+			
+
+	</style>
+</head>
+<body>
+	<p>
+		属性选择器 <br>
+
+		从语法上来说，[]前可以带 element ，也可以不带		
+
+
+		1: element[attr]  所有带 attr 属性的元素，都会被选择到 例：div[id] <br>
+		2: element[attr="val"] 所有带 attr 属性，并且值是val的元素，例 div[class="large"] a[href="http://www.baidu.com"]<br>
+		3: element[attr~="val"] 所有带 attr 属性，并且值中包含val的元素，一般class 用的比较多， 例：div[class~="red"]  <br>
+		4: 
+
+		<br>
+		<br>
+		css3 新增属性选择器<br>
+		1: [att*=val] 选择器 att 属性中包含 val 的，都会被选择 <br>
+		2: [att^=val] 选择器 att 属性以 val 开头的，都会被选择 <br>
+		3: [att$=val] 选择器 att 属性以 val 结尾的，都会被选择 <br> 
+
+
+	</p>
+
+
+	<div>下面是例子：</div>
+	<br>
+	<div id="section1"> section1 </div>
+	<div id="subsection1-1"> subsection1-1 </div>
+	<div id="subsection1-2"> subsection1-2 </div>
+	<div class="large">large text</div>
+	<div class="large red"> 显示为红色的字体 </div>
+
+</body>
+</html>

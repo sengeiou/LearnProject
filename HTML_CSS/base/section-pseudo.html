@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类和伪元素</title>
+		<style type="text/css">
+			
+			/*a:visited 选择已访问地址的超链接*/
+			a:visited {
+				color :red;
+					}
+			/* 咋一看，a:link 有点多余，完全可以用 a 元素选择器直接代替，但是如果 a 标签不带 href，也会被a 元素选择器选中*/
+			a:link {
+				font-size: 20px;
+				background-color: green;
+				}
+			
+			input:focus {
+				/*鼠标点击时改变了背景颜色*/
+				background-color: red;
+			}
+			input:active{
+				/*这个好像并没有选到*/
+				color: white;
+			}
+			*:hover{
+				background-color: yellow;
+			}
+			div:first-child {
+				color:red;
+			}
+			li:first-child{
+				color:red;
+			}
+			p:first-letter{
+				font-size: 50px;
+			}
+			p:first-line {
+				background-color: #ccc;
+			}
+
+
+			h1:before{
+				content: 'im h1 before';
+				background-color: red;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+		<p>
+			链接伪类 <br>
+			1. a:visited   <br>
+			2. a:link      <br>
+			<br>
+			2.1新增的动态伪类   <br>
+			1. :focus  当前拥有输入焦点的元素  <br>
+			2. :hover  鼠标指针停留的元素		<br>
+			3. :active 用户输入激活的元素  		<br>
+			动态伪类可以用应用到任何元素   <br>
+			
+			1: element:first-child 选择第一个子元素，如果还有子元素，则会被嵌套选择中 (IE6不支持)  <br>
+			2: element:first-letter 选择首字母  （css2中只能用块级元素和a标签） 具体选择的属性要去查表，伪元素选择器放在最后  <br>
+			3: element:first-line 选择第一行     （css2中只能用块级元素和a标签）  <br>
+
+			伪类可以与 CSS 类配合使用： <br>
+
+			1. a.red:visited {color:#FF0000;}   <br>
+ 
+			2. < a class="red" href="css-syntax.html">CSS 语法</ a>
+
+			<br>
+			<br>
+			<br>
+
+			<a href="http://www.runoob.com/css/css-pseudo-classes.html" target="blank">css伪类</a>
+			<a href="http://www.runoob.com/css/css-pseudo-elements.html" target="blank">css伪元素</a>
+		</p>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<a href="http://www.baidu.com">baidu.com   </a>
+		<br>
+		<a > empty a element</a>
+		<input type="text">
+		
+		<div>
+			<div>div-div
+				<p>div-p 一年前，国家主席习近平在世界经济论坛年会和联合国日内瓦总部发表两场历史性演讲，向世界描绘一幅构建人类命运共同体的壮美蓝图，产生了强烈反响。美国《外交政策》杂志说，这是“具有分水岭意义的时刻”。
+					<p>div-p-p一年前，国家主席习近平在世界经济论坛年会和联合国日内瓦总部发表两场历史性演讲，向世界描绘一幅构建人类命运共同体的壮美蓝图，产生了强烈反响。美国《外交政策》杂志说，这是“具有分水岭意义的时刻”。
+					</p>
+				</p>
+			</div>
+			<div>div-div</div>
+			<ul>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+			</ul>
+		</div>
+
+	
+		<h1>hi content</h1>
+
+	</body>
+</html>

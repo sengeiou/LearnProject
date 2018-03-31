@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>hierarchy 文档的层级结构</title>
+		<style type="text/css">
+			/*后代选择器, h1 元素下的 em 才会被选择到 */
+			h1 em {
+				color: grey;
+			}
+			
+			/*不论嵌套有多深，只要是包含在ul> ul 下的 em ，都会被选择 （任意的后代）*/
+			ul em{
+				color:grey;
+			}
+
+			/*选择子元素，不是任意后代，注意和上一行的区别*/
+			p > a{
+				background-color: red;
+			}
+
+			/*相邻兄弟元素*/
+			a + em {
+				font-size:  30px;
+			}
+			/*li + li 只会把第2列到最后一列选中 */
+			li + li {
+				font-weight: bold;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1><em>h1-em</em></h1>
+		<p>
+			<a href="111">p-a</a>
+			<em>p-em</em>
+			<strong>
+			<a href="http://www.baidu.com"><em>p-strong-a-em-baidu</em></a>
+			</strong>
+		</p>
+		<ul>
+			<li><ul>
+				<li>111</li>
+				<li>111</li>
+				<li><ol>
+					<li><em>ol1 -em </em></li>
+					<li>ol2</li>
+					<li>ol3</li>
+				</ol></li>
+			</ul></li>
+			<li>222</li>
+		</ul>
+		<p><a href="http://www.qq.com">p-a-qq.com</a></p>
+		
+	</body>
+</html>

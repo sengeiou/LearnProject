@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Title</title>
     <style type="text/css">
         img {
@@ -48,15 +48,12 @@
         .li-right {
             margin: 0px 0px 0px 10px;
         }
-
         div > h5 {
             margin: 6px 0px 0px 0px;
         }
-
         button {
             margin: 5px 15px 5px 5px;
         }
-
         .btn {
             float: left;
         }
@@ -71,7 +68,7 @@
             <img v-bind:src="it.pict_url"/>
 
             <div class="li-right">
-                <h5 class="title">{{index}}--{{ it.title }}</h5>
+                <h5 class="title">{{index}}--{{it.title}}--{{it.num_iid}}</h5>
                 <h5 class="decoration">价格:{{ it.reserve_price }}</h5>
                 <h5 class="price">促销价:{{ it.zk_final_price }}</h5>
                 <h5> 销量:{{ it.sales }}</h5>
@@ -86,7 +83,7 @@
         </li>
     </ul>
 
-    <button @click="nextPage()"> next page</button>
+    <button @click="getData()"> next page</button>
 </div>
 </body>
 <script src="https://unpkg.com/vue"></script>
@@ -110,86 +107,54 @@
     var example1 = new Vue({
             el: '#item',
             data: {
-                index: 0,
+                pageIndex: 0,
+                pageSize: 30,
                 items: [],
                 itemDebug: [{
-                    "id": 6285,
-                    "item_url": "http://item.taobao.com/item.htm?id\u003d524540166255",
-                    "nick": "天猫超市",
-                    "num_iid": "524540166255",
-                    "pict_url": "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png",
-                    "provcity": "上海",
-                    "reserve_price": "15.00",
-                    "seller_id": "725677994",
-                    "small_img": "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png@@http://img2.tbcdn.cn/tfscom/i1/725677994/TB2UvSbkVXXXXblXpXXXXXXXXXX_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2mn9Ya9iJ.eBjSszfXXa4bVXa_!!725677994.jpg@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2N4t9ipXXXXbHXpXXXXXXXXXX_!!725677994.jpg@",
-                    "title": "TC蔓越莓曲奇饼干手提兔子铁礼盒手工休闲零食品儿童女友送礼80g",
-                    "user_type": "1",
-                    "volume": "205542",
-                    "zk_final_price": "205542",
-                    "sales": 257073,
-                    "sales_update_time": "Nov 20, 2017 6:00:56 PM",
-                    "create_time": "Nov 20, 2017 6:00:56 PM",
-                    "status": 0
-                }, {
-                    "id": 6868,
-                    "item_url": "http://item.taobao.com/item.htm?id\u003d520291956767",
-                    "nick": "三只松鼠旗舰店",
-                    "num_iid": "520291956767",
-                    "pict_url": "http://img2.tbcdn.cn/tfscom/i2/880734502/TB1nV8ad2DH8KJjy1XcXXcpdXXa_!!0-item_pic.jpg",
-                    "provcity": "安徽 芜湖",
-                    "reserve_price": "55.00",
-                    "seller_id": "880734502",
-                    "small_img": "http://img2.tbcdn.cn/tfscom/i2/880734502/TB2ZQEdam4mpuFjSZFOXXaUqpXa_!!880734502.jpg@@http://img2.tbcdn.cn/tfscom/i4/880734502/TB2cGtAXMwjyKJjSsppXXaxUpXa_!!880734502.jpg@@http://img3.tbcdn.cn/tfscom/i2/880734502/TB2X.sQdpXXXXXQXXXXXXXXXXXX_!!880734502.jpg@@http://img3.tbcdn.cn/tfscom/i1/880734502/TB2AExdlMJlpuFjSspjXXcT.pXa_!!880734502.jpg@",
-                    "title": "聚【三只松鼠_夹心麻薯210gx3】传统糕点点心美食早餐零食组合",
-                    "user_type": "1",
-                    "volume": "22298",
-                    "zk_final_price": "22298",
-                    "sales": 185973,
-                    "sales_update_time": "Nov 20, 2017 6:08:34 PM",
-                    "create_time": "Nov 20, 2017 6:08:34 PM",
-                    "status": 0
-                }, {
-                    "id": 6669,
-                    "item_url": "http://item.taobao.com/item.htm?id\u003d44800690064",
-                    "nick": "天猫超市",
-                    "num_iid": "44800690064",
-                    "pict_url": "http://img2.tbcdn.cn/tfscom/i3/725677994/TB19EQua5ERMeJjy0FcXXc7opXa_!!2-item_pic.png",
-                    "provcity": "上海",
-                    "reserve_price": "18.90",
-                    "seller_id": "725677994",
-                    "small_img": "http://img2.tbcdn.cn/tfscom/i3/725677994/TB19EQua5ERMeJjy0FcXXc7opXa_!!2-item_pic.png@@http://img3.tbcdn.cn/tfscom/i2/725677994/TB2S00Rcp_.F1JjSZFjXXahnXXa_!!725677994.jpg@@http://img3.tbcdn.cn/tfscom/i1/725677994/TB2AqyXaYH8F1JjSspfXXarnXXa_!!725677994.jpg@@http://img2.tbcdn.cn/tfscom/i4/725677994/TB2QUp.cyb_F1JjSZFzXXc6KXXa_!!725677994.jpg@",
-                    "title": "百草味 蔓越莓曲奇100g 休闲零食小吃 饼干点心",
-                    "user_type": "1",
-                    "volume": "140814",
-                    "zk_final_price": "140814",
-                    "sales": 180619,
-                    "sales_update_time": "Nov 20, 2017 6:06:03 PM",
-                    "create_time": "Nov 20, 2017 6:06:03 PM",
-                    "status": 0
+                    "id": 12179,
+                    "item_url": "http://item.taobao.com/item.htm?id=44241444310",
+                    "nick": "衣裳云衫",
+                    "num_iid": "44241444310",
+                    "pict_url": "https://img.alicdn.com/tfscom/i1/644216784/TB2SFJ6sFXXXXaxXXXXXXXXXXXX_!!644216784.jpg",
+                    "provcity": "安徽 宣城",
+                    "reserve_price": "60.00",
+                    "seller_id": "644216784",
+                    "small_img": "https://img.alicdn.com/tfscom/i2/644216784/TB2b4s9hKEJL1JjSZFGXXa6OXXa_!!644216784.jpg@@https://img.alicdn.com/tfscom/i4/644216784/TB2H4ApspXXXXbGXpXXXXXXXXXX_!!644216784.jpg@@https://img.alicdn.com/tfscom/i2/644216784/TB247r8bByN.eBjSZFkXXb8YFXa_!!644216784.jpg@@https://img.alicdn.com/tfscom/i2/644216784/TB2zFagn9FjpuFjSszhXXaBuVXa_!!644216784.jpg@",
+                    "title": "1000g速溶阿萨姆奶茶粉 茶香三合一原味奶茶红茶冲饮料奶茶店原料",
+                    "user_type": "0",
+                    "volume": "27335",
+                    "zk_final_price": "28.00",
+                    "sales": 58702,
+                    "sales_update_time": 1515580603000,
+                    "create_time": 1515580603000,
+                    "rate": null,
+                    "status": 0,
+                    "search_kw": null,
+                    "from": 0,
                 }]
             },
             methods: {
                 getData: function () {
                     var vm = this;
-                    axios.get('/product/taobao/getItems?status=0&size=30&page=' + vm.index)
-                        .then(function (response) {
-                            vm.index++;
-                            vm.items = response.data;
-                        })
+                    axios.get('/product/taobao/getItems', {
+                        params: {
+                            size: vm.pageSize,
+                            page: vm.pageIndex,
+                            status: 0,
+                        }
+                    }).then(function (response) {
+                        vm.pageIndex++;
+                        vm.items = vm.items.concat(response.data.data.content);
+                    })
                 },
-                nextPage: function () {
-                    var vm = this;
-                    axios.get('/product/taobao/getItems?status=0&size=30&page=' + vm.index)
-                        .then(function (response) {
-                            vm.index++;
-                            vm.items = vm.items.concat(response.data);
-                        })
-                },
-
                 del: function (item) {
                     var vm = this;
-                    axios.get('/product/taobao/updateItemStatus?id=' + item.num_iid + '&status=delete')
-                        .then(function (response) {
+                    axios.get('/product/taobao/updateItemStatus', {
+                        params: {
+                            id: item.num_iid,
+                            status: "delete",
+                        }
+                    }).then(function (response) {
                             if (response.data.code == 0) {
                                 // 获取元素的位置
                                 var index = getIndex(vm.items, item);
@@ -201,8 +166,7 @@
                                 alert(response.data.msg);
                             }
                         })
-                }
-                ,
+                },
                 show: function (item) {
                     window.BC_SDK.goDetail({
                         itemId: item.num_iid,
@@ -211,34 +175,30 @@
 
                 },
                 add: function (item) {
-                    // 做 天猫超市 百草味 周黑鸭 三只松鼠  天猫生鲜 等的提示
+                    // 做 天猫超市 百草味做 天猫超市 百草味 周黑鸭 三只松鼠  天猫生鲜 等的提示 周黑鸭 三只松鼠  天猫生鲜 等的提示
                     if ((shopFilter(item.title) || shopFilter(item.nick)) && !item.flag) {
                         alert("这个店铺可能是大流量店铺，提醒！！！");
                         item.flag = true;
                         return;
                     }
                     var vm = this;
-                    // 先入shiji，在修改taobao的status
-                    axios.post('/product/shiji/additem_tb', {item: JSON.stringify(item)})
-                        .then(function (response) {
-                            if (response.data.code == 0) {
-                                axios.get('/product/taobao/updateItemStatus?id=' + item.num_iid + '&status=inserted')
-                                    .then(function (response) {
-                                        if (response.data.code == 0) {
-                                            // 获取元素的位置
-                                            var index = getIndex(vm.items, item);
-                                            if (index >= 0) {
-                                                // 删除元素
-                                                vm.items.remove(index);
-                                            }
-                                        } else {
-                                            alert(response.data.msg);
-                                        }
-                                    })
-                            } else {
-                                alert(response.data.msg);
+                    // 修改状态
+                    axios.get('/product/shiji/additem', {
+                        params: {
+                            num_iid: item.num_iid
+                        }
+                    }).then(function (response) {
+                        if (response.data.code == 0) {
+                            // 获取元素的位置
+                            var index = getIndex(vm.items, item);
+                            if (index >= 0) {
+                                // 删除元素
+                                vm.items.remove(index);
                             }
-                        })
+                        } else {
+                            alert(response.data.msg);
+                        }
+                    })
                 }
             }
         })

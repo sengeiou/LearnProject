@@ -20,7 +20,7 @@
         }
         li{
             display: flex;
-            padding: 20px;
+            padding: 10px;
         }
         li.active{
             background-color: #f7f4f4;
@@ -37,13 +37,26 @@
         }
         p.price{
             color : #FF0036;
-            font-size: .50rem;
+            font-size: 13px;
         }
         .li-right{
             margin: 0px 0px 0px 10px;
         }
         div>p{
             margin: 6px 0px 0px 0px;
+        }
+        p.title{
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;
+            text-overflow: ellipsis;
+            font-size: 14px;
+        }
+        p.decoration{
+            font-size: 13px;
+        }
+        p.sales{
+            font-size: 13px;
         }
     </style>
 </head>
@@ -57,7 +70,7 @@
             <p class="title">{{ it.title }}</p>
             <p class="decoration">价格:{{ it.reserve_price }}</p>
             <p class="price">促销价:{{ it.zk_final_price }}</p>
-            <p>销量:{{ it.sales }}</p>
+            <p class="sales">销量:{{ it.sales }}</p>
         </div>
     </li>
     </ul>
@@ -90,9 +103,9 @@
         methods: {
             getData : function (){
                 var vm  = this;
-                axios.get('/product/taobao/getItems?status=0&size=30')
+                axios.get('/product/shiji/getItems?status=0&size=20&page=0')
                     .then(function (response) {
-                    vm.items = response.data
+                    vm.items = response.data.data.content
                 })
             }
             ,

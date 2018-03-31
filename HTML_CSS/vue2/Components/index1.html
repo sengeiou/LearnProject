@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件1</title>
+	<script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+	<div id="app1">
+		<my-component></my-component>
+	</div>
+
+	<div id = "app2">
+		<my-component></my-component>
+	</div>
+
+
+	<div id = "app3">
+		<tag-component></tag-component>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	
+	//  app1 中使用的是全局组件的例子
+
+
+	Vue.component('my-component',{
+		template : '<div> this is my component </div>'
+	})
+
+
+	var vue1 = new Vue({
+		el:'#app1',
+
+	})
+
+
+	// app2 中使用的是局部组件
+
+	var child = {
+		template : '<div>this is child template</div>',
+	}
+
+	var vue2  = new Vue({
+		el :'#app2',
+		components :{
+			'my-component' : child	
+		},
+	});
+
+
+
+	// app3
+	// Vue.component('tag-component',{
+	// 	template :'<span>this is tag component and the message is {{message}}</span>',
+	// 	data : {
+	// 		message : 'hello'  // 会报错，这里的data 必须是一个函数
+	// 	}
+	// });
+
+
+	Vue.component('tag-component', {
+		template :'<span>this is tag component and the message is {{message}}</span>',
+		data : function() {
+	 		return 	{ message : 'hello' } // 这里的data 必须是一个函数
+		}
+	})
+
+	new Vue({
+		el : '#app3'
+	})
+
+
+
+
+</script>
+</html>

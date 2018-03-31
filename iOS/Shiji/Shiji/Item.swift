@@ -16,4 +16,6 @@ struct Item : HandyJSON{
     var title : String?
     var num_iid : String?
     var pict_url : String?
+    var zk_final_price : String?
+    var sales : String?
 }
