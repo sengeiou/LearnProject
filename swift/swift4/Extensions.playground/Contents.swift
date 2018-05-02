@@ -136,3 +136,13 @@ p1 == p2
 var p3 = SomeType(name: "cocoa", temp: " HELLO")
 p3.name
 
+
+
+var a : Int  = 10928423
+var intStr  = "\(a)"
+
+
+
+
+
+

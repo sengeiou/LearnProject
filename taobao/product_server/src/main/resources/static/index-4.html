@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Artistry - Free Responsive Html5 Templates</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates ">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/responsiveslides.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery183.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow 
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+		});
+	</script>
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body>
+<div class="wrap-body">
+
+<!--////////////////////////////////////Header-->
+<header>
+	<div class="top-header">
+		<div class="zerogrid">
+			<nav id="menu-wrap"><div id="menu-trigger">Menu</div>    
+				<ul id="menu" style="display: none;">
+					<li><a href="index.html">主页</a></li>
+					
+					<li><a href="single.html">关于</a></li>
+					<li><a href="contact.html">联系我</a></li>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="wrap-header">
+			<div class="row">
+				<div class="col-full t-center">
+					<div class="wrap-col">
+						<div class="logo"><a href="index.html"><h1>youweier</h1></a></div>	
+						<div class="tagline">个人技术博客小站</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slider">
+			<!-- Slideshow -->
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<img src="images/1.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/2.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/3.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="container">
+	<div class="wrap-container">
+		<div class="zerogrid">
+			<div class="row">
+				<div id="main-content" class="col-2-3">
+					<article>
+								<div class="art-header">
+									<div class="entry-title">
+										<a href="#">Android中工作者线程的思考</a>
+									</div>
+									<span>Posted on November 12, 2015</span>
+								</div>
+								<img src="images/1.jpg"/>
+								<div class="art-content">
+									<div class="excerpt"><p>在Android开发过程中，我们经常使用工作者线程，如AsyncTask和线程池。然而我们经常使用的这些工作者线程存在哪些不易察觉的问题呢，关于工作者线程有哪些优化呢，文本将逐一介绍并回答这些问题。
+
+</p></div>
+									<p>在Android开发过程中，我们经常使用工作者线程，如AsyncTask和线程池。然而我们经常使用的这些工作者线程存在哪些不易察觉的问题呢，关于工作者线程有哪些优化呢，文本将逐一介绍并回答这些问题。
+
+本文系2015 北京 GDG Devfest分享内容文章。
+
+在Android中，我们或多或少使用了工作者线程，比如Thread，AsyncTask，HandlerThread，甚至是自己创建的线程池，使用工作者线程我们可以将耗时的操作从主线程中移走。然而在Android系统中为什么存在工作者线程呢，常用的工作者线程有哪些不易察觉的问题呢，关于工作者线程有哪些优化的方面呢，本文将一一解答这些问题。
+
+</p>
+									
+									<h2>工作者线程的存在原因</h2>
+									<p>因为Android的UI单线程模型，所有的UI相关的操作都需要在主线程(UI线程)执行
+Android中各大组件的生命周期回调都是位于主线程中，使得主线程的职责更重
+如果不使用工作者线程为主线程分担耗时的任务，会造成应用卡顿，严重时可能出现ANR(Application Not Responding),即程序未响应。
+因而，在Android中使用工作者线程显得势在必行，如一开始提到那样，在Android中工作者线程有很多，接下来我们将围绕AsyncTask，HandlerThread等深入研究。
+
+</p>
+									<h2>AsyncTask</h2>
+									<p>AsyncTask是Android框架提供给开发者的一个辅助类，使用该类我们可以轻松的处理异步线程与主线程的交互，由于其便捷性，在Android工程中，AsyncTask被广泛使用。然而AsyncTask并非一个完美的方案，使用它往往会存在一些问题。接下来将逐一列举AsyncTask不容易被开发者察觉的问题。</p>
+									<h2>AsyncTask与内存泄露</h2>
+									<p>内存泄露是Android开发中常见的问题，只要开发者稍有不慎就有可能导致程序产生内存泄露，严重时甚至可能导致OOM(OutOfMemory，即内存溢出错误)。AsyncTask也不例外，也有可能造成内存泄露。
+
+以一个简单的场景为例： 在Activity中，通常我们这样使用AsyncTask
+
+上述代码使用的匿名内存类创建AsyncTask实例，然而在Java中，非静态内存类会隐式持有外部类的实例引用，上面例子AsyncTask创建于Activity中，因而会隐式持有Activity的实例引用。
+
+而在AsyncTask内部实现中,mFuture同样使用匿名内部类创建对象，而mFuture会作为执行任务加入到任务执行器中。
+
+而mFuture加入任务执行器，实际上是放入了一个静态成员变量SERIAL_EXECUTOR指向的对象SerialExecutor的一个ArrayDeque类型的集合中。
+
+当任务处于排队状态，则Activity实例引用被静态常量SERIAL_EXECUTOR 间接持有。
+
+在通常情况下，当设备发生屏幕旋转事件，当前的Activity被销毁，新的Activity被创建，以此完成对布局的重新加载。
+
+而本例中，当屏幕旋转时，处于排队的AsyncTask由于其对Activity实例的引用关系，导致这个Activity不能被销毁，其对应的内存不能被GC回收，因而就出现了内存泄露问题。
+
+关于如何避免内存泄露，我们可以使用静态内部类 + 弱引用的形式解决。
+
+cancel的问题
+AsyncTask作为任务，是支持调用者取消任务的，即允许我们使用AsyncTask.canncel()方法取消提交的任务。然而其实cancel并非真正的起作用。
+
+首先，我们看一下cancel方法：
+
+cancel方法接受一个boolean类型的参数，名称为mayInterruptIfRunning，意思是是否可以打断正在执行的任务。
+
+当我们调用cancel(false)，不打断正在执行的任务，对应的结果是
+
+处于doInBackground中的任务不受影响，继续执行
+任务结束时不会去调用onPostExecute方法，而是执行onCancelled方法
+当我们调用cancel(true)，表示打断正在执行的任务，会出现如下情况：
+
+如果doInBackground方法处于阻塞状态，如调用Thread.sleep,wait等方法，则会抛出InterruptedException。
+对于某些情况下，有可能无法打断正在执行的任务</p>
+								</div>
+							</article>
+				</div>
+                <div class="copyrights">Collect from <a href="https://miichin.taobao.com/" >企业网站模板</a></div>
+				<div id="sidebar" class="col-1-3">
+					<!---- Start Widget ---->
+					<div class="widget wid-about">
+						<div class="wid-header">
+							<h5>关于我</h5>
+						</div>
+						<div class="wid-content">
+							<img src="images/10.jpg" />
+							<p>我叫 cocoa ，一名程序员</p>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>关注我</h5>
+						</div>
+						<div class="wid-content">
+							<ul class="quick-link">
+								<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-post">
+						<div class="wid-header">
+							<h5>推荐商品</h5>
+						</div>
+						<div class="wid-content">
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=561286641145">
+										<img src="http://img.alicdn.com/imgextra/i3/628189716/TB14bgYbnlYBeNjSszcXXbwhFXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=561286641145">
+									满减【百草味-牛肉片100g】手撕牛肉干五香辣零食特产小吃</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539897385885">
+										<img src="http://img.alicdn.com/imgextra/i4/725677994/TB1r5xdeZic_eJjSZFnXXXVwVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539897385885">
+									百草味烧烤味牛板筋125g 零食小吃牛肉干小包装牛筋牛肉熟食卤味</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									【百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>我的头像</h5>
+						</div>
+						<div class="wid-content">
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/15.jpg" /></a>
+										<a><img src="images/16.jpg" /></a>
+										<a><img src="images/17.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/18.jpg" /></a>
+										<a><img src="images/19.jpg" /></a>
+										<a><img src="images/20.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/21.jpg" /></a>
+										<a><img src="images/22.jpg" /></a>
+										<a><img src="images/23.jpg" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="zerogrid">
+		<div class="wrap-footer t-center">
+			<div class="row">
+				<div class="full">
+					<ul class="quick-link">
+						<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<div class="copy-right">
+						<p>Copyright 2018 - youweier </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<script type="text/javascript">
+    $(function() {
+		if ($.browser.msie && $.browser.version.substr(0,1)<7)
+		{
+		$('li').has('ul').mouseover(function(){
+			$(this).children('ul').css('visibility','visible');
+			}).mouseout(function(){
+			$(this).children('ul').css('visibility','hidden');
+			})
+		}
+
+		/* Mobile */
+		$("#menu-trigger").on("click", function(){
+			$("#menu").slideToggle();
+		});
+
+		// iPad
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+		if (isiPad) $('#menu ul').addClass('no-transition');      
+    });          
+</script>
+
+</div>
+</body></html>

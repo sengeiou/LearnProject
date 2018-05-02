@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 70px;
+			border: 1px solid #ccc;
+			margin: 20px;
+		}
+		pre{
+			background-color :#ccc;
+			font-size: 18px;
+		}
+		.normal {
+			white-space: normal;
+		}
+		.pre{
+			white-space:pre;
+		}
+		.nowrap {
+			white-space:nowrap;
+		}
+		.pre-line {
+			white-space:pre-line;
+		}
+		.pre-wrap{
+			white-space: pre-wrap;
+		}
+		.inherit {
+			white-space: inherit;
+		}
+
+	</style>
+</head>
+<body>
+	<pre>
+		white-space 主要用来申明建立布局的过程中如何处理元素中的空白符 
+		1. normal  空白处会被浏览器忽略
+		2. pre 空白处会被扣留，类似与 pre 标签 ， 
+		3. nowrap 文本不会换行，文本会在同一行上， 直到碰到换行标签
+		4. pre-line 合并空白符序列，但保留换行符
+		5. pre-wrap  保留空白符序列，但是正常进行换行
+		6. inherit 继承父元素
+	</pre>
+
+	<h4>在下面的文字中， this 前面有很大的一个空格</h4>
+	<div class="normal">normal   this is test</div>
+	<div class="pre">pre   this is test</div>
+	<div class="nowrap">nowrap   this is test</div>
+	<div class="pre-line">pre-line   this is test</div>
+	<div class="pre-wrap">pre-wrap   this is test</div>
+	<div class="inherit">inherit   this is test</div>
+
+	
+</body>
+</html>

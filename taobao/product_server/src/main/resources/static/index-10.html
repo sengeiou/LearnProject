@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Artistry - Free Responsive Html5 Templates</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates ">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/responsiveslides.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery183.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow 
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+		});
+	</script>
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body>
+<div class="wrap-body">
+
+<!--////////////////////////////////////Header-->
+<header>
+	<div class="top-header">
+		<div class="zerogrid">
+			<nav id="menu-wrap"><div id="menu-trigger">Menu</div>    
+				<ul id="menu" style="display: none;">
+					<li><a href="index.html">主页</a></li>
+					
+					<li><a href="single.html">关于</a></li>
+					<li><a href="contact.html">联系我</a></li>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="wrap-header">
+			<div class="row">
+				<div class="col-full t-center">
+					<div class="wrap-col">
+						<div class="logo"><a href="index.html"><h1>youweier</h1></a></div>	
+						<div class="tagline">个人技术博客小站</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slider">
+			<!-- Slideshow -->
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<img src="images/1.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/2.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/3.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="container">
+	<div class="wrap-container">
+		<div class="zerogrid">
+			<div class="row">
+				<div id="main-content" class="col-2-3">
+					<article>
+								<div class="art-header">
+									<div class="entry-title">
+										<a href="#">程序员怎样才能写出一篇好的技术文章</a>
+									</div>
+									<span>Posted on November 12, 2015</span>
+								</div>
+								<img src="images/1.jpg"/>
+								<div class="art-content">
+									<div class="excerpt"><p>首先，这算是一篇回答知乎问题 程序员怎样才能写出一篇好的博客或者技术文章？的文章。</p></div>
+									<p>这是一个超级简单的问题，技术文章通常是指的涉及技术（这里指的是程序设计）的文章。
+
+技术文章可以是
+
+原创文章
+翻译文章，如最常见的翻译英文文章
+一篇阐述问题相关的文章
+一个系列的文章，如教程。</p>
+									
+									<p>写技术文章的目的据不完全统计，如下
+
+备忘
+帮助他人
+知识体系积累
+知识变现
+提高知名度，成为大牛，网红
+其中，出于备忘这个目的，适合书写类似工具使用类的文章，比如Android签名相关知识整理
+
+帮助别人这个应该是必须的，但是这个其实并不简单，因为有些时候文章的观点有误，可能误导了别人，结果反而适得其反。
+
+知识体系积累，如果是处于这个目的的话，其实写文章应该是把知识研究明白的附属产物。如果是站在这个角度，想要写出一篇文章就需要对涉及的内容要彻底掌握和吸收，行文也要严谨，观点需要反复斟酌。
+
+知识变现这是一个有意思的话题，尤其是对于一些刚刚开通博客不久的人来说，一提到这个话题便热血沸腾。然而真正实现这一目标的一般都是持久经营博客的作者。除了付费翻译变现快之外，想要靠博客变现必须要经得起时间的积累，而且是优质的技术文章的长时间积累。
+
+16年的关键词之一就是网红。写博客或者文章也是成为技术大牛和网红的一种途径。在这其中，持续不断的高质量文章产出是成功的不二法则。
+
+</p>
+									<h2>什么是好的技术文章</h2>
+									<p>好的文章必然得到很多肯定，如果你准备阅读一篇幅很长的文章，不放先跳到评论部分或者分享量，看一看其他读者对本文的评论，再选择继续还是放弃阅读。
+技术文章的目的是帮助读者答疑解惑，而一篇好的技术文章能够以很轻松易理解的形式讲明白一件事。</p>
+									<h2>选题</h2>
+									<p>选题对于文章来说很重要，它影响到了你的文章的阅读量。通常情况下选题有两种归类
+
+以读者需求为导向
+以个人研究为导向
+以读者需求为导向，通常的选题为
+
+新技术的教程，比如Android Studio系列
+某些热门的技术和工具
+某些技术的系列文章，比如内存泄漏专题
+鸡汤文章，这可能是读者最愿意读的系列
+以个人研究为导向的，通常选题比较有限，个人觉得这方面一般多为技术细节，比如ThreadLocal的原理等
+
+</p>
+									<h2>结构清晰很重要</h2>
+									<p>有一个清晰的结构是很重要的，一篇文字密密麻麻的文章，通常不会太好。
+
+关于结构，建议使用Markdown更好管理结构。
+
+通常我一般使用#标签和无序的*来处理文章结构，示例如下</p>
+									<p>代码高亮是对读者的基本尊重
+作为技术文章，代码通常应该是必不可少的。既然有了代码，就必须要高亮展示。
+
+聆听他人的反馈
+建议文章的发布平台都配备必要的反馈评论组建，因为它可以帮助你收集到这些有效的反馈
+
+文章中的错误
+解决问题的其他方法或者是更佳的方法
+别人对你的文章的正向肯定评价
+批评和建议
+耗时问题
+听见过很多人为什么没有坚持写博客下来，大多数回答是没有时间。可见，写博客是很需要时间的。尤其是产出一篇好文章。
+
+我认为一篇博文的耗时可以分为两个阶段
+
+研究阶段（阅读查阅资料并咀嚼消化）
+书写阶段（将研究阶段的成果以图文形式输出）
+对于研究阶段的一些实践
+
+将技术切分成点,比如研究ThreadLocal，我们可以切分成ThreadLocal的用途，使用方法，内部实现原理等
+切分成技术点之后，我们可以利用碎片时间对这些点逐个研究
+研究的参考资料推荐官方文档，StackOverflow和英文技术博客
+完成了研究阶段之后，就是书写阶段了。
+
+通常情况下，我自由写作时间主要集中在以下两段时间
+
+周末
+平时的早起时光（一般为6点开始到上班通勤之前）
+这里建议书写阶段最好是一个持续的时间，减少间断写作带来的回忆成本。
+
+拖延症问题
+拖延症已然成为了现代人的一种通病，写篇博文也或多或少碰到它。
+
+通常我一般的拖延症表现为
+
+提笔前，各种刷新闻，逛知乎，却迟迟不肯动笔
+写作中，忙里偷闲，刷微博，看朋友圈
+关于如果解决，通常的做法就是强迫自己，做到克制，缓解并解决强迫症需要慢慢来，循序渐进。
+
+关于拖延症，有一本书，大家可以选择去看以下。戒了吧！拖延症：写给年轻人的拖延心理学
+
+关于翻译
+翻译也是写作博文的一种，对于技术文章通常是把英文翻译成中文。有过翻译经历的同学都有过这样的感悟。
+
+翻译最痛苦的莫过于知道句子意思，却找不到信达雅的语句表达出来。
+
+我认为解决上述痛苦的方式有两种
+
+学习翻译技巧
+多阅读相关的翻译，从中吸取精华
+之前，一位负责对我翻译审校的前辈向我推荐过一本书，叫做翻译的技巧 如有需要，建议阅读。</p>
+								</div>
+							</article>
+				</div>
+                <div class="copyrights">Collect from <a href="https://miichin.taobao.com/" >企业网站模板</a></div>
+				<div id="sidebar" class="col-1-3">
+					<!---- Start Widget ---->
+					<div class="widget wid-about">
+						<div class="wid-header">
+							<h5>关于我</h5>
+						</div>
+						<div class="wid-content">
+							<img src="images/10.jpg" />
+							<p>我叫 cocoa ，一名程序员</p>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>关注我</h5>
+						</div>
+						<div class="wid-content">
+							<ul class="quick-link">
+								<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-post">
+						<div class="wid-header">
+							<h5>推荐商品</h5>
+						</div>
+						<div class="wid-content">
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=561286641145">
+										<img src="http://img.alicdn.com/imgextra/i3/628189716/TB14bgYbnlYBeNjSszcXXbwhFXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=561286641145">
+									满减【百草味-牛肉片100g】手撕牛肉干五香辣零食特产小吃</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539897385885">
+										<img src="http://img.alicdn.com/imgextra/i4/725677994/TB1r5xdeZic_eJjSZFnXXXVwVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539897385885">
+									百草味烧烤味牛板筋125g 零食小吃牛肉干小包装牛筋牛肉熟食卤味</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									【百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>我的头像</h5>
+						</div>
+						<div class="wid-content">
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/15.jpg" /></a>
+										<a><img src="images/16.jpg" /></a>
+										<a><img src="images/17.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/18.jpg" /></a>
+										<a><img src="images/19.jpg" /></a>
+										<a><img src="images/20.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/21.jpg" /></a>
+										<a><img src="images/22.jpg" /></a>
+										<a><img src="images/23.jpg" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="zerogrid">
+		<div class="wrap-footer t-center">
+			<div class="row">
+				<div class="full">
+					<ul class="quick-link">
+						<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<div class="copy-right">
+						<p>Copyright 2018 - youweier </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<script type="text/javascript">
+    $(function() {
+		if ($.browser.msie && $.browser.version.substr(0,1)<7)
+		{
+		$('li').has('ul').mouseover(function(){
+			$(this).children('ul').css('visibility','visible');
+			}).mouseout(function(){
+			$(this).children('ul').css('visibility','hidden');
+			})
+		}
+
+		/* Mobile */
+		$("#menu-trigger").on("click", function(){
+			$("#menu").slideToggle();
+		});
+
+		// iPad
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+		if (isiPad) $('#menu ul').addClass('no-transition');      
+    });          
+</script>
+
+</div>
+</body></html>

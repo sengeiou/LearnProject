@@ -183,11 +183,9 @@
                     }
                     var vm = this;
                     // 修改状态
-                    axios.get('/product/shiji/additem', {
-                        params: {
-                            num_iid: item.num_iid
-                        }
-                    }).then(function (response) {
+
+                    axios.post('/product/shiji/additem', item)
+                        .then(function (response) {
                         if (response.data.code == 0) {
                             // 获取元素的位置
                             var index = getIndex(vm.items, item);

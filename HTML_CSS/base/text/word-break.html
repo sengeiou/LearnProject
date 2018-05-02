@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		 div{
+			padding: 5px;
+			width: 150px;
+			margin: 10px;
+			font-size : 16px;
+			font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+			border: 1px solid #ccc;
+			
+		}
+
+		.break-all {
+			word-break: break-all;
+		}
+
+		.keep-all {
+			word-break: keep-all;
+		}
+		.parent {
+			float: left;
+			border-width: 0px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<p>
+		word-break 属性用来决定自动换行的处理方法，通过具体的属性设置，不仅可以实现半角空格或连字符后面的换行，还可以让浏览器实现任意位置的换行 <br>
+		
+		看下基本的语法  <br>
+		normal : 默认值，中文到边界换，英文从整个单词换行  <br>
+		break-all : 可以强行截断英文单词，达到词内换行的结果  <br>	
+		keep-all ：不允许字断开，   <br>
+
+
+
+
+	</p>
+
+	<h3>下面的例子中，左边为 break-all 右边为 keep-all ，可以看到 break-all 就是强行截断换的，而keep-all 在中文下 根据标点，英文则是证行换，会撑破容器</h3>
+
+	<div class="parent">
+	<div class = "break-all">
+		With everything you need to create amazing apps for Apple platforms, Xcode 9 is unbelievably quick and consistently smooth while editing even the largest files. It also understands your code better than ever, so you can select and edit the structure or even transform the selection directly in the editor. Powerful new 
+	</div>
+	<div class = "break-all">
+		2016年，50多岁的内蒙古农民王某揣着500万的拆迁款，想存进中国银行。但没想到，却在穿着银行服装的工作人员及银行行长的言语及利益引导下，买了一款银行的“理财产品”，工作人员承诺这款产品“没有任何风险，年底肯定能拿到27.5万元的利息”。可事后，王某发现，他买的根本不是中国银行的产品，而是一分阳光人寿保险公司的商业保险。按照保险合同，他要活到100周岁才能取回本金。
+
+	</div>
+	<div class = "break-all">
+		https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/
+		file:///Users/junshen/Documents/LearnProject/HTML_CSS/base/text/word-warp.html
+	</div>
+
+
+	<div class = "break-all">
+		<span>https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/
+		file:///Users/junshen/Documents/LearnProject/HTML_CSS/base/text/word-warp.html</span>
+	</div>
+
+	<div class = "break-all">
+		2016年，50多岁的内蒙古农民王某 Xcode 9 uses the same compiler to 揣着500万的拆迁款，想存Xcode 9 uses the same compiler to进中国银行。但没想到，却在穿着银行服装的工作人员及银行行长的言语及利益引导下，买了一款银行的“理财产品”，工Xcode 9 uses the same compiler to作人员承诺这款产品“没有Xcode 9 
+	</div>
+	
+	</div>
+
+	<div class="parent">
+			<div class = "keep-all">
+		With everything you need to create amazing apps for Apple platforms, Xcode 9 is unbelievably quick and consistently smooth while editing even the largest files. It also understands your code better than ever, so you can select and edit the structure or even transform the selection directly in the editor. Powerful new 
+	</div>
+	<div class = "keep-all">
+		2016年，50多岁的内蒙古农民王某揣着500万的拆迁款，想存进中国银行。但没想到，却在穿着银行服装的工作人员及银行行长的言语及利益引导下，买了一款银行的“理财产品”，工作人员承诺这款产品“没有任何风险，年底肯定能拿到27.5万元的利息”。可事后，王某发现，他买的根本不是中国银行的产品，而是一分阳光人寿保险公司的商业保险。按照保险合同，他要活到100周岁才能取回本金。
+
+	</div>
+	<div class = "keep-all">
+		https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/
+		file:///Users/junshen/Documents/LearnProject/HTML_CSS/base/text/word-warp.html
+	</div>
+
+
+	<div class = "keep-all">
+		<span>https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/https://www.baidu.com/
+		file:///Users/junshen/Documents/LearnProject/HTML_CSS/base/text/word-warp.html</span>
+	</div>
+
+	<div class = "keep-all">
+		2016年，50多岁的内蒙古农民王某 Xcode 9 uses the same compiler to 揣着500万的拆迁款，想存Xcode 9 uses the same compiler to进中国银行。但没想到，却在穿着银行服装的工作人员及银行行长的言语及利益引导下，买了一款银行的“理财产品”，工Xcode 9 uses the same compiler to作人员承诺这款产品“没有Xcode 9 
+	</div>
+
+	</div>
+	
+
+
+
+</body>
+</html>

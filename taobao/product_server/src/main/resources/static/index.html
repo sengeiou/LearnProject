@@ -1,142 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-    <title>Title</title>
-    <style type="text/css">
-        img{
-            max-width: 100%;
-            height: 120px;
-        }
 
-        html, body, *{
-            padding: 0px;
-            margin: 0px;
-        }
-
-        ul{
-            list-style-type: none;
-        }
-        li{
-            display: flex;
-            padding: 10px;
-        }
-        li.active{
-            background-color: #f7f4f4;
-        }
-
-        img{
-            float: left;
-        }
-        p{
-            clear: both;
-        }
-        .decoration{
-            text-decoration: line-through;
-        }
-        p.price{
-            color : #FF0036;
-            font-size: 13px;
-        }
-        .li-right{
-            margin: 0px 0px 0px 10px;
-        }
-        div>p{
-            margin: 6px 0px 0px 0px;
-        }
-        p.title{
-            display:-webkit-box;
-            -webkit-box-orient:vertical;
-            -webkit-line-clamp:2;
-            text-overflow: ellipsis;
-            font-size: 14px;
-        }
-        p.decoration{
-            font-size: 13px;
-        }
-        p.sales{
-            font-size: 13px;
-        }
-    </style>
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Artistry - Free Responsive Html5 Templates</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates ">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/responsiveslides.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery183.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow 
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+		});
+	</script>
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
 </head>
 <body>
-<div id="item">
-    <ul>
-    <li v-for="(it,index) in items" :class="{'active': index %2 == 0 } " @click="show(it)">
-        <img v-bind:src="it.pict_url" />
+<div class="wrap-body">
 
-        <div class="li-right">
-            <p class="title">{{ it.title }}</p>
-            <p class="decoration">价格:{{ it.reserve_price }}</p>
-            <p class="price">促销价:{{ it.zk_final_price }}</p>
-            <p class="sales">销量:{{ it.sales }}</p>
-        </div>
-    </li>
-    </ul>
-</div>
-</body>
-<script src="https://unpkg.com/vue"></script>
-<script type="text/javascript" src="//g.alicdn.com/mtb/lib-applink/0.3.7/??callApp.js,linksdk.js"></script>
-<!--http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.iDrdBy&treeId=129&articleId=105908&docType=1-->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--////////////////////////////////////Header-->
+<header>
+	<div class="top-header">
+		<div class="zerogrid">
+			<nav id="menu-wrap"><div id="menu-trigger">Menu</div>    
+				<ul id="menu" style="display: none;">
+					<li><a href="index.html">主页</a></li>
+					
+					<li><a href="single.html">关于</a></li>
+					<li><a href="contact.html">联系我</a></li>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="wrap-header">
+			<div class="row">
+				<div class="col-full t-center">
+					<div class="wrap-col">
+						<div class="logo"><a href="index.html"><h1>youweier</h1></a></div>	
+						<div class="tagline">个人技术博客小站</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slider">
+			<!-- Slideshow -->
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<img src="images/1.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/2.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/3.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="container">
+	<div class="wrap-container">
+		<div class="zerogrid">
+			<div class="row">
+				<div id="main-content" class="col-2-3">
+					<div class="wrap-content">
+						<div class="row">
+							<article>
+								<div class="art-header">
+									<div class="entry-title">
+										<a href="index-1.html">学习Android的一些套路</a>
+									</div>
+									<span>Posted on November 12, 2017</span>
+								</div>
+								<div class="art-content">
+									<div class="zoom-container">
+										<a href="index-1.html">
+											<img src="images/4.jpg" />
+										</a>
+									</div>
+									<p>今天我将给大家分享一下我学习Android的一些方法和想法，分享中并不局限于Android哪一块怎么学习。而是一个总体的，普适性的学习套路和方法。希望可以帮助大家解决一些问题。注意本文为知乎Live底稿，知识点相对分散，后面部分包含了一些听众提出的问题，但是不影响总体的阅读和理解。</p>
+									<div class="t-center"><a class="button button02" href="index-1.html">Read More</a></div>
+								</div>
+							</article>
+						</div>
+						<div class="row">
+							<article>
+								<div class="art-header">
+									<div class="entry-title">
+										<a href="index-2.html">Kotlin 成为 Android 官方支持开发语言</a>
+									</div>
+									<span>Posted on November 12, 2017</span>
+								</div>
+								<div class="art-content">
+									<div class="zoom-container">
+										<a href="index-2.html">
+											<img src="images/5.jpg" />
+										</a>
+									</div>
+									<p>Google IO 2017宣布了 Kotlin 会成为 Android 官方开发语言。一时间朋友圈和Android圈被各种刷屏。当然我也顺势而为发布了一篇的文章《为什么我要改用Kotlin
+》，着实狠狠地蹭了一波热度（尽管这样会被鄙视）。眼下Android圈已经躁动了，甚至严重到如果对Kotlin视而不见就显得自己不像一个合格的Android程序员。
+</p>
+									<div class="t-center"><a class="button button02" href="index-2.html">Read More</a></div>
+								</div>
+							</article>
+						</div>
+						<div class="row">
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-3.html">Java性能调优之容器扩容问题</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-3.html">
+													<img src="images/6.jpg" />
+												</a>
+											</div>
+											<p>在Java和Android编程中，我们经常使用类似ArrayList,HashMap等这些容器。这些容器少则存储几条，多则上千甚至更多。作为性能调优的一部分，容器调优往往被我们忽略...</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-4.html">Android中工作者线程的思考</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-4.html">
+													<img src="images/7.jpg" />
+												</a>
+											</div>
+											<p>在Android开发过程中，我们经常使用工作者线程，如AsyncTask和线程池。然而我们经常使用的这些工作者线程存在哪些不易察觉的问题呢，关于工作者线程有哪些优化呢，文本将逐一介绍并回答这些问题。</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-5.html">JVM运行时的数据区</a>
+											</div>
+											<span>Posted on November 12, 2017</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-5.html">
+													<img src="images/8.jpg" />
+												</a>
+											</div>
+											<p>L理解JVM运行时的数据区是Java编程中的进阶部分。我们在开发中都遇到过一个很头疼的问题就是OutOfMemoryError（内存溢出错误），但是如果我们了解JVM的内部实现和其运行时的数据区的工作机制...</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-6">Java中的Socket编程</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-6.html">
+													<img src="images/9.jpg" />
+												</a>
+											</div>
+											<p>Socket,又称为套接字，Socket是计算机网络通信的基本的技术之一。如今大多数基于网络的软件，如浏览器，即时通讯工具甚至是P2P下载都是基于Socket实现的。本文会介绍一下基于TCP/IP的Socket编程，并且如何写一个客户端/服务器程序。</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-7.html">改善强迫症的一些方法</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-7.html">
+													<img src="images/9.jpg" />
+												</a>
+											</div>
+											<p>一直以来我都有强迫症，尤其是毕业工作后，明显地感觉更加严重了。经常反复确认水龙头有没有关，锁门后下楼梯，往往又要上来检查一下是否真的锁上。总是担心天然气气有没有关紧。如此种种，每一天在出门...</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-8.html">Kotlin后的编译速度问题</a>
+											</div>
+											<span>Posted on November 12, 2017</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-8.html">
+													<img src="images/9.jpg" />
+												</a>
+											</div>
+											<p>2017年 Kotlin 被 Google 钦定为 Android 开发官方语言之一后，便如火如荼。很多团队开始应用了Kotlin，可谓是收益良多，可是也有一些问题，一个比较明显的就是Kotlin应用后编译速度会比较慢。</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-9">Android中的内存泄漏</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-9.html">
+													<img src="images/9.jpg" />
+												</a>
+											</div>
+											<p>作为Android开发人员，我们或多或少都听说过内存泄漏。那么何为内存泄漏，Android中的内存泄漏又是什么样子的呢，本文将简单概括的进行一些总结。</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="wrap-col">
+									<article style="border:none;">
+										<div class="art-header">
+											<div class="entry-title">
+												<a href="index-10">写出一篇好的技术文章</a>
+											</div>
+											<span>Posted on November 12, 2015</span>
+										</div>
+										<div class="art-content">
+											<div class="zoom-container">
+												<a href="index-10.html">
+													<img src="images/9.jpg" />
+												</a>
+											</div>
+											<p>这是一个超级简单的问题，技术文章通常是指的涉及技术（这里指的是程序设计）的文章。</p>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="copyrights">Collect from <a href="https://miichin.taobao.com/" >企业网站模板</a></div>
+				<div id="sidebar" class="col-1-3">
+					<!---- Start Widget ---->
+					<div class="widget wid-about">
+						<div class="wid-header">
+							<h5>关于我</h5>
+						</div>
+						<div class="wid-content">
+							<img src="images/10.jpg" />
+							<p>我叫 cocoa ，一名程序员</p>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>关注我</h5>
+						</div>
+						<div class="wid-content">
+							<ul class="quick-link">
+								<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-post">
+						<div class="wid-header">
+							<h5>推荐商品</h5>
+						</div>
+						<div class="wid-content">
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=561286641145">
+										<img src="http://img.alicdn.com/imgextra/i3/628189716/TB14bgYbnlYBeNjSszcXXbwhFXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=561286641145">
+									满减【百草味-牛肉片100g】手撕牛肉干五香辣零食特产小吃</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539897385885">
+										<img src="http://img.alicdn.com/imgextra/i4/725677994/TB1r5xdeZic_eJjSZFnXXXVwVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539897385885">
+									百草味烧烤味牛板筋125g 零食小吃牛肉干小包装牛筋牛肉熟食卤味</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									【百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>我的头像</h5>
+						</div>
+						<div class="wid-content">
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/15.jpg" /></a>
+										<a><img src="images/16.jpg" /></a>
+										<a><img src="images/17.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/18.jpg" /></a>
+										<a><img src="images/19.jpg" /></a>
+										<a><img src="images/20.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/21.jpg" /></a>
+										<a><img src="images/22.jpg" /></a>
+										<a><img src="images/23.jpg" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="zerogrid">
+		<div class="wrap-footer t-center">
+			<div class="row">
+				<div class="full">
+					<ul class="quick-link">
+						<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<div class="copy-right">
+						<p>Copyright 2018 - youweier </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
 <script type="text/javascript">
+    $(function() {
+		if ($.browser.msie && $.browser.version.substr(0,1)<7)
+		{
+		$('li').has('ul').mouseover(function(){
+			$(this).children('ul').css('visibility','visible');
+			}).mouseout(function(){
+			$(this).children('ul').css('visibility','hidden');
+			})
+		}
 
-    window.BC_SDK = BCSDK_AppLink.init({
-        appkey : '23781332', //必填，输入百川应用的appkey
-        backURL: 'tbopen23781332://', //必填，默认为空字符串，applink的tips的回跳url， 设置能在手机淘宝里面调回你自己应用的url，格式为`tbopen${appkey}`。
-        openApp: true, //非必填，默认为true，非必填，是否唤起客户端，设置false，只会做H5跳转。
-        linkKey: 'TB', //非必填，默认为TB, 唤起手淘(TB)/天猫(TM)。
-//        isNeedDownload: false, //非必填，默认为false, 没有app的情况下跳转目标h5页面还是下载页, 默认跳转目标h5页面。
-        isDefaultRedirect: false, //选填, 没有唤起app的情况下是否默认跳转, 默认true。
-//        params:{}, //非必填，带给applink协议的扩展参数,用户自定义参数也传在这里, 如scm、pvid、pid、subpid、e、unionId等业务参数会放到这里。
-//        trackParams:{}, //非必填，ybhpss的映射对象，传入这里的参数会被拼为ybhpss字符串带到协议上。
-//        timeout: 1000 // 非必填，默认跳转(目标h5页/下载页)的延时时长。
-    });
+		/* Mobile */
+		$("#menu-trigger").on("click", function(){
+			$("#menu").slideToggle();
+		});
 
-    var example1 = new Vue({
-        el: '#item',
-        data: {
-            items: [],
-            itemDebug: [{"id":6285,"item_url":"http://item.taobao.com/item.htm?id\u003d524540166255","nick":"天猫超市","num_iid":"524540166255","pict_url":"http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png","provcity":"上海","reserve_price":"15.00","seller_id":"725677994","small_img":"http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png@@http://img2.tbcdn.cn/tfscom/i1/725677994/TB2UvSbkVXXXXblXpXXXXXXXXXX_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2mn9Ya9iJ.eBjSszfXXa4bVXa_!!725677994.jpg@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2N4t9ipXXXXbHXpXXXXXXXXXX_!!725677994.jpg@","title":"TC蔓越莓曲奇饼干手提兔子铁礼盒手工休闲零食品儿童女友送礼80g","user_type":"1","volume":"205542","zk_final_price":"205542","sales":257073,"sales_update_time":"Nov 20, 2017 6:00:56 PM","create_time":"Nov 20, 2017 6:00:56 PM","status":0},{"id":6868,"item_url":"http://item.taobao.com/item.htm?id\u003d520291956767","nick":"三只松鼠旗舰店","num_iid":"520291956767","pict_url":"http://img2.tbcdn.cn/tfscom/i2/880734502/TB1nV8ad2DH8KJjy1XcXXcpdXXa_!!0-item_pic.jpg","provcity":"安徽 芜湖","reserve_price":"55.00","seller_id":"880734502","small_img":"http://img2.tbcdn.cn/tfscom/i2/880734502/TB2ZQEdam4mpuFjSZFOXXaUqpXa_!!880734502.jpg@@http://img2.tbcdn.cn/tfscom/i4/880734502/TB2cGtAXMwjyKJjSsppXXaxUpXa_!!880734502.jpg@@http://img3.tbcdn.cn/tfscom/i2/880734502/TB2X.sQdpXXXXXQXXXXXXXXXXXX_!!880734502.jpg@@http://img3.tbcdn.cn/tfscom/i1/880734502/TB2AExdlMJlpuFjSspjXXcT.pXa_!!880734502.jpg@","title":"聚【三只松鼠_夹心麻薯210gx3】传统糕点点心美食早餐零食组合","user_type":"1","volume":"22298","zk_final_price":"22298","sales":185973,"sales_update_time":"Nov 20, 2017 6:08:34 PM","create_time":"Nov 20, 2017 6:08:34 PM","status":0},{"id":6669,"item_url":"http://item.taobao.com/item.htm?id\u003d44800690064","nick":"天猫超市","num_iid":"44800690064","pict_url":"http://img2.tbcdn.cn/tfscom/i3/725677994/TB19EQua5ERMeJjy0FcXXc7opXa_!!2-item_pic.png","provcity":"上海","reserve_price":"18.90","seller_id":"725677994","small_img":"http://img2.tbcdn.cn/tfscom/i3/725677994/TB19EQua5ERMeJjy0FcXXc7opXa_!!2-item_pic.png@@http://img3.tbcdn.cn/tfscom/i2/725677994/TB2S00Rcp_.F1JjSZFjXXahnXXa_!!725677994.jpg@@http://img3.tbcdn.cn/tfscom/i1/725677994/TB2AqyXaYH8F1JjSspfXXarnXXa_!!725677994.jpg@@http://img2.tbcdn.cn/tfscom/i4/725677994/TB2QUp.cyb_F1JjSZFzXXc6KXXa_!!725677994.jpg@","title":"百草味 蔓越莓曲奇100g 休闲零食小吃 饼干点心","user_type":"1","volume":"140814","zk_final_price":"140814","sales":180619,"sales_update_time":"Nov 20, 2017 6:06:03 PM","create_time":"Nov 20, 2017 6:06:03 PM","status":0},{"id":6281,"item_url":"http://item.taobao.com/item.htm?id\u003d38910557353","nick":"天猫超市","num_iid":"38910557353","pict_url":"http://img2.tbcdn.cn/tfscom/i4/725677994/TB1WKZHcDvI8KJjSspjXXcgjXXa_!!0-item_pic.jpg","provcity":"上海","reserve_price":"19.90","seller_id":"725677994","small_img":"http://img2.tbcdn.cn/tfscom/i4/725677994/TB1WKZHcDvI8KJjSspjXXcgjXXa_!!0-item_pic.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2zyYHb_nI8KJjSszgXXc8ApXa_!!725677994.jpg@@http://img3.tbcdn.cn/tfscom/i3/725677994/TB2hlMrlFXXXXaHXpXXXXXXXXXX_!!725677994.jpg@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2II6PsVXXXXbaXXXXXXXXXXXX_!!725677994.jpg@","title":"百草味麻薯(抹茶味)210g 糕点小吃美食 休闲零食点心","user_type":"1","volume":"112290","zk_final_price":"112290","sales":154997,"sales_update_time":"Nov 20, 2017 6:00:53 PM","create_time":"Nov 20, 2017 6:00:53 PM","status":0},{"id":6376,"item_url":"http://item.taobao.com/item.htm?id\u003d22073443703","nick":"百草味旗舰店","num_iid":"22073443703","pict_url":"http://img3.tbcdn.cn/tfscom/i1/628189716/TB1OklBdsnI8KJjSsziXXb8QpXa_!!0-item_pic.jpg","provcity":"浙江 杭州","reserve_price":"22.80","seller_id":"628189716","small_img":"http://img2.tbcdn.cn/tfscom/i4/628189716/TB2WgWFi.UIL1JjSZFrXXb3xFXa_!!628189716.jpg@@http://img1.tbcdn.cn/tfscom/i3/628189716/TB2IwAekEhnpuFjSZFEXXX0PFXa_!!628189716.jpg@@http://img3.tbcdn.cn/tfscom/i4/628189716/TB28uhdcCiJ.eBjSszfXXa4bVXa_!!628189716.jpg@@http://img1.tbcdn.cn/tfscom/i2/628189716/TB2RvM7bzihSKJjy0FlXXadEXXa_!!628189716.png@","title":"满减【百草味-夹心麻薯210g】爆浆糯米糍 零食小吃早餐食品糕点","user_type":"1","volume":"103564","zk_final_price":"103564","sales":121862,"sales_update_time":"Nov 20, 2017 6:02:10 PM","create_time":"Nov 20, 2017 6:02:10 PM","status":0},{"id":7143,"item_url":"http://item.taobao.com/item.htm?id\u003d555177974556","nick":"粮悦食品旗舰店","num_iid":"555177974556","pict_url":"http://img4.tbcdn.cn/tfscom/i2/1661982204/TB1j3JbdBDH8KJjy1zeXXXjepXa_!!0-item_pic.jpg","provcity":"安徽 合肥","reserve_price":"99.90","seller_id":"1661982204","small_img":"http://img2.tbcdn.cn/tfscom/i3/1661982204/TB2ibvSmV9gSKJjSspbXXbeNXXa_!!1661982204.jpg@@http://img1.tbcdn.cn/tfscom/i4/1661982204/TB2Hr9SX7fb_uJkSne1XXbE4XXa_!!1661982204.jpg@@http://img1.tbcdn.cn/tfscom/i4/1661982204/TB2E_QyapLM8KJjSZFBXXXJHVXa_!!1661982204.jpg@@http://img2.tbcdn.cn/tfscom/i4/1661982204/TB2EtrLmWmgSKJjSspiXXXyJFXa_!!1661982204.jpg@","title":"粮悦大吃兄山药片 薯片脆片薄片手工膨化食品大礼包儿童零食小吃","user_type":"1","volume":"13267","zk_final_price":"13267","sales":110565,"sales_update_time":"Nov 20, 2017 6:12:03 PM","create_time":"Nov 20, 2017 6:12:03 PM","status":0},{"id":6315,"item_url":"http://item.taobao.com/item.htm?id\u003d541933679045","nick":"好利来官方旗舰店","num_iid":"541933679045","pict_url":"http://img1.tbcdn.cn/tfscom/i1/2455221099/TB1wOZfXQfb_uJkSmRyXXbWxVXa_!!0-item_pic.jpg","provcity":"北京","reserve_price":"78.00","seller_id":"2455221099","small_img":"http://img3.tbcdn.cn/tfscom/i1/2455221099/TB27GbNt3JlpuFjSspjXXcT.pXa_!!2455221099.jpg@@http://img2.tbcdn.cn/tfscom/i2/2455221099/TB2sFQ_gMJlpuFjSspjXXcT.pXa_!!2455221099.jpg@@http://img1.tbcdn.cn/tfscom/i3/2455221099/TB2uoj_pHlmpuFjSZFlXXbdQXXa_!!2455221099.jpg@@http://img1.tbcdn.cn/tfscom/i2/2455221099/TB2Dmt2t9BjpuFjy1XdXXaooVXa_!!2455221099.jpg@","title":"好利来半熟芝士蛋糕双味2盒甜品糕点点心小蛋糕面包早餐零食","user_type":"1","volume":"32501","zk_final_price":"32501","sales":105457,"sales_update_time":"Nov 20, 2017 6:01:18 PM","create_time":"Nov 20, 2017 6:01:18 PM","status":0},{"id":6742,"item_url":"http://item.taobao.com/item.htm?id\u003d524547862385","nick":"天猫超市","num_iid":"524547862385","pict_url":"http://img4.tbcdn.cn/tfscom/i3/725677994/TB1IYB6d_nI8KJjSszbXXb4KFXa_!!0-item_pic.jpg","provcity":"上海","reserve_price":"24.00","seller_id":"725677994","small_img":"http://img3.tbcdn.cn/tfscom/i3/725677994/TB10.WPakfb_uJkSndVXXaBkpXa_!!0-item_pic.jpg@@http://img2.tbcdn.cn/tfscom/i2/725677994/TB2UYapdILJ8KJjy0FnXXcFDpXa_!!725677994.png@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2NvGTXY1J.eBjSszcXXbFzVXa_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2aVmZajgy_uJjSZK9XXXvlFXa_!!725677994.jpg@","title":"三只松鼠 和风麻薯210g休闲零食小吃糕点美食抹茶味","user_type":"1","volume":"63086","zk_final_price":"63086","sales":103403,"sales_update_time":"Nov 20, 2017 6:06:59 PM","create_time":"Nov 20, 2017 6:06:59 PM","status":0},{"id":6587,"item_url":"http://item.taobao.com/item.htm?id\u003d523713871563","nick":"良品铺子旗舰店","num_iid":"523713871563","pict_url":"http://img4.tbcdn.cn/tfscom/i2/619123122/TB1BlZeaLjM8KJjSZFsXXXdZpXa_!!0-item_pic.jpg","provcity":"湖北 武汉","reserve_price":"48.00","seller_id":"619123122","small_img":"http://img1.tbcdn.cn/tfscom/i2/619123122/TB2TWfpbfNZWeJjSZFpXXXjBFXa_!!619123122.jpg@@http://img1.tbcdn.cn/tfscom/i2/619123122/TB2VcnWbdXXWeJjSZFvXXa6lpXa_!!619123122.jpg@@http://img1.tbcdn.cn/tfscom/i4/619123122/TB2CC68nSVmpuFjSZFFXXcZApXa_!!619123122.jpg@@http://img4.tbcdn.cn/tfscom/i2/619123122/TB2wKNacKKAUKJjSZFzXXXdQFXa_!!619123122.jpg@","title":"良品铺子爆浆麻薯 糯米糍手工夹心抹茶干吃汤圆点心糕点零食小吃","user_type":"1","volume":"84029","zk_final_price":"84029","sales":92719,"sales_update_time":"Nov 20, 2017 6:05:02 PM","create_time":"Nov 20, 2017 6:05:02 PM","status":0},{"id":9266,"item_url":"http://item.taobao.com/item.htm?id\u003d14798285011","nick":"天猫超市","num_iid":"14798285011","pict_url":"http://img4.tbcdn.cn/tfscom/i2/725677994/TB156vTcm3PL1JjSZFtXXclRVXa_!!2-item_pic.png","provcity":"上海","reserve_price":"19.90","seller_id":"725677994","small_img":"http://img4.tbcdn.cn/tfscom/i2/725677994/TB156vTcm3PL1JjSZFtXXclRVXa_!!2-item_pic.png@@http://img2.tbcdn.cn/tfscom/i4/725677994/TB2gPlNpR4lpuFjy1zjXXcAKpXa_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i4/725677994/TB2k2Q7eVXXXXbLXpXXXXXXXXXX_!!725677994.jpg@@http://img2.tbcdn.cn/tfscom/i1/725677994/TB2AyRmfXXXXXceXpXXXXXXXXXX_!!725677994.jpg@","title":"徐福记蛋黄沙琪玛168g*2袋促销装早餐零食手撕面包","user_type":"1","volume":"79716","zk_final_price":"79716","sales":92089,"sales_update_time":"Nov 21, 2017 10:34:15 AM","create_time":"Nov 21, 2017 10:34:15 AM","status":0}]
-        },
-        methods: {
-            getData : function (){
-                var vm  = this;
-                axios.get('/product/shiji/getItems?status=0&size=20&page=0')
-                    .then(function (response) {
-                    vm.items = response.data.data.content
-                })
-            }
-            ,
-            show : function(item) {
-                window.BC_SDK.goDetail({
-                    itemId : item.num_iid,
-                    params : {}
-                });
-
-            }
-        }
-    });
-    example1.getData();
+		// iPad
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+		if (isiPad) $('#menu ul').addClass('no-transition');      
+    });          
 </script>
 
-</html>
-
-<!--id: 6285,-->
-<!--item_url: "http://item.taobao.com/item.htm?id=524540166255",-->
-<!--nick: "天猫超市",-->
-<!--num_iid: "524540166255",-->
-<!--pict_url: "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png",-->
-<!--provcity: "上海",-->
-<!--reserve_price: "15.00",-->
-<!--seller_id: "725677994",-->
-<!--small_img: "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png@@http://img2.tbcdn.cn/tfscom/i1/725677994/TB2UvSbkVXXXXblXpXXXXXXXXXX_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2mn9Ya9iJ.eBjSszfXXa4bVXa_!!725677994.jpg@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2N4t9ipXXXXbHXpXXXXXXXXXX_!!725677994.jpg@",-->
-<!--title: "TC蔓越莓曲奇饼干手提兔子铁礼盒手工休闲零食品儿童女友送礼80g",-->
-<!--user_type: "1",-->
-<!--volume: "205542",-->
-<!--zk_final_price: "205542",-->
-<!--sales: 257073,-->
-<!--sales_update_time: "Nov 20, 2017 6:00:56 PM",-->
-<!--create_time: "Nov 20, 2017 6:00:56 PM",-->
-<!--status: 0-->
+</div>
+</body></html>

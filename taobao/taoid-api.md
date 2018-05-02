@@ -29,3 +29,10 @@ favcount: "206",
 taobaoDescUrl: "http://h5.m.taobao.com/app/detail/desc.html?_isH5Des=true#!id=522844070204&type=0&f=TB1e82mcFTM8KJjSZFl8quO8Fla&sellerType=C",
 tmallDescUrl: "//mdetail.tmall.com/templates/pages/desc?id=522844070204",
 taobaoPcDescUrl: "http://h5.m.taobao.com/app/detail/desc.html?_isH5Des=true#!id=522844070204&type=1&f=TB1iCOEb6gy_uJjSZPx8qunNpla&sellerType=C"
+
+
+
+
+
+// 查询商品的评价信息  itemId sellerId  currentPage
+https://rate.tmall.com/list_detail_rate.htm?itemId=541933679045&sellerId=2455221099&order=3&currentPage=1&pageSize=10&&callback=_DLP_2521_der_3_currentPage_4_pageSize_10_

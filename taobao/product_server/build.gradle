@@ -47,6 +47,6 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.8.RELEASE'
 	compile group: 'org.apache.rocketmq', name: 'rocketmq-client', version: '4.2.0'
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
-	provided group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+//	provided group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 
 }

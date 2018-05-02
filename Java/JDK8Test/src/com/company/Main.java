@@ -9,8 +9,9 @@ public class Main {
 
         Arrays.asList(1,3,4,5,7).forEach(e -> System.out.println(e));
 
-	Optional<String> optional = Optional.ofNullable(null);
-	System.out.println(optional.isPresent());
+		Optional<String> optional = Optional.ofNullable(null);
+		
+		System.out.println(optional.isPresent());
     }
 
 }

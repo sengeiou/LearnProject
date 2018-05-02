@@ -5,6 +5,7 @@ import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkItemGetRequest;
+import com.taobao.api.request.WirelessShareTpwdCreateRequest;
 import com.taobao.api.response.TbkItemGetResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

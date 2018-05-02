@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Artistry - Free Responsive Html5 Templates</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates ">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/responsiveslides.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery183.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow 
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+		});
+	</script>
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body>
+<div class="wrap-body">
+
+<!--////////////////////////////////////Header-->
+<header>
+	<div class="top-header">
+		<div class="zerogrid">
+			<nav id="menu-wrap"><div id="menu-trigger">Menu</div>    
+				<ul id="menu" style="display: none;">
+					<li><a href="index.html">主页</a></li>
+					
+					<li><a href="single.html">关于</a></li>
+					<li><a href="contact.html">联系我</a></li>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="wrap-header">
+			<div class="row">
+				<div class="col-full t-center">
+					<div class="wrap-col">
+						<div class="logo"><a href="index.html"><h1>youweier</h1></a></div>	
+						<div class="tagline">个人技术博客小站</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slider">
+			<!-- Slideshow -->
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<img src="images/1.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/2.jpg" alt="">
+					</li>
+					<li>
+						<img src="images/3.jpg" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="container">
+	<div class="wrap-container">
+		<div class="zerogrid">
+			<div class="row">
+				<div id="main-content" class="col-2-3">
+					<article>
+								<div class="art-header">
+									<div class="entry-title">
+										<a href="#">Java性能调优之容器扩容问题</a>
+									</div>
+									<span>Posted on November 12, 2015</span>
+								</div>
+								<img src="images/1.jpg"/>
+								<div class="art-content">
+									<div class="excerpt"><p>在Java和Android编程中，我们经常使用类似ArrayList,HashMap等这些容器。这些容器少则存储几条，多则上千甚至更多。作为性能调优的一部分，容器调优往往被我们忽略，本文将尝试探索阐述一些关于容器调优中的扩容问题。虽然以Java为例，但是也同样适用于其他编程语言。
+
+首先以我们最常用的ArrayList为例，它是一个基于数组的List实现。</p></div>
+									<p>以上代码很简单，不用赘述。那我们使用NetBeans的profile插件 来看一下关于Object对象分配的stacktrace</p>
+								
+									<p>从stacktrace中，我们可以发现
+
+Object对象trace始于ArrayList.add方法
+经过了一个叫做ArrayList.grow方法
+以上我们可以推断，ArrayList对象发生了扩容操作。因为使用无参的构造方法，会初始化一个存储容量为0的数组。
+
+如下代码为ArrayList的构造方法</p>
+									<h2>更容易扩容的HashMap</h2>
+									<p>HashMap作为一个高效的key-value的容器，内部也维护了一个Entry数组，也存在扩容的问题。
+
+然而，HashMap为了更加有效的避免数组冲突，引入了两个概念。
+
+threshold 阈(yu，四声)值，当内部数据占用量超过这个值，进行扩容。
+loadFactor 通常为0.75,用来计算threshold值，即threshold = 容量 * loadFactor
+举个例子
+
+创建一个HashMap设置初始化容量为16，使用默认的loadFactor 0.75，即threshold为12
+然后不断的填充key,value数据
+当内部数据占用量超过12时，就会触发扩容操作，而不是等到16的时候。
+通常的扩容为双倍扩容，即变成原来的两倍，这里为32.
+因此说HashMap更容易触发扩容，但是这其实是一种在hash与容量占用的一种平衡。</p>
+									<h2>使用预设较为合理的初始容量</h2>
+									<p>SQLiteDatabase提供了方便的ContentValues简化了我们处理列名与值的映射，ContentValues内部采用了HashMap来存储Key-Value数据，ContentValues的初始容量是8，如果当添加的数据超过8之前，则会进行双倍扩容操作，
+
+因此建议对ContentValues填入的内容进行估量，根据实际需要的字段数量，设置合理的初始化数量。</p>
+									<h2>尝试使用其他非基于数组的数据结构</h2>
+									<p>数组的一大优点就是随机访问很高效，这是链表所无法匹敌的。
+
+但是并不是所有的时候都数组都有明显优势
+
+不需要随机访问或者数据量很小
+在频繁的增加和删除数据的时候，链表有明显的优势。
+一些替代方案
+
+对于List，可以考虑使用LinkedList
+对于Map，可以考虑使用TreeMap
+关于替代HashMap，Android引入了一个叫做ArrayMap的类，用来解决HashMap内存占用的问题。具体可以参考深入剖析 Android中的 ArrayMap
+关于扩容的问题就是以上内容，当我们无论是使用任何数据结构时都需要考虑到具体的环境和需要，确保能够做到最优。</p>
+									
+								</div>
+							</article>
+				</div>
+                <div class="copyrights">Collect from <a href="https://miichin.taobao.com/" >企业网站模板</a></div>
+				<div id="sidebar" class="col-1-3">
+					<!---- Start Widget ---->
+					<div class="widget wid-about">
+						<div class="wid-header">
+							<h5>关于我</h5>
+						</div>
+						<div class="wid-content">
+							<img src="images/10.jpg" />
+							<p>我叫 cocoa ，一名程序员</p>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>关注我</h5>
+						</div>
+						<div class="wid-content">
+							<ul class="quick-link">
+								<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					<div class="widget wid-post">
+						<div class="wid-header">
+							<h5>推荐商品</h5>
+						</div>
+						<div class="wid-content">
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=561286641145">
+										<img src="http://img.alicdn.com/imgextra/i3/628189716/TB14bgYbnlYBeNjSszcXXbwhFXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=561286641145">
+									满减【百草味-牛肉片100g】手撕牛肉干五香辣零食特产小吃</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539897385885">
+										<img src="http://img.alicdn.com/imgextra/i4/725677994/TB1r5xdeZic_eJjSZFnXXXVwVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539897385885">
+									百草味烧烤味牛板筋125g 零食小吃牛肉干小包装牛筋牛肉熟食卤味</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+							<div class="post">
+								<div class="zoom-container">
+									<a href="http://item.taobao.com/item.htm?id=539118158882">
+										<img src="http://img.alicdn.com/imgextra/i2/628189716/TB1G1Xhb9CWBuNjy0FhXXb6EVXa_!!0-item_pic.jpg" />
+									</a>
+								</div>
+								<div class="wrapper">
+									<div class="vid-name"><a href="http://item.taobao.com/item.htm?id=539118158882">
+									【百草味-牛板筋125gx2袋】四川特产小吃牛肉干 麻辣味零食熟食</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					
+					<!---- Start Widget ---->
+					<div class="widget wid-follow">
+						<div class="wid-header">
+							<h5>我的头像</h5>
+						</div>
+						<div class="wid-content">
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/15.jpg" /></a>
+										<a><img src="images/16.jpg" /></a>
+										<a><img src="images/17.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/18.jpg" /></a>
+										<a><img src="images/19.jpg" /></a>
+										<a><img src="images/20.jpg" /></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a><img src="images/21.jpg" /></a>
+										<a><img src="images/22.jpg" /></a>
+										<a><img src="images/23.jpg" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="zerogrid">
+		<div class="wrap-footer t-center">
+			<div class="row">
+				<div class="full">
+					<ul class="quick-link">
+						<li><a href="https://github.com/cococa"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/cococa"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<div class="copy-right">
+						<p>Copyright 2018 - youweier </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<script type="text/javascript">
+    $(function() {
+		if ($.browser.msie && $.browser.version.substr(0,1)<7)
+		{
+		$('li').has('ul').mouseover(function(){
+			$(this).children('ul').css('visibility','visible');
+			}).mouseout(function(){
+			$(this).children('ul').css('visibility','hidden');
+			})
+		}
+
+		/* Mobile */
+		$("#menu-trigger").on("click", function(){
+			$("#menu").slideToggle();
+		});
+
+		// iPad
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+		if (isiPad) $('#menu ul').addClass('no-transition');      
+    });          
+</script>
+
+</div>
+</body></html>

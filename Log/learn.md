@@ -41,6 +41,13 @@
 	https://www.toutiao.com/c/user/6093393054/#mid=6092543233   baiguo
 
 
+4. java 新特性 https://segmentfault.com/a/1190000014076481?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
+
+5. oracle java https://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html
+
+
+
+
 ## jvm
 1. http://www.importnew.com/28390.html
 2. 马士兵 jvm https://www.bilibili.com/video/av11226146?from=search&seid=1602006468027757593 

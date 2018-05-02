@@ -29,7 +29,7 @@ public class Chapter2{
 	}
 
 
-        public static void main(String[] args){
+    public static void main(String[] args){
 
 	List<Apple> temp= new ArrayList<>();
 	temp.add(new Apple("red",12));	
@@ -38,6 +38,6 @@ public class Chapter2{
 
 	List<Apple> result = filter("red",temp);
 	System.out.println(result.size());
-        }
+    }
 }
 

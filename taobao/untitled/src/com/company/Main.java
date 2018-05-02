@@ -4,8 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        int code = getCode();
+    }
 
-        byte b = 50;
 
+    public static int getCode(){
+        try {
+            return  0;
+        }finally {
+            System.out.println("123");
+        }
     }
 }

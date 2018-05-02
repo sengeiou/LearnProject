@@ -53,8 +53,6 @@ public class CommitItem extends  BaseItem {
     private Date sales_update_time;
     @Column(name = "create_time")
     private Date create_time;
-    @Column(name = "rate")
-    private String rate;
     @Column(name="status")
     private int status;
     @Column(name="search_kw")
@@ -64,7 +62,7 @@ public class CommitItem extends  BaseItem {
 
 
     public Object[] getSqlParams() {
-        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, rate,status,search_kw};
+        return new Object[]{item_url, nick, num_iid, pict_url, provcity, reserve_price, seller_id, small_img, title, user_type, volume, zk_final_price, sales, sales_update_time, create_time, status,search_kw};
     }
 
 
@@ -208,13 +206,7 @@ public class CommitItem extends  BaseItem {
         this.create_time = create_time;
     }
 
-    public String getRate() {
-        return rate;
-    }
 
-    public void setRate(String rate) {
-        this.rate = rate;
-    }
 
     public int getStatus() {
         return status;
