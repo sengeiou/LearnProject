@@ -1,0 +1,129 @@
+//index.js
+const app = getApp()
+Page({
+   clickDetail: function (event) {
+     var numid = event.currentTarget.dataset.id;
+       wx.navigateTo({
+         url: '../detail/detail?num_iid=' + numid
+       })
+   },
+  
+  data: {
+    index:[],
+    navigationBarTitleText: "index",
+    array:[],
+    listUrl: 'https://www.youweier77.com/product/shiji/getItems',
+    size: 20,
+    page: 0,
+    srollHeight:600,
+    loadmore:{
+      type: 'loading',
+      nodata_str:'我也是有底线的'
+    },
+    showTopPopup: false,
+    img_height:0,
+    img_width:0,
+    width_:0,
+    status:1,
+    height_:0,
+    bannerImgs: ["https://gd4.alicdn.com/imgextra/i4/3212966679/TB2skMyo3nH8KJjSspcXXb3QFXa_!!3212966679.jpg", "https://gd4.alicdn.com/imgextra/i2/907987408/TB2m14dcHMlyKJjSZFAXXbkLXXa_!!907987408.jpg_400x400.jpg","https://gd3.alicdn.com/imgextra/i4/0/TB1btDncBHH8KJjy0FbXXcqlpXa_!!0-item_pic.jpg"],
+    rmdArray: [],
+    item_width: 0,
+    third_width: 0,
+    quarter_width: 0
+  },
+  imageError: function (e) {
+    // console.log('image3发生error事件，携带值为', e.detail.errMsg);
+    // console.log('image3发生error事件，携带值为', e.detail.errMsg);
+  },
+  imgloaded: function (e){
+    // console.log(e);
+  },
+  onPullDownRefresh: function(){
+    this.getData(true);
+  },
+ 
+  onLoad: function () {
+    // this.setData({ loading: false });
+    this.getData(true);
+  },
+  onShow(){
+    var wxPage = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        wxPage.setData({
+          width_: res.windowWidth,
+          height_: res.windowHeight,
+          img_width: parseInt(res.windowWidth * 0.46 ),
+          img_height: parseInt(res.windowWidth * 0.46 * 1.1),
+          item_width: (res.screenWidth * 0.94),
+          third_width: (res.screenWidth * 0.94 - 6) / 3,
+          quarter_width: (res.screenWidth) / 4,
+          });
+      }
+    })
+
+    wx.createIntersectionObserver().relativeToViewport().observe('.mainTilteContainer', (res) => {
+      if (res.intersectionRect.right == 0) {
+        wx.setNavigationBarTitle({
+          title: '与你分享万千美食'
+        })
+      } else {
+        wx.setNavigationBarTitle({
+          title: ''
+        })
+      }
+    });
+
+  },
+  toggleTopPopup: function(){
+    this.setData({
+      showTopPopup: !this.data.showTopPopup
+    });
+  },
+  onReachBottom: function () {
+      // sleep(2000);
+      // this.setData({'loadmore.type': 'nodata'});
+    this.getData(false); 
+    
+  },
+  getData: function(isRefresh){
+    if (isRefresh) {
+      this.setData({
+        page: 1,
+        'loadmore.type': 'loading'
+      });
+    };    
+       var wxPage = this;
+       wx.request({
+         url: wxPage.data.listUrl,
+         data: {
+           status: wxPage.data.status,
+           size: wxPage.data.size,
+           page: wxPage.data.page
+         },
+         header: {
+           'content-type': 'application/json' // 默认值
+         },
+         complete : function(){
+           wx.stopPullDownRefresh();
+         },
+         success: function (res) {
+           if (isRefresh) {
+             wxPage.setData({
+               array: [],
+             });
+           };    
+           if (res.data.data.content.length < wxPage.data.size) {
+             console.log(wxPage.data.page);
+             wxPage.setData({ 'loadmore.type': 'nodata' });
+           }
+           wxPage.setData({
+             array: wxPage.data.array.concat(res.data.data.content),
+             page: wxPage.data.page + 1   // 页数自增
+           });
+         },
+
+       })
+  }
+})

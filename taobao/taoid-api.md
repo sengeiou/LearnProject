@@ -8,7 +8,7 @@ http://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=
 
 
 
-http://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=12574478&t=1513130908745&sign=4cca0b2f4172fb146369c9b59f3b5116&api=mtop.taobao.detail.getdetail&v=6.0&ttid=2016%40taobao_h5_2.0.0&isSec=0&ecode=0&AntiFlood=true&AntiCreep=true&H5Request=true&type=jsonp&dataType=jsonp&callback=mtopjsonp1&data=%7B%22exParams%22%3A%22%7B%5C%22id%5C%22%3A%5C%22522844070204%5C%22%7D%22%2C%22itemNumId%22%3A%22541933679045%22%7D
+http://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8api=mtop.taobao.detail.getdetail&v=6.0&ttid=2016%40taobao_h5_2.0.0&isSec=0&ecode=0&AntiFlood=true&AntiCreep=true&H5Request=true&type=jsonp&dataType=jsonp&callback=mtopjsonp1&data=%7B%22exParams%22%3A%22%7B%5C%22id%5C%22%3A%5C%22522844070204%5C%22%7D%22%2C%22itemNumId%22%3A%22541933679045%22%7D
 
 itemId: "522844070204",
 title: "天天特价 即食烤虾干山东特产零食虾干大对虾干虾仁250g海鲜包邮",

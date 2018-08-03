@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Title</title>
+    <style type="text/css">
+        img {
+            max-width: 100%;
+            height: 120px;
+        }
+
+        html, body, * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            display: flex;
+            padding: 20px;
+        }
+
+        li.active {
+            background-color: #f7f4f4;
+        }
+
+        img {
+            float: left;
+        }
+
+        p {
+            clear: both;
+        }
+
+        .decoration {
+            text-decoration: line-through;
+        }
+
+        h5.price {
+            color: #FF0036;
+
+        }
+
+        .li-right {
+            margin: 0px 0px 0px 10px;
+        }
+        div > h5 {
+            margin: 6px 0px 0px 0px;
+        }
+        button {
+            margin: 5px 15px 5px 5px;
+        }
+        .btn {
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div id="item">
+
+
+    <div>
+         <input v-model="message" placeholder="请输入关键字">
+        <button @click="getDataA()">getData</button>
+    </div>
+
+
+    <ul>
+        <li v-for="(it,index) in items" v-cloak :class="{'active': index %2 == 0 } ">
+
+            <img v-bind:src="it.pict_url"/>
+
+            <div class="li-right">
+                <h5 class="title">{{index}}--{{it.title}}--{{it.num_iid}}</h5>
+                <h5 class="decoration">价格:{{ it.reserve_price }}</h5>
+                <h5 class="price">促销价:{{ it.zk_final_price }}</h5>
+                <h5> 销量:{{ it.sales }}</h5>
+
+                <div class="btn">
+                    <button @click="add(it)">addto-sj</button>
+                    <button @click="show(it)">open-tb</button>
+                    <button @click="del(it)">delete-tb</button>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+    <button @click="getData()"> next page</button>
+</div>
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="//g.alicdn.com/mtb/lib-applink/0.3.7/??callApp.js,linksdk.js"></script>
+<!--http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.iDrdBy&treeId=129&articleId=105908&docType=1-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+
+    window.BC_SDK = BCSDK_AppLink.init({
+        appkey: '23781332', //必填，输入百川应用的appkey
+        backURL: 'tbopen23781332://', //必填，默认为空字符串，applink的tips的回跳url， 设置能在手机淘宝里面调回你自己应用的url，格式为`tbopen${appkey}`。
+        openApp: true, //非必填，默认为true，非必填，是否唤起客户端，设置false，只会做H5跳转。
+        linkKey: 'TB', //非必填，默认为TB, 唤起手淘(TB)/天猫(TM)。
+//        isNeedDownload: false, //非必填，默认为false, 没有app的情况下跳转目标h5页面还是下载页, 默认跳转目标h5页面。
+        isDefaultRedirect: false, //选填, 没有唤起app的情况下是否默认跳转, 默认true。
+//        params:{}, //非必填，带给applink协议的扩展参数,用户自定义参数也传在这里, 如scm、pvid、pid、subpid、e、unionId等业务参数会放到这里。
+//        trackParams:{}, //非必填，ybhpss的映射对象，传入这里的参数会被拼为ybhpss字符串带到协议上。
+//        timeout: 1000 // 非必填，默认跳转(目标h5页/下载页)的延时时长。
+    });
+
+    var example1 = new Vue({
+            el: '#item',
+            data: {
+                message:"",
+                pageIndex: 0,
+                pageSize: 30,
+                items: [],
+                itemDebug: [{
+                    "id": 12179,
+                    "item_url": "http://item.taobao.com/item.htm?id=44241444310",
+                    "nick": "衣裳云衫",
+                    "num_iid": "44241444310",
+                    "pict_url": "https://img.alicdn.com/tfscom/i1/644216784/TB2SFJ6sFXXXXaxXXXXXXXXXXXX_!!644216784.jpg",
+                    "provcity": "安徽 宣城",
+                    "reserve_price": "60.00",
+                    "seller_id": "644216784",
+                    "small_img": "https://img.alicdn.com/tfscom/i2/644216784/TB2b4s9hKEJL1JjSZFGXXa6OXXa_!!644216784.jpg@@https://img.alicdn.com/tfscom/i4/644216784/TB2H4ApspXXXXbGXpXXXXXXXXXX_!!644216784.jpg@@https://img.alicdn.com/tfscom/i2/644216784/TB247r8bByN.eBjSZFkXXb8YFXa_!!644216784.jpg@@https://img.alicdn.com/tfscom/i2/644216784/TB2zFagn9FjpuFjSszhXXaBuVXa_!!644216784.jpg@",
+                    "title": "1000g速溶阿萨姆奶茶粉 茶香三合一原味奶茶红茶冲饮料奶茶店原料",
+                    "user_type": "0",
+                    "volume": "27335",
+                    "zk_final_price": "28.00",
+                    "sales": 58702,
+                    "sales_update_time": 1515580603000,
+                    "create_time": 1515580603000,
+                    "rate": null,
+                    "status": 0,
+                    "search_kw": null,
+                    "from": 0,
+                }]
+            },
+            methods: {
+                getDataA: function () {
+                    var vm = this;
+                    vm.items = [];
+                    vm.pageIndex = 0;
+                    axios.get('/product/taobao/getItems', {
+                        params: {
+                            size: vm.pageSize,
+                            page: vm.pageIndex,
+                            status: 'new',
+                            keywords:vm.message
+                        }
+                    }).then(function (response) {
+                        vm.pageIndex++;
+                        vm.items = vm.items.concat(response.data.data.content);
+                    })
+                },
+                getData: function () {
+                    var vm = this;
+                    axios.get('/product/taobao/getItems', {
+                        params: {
+                            size: vm.pageSize,
+                            page: vm.pageIndex,
+                            status: 'new',
+                            keywords:vm.message
+                        }
+                    }).then(function (response) {
+                        vm.pageIndex++;
+                        vm.items = vm.items.concat(response.data.data.content);
+                    })
+                },
+                del: function (item) {
+                    var vm = this;
+                    axios.get('/product/taobao/updateItemStatus', {
+                        params: {
+                            num_iid: item.num_iid,
+                            status: "delete",
+                        }
+                    }).then(function (response) {
+                            if (response.data.code == 0) {
+                                // 获取元素的位置
+                                var index = getIndex(vm.items, item);
+                                if (index >= 0) {
+                                    // 删除元素
+                                    vm.items.remove(index);
+                                }
+                            } else {
+                                alert(response.data.msg);
+                            }
+                    })
+                },
+                show: function (item) {
+                    window.BC_SDK.goDetail({
+                        itemId: item.num_iid,
+                        params: {}
+                    });
+
+                },
+                add: function (item) {
+                    // 做 天猫超市 百草味做 天猫超市 百草味 周黑鸭 三只松鼠  天猫生鲜 等的提示 周黑鸭 三只松鼠  天猫生鲜 等的提示
+                    if ((shopFilter(item.title) || shopFilter(item.nick)) && !item.flag) {
+                        alert("这个店铺可能是大流量店铺，提醒！！！");
+                        item.flag = true;
+                        return;
+                    }
+                    var vm = this;
+                    // 修改状态
+                    // 加到shiji库
+                    axios.post('/product/shiji/additem', item)
+                        .then(function (response) {
+                        if (response.data.code != 100 ) {
+                            // 更新淘宝库的状态，
+                            axios.get('/product/taobao/updateItemStatus', {
+                                params: {
+                                    num_iid: item.num_iid,
+                                    status: "inserted",
+                                }
+                            }).then(function (response) {
+                                if (response.data.code == 0) {
+                                    // 获取元素的位置
+                                    var index = getIndex(vm.items, item);
+                                    if (index >= 0) {
+                                        // 删除元素
+                                        vm.items.remove(index);
+                                    }
+                                } else {
+                                    alert(response.data.msg);
+                                }
+                            })
+                        } else {
+                            alert(response.data.msg);
+                        }
+                    })
+                }
+            }
+        })
+    ;
+//    example1.getData();
+
+
+    function getIndex(array, temp) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i].num_iid == temp.num_iid) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    Array.prototype.remove = function (dx) {
+        if (isNaN(dx) || dx > this.length) {
+            return false;
+        }
+        this.splice(dx, 1);
+    }
+
+    var shopArray = ["百草味", "周黑鸭", "三只松鼠", "良品铺子", "天猫生鲜", "天猫超市", "天猫"];
+
+    function shopFilter(str) {
+        for (var i = 0; i < shopArray.length; i++) {
+            if (str.indexOf(shopArray[i]) > -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+</script>
+
+</html>
+
+<!--id: 6285,-->
+<!--item_url: "http://item.taobao.com/item.htm?id=524540166255",-->
+<!--nick: "天猫超市",-->
+<!--num_iid: "524540166255",-->
+<!--pict_url: "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png",-->
+<!--provcity: "上海",-->
+<!--reserve_price: "15.00",-->
+<!--seller_id: "725677994",-->
+<!--small_img: "http://img1.tbcdn.cn/tfscom/i2/725677994/TB1xOkCawMPMeJjy1XbXXcwxVXa_!!2-item_pic.png@@http://img2.tbcdn.cn/tfscom/i1/725677994/TB2UvSbkVXXXXblXpXXXXXXXXXX_!!725677994.jpg@@http://img4.tbcdn.cn/tfscom/i1/725677994/TB2mn9Ya9iJ.eBjSszfXXa4bVXa_!!725677994.jpg@@http://img1.tbcdn.cn/tfscom/i3/725677994/TB2N4t9ipXXXXbHXpXXXXXXXXXX_!!725677994.jpg@",-->
+<!--title: "TC蔓越莓曲奇饼干手提兔子铁礼盒手工休闲零食品儿童女友送礼80g",-->
+<!--user_type: "1",-->
+<!--volume: "205542",-->
+<!--zk_final_price: "205542",-->
+<!--sales: 257073,-->
+<!--sales_update_time: "Nov 20, 2017 6:00:56 PM",-->
+<!--create_time: "Nov 20, 2017 6:00:56 PM",-->
+<!--status: 0-->

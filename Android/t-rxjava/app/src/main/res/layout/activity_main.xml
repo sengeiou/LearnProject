@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!" />
+
+            <Button
+                android:id="@+id/create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="创建操作" />
+
+            <Button
+                android:id="@+id/tram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="变换操作" />
+
+            <LinearLayout
+                android:id="@+id/vpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indicatorLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

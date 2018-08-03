@@ -22,14 +22,11 @@ public class Test{
 
 	}
 
-
 	public static <T> void forEach(List<T> list, Consumer<T> c){
 		for(T t : list){
 			c.accept(t);
 		}
 	}
-
-
 
 	public static <T> List<T> filter(List<T> list, Predicate<T> predicate){
 		List<T> resultList = new ArrayList<>();

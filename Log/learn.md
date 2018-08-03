@@ -41,7 +41,7 @@
 	https://www.toutiao.com/c/user/6093393054/#mid=6092543233   baiguo
 
 
-4. java 新特性 https://segmentfault.com/a/1190000014076481?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
+4. java 新特性 https://segmentfault.com/a/1190000014076481
 
 5. oracle java https://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html
 
@@ -57,6 +57,47 @@
 ## js
 1. webpack http://www.css88.com/doc/webpack2/guides/development/
             https://www.webpackjs.com/concepts/
+
+
+
+
+
+
+1.linux  30
+2.vim 10
+3.typing 10
+4.gradle 30
+5.arg  60
+6.dp 60
+7.food 60
+8.git 30 
+
+
+
+mysql 
+http://www.runoob.com/sql/sql-having.html
+
+
+
+idea
+http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-mac-introduce.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Title</title>
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style type="text/css">
+        .marign-top{
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="item">
+
+    <el-row >
+        <el-col :span="20" :offset="2">
+            <div>
+                <el-input  v-model="message" placeholder="请输入关键字"></el-input>
+                <el-button class="marign-top" @click="getData()"> next page</el-button>
+            </div>
+        </el-col>
+    </el-row>
+
+
+
+</div>
+</body>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script type="text/javascript">
+
+    var example1 = new Vue({
+            el: '#item',
+            data: {
+                message:"",
+                pageIndex: 0,
+            },
+            methods: {
+                getData: function () {
+                    console.log(this.message);
+                }
+            }
+        });
+    ;
+
+</script>
+
+</html>

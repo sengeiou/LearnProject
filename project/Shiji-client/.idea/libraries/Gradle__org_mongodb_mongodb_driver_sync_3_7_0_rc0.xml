@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mongodb:mongodb-driver-sync:3.7.0-rc0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-sync/3.7.0-rc0/11e4419c19da19a17c661865c71d549ad3d00d0c/mongodb-driver-sync-3.7.0-rc0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-sync/3.7.0-rc0/b014de6b887fe4bc7a8838c490c7db968bcc29e/mongodb-driver-sync-3.7.0-rc0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
