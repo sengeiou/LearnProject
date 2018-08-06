@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cocoa.taobao.product_server.mapper.ShijiItemMapper">
+
+
+    <insert id="insertShijiItem" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `shiji_item`
+        (
+        <trim suffixOverrides=",">
+            <if test="id!=null">
+                `id`,
+            </if>
+            <if test="item_url!=null">
+                `item_url`,
+            </if>
+            <if test="nick!=null">
+                `nick`,
+            </if>
+            <if test="num_iid!=null">
+                `num_iid`,
+            </if>
+            <if test="pict_url!=null">
+                `pict_url`,
+            </if>
+            <if test="provcity!=null">
+                `provcity`,
+            </if>
+            <if test="reserve_price!=null">
+                `reserve_price`,
+            </if>
+            <if test="seller_id!=null">
+                `seller_id`,
+            </if>
+            <if test="small_images!=null">
+                `small_images`,
+            </if>
+            <if test="title!=null">
+                `title`,
+            </if>
+            <if test="user_type!=null">
+                `user_type`,
+            </if>
+            <if test="volume!=null">
+                `volume`,
+            </if>
+            <if test="zk_final_price!=null">
+                `zk_final_price`,
+            </if>
+            <if test="sales!=null">
+                `sales`,
+            </if>
+            <if test="sales_update_time!=null">
+                `sales_update_time`,
+            </if>
+            <if test="create_time!=null">
+                `create_time`,
+            </if>
+            <if test="status!=null">
+                `status`,
+            </if>
+            <if test="search_kw!=null">
+                `search_kw`,
+            </if>
+            <if test="tb_from!=null">
+                `tb_from`,
+            </if>
+        </trim>
+        )
+        VALUES
+        (
+        <trim suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="item_url!=null">
+                #{item_url},
+            </if>
+            <if test="nick!=null">
+                #{nick},
+            </if>
+            <if test="num_iid!=null">
+                #{num_iid},
+            </if>
+            <if test="pict_url!=null">
+                #{pict_url},
+            </if>
+            <if test="provcity!=null">
+                #{provcity},
+            </if>
+            <if test="reserve_price!=null">
+                #{reserve_price},
+            </if>
+            <if test="seller_id!=null">
+                #{seller_id},
+            </if>
+            <if test="small_images!=null">
+                #{small_images},
+            </if>
+            <if test="title!=null">
+                #{title},
+            </if>
+            <if test="user_type!=null">
+                #{user_type},
+            </if>
+            <if test="volume!=null">
+                #{volume},
+            </if>
+            <if test="zk_final_price!=null">
+                #{zk_final_price},
+            </if>
+            <if test="sales!=null">
+                #{sales},
+            </if>
+            <if test="sales_update_time!=null">
+                #{sales_update_time},
+            </if>
+            <if test="create_time!=null">
+                #{create_time},
+            </if>
+            <if test="status!=null">
+                #{status},
+            </if>
+            <if test="search_kw!=null">
+                #{search_kw},
+            </if>
+            <if test="tb_from!=null">
+                #{tb_from},
+            </if>
+        </trim>
+        )
+    </insert>
+
+
+    <update id="updateShijiItem">
+        UPDATE `shiji_item`
+        SET
+        <trim suffixOverrides=",">
+            <if test="item_url != null and item_url!=''">
+                `item_url` = #{item_url},
+            </if>
+            <if test="nick != null and nick!=''">
+                `nick` = #{nick},
+            </if>
+            <if test="num_iid != null and num_iid!=''">
+                `num_iid` = #{num_iid},
+            </if>
+            <if test="pict_url != null and pict_url!=''">
+                `pict_url` = #{pict_url},
+            </if>
+            <if test="provcity != null and provcity!=''">
+                `provcity` = #{provcity},
+            </if>
+            <if test="reserve_price != null and reserve_price!=''">
+                `reserve_price` = #{reserve_price},
+            </if>
+            <if test="seller_id != null and seller_id!=''">
+                `seller_id` = #{seller_id},
+            </if>
+            <if test="small_images != null and small_images!=''">
+                `small_images` = #{small_images},
+            </if>
+            <if test="title != null and title!=''">
+                `title` = #{title},
+            </if>
+            <if test="user_type != null">
+                `user_type` = #{user_type},
+            </if>
+            <if test="volume != null and volume!=''">
+                `volume` = #{volume},
+            </if>
+            <if test="zk_final_price != null and zk_final_price!=''">
+                `zk_final_price` = #{zk_final_price},
+            </if>
+            <if test="sales != null">
+                `sales` = #{sales},
+            </if>
+            <if test="sales_update_time != null">
+                `sales_update_time` = #{sales_update_time},
+            </if>
+            <if test="create_time != null">
+                `create_time` = #{create_time},
+            </if>
+            <if test="status != null">
+                `status` = #{status},
+            </if>
+            <if test="search_kw != null and search_kw!=''">
+                `search_kw` = #{search_kw},
+            </if>
+            <if test="tb_from != null">
+                `tb_from` = #{tb_from},
+            </if>
+        </trim>
+        WHERE
+        <trim suffixOverrides="and">
+            `id` = #{id} and
+        </trim>
+    </update>
+
+
+    <update id="updateShijiItemByNumiid">
+        UPDATE `shiji_item`
+        SET
+        <trim suffixOverrides=",">
+            <if test="item_url != null and item_url!=''">
+                `item_url` = #{item_url},
+            </if>
+            <if test="nick != null and nick!=''">
+                `nick` = #{nick},
+            </if>
+            <if test="num_iid != null and num_iid!=''">
+                `num_iid` = #{num_iid},
+            </if>
+            <if test="pict_url != null and pict_url!=''">
+                `pict_url` = #{pict_url},
+            </if>
+            <if test="provcity != null and provcity!=''">
+                `provcity` = #{provcity},
+            </if>
+            <if test="reserve_price != null and reserve_price!=''">
+                `reserve_price` = #{reserve_price},
+            </if>
+            <if test="seller_id != null and seller_id!=''">
+                `seller_id` = #{seller_id},
+            </if>
+            <if test="small_images != null and small_images!=''">
+                `small_images` = #{small_images},
+            </if>
+            <if test="title != null and title!=''">
+                `title` = #{title},
+            </if>
+            <if test="user_type != null">
+                `user_type` = #{user_type},
+            </if>
+            <if test="volume != null and volume!=''">
+                `volume` = #{volume},
+            </if>
+            <if test="zk_final_price != null and zk_final_price!=''">
+                `zk_final_price` = #{zk_final_price},
+            </if>
+            <if test="sales != null">
+                `sales` = #{sales},
+            </if>
+            <if test="sales_update_time != null">
+                `sales_update_time` = #{sales_update_time},
+            </if>
+            <if test="create_time != null">
+                `create_time` = #{create_time},
+            </if>
+            <if test="status != null">
+                `status` = #{status},
+            </if>
+            <if test="search_kw != null and search_kw!=''">
+                `search_kw` = #{search_kw},
+            </if>
+            <if test="tb_from != null">
+                `tb_from` = #{tb_from},
+            </if>
+        </trim>
+        WHERE
+        <trim suffixOverrides="and">
+            `num_iid` = #{num_iid} and
+        </trim>
+    </update>
+
+
+    <update id="update">
+        UPDATE `shiji_item`
+        SET
+        <trim suffixOverrides=",">
+            <if test="set.item_url != null and set.item_url!=''">
+                `item_url` = #{set.item_url},
+            </if>
+            <if test="set.nick != null and set.nick!=''">
+                `nick` = #{set.nick},
+            </if>
+            <if test="set.num_iid != null and set.num_iid!=''">
+                `num_iid` = #{set.num_iid},
+            </if>
+            <if test="set.pict_url != null and set.pict_url!=''">
+                `pict_url` = #{set.pict_url},
+            </if>
+            <if test="set.provcity != null and set.provcity!=''">
+                `provcity` = #{set.provcity},
+            </if>
+            <if test="set.reserve_price != null and set.reserve_price!=''">
+                `reserve_price` = #{set.reserve_price},
+            </if>
+            <if test="set.seller_id != null and set.seller_id!=''">
+                `seller_id` = #{set.seller_id},
+            </if>
+            <if test="set.small_images != null and set.small_images!=''">
+                `small_images` = #{set.small_images},
+            </if>
+            <if test="set.title != null and set.title!=''">
+                `title` = #{set.title},
+            </if>
+            <if test="set.user_type != null">
+                `user_type` = #{set.user_type},
+            </if>
+            <if test="set.volume != null and set.volume!=''">
+                `volume` = #{set.volume},
+            </if>
+            <if test="set.zk_final_price != null and set.zk_final_price!=''">
+                `zk_final_price` = #{set.zk_final_price},
+            </if>
+            <if test="set.sales != null">
+                `sales` = #{set.sales},
+            </if>
+            <if test="set.sales_update_time != null">
+                `sales_update_time` = #{set.sales_update_time},
+            </if>
+            <if test="set.create_time != null">
+                `create_time` = #{set.create_time},
+            </if>
+            <if test="set.status != null">
+                `status` = #{set.status},
+            </if>
+            <if test="set.search_kw != null and set.search_kw!=''">
+                `search_kw` = #{set.search_kw},
+            </if>
+            <if test="set.tb_from != null">
+                `tb_from` = #{set.tb_from},
+            </if>
+        </trim>
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="where.idList != null">
+                `id` in
+                <foreach collection="where.idList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.idSt !=null">
+                `id` >= #{where.idSt} and
+            </if>
+            <if test="where.idEd!=null">
+                `id` &lt;= #{where.idEd} and
+            </if>
+            <if test="where.item_urlList != null">
+                `item_url` in
+                <foreach collection="where.item_urlList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyItem_url!=null and where.fuzzyItem_url.size()>0">
+                (
+                <foreach collection="where.fuzzyItem_url" separator="or" item="item">
+                    `Item_url` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyItem_url!=null and where.rightFuzzyItem_url.size()>0">
+                (
+                <foreach collection="where.rightFuzzyItem_url" separator="or" item="item">
+                    `Item_url` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.nickList != null">
+                `nick` in
+                <foreach collection="where.nickList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyNick!=null and where.fuzzyNick.size()>0">
+                (
+                <foreach collection="where.fuzzyNick" separator="or" item="item">
+                    `Nick` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyNick!=null and where.rightFuzzyNick.size()>0">
+                (
+                <foreach collection="where.rightFuzzyNick" separator="or" item="item">
+                    `Nick` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.num_iidList != null">
+                `num_iid` in
+                <foreach collection="where.num_iidList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyNum_iid!=null and where.fuzzyNum_iid.size()>0">
+                (
+                <foreach collection="where.fuzzyNum_iid" separator="or" item="item">
+                    `Num_iid` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyNum_iid!=null and where.rightFuzzyNum_iid.size()>0">
+                (
+                <foreach collection="where.rightFuzzyNum_iid" separator="or" item="item">
+                    `Num_iid` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.pict_urlList != null">
+                `pict_url` in
+                <foreach collection="where.pict_urlList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyPict_url!=null and where.fuzzyPict_url.size()>0">
+                (
+                <foreach collection="where.fuzzyPict_url" separator="or" item="item">
+                    `Pict_url` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyPict_url!=null and where.rightFuzzyPict_url.size()>0">
+                (
+                <foreach collection="where.rightFuzzyPict_url" separator="or" item="item">
+                    `Pict_url` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.provcityList != null">
+                `provcity` in
+                <foreach collection="where.provcityList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyProvcity!=null and where.fuzzyProvcity.size()>0">
+                (
+                <foreach collection="where.fuzzyProvcity" separator="or" item="item">
+                    `Provcity` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyProvcity!=null and where.rightFuzzyProvcity.size()>0">
+                (
+                <foreach collection="where.rightFuzzyProvcity" separator="or" item="item">
+                    `Provcity` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.reserve_priceList != null">
+                `reserve_price` in
+                <foreach collection="where.reserve_priceList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyReserve_price!=null and where.fuzzyReserve_price.size()>0">
+                (
+                <foreach collection="where.fuzzyReserve_price" separator="or" item="item">
+                    `Reserve_price` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyReserve_price!=null and where.rightFuzzyReserve_price.size()>0">
+                (
+                <foreach collection="where.rightFuzzyReserve_price" separator="or" item="item">
+                    `Reserve_price` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.seller_idList != null">
+                `seller_id` in
+                <foreach collection="where.seller_idList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzySeller_id!=null and where.fuzzySeller_id.size()>0">
+                (
+                <foreach collection="where.fuzzySeller_id" separator="or" item="item">
+                    `Seller_id` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzySeller_id!=null and where.rightFuzzySeller_id.size()>0">
+                (
+                <foreach collection="where.rightFuzzySeller_id" separator="or" item="item">
+                    `Seller_id` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.small_imagesList != null">
+                `small_images` in
+                <foreach collection="where.small_imagesList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzySmall_images!=null and where.fuzzySmall_images.size()>0">
+                (
+                <foreach collection="where.fuzzySmall_images" separator="or" item="item">
+                    `Small_images` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzySmall_images!=null and where.rightFuzzySmall_images.size()>0">
+                (
+                <foreach collection="where.rightFuzzySmall_images" separator="or" item="item">
+                    `Small_images` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.titleList != null">
+                `title` in
+                <foreach collection="where.titleList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyTitle!=null and where.fuzzyTitle.size()>0">
+                (
+                <foreach collection="where.fuzzyTitle" separator="or" item="item">
+                    `Title` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyTitle!=null and where.rightFuzzyTitle.size()>0">
+                (
+                <foreach collection="where.rightFuzzyTitle" separator="or" item="item">
+                    `Title` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.user_typeList != null">
+                `user_type` in
+                <foreach collection="where.user_typeList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.user_typeSt !=null">
+                `user_type` >= #{where.user_typeSt} and
+            </if>
+            <if test="where.user_typeEd!=null">
+                `user_type` &lt;= #{where.user_typeEd} and
+            </if>
+            <if test="where.volumeList != null">
+                `volume` in
+                <foreach collection="where.volumeList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyVolume!=null and where.fuzzyVolume.size()>0">
+                (
+                <foreach collection="where.fuzzyVolume" separator="or" item="item">
+                    `Volume` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyVolume!=null and where.rightFuzzyVolume.size()>0">
+                (
+                <foreach collection="where.rightFuzzyVolume" separator="or" item="item">
+                    `Volume` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.zk_final_priceList != null">
+                `zk_final_price` in
+                <foreach collection="where.zk_final_priceList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzyZk_final_price!=null and where.fuzzyZk_final_price.size()>0">
+                (
+                <foreach collection="where.fuzzyZk_final_price" separator="or" item="item">
+                    `Zk_final_price` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzyZk_final_price!=null and where.rightFuzzyZk_final_price.size()>0">
+                (
+                <foreach collection="where.rightFuzzyZk_final_price" separator="or" item="item">
+                    `Zk_final_price` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.salesList != null">
+                `sales` in
+                <foreach collection="where.salesList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.salesSt !=null">
+                `sales` >= #{where.salesSt} and
+            </if>
+            <if test="where.salesEd!=null">
+                `sales` &lt;= #{where.salesEd} and
+            </if>
+            <if test="where.sales_update_timeList != null">
+                `sales_update_time` in
+                <foreach collection="where.sales_update_timeList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.sales_update_timeSt !=null">
+                `sales_update_time` >= #{where.sales_update_timeSt} and
+            </if>
+            <if test="where.sales_update_timeEd!=null">
+                `sales_update_time` &lt;= #{where.sales_update_timeEd} and
+            </if>
+            <if test="where.create_timeList != null">
+                `create_time` in
+                <foreach collection="where.create_timeList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.create_timeSt !=null">
+                `create_time` >= #{where.create_timeSt} and
+            </if>
+            <if test="where.create_timeEd!=null">
+                `create_time` &lt;= #{where.create_timeEd} and
+            </if>
+            <if test="where.statusList != null">
+                `status` in
+                <foreach collection="where.statusList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.statusSt !=null">
+                `status` >= #{where.statusSt} and
+            </if>
+            <if test="where.statusEd!=null">
+                `status` &lt;= #{where.statusEd} and
+            </if>
+            <if test="where.search_kwList != null">
+                `search_kw` in
+                <foreach collection="where.search_kwList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.fuzzySearch_kw!=null and where.fuzzySearch_kw.size()>0">
+                (
+                <foreach collection="where.fuzzySearch_kw" separator="or" item="item">
+                    `Search_kw` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.rightFuzzySearch_kw!=null and where.rightFuzzySearch_kw.size()>0">
+                (
+                <foreach collection="where.rightFuzzySearch_kw" separator="or" item="item">
+                    `Search_kw` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test="where.tb_fromList != null">
+                `tb_from` in
+                <foreach collection="where.tb_fromList" close=")" open="(" separator="," item="item">
+                    #{item}
+                </foreach>
+                and
+            </if>
+            <if test="where.tb_fromSt !=null">
+                `tb_from` >= #{where.tb_fromSt} and
+            </if>
+            <if test="where.tb_fromEd!=null">
+                `tb_from` &lt;= #{where.tb_fromEd} and
+            </if>
+        </trim>
+    </update>
+
+
+    <resultMap type="com.cocoa.taobao.product_server.bean.sql.ShijiItem" id="ShijiItemMap">
+        <result property="id" column="id"/>
+        <result property="item_url" column="item_url"/>
+        <result property="nick" column="nick"/>
+        <result property="num_iid" column="num_iid"/>
+        <result property="pict_url" column="pict_url"/>
+        <result property="provcity" column="provcity"/>
+        <result property="reserve_price" column="reserve_price"/>
+        <result property="seller_id" column="seller_id"/>
+        <result property="small_images" column="small_images"/>
+        <result property="title" column="title"/>
+        <result property="user_type" column="user_type"/>
+        <result property="volume" column="volume"/>
+        <result property="zk_final_price" column="zk_final_price"/>
+        <result property="sales" column="sales"/>
+        <result property="sales_update_time" column="sales_update_time"/>
+        <result property="create_time" column="create_time"/>
+        <result property="status" column="status"/>
+        <result property="search_kw" column="search_kw"/>
+        <result property="tb_from" column="tb_from"/>
+    </resultMap>
+
+
+    <select id="queryShijiItem" resultMap="ShijiItemMap">
+        select
+        <include refid="baseResult"></include>
+        from `shiji_item`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="item_url != null and item_url!=''">
+                `item_url` = #{item_url} and
+            </if>
+            <if test="nick != null and nick!=''">
+                `nick` = #{nick} and
+            </if>
+            <if test="num_iid != null and num_iid!=''">
+                `num_iid` = #{num_iid} and
+            </if>
+            <if test="pict_url != null and pict_url!=''">
+                `pict_url` = #{pict_url} and
+            </if>
+            <if test="provcity != null and provcity!=''">
+                `provcity` = #{provcity} and
+            </if>
+            <if test="reserve_price != null and reserve_price!=''">
+                `reserve_price` = #{reserve_price} and
+            </if>
+            <if test="seller_id != null and seller_id!=''">
+                `seller_id` = #{seller_id} and
+            </if>
+            <if test="small_images != null and small_images!=''">
+                `small_images` = #{small_images} and
+            </if>
+            <if test="title != null and title!=''">
+                `title` = #{title} and
+            </if>
+            <if test="user_type != null">
+                `user_type` = #{user_type} and
+            </if>
+            <if test="volume != null and volume!=''">
+                `volume` = #{volume} and
+            </if>
+            <if test="zk_final_price != null and zk_final_price!=''">
+                `zk_final_price` = #{zk_final_price} and
+            </if>
+            <if test="sales != null">
+                `sales` = #{sales} and
+            </if>
+            <if test="sales_update_time != null">
+                `sales_update_time` = #{sales_update_time} and
+            </if>
+            <if test="create_time != null">
+                `create_time` = #{create_time} and
+            </if>
+            <if test="status != null">
+                `status` = #{status} and
+            </if>
+            <if test="search_kw != null and search_kw!=''">
+                `search_kw` = #{search_kw} and
+            </if>
+            <if test="tb_from != null">
+                `tb_from` = #{tb_from} and
+            </if>
+            <if test="(_parameter instanceof com.cocoa.taobao.product_server.bean.sql.ShijiItem$QueryBuilder) == true">
+                <if test="idList != null">
+                    `id` in
+                    <foreach collection="idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                <if test="item_urlList != null">
+                    `item_url` in
+                    <foreach collection="item_urlList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyItem_url!=null and fuzzyItem_url.size()>0">
+                    (
+                    <foreach collection="fuzzyItem_url" separator="or" item="item">
+                        `Item_url` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyItem_url!=null and rightFuzzyItem_url.size()>0">
+                    (
+                    <foreach collection="rightFuzzyItem_url" separator="or" item="item">
+                        `Item_url` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="nickList != null">
+                    `nick` in
+                    <foreach collection="nickList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyNick!=null and fuzzyNick.size()>0">
+                    (
+                    <foreach collection="fuzzyNick" separator="or" item="item">
+                        `Nick` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyNick!=null and rightFuzzyNick.size()>0">
+                    (
+                    <foreach collection="rightFuzzyNick" separator="or" item="item">
+                        `Nick` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="num_iidList != null">
+                    `num_iid` in
+                    <foreach collection="num_iidList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyNum_iid!=null and fuzzyNum_iid.size()>0">
+                    (
+                    <foreach collection="fuzzyNum_iid" separator="or" item="item">
+                        `Num_iid` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyNum_iid!=null and rightFuzzyNum_iid.size()>0">
+                    (
+                    <foreach collection="rightFuzzyNum_iid" separator="or" item="item">
+                        `Num_iid` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="pict_urlList != null">
+                    `pict_url` in
+                    <foreach collection="pict_urlList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyPict_url!=null and fuzzyPict_url.size()>0">
+                    (
+                    <foreach collection="fuzzyPict_url" separator="or" item="item">
+                        `Pict_url` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyPict_url!=null and rightFuzzyPict_url.size()>0">
+                    (
+                    <foreach collection="rightFuzzyPict_url" separator="or" item="item">
+                        `Pict_url` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="provcityList != null">
+                    `provcity` in
+                    <foreach collection="provcityList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyProvcity!=null and fuzzyProvcity.size()>0">
+                    (
+                    <foreach collection="fuzzyProvcity" separator="or" item="item">
+                        `Provcity` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyProvcity!=null and rightFuzzyProvcity.size()>0">
+                    (
+                    <foreach collection="rightFuzzyProvcity" separator="or" item="item">
+                        `Provcity` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="reserve_priceList != null">
+                    `reserve_price` in
+                    <foreach collection="reserve_priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyReserve_price!=null and fuzzyReserve_price.size()>0">
+                    (
+                    <foreach collection="fuzzyReserve_price" separator="or" item="item">
+                        `Reserve_price` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyReserve_price!=null and rightFuzzyReserve_price.size()>0">
+                    (
+                    <foreach collection="rightFuzzyReserve_price" separator="or" item="item">
+                        `Reserve_price` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="seller_idList != null">
+                    `seller_id` in
+                    <foreach collection="seller_idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySeller_id!=null and fuzzySeller_id.size()>0">
+                    (
+                    <foreach collection="fuzzySeller_id" separator="or" item="item">
+                        `Seller_id` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySeller_id!=null and rightFuzzySeller_id.size()>0">
+                    (
+                    <foreach collection="rightFuzzySeller_id" separator="or" item="item">
+                        `Seller_id` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="small_imagesList != null">
+                    `small_images` in
+                    <foreach collection="small_imagesList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySmall_images!=null and fuzzySmall_images.size()>0">
+                    (
+                    <foreach collection="fuzzySmall_images" separator="or" item="item">
+                        `Small_images` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySmall_images!=null and rightFuzzySmall_images.size()>0">
+                    (
+                    <foreach collection="rightFuzzySmall_images" separator="or" item="item">
+                        `Small_images` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="titleList != null">
+                    `title` in
+                    <foreach collection="titleList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyTitle!=null and fuzzyTitle.size()>0">
+                    (
+                    <foreach collection="fuzzyTitle" separator="or" item="item">
+                        `Title` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyTitle!=null and rightFuzzyTitle.size()>0">
+                    (
+                    <foreach collection="rightFuzzyTitle" separator="or" item="item">
+                        `Title` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="user_typeList != null">
+                    `user_type` in
+                    <foreach collection="user_typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="user_typeSt !=null">
+                    `user_type` >= #{user_typeSt} and
+                </if>
+                <if test="user_typeEd!=null">
+                    `user_type` &lt;= #{user_typeEd} and
+                </if>
+                <if test="volumeList != null">
+                    `volume` in
+                    <foreach collection="volumeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyVolume!=null and fuzzyVolume.size()>0">
+                    (
+                    <foreach collection="fuzzyVolume" separator="or" item="item">
+                        `Volume` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyVolume!=null and rightFuzzyVolume.size()>0">
+                    (
+                    <foreach collection="rightFuzzyVolume" separator="or" item="item">
+                        `Volume` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="zk_final_priceList != null">
+                    `zk_final_price` in
+                    <foreach collection="zk_final_priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyZk_final_price!=null and fuzzyZk_final_price.size()>0">
+                    (
+                    <foreach collection="fuzzyZk_final_price" separator="or" item="item">
+                        `Zk_final_price` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyZk_final_price!=null and rightFuzzyZk_final_price.size()>0">
+                    (
+                    <foreach collection="rightFuzzyZk_final_price" separator="or" item="item">
+                        `Zk_final_price` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="salesList != null">
+                    `sales` in
+                    <foreach collection="salesList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="salesSt !=null">
+                    `sales` >= #{salesSt} and
+                </if>
+                <if test="salesEd!=null">
+                    `sales` &lt;= #{salesEd} and
+                </if>
+                <if test="sales_update_timeList != null">
+                    `sales_update_time` in
+                    <foreach collection="sales_update_timeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="sales_update_timeSt !=null">
+                    `sales_update_time` >= #{sales_update_timeSt} and
+                </if>
+                <if test="sales_update_timeEd!=null">
+                    `sales_update_time` &lt;= #{sales_update_timeEd} and
+                </if>
+                <if test="create_timeList != null">
+                    `create_time` in
+                    <foreach collection="create_timeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="create_timeSt !=null">
+                    `create_time` >= #{create_timeSt} and
+                </if>
+                <if test="create_timeEd!=null">
+                    `create_time` &lt;= #{create_timeEd} and
+                </if>
+                <if test="statusList != null">
+                    `status` in
+                    <foreach collection="statusList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="statusSt !=null">
+                    `status` >= #{statusSt} and
+                </if>
+                <if test="statusEd!=null">
+                    `status` &lt;= #{statusEd} and
+                </if>
+                <if test="search_kwList != null">
+                    `search_kw` in
+                    <foreach collection="search_kwList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySearch_kw!=null and fuzzySearch_kw.size()>0">
+                    (
+                    <foreach collection="fuzzySearch_kw" separator="or" item="item">
+                        `Search_kw` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySearch_kw!=null and rightFuzzySearch_kw.size()>0">
+                    (
+                    <foreach collection="rightFuzzySearch_kw" separator="or" item="item">
+                        `Search_kw` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="tb_fromList != null">
+                    `tb_from` in
+                    <foreach collection="tb_fromList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="tb_fromSt !=null">
+                    `tb_from` >= #{tb_fromSt} and
+                </if>
+                <if test="tb_fromEd!=null">
+                    `tb_from` &lt;= #{tb_fromEd} and
+                </if>
+            </if>
+        </trim>
+    </select>
+
+
+    <select id="findByNumIids" resultMap="ShijiItemMap">
+        SELECT *FROM shiji_item
+        where num_iid in
+        <foreach collection="numIids" close=")" open="(" separator="," item="item">
+            #{item}
+        </foreach>
+
+    </select>
+
+
+    <select id="queryShijiItemByTitle" resultMap="ShijiItemMap">
+        SELECT *FROM shiji_item
+        where 1=1
+        <if test="title != null">
+            and `title` LIKE '%${title}%'
+        </if>
+        <if test="status != null">
+            and `status`= #{status}
+        </if>
+        <if test="num_iid != null">
+            and `num_iid`= #{num_iid}
+        </if>
+    </select>
+
+
+    <select id="queryShijiItemLimit1" resultMap="ShijiItemMap">
+        select
+        <include refid="baseResult"></include>
+        from `shiji_item`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="item_url != null and item_url!=''">
+                `item_url` = #{item_url} and
+            </if>
+            <if test="nick != null and nick!=''">
+                `nick` = #{nick} and
+            </if>
+            <if test="num_iid != null and num_iid!=''">
+                `num_iid` = #{num_iid} and
+            </if>
+            <if test="pict_url != null and pict_url!=''">
+                `pict_url` = #{pict_url} and
+            </if>
+            <if test="provcity != null and provcity!=''">
+                `provcity` = #{provcity} and
+            </if>
+            <if test="reserve_price != null and reserve_price!=''">
+                `reserve_price` = #{reserve_price} and
+            </if>
+            <if test="seller_id != null and seller_id!=''">
+                `seller_id` = #{seller_id} and
+            </if>
+            <if test="small_images != null and small_images!=''">
+                `small_images` = #{small_images} and
+            </if>
+            <if test="title != null and title!=''">
+                `title` = #{title} and
+            </if>
+            <if test="user_type != null">
+                `user_type` = #{user_type} and
+            </if>
+            <if test="volume != null and volume!=''">
+                `volume` = #{volume} and
+            </if>
+            <if test="zk_final_price != null and zk_final_price!=''">
+                `zk_final_price` = #{zk_final_price} and
+            </if>
+            <if test="sales != null">
+                `sales` = #{sales} and
+            </if>
+            <if test="sales_update_time != null">
+                `sales_update_time` = #{sales_update_time} and
+            </if>
+            <if test="create_time != null">
+                `create_time` = #{create_time} and
+            </if>
+            <if test="status != null">
+                `status` = #{status} and
+            </if>
+            <if test="search_kw != null and search_kw!=''">
+                `search_kw` = #{search_kw} and
+            </if>
+            <if test="tb_from != null">
+                `tb_from` = #{tb_from} and
+            </if>
+            <if test="(_parameter instanceof com.cocoa.taobao.product_server.bean.sql.ShijiItem$QueryBuilder) == true">
+                <if test="idList != null">
+                    `id` in
+                    <foreach collection="idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                <if test="item_urlList != null">
+                    `item_url` in
+                    <foreach collection="item_urlList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyItem_url!=null and fuzzyItem_url.size()>0">
+                    (
+                    <foreach collection="fuzzyItem_url" separator="or" item="item">
+                        `Item_url` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyItem_url!=null and rightFuzzyItem_url.size()>0">
+                    (
+                    <foreach collection="rightFuzzyItem_url" separator="or" item="item">
+                        `Item_url` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="nickList != null">
+                    `nick` in
+                    <foreach collection="nickList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyNick!=null and fuzzyNick.size()>0">
+                    (
+                    <foreach collection="fuzzyNick" separator="or" item="item">
+                        `Nick` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyNick!=null and rightFuzzyNick.size()>0">
+                    (
+                    <foreach collection="rightFuzzyNick" separator="or" item="item">
+                        `Nick` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="num_iidList != null">
+                    `num_iid` in
+                    <foreach collection="num_iidList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyNum_iid!=null and fuzzyNum_iid.size()>0">
+                    (
+                    <foreach collection="fuzzyNum_iid" separator="or" item="item">
+                        `Num_iid` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyNum_iid!=null and rightFuzzyNum_iid.size()>0">
+                    (
+                    <foreach collection="rightFuzzyNum_iid" separator="or" item="item">
+                        `Num_iid` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="pict_urlList != null">
+                    `pict_url` in
+                    <foreach collection="pict_urlList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyPict_url!=null and fuzzyPict_url.size()>0">
+                    (
+                    <foreach collection="fuzzyPict_url" separator="or" item="item">
+                        `Pict_url` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyPict_url!=null and rightFuzzyPict_url.size()>0">
+                    (
+                    <foreach collection="rightFuzzyPict_url" separator="or" item="item">
+                        `Pict_url` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="provcityList != null">
+                    `provcity` in
+                    <foreach collection="provcityList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyProvcity!=null and fuzzyProvcity.size()>0">
+                    (
+                    <foreach collection="fuzzyProvcity" separator="or" item="item">
+                        `Provcity` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyProvcity!=null and rightFuzzyProvcity.size()>0">
+                    (
+                    <foreach collection="rightFuzzyProvcity" separator="or" item="item">
+                        `Provcity` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="reserve_priceList != null">
+                    `reserve_price` in
+                    <foreach collection="reserve_priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyReserve_price!=null and fuzzyReserve_price.size()>0">
+                    (
+                    <foreach collection="fuzzyReserve_price" separator="or" item="item">
+                        `Reserve_price` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyReserve_price!=null and rightFuzzyReserve_price.size()>0">
+                    (
+                    <foreach collection="rightFuzzyReserve_price" separator="or" item="item">
+                        `Reserve_price` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="seller_idList != null">
+                    `seller_id` in
+                    <foreach collection="seller_idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySeller_id!=null and fuzzySeller_id.size()>0">
+                    (
+                    <foreach collection="fuzzySeller_id" separator="or" item="item">
+                        `Seller_id` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySeller_id!=null and rightFuzzySeller_id.size()>0">
+                    (
+                    <foreach collection="rightFuzzySeller_id" separator="or" item="item">
+                        `Seller_id` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="small_imagesList != null">
+                    `small_images` in
+                    <foreach collection="small_imagesList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySmall_images!=null and fuzzySmall_images.size()>0">
+                    (
+                    <foreach collection="fuzzySmall_images" separator="or" item="item">
+                        `Small_images` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySmall_images!=null and rightFuzzySmall_images.size()>0">
+                    (
+                    <foreach collection="rightFuzzySmall_images" separator="or" item="item">
+                        `Small_images` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="titleList != null">
+                    `title` in
+                    <foreach collection="titleList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyTitle!=null and fuzzyTitle.size()>0">
+                    (
+                    <foreach collection="fuzzyTitle" separator="or" item="item">
+                        `Title` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyTitle!=null and rightFuzzyTitle.size()>0">
+                    (
+                    <foreach collection="rightFuzzyTitle" separator="or" item="item">
+                        `Title` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="user_typeList != null">
+                    `user_type` in
+                    <foreach collection="user_typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="user_typeSt !=null">
+                    `user_type` >= #{user_typeSt} and
+                </if>
+                <if test="user_typeEd!=null">
+                    `user_type` &lt;= #{user_typeEd} and
+                </if>
+                <if test="volumeList != null">
+                    `volume` in
+                    <foreach collection="volumeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyVolume!=null and fuzzyVolume.size()>0">
+                    (
+                    <foreach collection="fuzzyVolume" separator="or" item="item">
+                        `Volume` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyVolume!=null and rightFuzzyVolume.size()>0">
+                    (
+                    <foreach collection="rightFuzzyVolume" separator="or" item="item">
+                        `Volume` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="zk_final_priceList != null">
+                    `zk_final_price` in
+                    <foreach collection="zk_final_priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzyZk_final_price!=null and fuzzyZk_final_price.size()>0">
+                    (
+                    <foreach collection="fuzzyZk_final_price" separator="or" item="item">
+                        `Zk_final_price` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzyZk_final_price!=null and rightFuzzyZk_final_price.size()>0">
+                    (
+                    <foreach collection="rightFuzzyZk_final_price" separator="or" item="item">
+                        `Zk_final_price` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="salesList != null">
+                    `sales` in
+                    <foreach collection="salesList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="salesSt !=null">
+                    `sales` >= #{salesSt} and
+                </if>
+                <if test="salesEd!=null">
+                    `sales` &lt;= #{salesEd} and
+                </if>
+                <if test="sales_update_timeList != null">
+                    `sales_update_time` in
+                    <foreach collection="sales_update_timeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="sales_update_timeSt !=null">
+                    `sales_update_time` >= #{sales_update_timeSt} and
+                </if>
+                <if test="sales_update_timeEd!=null">
+                    `sales_update_time` &lt;= #{sales_update_timeEd} and
+                </if>
+                <if test="create_timeList != null">
+                    `create_time` in
+                    <foreach collection="create_timeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="create_timeSt !=null">
+                    `create_time` >= #{create_timeSt} and
+                </if>
+                <if test="create_timeEd!=null">
+                    `create_time` &lt;= #{create_timeEd} and
+                </if>
+                <if test="statusList != null">
+                    `status` in
+                    <foreach collection="statusList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="statusSt !=null">
+                    `status` >= #{statusSt} and
+                </if>
+                <if test="statusEd!=null">
+                    `status` &lt;= #{statusEd} and
+                </if>
+                <if test="search_kwList != null">
+                    `search_kw` in
+                    <foreach collection="search_kwList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="fuzzySearch_kw!=null and fuzzySearch_kw.size()>0">
+                    (
+                    <foreach collection="fuzzySearch_kw" separator="or" item="item">
+                        `Search_kw` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="rightFuzzySearch_kw!=null and rightFuzzySearch_kw.size()>0">
+                    (
+                    <foreach collection="rightFuzzySearch_kw" separator="or" item="item">
+                        `Search_kw` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="tb_fromList != null">
+                    `tb_from` in
+                    <foreach collection="tb_fromList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach>
+                    and
+                </if>
+                <if test="tb_fromSt !=null">
+                    `tb_from` >= #{tb_fromSt} and
+                </if>
+                <if test="tb_fromEd!=null">
+                    `tb_from` &lt;= #{tb_fromEd} and
+                </if>
+            </if>
+        </trim>
+        limit 1
+    </select>
+
+    <sql id="allResult">
+        <trim suffixOverrides=",">
+            `id`,
+            `item_url`,
+            `nick`,
+            `num_iid`,
+            `pict_url`,
+            `provcity`,
+            `reserve_price`,
+            `seller_id`,
+            `small_images`,
+            `title`,
+            `user_type`,
+            `volume`,
+            `zk_final_price`,
+            `sales`,
+            `sales_update_time`,
+            `create_time`,
+            `status`,
+            `search_kw`,
+            `tb_from`,
+        </trim>
+    </sql>
+
+
+    <sql id="baseResult">
+        <trim suffixOverrides=",">
+            <if test="(_parameter instanceof com.cocoa.taobao.product_server.bean.sql.ShijiItem$QueryBuilder) == true">
+
+                <if test="fetchFields==null">
+                    <include refid="allResult"></include>
+                </if>
+                <if test="fetchFields!=null">
+                    <if test="fetchFields.AllFields !=null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields ==null and fetchFields.fetchFields==null and fetchFields.excludeFields==null and fetchFields.otherFields==null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.fetchFields!=null">
+                        <if test="fetchFields.fetchFields.id==true">
+                            `id`,
+                        </if>
+                        <if test="fetchFields.fetchFields.item_url==true">
+                            `item_url`,
+                        </if>
+                        <if test="fetchFields.fetchFields.nick==true">
+                            `nick`,
+                        </if>
+                        <if test="fetchFields.fetchFields.num_iid==true">
+                            `num_iid`,
+                        </if>
+                        <if test="fetchFields.fetchFields.pict_url==true">
+                            `pict_url`,
+                        </if>
+                        <if test="fetchFields.fetchFields.provcity==true">
+                            `provcity`,
+                        </if>
+                        <if test="fetchFields.fetchFields.reserve_price==true">
+                            `reserve_price`,
+                        </if>
+                        <if test="fetchFields.fetchFields.seller_id==true">
+                            `seller_id`,
+                        </if>
+                        <if test="fetchFields.fetchFields.small_images==true">
+                            `small_images`,
+                        </if>
+                        <if test="fetchFields.fetchFields.title==true">
+                            `title`,
+                        </if>
+                        <if test="fetchFields.fetchFields.user_type==true">
+                            `user_type`,
+                        </if>
+                        <if test="fetchFields.fetchFields.volume==true">
+                            `volume`,
+                        </if>
+                        <if test="fetchFields.fetchFields.zk_final_price==true">
+                            `zk_final_price`,
+                        </if>
+                        <if test="fetchFields.fetchFields.sales==true">
+                            `sales`,
+                        </if>
+                        <if test="fetchFields.fetchFields.sales_update_time==true">
+                            `sales_update_time`,
+                        </if>
+                        <if test="fetchFields.fetchFields.create_time==true">
+                            `create_time`,
+                        </if>
+                        <if test="fetchFields.fetchFields.status==true">
+                            `status`,
+                        </if>
+                        <if test="fetchFields.fetchFields.search_kw==true">
+                            `search_kw`,
+                        </if>
+                        <if test="fetchFields.fetchFields.tb_from==true">
+                            `tb_from`,
+                        </if>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.excludeFields!=null">
+                        <if test="fetchFields.excludeFields.id==null">
+                            `id`,
+                        </if>
+                        <if test="fetchFields.excludeFields.item_url==null">
+                            `item_url`,
+                        </if>
+                        <if test="fetchFields.excludeFields.nick==null">
+                            `nick`,
+                        </if>
+                        <if test="fetchFields.excludeFields.num_iid==null">
+                            `num_iid`,
+                        </if>
+                        <if test="fetchFields.excludeFields.pict_url==null">
+                            `pict_url`,
+                        </if>
+                        <if test="fetchFields.excludeFields.provcity==null">
+                            `provcity`,
+                        </if>
+                        <if test="fetchFields.excludeFields.reserve_price==null">
+                            `reserve_price`,
+                        </if>
+                        <if test="fetchFields.excludeFields.seller_id==null">
+                            `seller_id`,
+                        </if>
+                        <if test="fetchFields.excludeFields.small_images==null">
+                            `small_images`,
+                        </if>
+                        <if test="fetchFields.excludeFields.title==null">
+                            `title`,
+                        </if>
+                        <if test="fetchFields.excludeFields.user_type==null">
+                            `user_type`,
+                        </if>
+                        <if test="fetchFields.excludeFields.volume==null">
+                            `volume`,
+                        </if>
+                        <if test="fetchFields.excludeFields.zk_final_price==null">
+                            `zk_final_price`,
+                        </if>
+                        <if test="fetchFields.excludeFields.sales==null">
+                            `sales`,
+                        </if>
+                        <if test="fetchFields.excludeFields.sales_update_time==null">
+                            `sales_update_time`,
+                        </if>
+                        <if test="fetchFields.excludeFields.create_time==null">
+                            `create_time`,
+                        </if>
+                        <if test="fetchFields.excludeFields.status==null">
+                            `status`,
+                        </if>
+                        <if test="fetchFields.excludeFields.search_kw==null">
+                            `search_kw`,
+                        </if>
+                        <if test="fetchFields.excludeFields.tb_from==null">
+                            `tb_from`,
+                        </if>
+                    </if>
+                    <if test="fetchFields.otherFields!=null and fetchFields.otherFields.size>0">
+                        <foreach collection="fetchFields.otherFields" index="index" item="item" separator=",">
+                            `#{item}`
+                        </foreach>
+                    </if>
+                </if>
+            </if>
+            <if test="(_parameter instanceof com.cocoa.taobao.product_server.bean.sql.ShijiItem$QueryBuilder) == false">
+                <include refid="allResult"></include>
+            </if>
+
+        </trim>
+    </sql>
+
+
+</mapper>

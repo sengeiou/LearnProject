@@ -171,17 +171,5 @@ public class ShopController {
     }
 
 
-    public void getMoreDetail(String num_iid) {
-        try {
-            SendResult resultContentImg = mqProducer.senMsg(num_iid, tagContentImg);
-            System.out.println(resultContentImg);
-            SendResult resultRateList = mqProducer.senMsg(num_iid, tagRateList);
-            System.out.println(resultRateList);
-            SendResult resultItemDetail = mqProducer.senMsg(num_iid, tagItemDetail);
-            System.out.println(resultItemDetail);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 }

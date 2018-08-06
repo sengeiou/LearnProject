@@ -18,7 +18,7 @@ import java.util.Date;
 @Table(name = "taobao_item" )
 
 @Entity
-public class CommitItem extends  BaseItem {
+public class CommitItem extends ShijiResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

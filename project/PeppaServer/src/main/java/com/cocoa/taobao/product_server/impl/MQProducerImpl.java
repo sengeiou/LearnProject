@@ -71,4 +71,16 @@ public class MQProducerImpl implements IMQProducerService {
         return producer.send(message);
     }
 
+
+    public void getMoreDetail(String num_iid, String... tags) {
+        for (String tag : tags) {
+            try {
+                SendResult sendResult = senMsg(num_iid, tag);
+                System.out.println(sendResult);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

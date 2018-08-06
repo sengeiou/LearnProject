@@ -20,7 +20,7 @@ public interface ShopMapper{
 
     Shop queryShopLimit1(Shop object);
 
-    @Select("SELECT *FROM shop")
+    @Select("SELECT *FROM shop sort ")
     List<Shop> findAll();
 
     int updateStatus(@Param("shop_id") int shop_id,@Param("status") int status);

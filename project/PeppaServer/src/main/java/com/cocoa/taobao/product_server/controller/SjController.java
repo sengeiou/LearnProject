@@ -1,47 +1,45 @@
 package com.cocoa.taobao.product_server.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.cocoa.taobao.product_server.bean.content_img.ContentDetail;
 import com.cocoa.taobao.product_server.bean.itemDetail.MongoItemDetail;
-import com.cocoa.taobao.product_server.bean.mongo.ContentImg;
 import com.cocoa.taobao.product_server.bean.mongo.MongoResult;
 import com.cocoa.taobao.product_server.bean.rate.RateDetail;
-import com.cocoa.taobao.product_server.bean.rate.RateList;
 import com.cocoa.taobao.product_server.bean.resp.BaseResp;
-import com.cocoa.taobao.product_server.bean.sql.BaseItem;
-import com.cocoa.taobao.product_server.bean.sql.CommitItem;
+import com.cocoa.taobao.product_server.bean.resp.Pageable;
 import com.cocoa.taobao.product_server.bean.sql.ShijiItem;
+import com.cocoa.taobao.product_server.bean.sql.ShijiResult;
+import com.cocoa.taobao.product_server.bean.sql.Shop;
+import com.cocoa.taobao.product_server.bean.status.ShopStatus;
 import com.cocoa.taobao.product_server.bean.status.TBItemFrom;
 import com.cocoa.taobao.product_server.bean.status.TBItemStatus;
 import com.cocoa.taobao.product_server.bean.taobao.*;
 import com.cocoa.taobao.product_server.bean.taocode.TaoCode;
 import com.cocoa.taobao.product_server.impl.*;
 import com.cocoa.taobao.product_server.util.TextUtil;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.rocketmq.client.exception.MQBrokerException;
-import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Type;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping(value = "/shiji")
 @Api(value = "db shiji_item的相关操作", description = "主要有两个插入：1.从ProductController获取信息后，在调用H5 api 入库 \r\n" +
         "2.根据商品的id 调用H5 api 后入库")
 public class SjController {
-
-    public static final Gson mGson = new Gson();
 
     @Autowired
     private BaseResp baseResp;
@@ -81,13 +79,11 @@ public class SjController {
      * @return
      */
     @ApiOperation(value = "通过淘宝 api 过来的数据", notes = "这个方法要优化")
-    @RequestMapping(method = RequestMethod.POST, value = "/additem")
+    @RequestMapping(method = RequestMethod.POST, value = "/add/item")
     public BaseResp addShijiFromTB(@RequestBody String json) {
-
         if (TextUtil.isEmpty(json)) {
             return baseResp.setError(100, "body data is null");
         }
-
         GsonBuilder builder = new GsonBuilder();
         // Register an adapter to manage the date types as long values
         builder.registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
@@ -96,53 +92,53 @@ public class SjController {
                 return new Date(json.getAsJsonPrimitive().getAsLong());
             }
         });
-
         Gson gson = builder.create();
-
         ShijiItem shijiItem = gson.fromJson(json, ShijiItem.class);
 
         if (shijiItem == null || TextUtil.isEmpty(shijiItem.getNum_iid())) {
             return baseResp.setError(100, "item or num_iid has been null");
         }
-
-        // 根据num_iid 查询shiji 库
         ShijiItem dbItem = shijiService.getItem(shijiItem.getNum_iid());
-
+        int result = 0;
         if (dbItem == null) {
             //start mq
-            getMoreDetail(shijiItem.getNum_iid());
+            mqProducer.getMoreDetail(shijiItem.getNum_iid(),tagContentImg,tagItemDetail,tagRateList);
 
             //change status
-            shijiItem.setFrom(TBItemFrom.TKAPI.getValue());
-
-            shijiItem = shijiService.saveAndUpdate(shijiItem);
+            shijiItem.setTb_from(TBItemFrom.TKAPI.getValue());
+            try {
+                result = shijiService.saveItem(shijiItem);
+            } catch (Exception e) {
+                return baseResp.setError(100, "save shijiitem failed ;" + e.toString());
+            }
         } else {
-            return baseResp.setError(1, "item has been added");
+            return baseResp.setError(200, "item has been added");
         }
-        if (null != shijiItem) {
-            baseResp.setResultOK();
-            baseResp.setData(shijiItem);
-        } else {
+        if (result == 0) {
             baseResp.setError(100, "error");
+        } else {
+            baseResp.setResultOK().setData(shijiItem);
         }
 
         return baseResp;
     }
+
 
     /**
      * @param
      * @return
      */
     @ApiOperation(value = "通过id过来的数据", notes = "官方的api 查询")
-    @RequestMapping(method = RequestMethod.GET, value = "/additem")
-    public BaseResp addShijiFromId(@RequestParam(value = "num_iid", required = true) String num_iid) {
+    @RequestMapping(method = RequestMethod.GET, value = "/add/item")
+    public BaseResp addShijiFromId(@RequestParam(value = "num_iids", required = true) String num_iids) {
 
-        baseResp.setData(null);
-        if (TextUtil.isEmpty(num_iid)) {
+        if (TextUtil.isEmpty(num_iids)) {
             return baseResp.setError(100, "num_iids is null");
         }
+        StringBuilder operationMsg = new StringBuilder();
+
         try {
-            List<TaobaoRespItem> mList = productImpl.getItems(num_iid);
+            List<TaobaoRespItem> mList = productImpl.getItems(num_iids);
 
             if (mList == null || mList.size() == 0) {
                 return baseResp.setError(100, "taobao api return null");
@@ -150,74 +146,61 @@ public class SjController {
 
             for (TaobaoRespItem item : mList) {
 
+                String num_iid = item.getNum_iid();
+
                 if (item == null || TextUtil.isEmpty(item.getNum_iid())) {
+                    operationMsg.append(num_iid + " taoapi found error; \n");
                     continue;
                 }
 
                 ShijiItem dbItem = shijiService.getItem(item.getNum_iid());
                 if (dbItem != null) {
+                    operationMsg.append(num_iid + " has been added; \n");
                     continue;
                 }
 
-                ShijiItem shijiItem = new ShijiItem();
-                shijiItem.setNum_iid(item.getNum_iid());
-                shijiItem.setNick(item.getNick());
-                shijiItem.setItem_url(item.getItem_url());
-                shijiItem.setPict_url(item.getPict_url());
-                shijiItem.setProvcity(item.getProvcity());
-                shijiItem.setReserve_price(item.getReserve_price());
-                shijiItem.setSeller_id(item.getSeller_id());
-                shijiItem.setTitle(item.getTitle());
-                shijiItem.setUser_type(item.getUser_type());
-                shijiItem.setVolume(item.getVolume());
-                shijiItem.setZk_final_price(item.getZk_final_price());
-                shijiItem.setCreateTime(new Date());
-                shijiItem.setSales_update_time(new Date());
-                shijiItem.setFrom(TBItemFrom.FIND_ID.getValue());
+                ShijiItem shijiItem = item.convert();
+                shijiItem.setTb_from(TBItemFrom.FIND_ID.getValue());
                 shijiItem.setStatus(TBItemStatus.REQ_UPDATED.getValue());
 
-                TaobaoSmallimg img = item.getSmall_img();
-                if (img != null && img.getString() != null && img.getString().size() > 0) {
-                    StringBuilder sb = new StringBuilder();
-                    for (String imgUrl : img.getString()) {
-                        sb.append(imgUrl + "@@");
-                    }
-                    shijiItem.setSmall_img(sb.substring(0, sb.length() - 2));
-                }
-                shijiService.saveAndUpdate(shijiItem);
+                int code = shijiService.saveItem(shijiItem);
 
-                getMoreDetail(shijiItem.getNum_iid());
+                operationMsg.append(num_iid + " insert db " + code + " ;\n");
+
+                mqProducer.getMoreDetail(shijiItem.getNum_iid(),tagContentImg,tagItemDetail,tagRateList);
             }
 
         } catch (Exception e) {
             return baseResp.setError(100, e.toString());
         }
-        return baseResp.setResultOK();
+        return baseResp.setResultOK().setData(operationMsg);
     }
 
 
     @ApiOperation(value = "根据num_iid 查询商品", notes = "")
-    @RequestMapping(method = RequestMethod.GET, value = "/getitem")
+    @RequestMapping(method = RequestMethod.GET, value = "/get/item")
     public BaseResp getItem(@RequestParam(value = "num_iid", required = true) String num_iid) {
         ShijiItem shijiItem = shijiService.getItem(num_iid);
 
         if (shijiItem != null) {
+
+            ShijiResult shijiResult = new ShijiResult();
+            shijiResult.setShijiItem(shijiItem);
+
             // add the detail page content images
             MongoResult contentImgMongoResult = itemDetailService.findByNumiid(num_iid, MongoResult.class, "contentImg");
             if (null != contentImgMongoResult && !TextUtil.isEmpty(contentImgMongoResult.data)) {
-                Type type = new TypeToken<List<ContentDetail>>() {
-                }.getType();
-                List<ContentDetail> mList = mGson.fromJson(contentImgMongoResult.data, type);
+                List<ContentDetail> mList = JSON.parseArray(contentImgMongoResult.data, ContentDetail.class);
                 if (mList != null && mList.size() > 0) {
-                    shijiItem.contentDetailList.addAll(mList);
+                    shijiResult.setContentDetailList(mList);
                 }
             }
 
             //taocode
             MongoResult taoCodeMongoResult = itemDetailService.findByNumiid(num_iid, MongoResult.class, "taoCode");
             if (null != taoCodeMongoResult && !TextUtil.isEmpty(taoCodeMongoResult.data)) {
-                TaoCode taoCode = mGson.fromJson(taoCodeMongoResult.data, TaoCode.class);
-                shijiItem.taoCode = taoCode;
+                TaoCode taoCode = JSON.parseObject(taoCodeMongoResult.data, TaoCode.class);
+                shijiResult.setTaoCode(taoCode);
             }
 
             // rateList 最近的20条评论
@@ -225,42 +208,60 @@ public class SjController {
             if (null != rateListMongoResult && !TextUtil.isEmpty(rateListMongoResult.data)) {
                 Type type = new TypeToken<List<RateDetail>>() {
                 }.getType();
-                List<RateDetail> mList = mGson.fromJson(rateListMongoResult.data, type);
+                List<RateDetail> mList = JSON.parseObject(rateListMongoResult.data, type);
                 if (mList != null && mList.size() > 0) {
-                    shijiItem.rateDetailList.addAll(mList);
+                    shijiResult.setRateDetailList(mList);
                 }
             }
             // itemDetail 暂时就用到了 rate（和评论相关的） 相关的
             MongoResult itemDetailResult = itemDetailService.findByNumiid(num_iid, MongoResult.class, "itemDetail");
             if (null != itemDetailResult && !TextUtil.isEmpty(itemDetailResult.data)) {
                 System.out.println(itemDetailResult.data);
-                MongoItemDetail mongoItemDetail = mGson.fromJson(itemDetailResult.data, MongoItemDetail.class);
-                shijiItem.rate = mongoItemDetail.rate;
+                MongoItemDetail mongoItemDetail = JSON.parseObject(itemDetailResult.data, MongoItemDetail.class);
+                shijiResult.setRate(mongoItemDetail.rate);
             }
 
-            return baseResp.setResultOK().setData(shijiItem);
+            return baseResp.setResultOK().setData(shijiResult);
         } else {
-            return baseResp.setError(100, "error");
+            return baseResp.setError(100, "sorry, item id not found;");
         }
     }
 
 
     @ApiOperation(value = "根据num_iid 查询商品", notes = "")
-    @RequestMapping(method = RequestMethod.GET, value = "/getsitem")
+    @RequestMapping(method = RequestMethod.GET, value = "/get/item/simplify")
     public BaseResp getSimpleItem(@RequestParam(value = "num_iid", required = true) String num_iid) {
         ShijiItem shijiItem = shijiService.getItem(num_iid);
         if (shijiItem != null) {
             return baseResp.setResultOK().setData(shijiItem);
         } else {
-            return baseResp.setError(100, "error");
+            return baseResp.setError(100, "sorry, item id not found;");
         }
+    }
+
+    @ApiOperation(value = "根据num_iid 查询商品", notes = "")
+    @RequestMapping(method = RequestMethod.GET, value = "/get/items/numiids")
+    public BaseResp getItemByIids(@RequestParam(value = "num_iids", required = true) String num_iids) {
+        if (TextUtil.isEmpty(num_iids)) {
+            return baseResp.setError(100, "num_iids is null");
+        }
+        List<String> numIidList = Arrays.asList(num_iids.split(","))
+                .stream()
+                .filter((str) -> !TextUtil.isEmpty(str))
+                .collect(Collectors.toList());
+        if (numIidList == null || numIidList.size() == 0) {
+            return baseResp.setResultOK().setData(numIidList);
+        }
+        List<ShijiItem> mList = shijiService.findByNumIids(numIidList);
+        return baseResp.setResultOK().setData(mList);
     }
 
 
     @ApiOperation(value = "获取商品", notes = "根据关键字分页获取推荐的商品")
-    @RequestMapping(method = RequestMethod.GET, value = "/getItems")
-    public BaseResp getItems(@RequestParam(value = "keywords", required = false, defaultValue = "") String keywords,
-                             @RequestParam(value = "status", required = false, defaultValue = "0") int status,
+    @RequestMapping(method = RequestMethod.GET, value = "/get/items")
+    public BaseResp getItems(@RequestParam(value = "kw", required = false, defaultValue = "") String keywords,
+                             @RequestParam(value = "num_iid", required = false, defaultValue = "") String num_iid,
+                             @RequestParam(value = "status", required = false, defaultValue = "") String status,
                              @RequestParam(value = "size", required = false, defaultValue = "10") int size,
                              @RequestParam(value = "page", required = false, defaultValue = "0") int page) {
         if (size < 1 || size > 50) {
@@ -269,43 +270,69 @@ public class SjController {
         if (page < 0) {
             page = defaultPageIndex;
         }
-        Page<ShijiItem> mList = shijiService.findAll(keywords, status, size, page);
-        baseResp.setResultOK();
-        baseResp.setData(mList);
-        return baseResp;
-    }
 
-    @ApiOperation(value = "获取商品", notes = "根据关键字分页获取推荐的商品")
-    @RequestMapping(method = RequestMethod.GET, value = "/getAllItems")
-    public BaseResp getItems(@RequestParam(value = "size", required = false, defaultValue = "10") int size,
-                             @RequestParam(value = "page", required = false, defaultValue = "0") int page) {
-        if (size < 1 || size > 50) {
-            size = defaultPageSize;
-        }
-        if (page < 0) {
-            page = defaultPageIndex;
-        }
-        Page<ShijiItem> mList = shijiService.findAll(size, page, Sort.Direction.ASC, "status");
-        baseResp.setResultOK();
-        baseResp.setData(mList);
-        return baseResp;
-    }
+        Page mPage = PageHelper.startPage(page, size);
 
+        ShijiItem shijiItem = new ShijiItem();
 
-    public void getMoreDetail(String num_iid) {
-        try {
-            SendResult resultContentImg = mqProducer.senMsg(num_iid, tagContentImg);
-            System.out.println(resultContentImg);
-            SendResult resultRateList = mqProducer.senMsg(num_iid, tagRateList);
-            System.out.println(resultRateList);
-            SendResult resultItemDetail = mqProducer.senMsg(num_iid, tagItemDetail);
-            System.out.println(resultItemDetail);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!TextUtil.isEmpty(keywords)) {
+            shijiItem.setTitle(keywords);
         }
+        if (!TextUtil.isEmpty(num_iid)) {
+            shijiItem.setNum_iid(num_iid);
+        }
+
+        TBItemStatus tbItemStatus = TBItemStatus.getStatus(status);
+        if (tbItemStatus != null) {
+            shijiItem.setStatus(tbItemStatus.getValue());
+        }
+        System.out.println(shijiItem);
+
+        List<ShijiItem> mList = shijiService.findAll(shijiItem);
+
+        Pageable pageable = new Pageable();
+        pageable.setTotal(mPage.getTotal());
+        pageable.setContent(mList);
+
+        return baseResp.setResultOK().setData(pageable);
     }
 
 
+    /**
+     * @param
+     * @return
+     */
+    @ApiOperation(value = "获取商品状态的信息", notes = "")
+    @RequestMapping(method = RequestMethod.GET, value = "/get/status")
+    public BaseResp getStatusInfo() {
+        baseResp.setData(TBItemStatus.getStatusInfo());
+        return baseResp.setResultOK();
+    }
+
+
+//    @ApiOperation(value = "获取商品", notes = "根据关键字分页获取推荐的商品")
+//    @RequestMapping(method = RequestMethod.GET, value = "/get/items/simplify")
+//    public BaseResp getItems(@RequestParam(value = "size", required = false, defaultValue = "10") int size,
+//                             @RequestParam(value = "page", required = false, defaultValue = "0") int page) {
+//        if (size < 1 || size > 50) {
+//            size = defaultPageSize;
+//        }
+//        if (page < 0) {
+//            page = defaultPageIndex;
+//        }
+//        Page mPage = PageHelper.startPage(page, size);
+//        ShijiItem shijiItem = new ShijiItem();
+//        List<ShijiItem> mList = shijiService.findAll(shijiItem);
+//
+//        Pageable pageable = new Pageable();
+//        pageable.setTotal(mPage.getTotal());
+//        pageable.setContent(mList);
+//
+//        return baseResp.setResultOK().setData(pageable);
+//    }
+
+
+//old code
 //    @ApiOperation(value = "根据 id 插入/更新商品", notes = "")
 //    @RequestMapping(method = RequestMethod.GET, value = "/updateitem")
 //    public BaseResp updateItem(@RequestParam(value = "num_iid", required = true) String num_iid) {
@@ -376,63 +403,74 @@ public class SjController {
 //    }
 
 
-    @ApiOperation(value = "商品状态修改", notes = "expird")
-    @RequestMapping(method = RequestMethod.GET, value = "/update_status")
-    public BaseResp update(@RequestParam(value = "num_iid") String num_iid,
-            @RequestParam(value = "status") String status) {
-        // *******require fix*****
-        // 钉钉提醒 dingding
-        TBItemStatus tbItemStatus = TBItemStatus.getStatus(status);
-        if (tbItemStatus==null){
-            return baseResp.setError(100, "status error");
-        }
-        int code = shijiService.updateStatus(num_iid, tbItemStatus.getValue());
-        if (code > 0) {
-            return baseResp.setResultOK();
-        }
-        return baseResp.setError(100, "update error");
-    }
-
-    @ApiOperation(value = "修改商品的销量", notes = "sales")
-    @RequestMapping(method = RequestMethod.GET, value = "/update_sales")
-    public BaseResp updateSales(@RequestParam(value = "num_iid") String num_iid,
-                                @RequestParam(value = "sales") int sales) {
-        if (sales > 1000_0000 || TextUtil.isEmpty(num_iid)) {
-            return baseResp.setError(100, "check params");
-        }
-        int code = shijiService.updateSales(num_iid, sales);
-        if (code > 0) {
-            return baseResp.setResultOK();
-        }
-        return baseResp.setError(code, "update error");
-    }
-
-
-    @ApiOperation(value = "xxxx", notes = "")
-    @RequestMapping(method = RequestMethod.GET, value = "/mongo1")
-    public BaseResp mongotest1(@RequestParam(value = "num_iid") String num_iid
+    @ApiOperation(value = "修改商品的信息", notes = "[sales,status]")
+    @RequestMapping(method = RequestMethod.GET, value = "/update/sales")
+    public BaseResp updateItemInfo(@RequestParam(value = "num_iid") String num_iid,
+                                   @RequestParam(value = "sales") String sales,
+                                   @RequestParam(value = "status") String status
     ) {
-        return baseResp.setData(itemDetailService.find(num_iid, TaoCode.class, "taoCode"));
+        if (TextUtil.isEmpty(num_iid) || num_iid.length() < 5) {
+            return baseResp.setError(100, "check params [num_iid]");
+        }
+
+        ShijiItem shijiItem = new ShijiItem();
+        shijiItem.setNum_iid(num_iid);
+        if (!TextUtil.isEmpty(sales)) {
+            try {
+                shijiItem.setSales(Integer.parseInt(sales));
+            } catch (Exception e) {
+                return baseResp.setError(100, "check params [sales] " + e.toString());
+            }
+        }
+        if (!TextUtil.isEmpty(status)) {
+            TBItemStatus tbItemStatus = TBItemStatus.getStatus(status);
+            if (tbItemStatus == null) {
+                return baseResp.setError(100, "check params [status] ,not found this status;");
+            } else {
+                shijiItem.setSales(Integer.parseInt(sales));
+            }
+        }
+
+        int code = 0;
+        try {
+            code = shijiService.updateItem(shijiItem);
+        } catch (Exception e) {
+            return baseResp.setError(100, "update error" + e.toString());
+        }
+        if (code == 0) {
+            return baseResp.setError(100, "update error");
+        }
+        return baseResp.setResultOK().setData(null);
     }
 
 
-    @ApiOperation(value = "xxxx", notes = "")
-    @RequestMapping(method = RequestMethod.GET, value = "/mongo2")
-    public BaseResp mongotest2(
-    ) {
-        return baseResp.setData(itemDetailService.findAll(TaoCode.class, "taoCode"));
-    }
+//
+//
+//    @ApiOperation(value = "xxxx", notes = "")
+//    @RequestMapping(method = RequestMethod.GET, value = "/mongo1")
+//    public BaseResp mongotest1(@RequestParam(value = "num_iid") String num_iid
+//    ) {
+//        return baseResp.setData(itemDetailService.find(num_iid, TaoCode.class, "taoCode"));
+//    }
+//
+//
+//    @ApiOperation(value = "xxxx", notes = "")
+//    @RequestMapping(method = RequestMethod.GET, value = "/mongo2")
+//    public BaseResp mongotest2(
+//    ) {
+//        return baseResp.setData(itemDetailService.findAll(TaoCode.class, "taoCode"));
+//    }
+//
+//    @ApiOperation(value = "xxxx", notes = "")
+//    @RequestMapping(method = RequestMethod.GET, value = "/mongo3")
+//    public BaseResp mongotest3(@RequestParam(value = "price") Double price,
+//                               @RequestParam(value = "id") String id) {
+//        ContentImg itemDetail = new ContentImg();
+//        itemDetailService.insertOne(itemDetail, "taoCode");
+//        return baseResp;
+//    }
 
-    @ApiOperation(value = "xxxx", notes = "")
-    @RequestMapping(method = RequestMethod.GET, value = "/mongo3")
-    public BaseResp mongotest3(@RequestParam(value = "price") Double price,
-                               @RequestParam(value = "id") String id) {
-        ContentImg itemDetail = new ContentImg();
-        itemDetailService.insertOne(itemDetail, "taoCode");
-        return baseResp;
-    }
-
-
+//old  code
 //    @ApiOperation(value = "根据num_iid 查询商品", notes = "")
 //    @RequestMapping(method = RequestMethod.GET, value = "/taocode")
 //    public BaseResp getTaoCode(@RequestParam(value = "pict") String itme_pict

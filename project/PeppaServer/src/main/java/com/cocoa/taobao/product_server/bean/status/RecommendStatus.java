@@ -10,7 +10,10 @@ public enum RecommendStatus {
 
 
     ONLINE("online", 1), // 上线的
+    top("top", 2), // 置顶
     OFFLINE("offline", 400); // 下线
+
+
 
     private String des;
     private int value;

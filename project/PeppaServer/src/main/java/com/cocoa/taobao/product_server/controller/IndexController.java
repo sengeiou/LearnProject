@@ -68,8 +68,7 @@ public class IndexController {
         // shiji list
         Sort sort = new Sort(Sort.Direction.DESC, "createTime");
         PageRequest pageRequest = new PageRequest(pageIndex, itemSize, sort);
-        Page<ShijiItem> mList = shijiService.findAll("", TBItemStatus.ONLINE.getValue(), pageRequest);
-        indexResult.setItemList(mList);
+//
 
         baseResp.setData(indexResult);
         return baseResp.setResultOK();

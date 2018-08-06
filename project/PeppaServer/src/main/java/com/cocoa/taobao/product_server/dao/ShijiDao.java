@@ -9,16 +9,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
-public interface ShijiDao extends JpaRepository<ShijiItem, Long> {
+public interface ShijiDao {  //extends JpaRepository<ShijiItem, Long> {
 
-    @Transactional
-    @Modifying
-    @Query(value = "UPDATE shiji_item SET status = ?2 WHERE num_iid = ?1", nativeQuery = true)
-    int updateStatus(String num_iid, int status);
-
-    @Transactional
-    @Modifying
-    @Query(value = "UPDATE shiji_item SET sales = ?2 WHERE num_iid = ?1", nativeQuery = true)
-    int updateSales(String num_iid, int sales);
+//    @Transactional
+//    @Modifying
+//    @Query(value = "UPDATE shiji_item SET status = ?2 WHERE num_iid = ?1", nativeQuery = true)
+//    int updateStatus(String num_iid, int status);
+//
+//    @Transactional
+//    @Modifying
+//    @Query(value = "UPDATE shiji_item SET sales = ?2 WHERE num_iid = ?1", nativeQuery = true)
+//    int updateSales(String num_iid, int sales);
 
 }

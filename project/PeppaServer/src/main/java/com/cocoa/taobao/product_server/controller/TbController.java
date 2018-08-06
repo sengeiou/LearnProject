@@ -171,7 +171,7 @@ public class TbController {
             commitItem.setReserve_price(taobaoRespItem.getReserve_price());
             commitItem.setSeller_id(taobaoRespItem.getSeller_id());
             commitItem.setTitle(taobaoRespItem.getTitle());
-            commitItem.setUser_type(taobaoRespItem.getUser_type());
+            commitItem.setUser_type(String.valueOf(taobaoRespItem.getUser_type()));
             commitItem.setVolume(taobaoRespItem.getVolume());
             int sales = 0;
             try {

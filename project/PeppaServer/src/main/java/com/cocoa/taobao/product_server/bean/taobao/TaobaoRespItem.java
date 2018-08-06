@@ -1,11 +1,13 @@
 package com.cocoa.taobao.product_server.bean.taobao;
 
+import com.cocoa.taobao.product_server.bean.sql.ShijiItem;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 
 public class TaobaoRespItem {
 
-    private String item_url;//private String http:\/\/item.taobao.com\/item.htm?id=43189047510",
+    private String item_url;//private String http:\/\/taobao.com\/htm?id=43189047510",
     private String nick;//private String 双钱旗舰店",
     private String num_iid;// 43189047510,
     private String pict_url;//private String http:\/\/img1.tbcdn.cn\/tfscom\/i2\/2355948914\/TB1R_QWKFXXXXXUXXXXXXXXXXXX_!!0-item_pic.jpg",
@@ -14,7 +16,7 @@ public class TaobaoRespItem {
     private String seller_id;// 2355948914,
     private TaobaoSmallimg small_img ;// {
     private String title;//private String 双钱龟苓膏原味易拉罐礼盒|7月生产|250克X12罐",
-    private String user_type;// 1,
+    private int user_type;// 1,
     private String volume;// 3153,
     private String zk_final_price;//private String 41.80"
 
@@ -90,11 +92,11 @@ public class TaobaoRespItem {
         this.title = title;
     }
 
-    public String getUser_type() {
+    public int getUser_type() {
         return user_type;
     }
 
-    public void setUser_type(String user_type) {
+    public void setUser_type(int user_type) {
         this.user_type = user_type;
     }
 
@@ -113,4 +115,36 @@ public class TaobaoRespItem {
     public void setZk_final_price(String zk_final_price) {
         this.zk_final_price = zk_final_price;
     }
+    
+    public ShijiItem convert(){
+        ShijiItem shijiItem = new ShijiItem();
+        shijiItem.setNum_iid(getNum_iid());
+        shijiItem.setNick(getNick());
+        shijiItem.setItem_url(getItem_url());
+        shijiItem.setPict_url(getPict_url());
+        shijiItem.setProvcity(getProvcity());
+        shijiItem.setReserve_price(getReserve_price());
+        shijiItem.setSeller_id(getSeller_id());
+        shijiItem.setTitle(getTitle());
+        shijiItem.setUser_type(getUser_type());
+        shijiItem.setVolume(getVolume());
+        shijiItem.setZk_final_price(getZk_final_price());
+        Long currentTime = System.currentTimeMillis();
+        shijiItem.setCreate_time(currentTime);
+        shijiItem.setSales_update_time(currentTime);
+
+
+        TaobaoSmallimg img = getSmall_img();
+        if (img != null && img.getString() != null && img.getString().size() > 0) {
+            StringBuilder sb = new StringBuilder();
+            for (String imgUrl : img.getString()) {
+                sb.append(imgUrl + "@@");
+            }
+            shijiItem.setSmall_images(sb.substring(0, sb.length() - 2));
+        }
+        return shijiItem;
+    }
+    
+    
+    
 }

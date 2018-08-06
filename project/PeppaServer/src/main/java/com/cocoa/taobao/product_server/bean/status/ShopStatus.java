@@ -55,7 +55,7 @@ public enum ShopStatus {
     }
 
     public static List<StatusTemp> getStatusInfo() {
-        List<StatusTemp> statusList = new ArrayList<>(ShopStatus.values().length + 1);
+        List<StatusTemp> statusList = new ArrayList<>(ShopStatus.values().length + 2);
         for (ShopStatus status : ShopStatus.values()) {
             statusList.add(new StatusTemp(status.getDes(), status.getValue()));
         }

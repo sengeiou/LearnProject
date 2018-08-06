@@ -5,23 +5,27 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
+import java.util.List;
+
 public interface IShijiService {
 
-
-    ShijiItem getItem(String num_iid);
-
-    Page findAll(String keywords, int status, int size, int page);
-
-    Page findAll(String keywords, int status, PageRequest pageRequest);
-
-    ShijiItem saveAndUpdate(ShijiItem shijiItem);
+    int updateItem(ShijiItem shijiItem);
 
     int updateStatus(String num_iid, int status);
 
-    int updateSales(String num_iid, int sales) ;
+    int updateSales(String num_iid, int sales);
 
-    Page findAll(int size, int page, Sort.Direction direction, String sortProp) ;
+    ShijiItem getItem(String num_iid);
 
+    //    Page findAll(String keywords, int status, int size, int page);
+//
+//    Page findAll(String keywords, int status, PageRequest pageRequest);
+//
+    int saveItem(ShijiItem shijiItem);
+//
+//
+    List<ShijiItem> findAll(ShijiItem shijiItem);
 
+    List<ShijiItem> findByNumIids(List<String> numIids);
 
 }

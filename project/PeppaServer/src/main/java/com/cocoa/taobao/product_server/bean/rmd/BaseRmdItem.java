@@ -7,7 +7,8 @@ import java.util.List;
 public class BaseRmdItem {
 
     private String _id;
-    private long createData;
+    private long createDate;
+    private long updateDate;
     private int status;
     private String title;
     private String bannerImg;
@@ -30,12 +31,12 @@ public class BaseRmdItem {
         this._id = _id;
     }
 
-    public long getCreateData() {
-        return createData;
+    public long getCreateDate() {
+        return createDate;
     }
 
-    public void setCreateData(long createData) {
-        this.createData = createData;
+    public void setCreateDate(long createDate) {
+        this.createDate = createDate;
     }
 
     public String getTitle() {
@@ -70,11 +71,20 @@ public class BaseRmdItem {
         this.viewCount = viewCount;
     }
 
+    public long getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(long updateDate) {
+        this.updateDate = updateDate;
+    }
+
     @Override
     public String toString() {
         return "BaseRmdItem{" +
                 "_id='" + _id + '\'' +
-                ", createData=" + createData +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 ", status=" + status +
                 ", title='" + title + '\'' +
                 ", bannerImg='" + bannerImg + '\'' +

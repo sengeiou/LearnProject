@@ -41,26 +41,15 @@ public class RecommendController {
     @RequestMapping(method = RequestMethod.POST, value = "/add/item")
     public BaseResp addItem(@RequestBody String data) {
 
-        System.out.println(data);
-
         RmdPostBean rmdPostBean = JSON.parseObject(data, RmdPostBean.class);
-
-
+        if(rmdPostBean == null){
+            return baseResp.setError(100, "check params [data], parse object is null ;");
+        }
         RmdItem item = rmdPostBean.getParams();
 
         System.out.println(item);
-
-        // test data
-//        RmdItem rmdItem = new RmdItem();
-//        List<RmdDetail> list = new ArrayList<>();
-//        list.add(new RmdDetail("11", "22", "33", "44", null));
-//        rmdItem.setList(list);
-//        rmdItem.setCreateData(System.currentTimeMillis());
-//        rmdItem.setTitle("123123123");
-//        rmdItem.setBannerImg("http://pcpuvk4ni.bkt.clouddn.com/FpYRB74urr1xkra_KsD2Xw8ssDlJ");
-//        rmdItem.setStatus(RecommendStatus.ONLINE.getValue());
-
-        item.setCreateData(System.currentTimeMillis());
+        item.setCreateDate(System.currentTimeMillis());
+        item.setUpdateDate(System.currentTimeMillis());
         item.setStatus(RecommendStatus.ONLINE.getValue());
         itemDetailService.insertOne(item, mongoRrcommend);
 
@@ -83,8 +72,8 @@ public class RecommendController {
     public BaseResp getItems(@RequestParam(value = "size", required = true, defaultValue = "10") int pageSize,
                              @RequestParam(value = "page", required = true, defaultValue = "0") int pageNo,
                              @RequestParam(value = "status", required = true, defaultValue = "") String status,
-                             @RequestParam(value = "sort", required = false, defaultValue = "createData") String sort,
-                             @RequestParam(value = "dir", required = false, defaultValue = "asc") String dir,
+                             @RequestParam(value = "sort", required = false, defaultValue = "createDate") String sort,
+                             @RequestParam(value = "dir", required = false, defaultValue = "desc") String dir,
                              @RequestParam(value = "start", required = false, defaultValue = "") String start,
                              @RequestParam(value = "end", required = false, defaultValue = "") String end
 
@@ -111,17 +100,17 @@ public class RecommendController {
             }
             if (startLong != 0L && endLong != 0L) {
                 if (startLong == endLong) {
-                    criteria = criteria.andOperator(Criteria.where("createData").is(endLong));
+                    criteria = criteria.andOperator(Criteria.where("createDate").is(endLong));
                 } else if (startLong < endLong) {
-                    c.andOperator(Criteria.where("createData").lte(endLong), Criteria.where("createData").gte(startLong));
+                    c.andOperator(Criteria.where("createDate").lte(endLong), Criteria.where("createDate").gte(startLong));
                     criteria = criteria.andOperator(c);
                 }
             } else {
                 if (startLong != 0) {
-                    criteria = criteria.andOperator(Criteria.where("createData").gte(startLong));
+                    criteria = criteria.andOperator(Criteria.where("createDate").gte(startLong));
                 }
                 if (endLong != 0) {
-                    criteria = criteria.andOperator(Criteria.where("createData").lte(endLong));
+                    criteria = criteria.andOperator(Criteria.where("createDate").lte(endLong));
                 }
             }
         }
@@ -174,6 +163,8 @@ public class RecommendController {
         if (TextUtil.isEmpty(id)) {
             return baseResp.setError(100, "check params [id];");
         }
+
+        // fix 需要改进，写的太乱
         Update update = new Update();
         if (!TextUtil.isEmpty(like)) {
             try {
@@ -205,6 +196,11 @@ public class RecommendController {
             }
             update.set("status", rmdStatus.getValue());
         }
+
+        if(update.getUpdateObject().toMap().size() == 0){
+             return baseResp.setError(100, "check params ; nothing changed; ");
+        }
+        update.set("updateDate", System.currentTimeMillis());
 
         WriteResult result = null;
         try {

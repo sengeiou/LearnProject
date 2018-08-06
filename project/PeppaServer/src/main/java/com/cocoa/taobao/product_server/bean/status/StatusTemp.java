@@ -6,20 +6,20 @@ public class StatusTemp implements Serializable{
 
     private static final long serialVersionUID = 1532961179117L;
 
-    private String des;
+    private String desc;
     private int value;
 
-    public  StatusTemp(String des, int value) {
-        this.des = des;
+    public  StatusTemp(String desc, int value) {
+        this.desc = desc;
         this.value = value;
     }
 
-    public String getDes() {
-        return des;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public int getValue() {
