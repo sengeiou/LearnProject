@@ -114,8 +114,7 @@ public class StreamTest1 {
         // max  min  找出名字最大的item  例子有点不合理，>_<!!!
         Optional<Item> itemOptional1 = itemList.stream().max((t1, t2) -> t1.name.compareTo(t2.name));
         System.out.println(itemOptional1);
-
-
+        
         Arrays.asList(1,2,3,4).stream().reduce(Math::max);
 
 
