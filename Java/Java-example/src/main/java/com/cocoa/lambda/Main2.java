@@ -40,7 +40,7 @@ public class Main2 {
         // prdicate
         Predicate<String> predicate = (str) -> str.length() > 0;
         System.out.println(predicate.test(""));
-
+        "".replaceAll("\\.","\\/");
     }
 
 

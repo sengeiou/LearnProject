@@ -166,8 +166,9 @@ class ChildSomeClass_2 : SomeClass_2  {
 // 意思就是说 协议和父类的构造器一样，那么就要写上  required 和 override
 
 
+func test( a : String ) -> String{
+    let a : String = "123"
+    return a
+}
 
-
-
-
-
+print(test(a: ""))
