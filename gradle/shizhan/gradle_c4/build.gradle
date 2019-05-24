@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+}
+
+group 'com.coco'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+// use gradle 4.10.1
+
+
+// sayhello task 依赖 build task
+// << 表示在 build 后执行 sayhello 中的代码
+task sayhello (dependsOn: [build]) << {
+    println("Hello gradle!!")
+    // 创建 version 对象
+    version = new Version("cocoa",12)
+    println(version)
+    
+    // get basic info
+    println(getName())
+    println(getProject())
+    println(getProjectDir())
+    println(getAnt())
+}
+
+class Version {
+    String name
+    Integer ver
+
+    Version(String name ,Integer ver){
+        this. name= name
+        this.ver = ver
+    }
+
+    @Override
+    String toString() {
+        return "$name----$ver"
+    }
+}
+
+
+
+
+

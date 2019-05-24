@@ -10,7 +10,7 @@ public class TestLinkedList {
         LinkedList<String> linkedList = new LinkedList();
         linkedList.add("1");
         linkedList.addFirst("0");
-        linkedList.add("2")
+        linkedList.add("2");
         linkedList.addLast("3");
         for (String s : linkedList) {
             System.out.println(s);
