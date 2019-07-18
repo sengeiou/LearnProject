@@ -1,8 +1,8 @@
 package com.cocoa.concurrent.base;
 
-public class TestYield extends Thread {
+public class TestYield03 extends Thread {
 
-    public TestYield(String name) {
+    public TestYield03(String name) {
         super(name);
     }
 
@@ -22,11 +22,11 @@ public class TestYield extends Thread {
 
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
-            TestYield testYield = null;
+            TestYield03 testYield = null;
             if (i == 0) {
-                testYield = new TestYield("cocoa");
+                testYield = new TestYield03("cocoa");
             } else {
-                testYield = new TestYield("thread" + i);
+                testYield = new TestYield03("thread" + i);
             }
             testYield.start();
         }
