@@ -20,6 +20,11 @@ fun main() {
     val pp = Derived1("shen","jun")
 
 
+
+
+
+//    packageFun("cocoa")
+
 }
 
 // 定义类
