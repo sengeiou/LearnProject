@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_6_stackview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="03C-hh-dmy">
+                                <rect key="frame" x="362.5" y="120" width="299.5" height="68.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instant Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJg-d8-pnE">
+                                        <rect key="frame" x="0.0" y="0.0" width="299.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get help from experts in 15 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DR-yn-XDb">
+                                        <rect key="frame" x="13.5" y="48" width="272" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BrO-Ju-BYx">
+                                <rect key="frame" x="0.0" y="360" width="1024" height="316.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user1" translatesAutoresizingMaskIntoConstraints="NO" id="Fif-rP-lgg">
+                                        <rect key="frame" x="0.0" y="0.0" width="341.5" height="316.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Fif-rP-lgg" secondAttribute="height" multiplier="69:64" id="R1j-Oq-Zge"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2" translatesAutoresizingMaskIntoConstraints="NO" id="Mj9-nx-f17">
+                                        <rect key="frame" x="341.5" y="0.0" width="341" height="316.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Mj9-nx-f17" secondAttribute="height" multiplier="69:64" id="zkE-XL-wXn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user3" translatesAutoresizingMaskIntoConstraints="NO" id="hoW-pr-Wa4">
+                                        <rect key="frame" x="682.5" y="0.0" width="341.5" height="316.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hoW-pr-Wa4" secondAttribute="height" multiplier="69:64" id="Etx-J5-vr8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BrO-Ju-BYx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0pG-4q-gPt"/>
+                            <constraint firstItem="03C-hh-dmy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RIw-x1-c3m"/>
+                            <constraint firstItem="BrO-Ju-BYx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZHi-J8-CuX"/>
+                            <constraint firstAttribute="trailing" secondItem="BrO-Ju-BYx" secondAttribute="trailing" id="aFB-yv-TER"/>
+                            <constraint firstItem="03C-hh-dmy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="vOH-fK-l5v"/>
+                            <constraint firstItem="BrO-Ju-BYx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="z1T-Dm-cpl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="user1" width="100" height="136"/>
+        <image name="user2" width="100" height="134"/>
+        <image name="user3" width="100" height="139"/>
+    </resources>
+</document>
