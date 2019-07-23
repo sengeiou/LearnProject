@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">  
+	<title>Document</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+			//https://github.com/0x5e/wechat-deleted-friends/blob/master/wdf.py#L341
+			//https://github.com/xiangzhai/qwx/blob/master/doc/protocol.md
+			function myfunction() {
+    //https://login.weixin.qq.com/jslogin?appid=wx782c26e4c19acffb&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=zh_CN&_=1388994062250
+    		
+    	 	var url = "https://login.weixin.qq.com/jslogin?appid=wx782c26e4c19acffb&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=zh_CN&_=" + Date.parse(new Date());
+    	// 	axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
+    	// 	axios.get(url).then(function (response) {
+    	// 		console.log(response);
+  			// })
+
+axios.interceptors.request.use(
+    config => {
+        if (store.state.token) {  // 判断是否存在token，如果存在的话，则每个http header都加上token
+            config.headers.Authorization = `token ${store.state.token}`;
+        }
+        return config;
+    },
+    err => {
+        return Promise.reject(err);
+         });
+  			
+    		axios.get(url)
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+           console.log(error)
+          })
+    	
+		};
+
+window.onload = myfunction;
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class14 数组</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		// 创建数组
+		var array1 = new Array();
+
+		var array2 = new Array(10);
+
+		var array3 = new Array('1','2','3');
+
+		var array4 = ['1','2','3','4'];  //字面量创建数组
+
+
+		console.log(typeof array1);  // 数组属于Object类型	
+		
+		array4[4] = '10'; //不会越界，很神奇
+		console.log(array3);
+		
+		console.log(array4);   
+
+		// 获取数组的长度
+		console.log("arra4.length="+ array4.length);
+		//遍历数组
+		for(var i = 0; i < array4.length ; i++){
+			console.log(array4[i]);
+		}
+
+		// 数组的元素可以是任意类型
+		// 但是我个人不喜欢这么用，可能是受java泛型的影响
+
+
+
+
+	</script>
+	
+</body>
+</html>
