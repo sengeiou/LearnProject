@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="8e6aaf03-df06-4d54-8510-26f07b5e9801" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/properties.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user1.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user1.imageset/user1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user3.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user3.imageset/user3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewTests/_6_stackviewTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewUITests/_6_stackviewUITests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_nav/ViewController2.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_navTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_navTests/c12_navTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_navUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c12_nav/c12_navUITests/c12_navUITests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutTests/c5_autolayoutTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutUITests/c5_autolayoutUITests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant@2x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant@3x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewTests/c8_tableviewTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewUITests/c8_tableviewUITests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/AppDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant@2x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant@3x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/FoodUITableViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/RestrauntTableViewCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/ViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewTests/c9_customize_tableviewTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewUITests/c9_customize_tableviewUITests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/06_functions.playground/Contents.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/06_functions.playground/contents.xcplayground" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/07_closures.playground/Contents.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/07_closures.playground/contents.xcplayground" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/07_closures.playground/playground.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../swift/swift5/07_closures.playground/playground.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../go/go_shizhan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../go/go_shizhan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../go/go_shizhan/Test1_Array.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../go/go_shizhan/Test1_Array.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../iOS/iOS_Programming6/Chapter_1/Chapter_1.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/iOS_Programming6/Chapter_1/Chapter_1.xcodeproj/project.pbxproj" afterDir="false" />
+=======
     <list default="true" id="77e9948d-1e9e-4ce3-ad41-b60a44b5e174" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestInterrupt04.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestInterrupt04.md" afterDir="false" />
@@ -10,10 +119,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestConstructor01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestConstructor01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestYield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestYield03.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestYield.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cocoa/concurrent/base/TestYield03.md" afterDir="false" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +135,95 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-341870542">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="1" />
+          <entry key="java" value="1" />
+          <entry key="kt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="1" />
+          <entry key="JAVA" value="1" />
+          <entry key="Kotlin" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="kt" value="568" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Kotlin" value="568" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cocoa/netty/TestClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/classExtend.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/corutines/Test.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/properties.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+=======
     <leaf />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,9 +245,398 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4.10" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="TestFinal" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="TestFinal" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'TestFinal'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="inspectClassesForKotlinIC" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="kotlinSourcesJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'TestFinal'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="mainClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the test Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'TestFinal'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the main Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the compilation 'test' (target  (jvm))." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Groovydoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="groovydoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the compilation 'main' (target  (jvm))." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileKotlin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'TestFinal'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="7793847534000" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="2841304680" />
+        <entry key="$PROJECT_DIR$/gradle.properties" value="3650535818" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="261915471" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="2353809184" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.3.30/8622fff29c58300c8d7d74967a0493f16e60d39a/kotlin-gradle-plugin-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.3.30/fb6024ed34d243a5fdd1d182467b65279c5b8d07/kotlin-gradle-plugin-api-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.3.30/3c3a6ce66fed4fa931a015b99cdc219862963c0f/kotlin-gradle-plugin-model-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.30/e376354ab80fca7470a1d39f9a56d09ecaee899b/kotlin-compiler-embeddable-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.30/545424e3a8dd0aa54c4aa94d0ff81345f858b39a/kotlin-annotation-processing-gradle-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.30/d3ecdb7c380c225c3fe1cc1649d2d88257c9d057/kotlin-android-extensions-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.3.30/259e7aa90016422307945cc0dd5eb78fe1bb5e2d/kotlin-compiler-runner-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.30/aa5601f68d4489fe595660e32d6b60680bd9be1f/kotlin-scripting-compiler-embeddable-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.30/1093224407fb1a6f5b79358044a2836bb3d899fd/kotlin-stdlib-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.3.30/95618f10c7fff72b5cdde1ad467afe0eb1b77b1d/kotlin-native-utils-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.30/c9f47680a725895f60884e51e02b4b444143106d/kotlin-script-runtime-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.30/f7d686a6cf7e4eb13ba1d25a13be3d6ce88376b9/kotlin-reflect-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/fff84a7f9b3215e7ef684672d0adf2853e20040a/trove4j-1.0.20181211-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.3.30/a3d4fc109c7fb6b25f804ada95cf72a3a7845ccb/kotlin-build-common-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.3.30/11ff7e81df8fd375a37f8fc5f14ee7ccf49b832a/kotlin-daemon-client-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.30/9c981bc2a33066176e605b58a84170b8116e9d8c/kotlin-stdlib-common-1.3.30-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.3.30/70c672aa93cc501164b41c18918333959d78f230/kotlin-gradle-plugin-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.3.30/e02f13f8039083624f8ff6634fa6f5c897eb4833/kotlin-gradle-plugin-api-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.3.30/135cb0ff1246490ea68fa696541bf3f6078a77c6/kotlin-gradle-plugin-model-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.30/e894c4a8dd7319b53a8fb357bea3a927abbccadd/kotlin-compiler-embeddable-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.30/862a7236f3a5bf5d8d5beb8353e1c424ed3fe1c6/kotlin-annotation-processing-gradle-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.30/6c4efb38cdff0c5c302f8ad6ebb471940fcda4d7/kotlin-android-extensions-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.3.30/64b839723e48415397d4fa50a6bedd3266c0253b/kotlin-compiler-runner-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.30/2adeda8a8bc2cdc75230f0b7061a1f1b88642da2/kotlin-scripting-compiler-embeddable-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.30/9ea98e65c246d34de9af59c104ad9bdea4908ee/kotlin-stdlib-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.3.30/72c180f42b9e6e86f90339ec9b43de6d10605386/kotlin-native-utils-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.30/dd223593ee63574426ef98f7111862f138e40fdc/kotlin-script-runtime-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.30/b5aa87d4a75c9635915e4189f687e92ce375c054/kotlin-reflect-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/216c2e14b070f334479d800987affe4054cd563f/trove4j-1.0.20181211.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.3.30/5b53b550509ed6ada0b96c6dac058e46f3258bca/kotlin-build-common-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.3.30/9ab0b01afa1a7aa6897989a08ed5d92a205f793/kotlin-daemon-client-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.30/989a125fdb6e4d0d75a016032e03e1e3b57a13d/kotlin-stdlib-common-1.3.30.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="TestFinal" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-model-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-persistent-cache-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-kotlin-dsl-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-process-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-cli-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-core-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/ant-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/groovy-all-2.4.15.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-runtime-api-info-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-base-services-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-jvm-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-base-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/ant-launcher-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-logging-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-messaging-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-docs-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-kotlin-dsl-tooling-builders-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-resources-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-kotlin-dsl-provider-plugins-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-kotlin-dsl-tooling-models-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-model-core-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-api-metadata-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-tooling-api-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-launcher-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-wrapper-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-build-option-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-core-api-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-build-cache-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/gradle-installation-beacon-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-testing-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-composite-builds-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-ear-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-build-cache-http-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-publish-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-testing-base-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-signing-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-resources-s3-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-ivy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-language-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-announce-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-ide-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-diagnostics-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-resources-gcs-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-osgi-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-language-java-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-build-comparison-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-tooling-api-builders-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-testing-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-platform-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-language-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-code-quality-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-platform-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-version-control-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-ide-play-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-javascript-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-platform-play-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-jacoco-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-test-kit-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-testing-junit-platform-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-dependency-management-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-plugin-development-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-antlr-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-scala-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-maven-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-language-scala-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-tooling-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-platform-base-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-resources-http-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-ide-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-reporting-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-plugin-use-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-build-init-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-resources-sftp-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-plugins-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-workers-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/gradle-language-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-bin/bg6py687nqv2mbe6e1hdtk57h/gradle-4.10/lib/plugins/ivy-2.2.0.jar" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+        <entry key="$PROJECT_DIR$/../../../Peppa/PeppaBean" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../Peppa/PeppaClient" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/properties.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="813" />
+=======
         <option value="$PROJECT_DIR$/src/main/java/com/cocoa/netty/netty.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/cocoa/corutines/Main.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/cocoa/netty/Main.java" />
@@ -86,6 +672,7 @@
     <option name="y" value="20" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -93,7 +680,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,27 +688,77 @@
               <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
+<<<<<<< HEAD
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="cocoa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestFinal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="cocoa" type="462c0819:PsiDirectoryNode" />
+              <item name="classInstance" type="462c0819:PsiDirectoryNode" />
+            </path>
+=======
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561716177866" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\cocoa\LearnProject\Java\TestFinal\src\main\kotlin\com\cocoa\corutines" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -135,10 +772,24 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Kotlin.com.cocoa.classInstance.ClassExtendKt">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cocoa.netty.TestClient" />
+      <module name="TestFinal_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+=======
   <component name="RunManager" selected="Application.TestJoin05">
     <configuration name="TestConstructor01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cocoa.concurrent.base.TestConstructor01" />
       <module name="com.cocoa.TestFinal.main" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.cocoa.concurrent.base.*" />
@@ -149,6 +800,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+=======
     <configuration name="TestInterrupt04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cocoa.concurrent.base.TestInterrupt04" />
       <module name="com.cocoa.TestFinal.main" />
@@ -158,10 +819,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <configuration name="com.cocoa.classInstance.ClassExtendKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="TestFinal_main" />
+=======
     <configuration name="TestJoin05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cocoa.concurrent.base.TestJoin05" />
       <module name="com.cocoa.TestFinal.main" />
@@ -190,6 +856,7 @@
     </configuration>
     <configuration name="com.cocoa.book.c3.TestClass01Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="com.cocoa.TestFinal.main" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -201,13 +868,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.TestClient" />
+      <item itemvalue="Kotlin.com.cocoa.classInstance.ClassExtendKt" />
+    </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="Kotlin.com.cocoa.classInstance.ClassExtendKt" />
+        <item itemvalue="Application.TestClient" />
+=======
         <item itemvalue="Application.TestJoin05" />
         <item itemvalue="Application.TestInterrupt04" />
         <item itemvalue="Application.TestConstructor01" />
         <item itemvalue="Kotlin.com.cocoa.book.c3.TestClass01Kt" />
         <item itemvalue="Application.TestYield03" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
       </list>
     </recent_temporary>
   </component>
@@ -216,10 +909,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="77e9948d-1e9e-4ce3-ad41-b60a44b5e174" name="Default Changelist" comment="" />
-      <created>1558665693336</created>
+      <changelist id="8e6aaf03-df06-4d54-8510-26f07b5e9801" name="Default Changelist" comment="" />
+      <created>1558777391034</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1558777391034</updated>
+      <workItem from="1558777394783" duration="969000" />
+      <workItem from="1558798940358" duration="256000" />
+      <workItem from="1558799221219" duration="550000" />
+      <workItem from="1558799850400" duration="5000" />
+      <workItem from="1558799896879" duration="51000" />
+      <workItem from="1558800031892" duration="2943000" />
+      <workItem from="1559568440846" duration="681000" />
+      <workItem from="1559633681816" duration="57000" />
+      <workItem from="1559891538682" duration="82000" />
+=======
       <updated>1558665693336</updated>
       <workItem from="1558665697426" duration="12857000" />
       <workItem from="1558693479315" duration="31000" />
@@ -235,10 +940,49 @@
       <workItem from="1561604005424" duration="12644000" />
       <workItem from="1561687913671" duration="11652000" />
       <workItem from="1561960900969" duration="426000" />
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="5594000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="813" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32871014" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Statistic" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="14" weight="0.32871014" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.32871014" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Gradle" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+=======
     <option name="totallyTimeSpent" value="55057000" />
   </component>
   <component name="ToolWindowManager">
@@ -313,23 +1057,35 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout-to-restore>
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/cocoa/netty/InboundHandler.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cocoa/netty/TestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/classExtend.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/corutines/Test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+=======
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.36.Final/194c47ffd2525ec0a1caf8f070321ce7629ca1d8/netty-all-4.1.36.Final-sources.jar!/io/netty/handler/codec/socks/SocksRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -562,10 +1318,19 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
+<<<<<<< HEAD
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/cocoa/classInstance/properties.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
@@ -741,87 +1506,16 @@
             <element signature="e#113#114#0" expanded="true" />
             <element signature="e#134#135#0" expanded="true" />
           </folding>
+>>>>>>> 84296e6748df8eef1cb58a787ad37fd22a73b13a
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Kotlin</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>main|com.cocoa.TestFinal</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Gradle: junit:junit:4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
