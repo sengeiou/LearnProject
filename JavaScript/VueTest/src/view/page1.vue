@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: "page2",
   data() {
@@ -17,6 +16,11 @@ export default {
     console.log(letapp.name)
     console.log(constapp.name)
     console.log(this.test1() +" // 可以看到let是在块级作用域中") 
+
+    let isDone : boolean = false
+
+    
+
   },
   methods: {
      test1() {
