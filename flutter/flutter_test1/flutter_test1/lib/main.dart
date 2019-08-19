@@ -79,10 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '123123',
-              style:TextStyle(
-                background: Colors.red
-              )
+              '123123'
             ),
             Text(
               'You have pushed the button this many times:',
