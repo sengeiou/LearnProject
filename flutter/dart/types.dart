@@ -32,7 +32,8 @@ void main(){
 
       var  list = [1,23,3];
       print("the list is $list");
-      var re = "the lenght is "+ list.length.toString();
+      var  length = list.length;
+      var re = "the lenght is $length";
       print(re);  
 
       var  map1 = {
