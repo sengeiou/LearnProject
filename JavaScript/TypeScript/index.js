@@ -1,20 +1,41 @@
-// 接口初步认识
-function printLabel(labelObj) {
-    console.log(labelObj.label);
+// funtion add(x,y){
+//     return x + y
+// }
+// let myAdd = function(a, b){
+//     return a + b 
+// }
+// ts 的写法
+function add(a, b) {
+    return a + b;
 }
-var myObj = { size: 10, label: "size is 10" };
-printLabel(myObj);
-function printLabel1(labeler) {
-    console.log(labeler.label);
-}
-printLabel1(myObj);
-var myObj1 = { size: 10 }; //删掉label属性，下面的代码编译期就报错
-function test1(config) {
-    if (config.color) {
-        console.log(config.color);
+var myAdd = function (a, b) {
+    return a + b;
+};
+// 完整的函数类型
+var myAdd1 = function (a, b) {
+    return a + b;
+};
+console.log(myAdd1(10, 10));
+function buildName(firstName, lastName) {
+    if (lastName) {
+        return firstName + " " + lastName;
     }
-    if (config.width) {
-        console.log(config.width);
-    }
+    return firstName;
 }
-test1({ color: 'red', width: 1123 });
+console.log(buildName("cocoa"));
+function buildName1(firstName, lastName) {
+    if (lastName === void 0) { lastName = 'welcome!'; }
+    return firstName + " " + lastName;
+}
+console.log(buildName1("cocoa")); //cocoa welcome!
+console.log(buildName1("cocoa", undefined)); //cocoa welcome!
+console.log(buildName1("cocoa", null)); //cocoa null
+//剩余参数
+function buildName3(name) {
+    var otherInfo = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        otherInfo[_i - 1] = arguments[_i];
+    }
+    console.log(name + " " + otherInfo.join(" "));
+}
+console.log(buildName3("cocoa", "11", "22", "333"));
