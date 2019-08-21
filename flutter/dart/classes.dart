@@ -88,6 +88,76 @@ class Rectangle {
 }
 
 
+
+// Abstract methods（抽象函数）
+//使用 abstract 修饰符定义一个 抽象类—一个不能被实例化的类。 
+//抽象类通常用来定义接口， 以及部分实现。如果你希望你的抽象类 是可示例化的，则定义一个 工厂 构造函数。
+abstract class Doer{
+    void doSomething();
+}
+
+class EffectiveDoer extends Doer{
+      void doSomething(){
+      }
+}
+
+// 在 dart 中， 操作符也可以被重写
+
+
+class PersonXX{
+  final _name;
+  PersonXX(this._name);
+  String greet(who) => "PersonXX Hello $who $_name";
+}
+
+class Imposter implements PersonXX{   // 可以实现多个接口
+  final _name = "";
+  String greet(who) => "Imposter Hello $who $_name";
+}
+
+greetBob(PersonXX person) => person.greet("bob");
+
+//使用 extends 定义子类， super 引用 超类：
+//@override 注解来 表明你的函数是想覆写超类的一个函数：
+
+
+// 定义枚举类型
+enum Color{
+  red,
+  green,
+  blue
+}
+// 枚举类型中的每个值都有一个 index getter 函数， 该函数返回该值在枚举类型定义中的位置（从 0 开始）。 例如，第一个枚举值的位置为 0， 第二个为 1.
+class Util{
+    void printf(){
+        print("this is util print");
+    }
+}
+// 使用 with 进行mixins 功能扩展
+// 注意，定义一个类继承 Object，该类没有构造函数， 
+//不能调用 super ，则该类就是一个 mixin ，但是1.13  版本后就没有这些限制了
+// 上面的Util 就是一个mixin 类
+class Test with Util{
+
+}
+
+
+
+// 类变量和函数
+class ColorXX{
+  static const red = const ColorXX("red");
+
+  final name;
+  const ColorXX(this.name);
+
+  static void println(String msg){
+        print(msg);
+  }
+
+}
+
+
+
 void main(){
       var p1 = Point(1,2);
       p1.x = 109;
@@ -122,4 +192,23 @@ void main(){
       var r1 = Rectangle(10,101,1012,100);
       r1.right = 9999;
       print("the right = ${r1.left}");
+
+
+       print(greetBob(new PersonXX('kathy')));
+        print(greetBob(new Imposter()));
+
+        print("the red index is ${Color.red.index}");
+        print("the blue index is ${Color.blue.index}");
+
+        List<Color> colors = Color.values;
+        for (var item in colors) {
+            print("the color is ${item}");
+        }  
+        
+        var t = new Test();
+        t.printf();
+
+        const red = ColorXX.red;
+        print("the color name is ${red.name}");
+        ColorXX.println("THIS IS STATIC METHOD");
 }

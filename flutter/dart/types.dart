@@ -47,4 +47,12 @@ void main(){
       var hasThree = map1['three'] != null;
       print("map1 has three = $hasThree");
 
+
+      num a = 10;
+      int a1 = 1;
+      double b12 = 1.2;
+      String name  = "123";
+      bool b = true;
+      
+
 }
