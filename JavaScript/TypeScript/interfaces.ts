@@ -101,3 +101,48 @@ let myArray : StringArray = ["Hello","ccooa"]
 let s : string = myArray[0]
 
 
+// 类类型
+
+interface Dater{
+    currentTime :Date
+    setTime(d: Date)
+}
+
+class Clock implements Dater{
+    currentTime : Date
+    setTime(d: Date){
+        this. currentTime = d
+    }
+}
+
+
+//类静态部分与实例部分的区别
+//当你操作类和接口的时候，你要知道类是具有两个类型的：静态部分的类型和实例的类型。 你会注意到，当你用构造器签名去定义一个接口并试图定义一个类去实现这个接口时会得到一个错误：
+
+interface ClockConstructor {
+    new (hour: number, minute: number);
+}
+
+// class Clockxx implements ClockConstructor {
+//     currentTime: Date;
+//     constructor(h: number, m: number) { }
+// }
+
+// 太烦了，没看明白，跳过
+
+
+// 继承接口
+interface Shape{
+    color : string
+}
+
+interface Square extends Shape{   // 接口可以多继承
+    length : number
+}
+
+let square = <Square>{}
+square.length = 10
+square.color  = "red"
+
+
+

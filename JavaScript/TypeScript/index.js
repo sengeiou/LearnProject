@@ -1,41 +1,36 @@
-// funtion add(x,y){
-//     return x + y
-// }
-// let myAdd = function(a, b){
-//     return a + b 
-// }
-// ts 的写法
-function add(a, b) {
-    return a + b;
-}
-var myAdd = function (a, b) {
-    return a + b;
-};
-// 完整的函数类型
-var myAdd1 = function (a, b) {
-    return a + b;
-};
-console.log(myAdd1(10, 10));
-function buildName(firstName, lastName) {
-    if (lastName) {
-        return firstName + " " + lastName;
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+// ts 中的继承
+var Animal = /** @class */ (function () {
+    function Animal() {
     }
-    return firstName;
-}
-console.log(buildName("cocoa"));
-function buildName1(firstName, lastName) {
-    if (lastName === void 0) { lastName = 'welcome!'; }
-    return firstName + " " + lastName;
-}
-console.log(buildName1("cocoa")); //cocoa welcome!
-console.log(buildName1("cocoa", undefined)); //cocoa welcome!
-console.log(buildName1("cocoa", null)); //cocoa null
-//剩余参数
-function buildName3(name) {
-    var otherInfo = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        otherInfo[_i - 1] = arguments[_i];
+    Animal.prototype.move = function (dis) {
+        if (dis === void 0) { dis = 0; }
+        console.log("move ${dis}");
+    };
+    return Animal;
+}());
+var Dog = /** @class */ (function (_super) {
+    __extends(Dog, _super);
+    function Dog() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    console.log(name + " " + otherInfo.join(" "));
-}
-console.log(buildName3("cocoa", "11", "22", "333"));
+    Dog.prototype.back = function () {
+        console.log("back");
+    };
+    return Dog;
+}(Animal));
+var dog = new Dog();
+dog.move();
+dog.back();
