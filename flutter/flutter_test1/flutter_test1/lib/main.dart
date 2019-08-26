@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+var list = List<Text>();
+
+void main() {
+
+  list.add(Text("123"));
+  list.add(Text("323"));
+  list.add(Text("423"));
+  list.add(Text("523"));
+  list.add(Text("623"));
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -18,9 +29,17 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ListView(
+          children:<Widget>[
+            ListTile(title:Text("this is title")),
+            ListTile(title:Text("this is title")),
+            ListTile(title:Text("this is title")),
+            ListTile(title:Text("this is title")),
+          ]
+      ),
     );
   }
 }
@@ -40,8 +59,12 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState createState() => new _MyHomePageState();
 }
+
+
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -75,11 +98,15 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '123123'
+            ListView(
+                children:<Widget>[
+                  ListTile(title:Text("this is title")),
+                  ListTile(title:Text("this is title")),
+                  ListTile(title:Text("this is title")),
+                  ListTile(title:Text("this is title")),
+                ]
             ),
             Text(
               'You have pushed the button this many times:',
