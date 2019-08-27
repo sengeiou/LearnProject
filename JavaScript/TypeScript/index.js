@@ -11,26 +11,37 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// ts 中的继承
-var Animal = /** @class */ (function () {
-    function Animal() {
+var Base = /** @class */ (function () {
+    function Base(name) {
+        this.name = "base";
+        this.name = name;
     }
-    Animal.prototype.move = function (dis) {
-        if (dis === void 0) { dis = 0; }
-        console.log("move ${dis}");
+    Base.prototype.test = function () {
     };
-    return Animal;
+    return Base;
 }());
-var Dog = /** @class */ (function (_super) {
-    __extends(Dog, _super);
-    function Dog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var A = /** @class */ (function (_super) {
+    __extends(A, _super);
+    function A(name) {
+        return _super.call(this, name) || this;
     }
-    Dog.prototype.back = function () {
-        console.log("back");
-    };
-    return Dog;
-}(Animal));
-var dog = new Dog();
-dog.move();
-dog.back();
+    return A;
+}(Base));
+var B = /** @class */ (function (_super) {
+    __extends(B, _super);
+    function B(name) {
+        return _super.call(this, name) || this;
+    }
+    return B;
+}(Base));
+function test(b) {
+    //  b.test();
+}
+var a = new A('A');
+console.log(a.name);
+// let arr = [new A('A'), new B('B')];
+// console.log(typeof arr);
+// // test(arr[1]);
+// let arr1 : Base[] = [new A('A'), new B('B')];
+// console.log(typeof arr1);
+// // test(arr1[1]);

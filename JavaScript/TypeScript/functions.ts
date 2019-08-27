@@ -48,3 +48,44 @@ function buildName3(name: string, ...otherInfo: string[]){
     console.log(name+" "+ otherInfo.join(" "))
 }
 buildName3("cocoa","11","22","333")
+
+
+
+// this 箭头
+
+
+// 会报错
+// let deck = {
+//     suits : ["hearts", "spades", "clubs", "diamonds"],
+//     cards : Array(52),
+//     createCardPicker : function(){
+//         return function (){
+//             console.log(this);
+//             // 这里会报错，因为this 对象并不是deck    
+//             return {suit: this.suits[1]}; 
+//         }
+//     }
+// }
+
+// let cardPicker = deck.createCardPicker();
+// let obj = cardPicker();
+// console.log(obj.suit);
+
+
+
+let deck1 = {
+    suits : ["hearts", "spades", "clubs", "diamonds"],
+    cards : Array(52),
+    createCardPicker : function(){
+        return () => {
+            console.log(this);
+            // 这里会报错，因为this 对象并不是deck    
+            return {suit: this.suits[1]}; 
+        }
+    }
+}
+
+let cardPicker1 = deck1.createCardPicker();
+let obj1 = cardPicker1();
+console.log(obj1.suit);
+
