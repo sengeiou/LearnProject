@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
-import 'test.dart';
 
-void main() {
 
-//  var s = Symbol("bnandas");
-
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class Test extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -37,40 +30,13 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage2 extends StatelessWidget{
 
-  List<Widget> getData(BuildContext context){
-        var list = new List<Widget>();
-        for(var i = 0;i< 100; i ++){
-          list.add(ListTile(
-              leading: Image.network("https://note.youdao.com/yws/api/image/normal/1420350189631?userId=qq218F58C463345C164E5B2B7A53B11D3A",
-                width: 100.0,
-                height: 100.0,
-              ),
-              title:Text("this is item and index = $i"),
-              subtitle: Text("this is subtitle"),
-              trailing:RaisedButton(
-                child: Text("normal"),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) {
-                        return Test();
-                      }));
-                },
-              )
-          ));
-        }
-//        var result = list.any((item,index){
-////          return item % 2 ==0;
-////        });
-        return list;
-  }
-
 
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return ListView(
-        children: getData(context)
+    return Text(
+        "this is test view"
     );
   }
 
