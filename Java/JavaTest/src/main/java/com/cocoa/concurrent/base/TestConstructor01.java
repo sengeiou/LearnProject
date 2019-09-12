@@ -5,6 +5,7 @@ public class TestConstructor01 {
 
     public static void main(String[] args) {
 
+        //阿实践活动好
         ThreadGroup threadGroup = new ThreadGroup("group-name");
 
         Thread thread = new Thread(threadGroup, new Runnable() {

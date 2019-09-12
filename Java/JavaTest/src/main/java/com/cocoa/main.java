@@ -10,8 +10,8 @@ public class main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        System.out.println("123阿萨德");
+        // 砂夹石的
+        System.out.println("can find any more!");
 
         TestParent  parent = new TestParent();
         parent.setAge(12);

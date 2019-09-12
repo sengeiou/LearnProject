@@ -17,7 +17,7 @@ func main() {
 	var emeintArray [4]int //数组的定义1
 
 	// 输出为[0,0,0,0]
-	fmt.Print(intArray)
+	fmt.Print(emeintArray)
 
 	a := [...]int{1, 1, 1}    //数组的定义2
 	var b = [10]int{1, 2}     //数组的定义3
@@ -60,8 +60,8 @@ func main() {
 
 	fmt.Println(bbb)
 
-	test1(aaa)
-	test2(aaa)
+	// test1(aaa)
+	// test2(aaa)
 
 }
 

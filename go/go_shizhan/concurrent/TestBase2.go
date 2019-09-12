@@ -9,8 +9,8 @@ var wg sync.WaitGroup
 
 func main(){
 	fmt.Println("app start")
-	runtime.GOMAXPROCS(1)
-	
+	runtime.GOMAXPROCS(1)     // 试着改成2 
+  	
 	wg.Add(2)
 
 	go print("a")
