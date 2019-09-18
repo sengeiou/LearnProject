@@ -1,10 +1,15 @@
 package com.cocoa;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         try {
 //            new main().test();
         } catch (Exception e) {
@@ -33,6 +38,18 @@ public class main {
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
+
+
+        String strDateFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        Date date = sdf.parse("2017-1-1");
+        System.out.println(date.getDate());
+
+        String str1="2018-7-5";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
+        System.out.println(parse);
+
 
 
     }
