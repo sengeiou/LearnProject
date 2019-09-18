@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<h1 id="jsonp"></h1>
+
+
+<body>
+	
+</body>
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+
+// $.ajax({
+//            type: 'GET',
+//            url: 'http://127.0.0.1:8080/getUser',
+//            // data: 'name=penngo',
+//            dataType: 'jsonp',
+//            success: function(msg){
+//            		// document.getElementById('jsonp').innerHTML = "123";
+//            	// document.write (msg);
+//               // $('#jsonp').html(JSON.stringify(msg));
+//            	alert(msg);
+
+//            }
+//         });
+
+
+
+	function httpGet(url, method, data) {  
+    var xmlhttp;  
+    xmlhttp = new XMLHttpRequest();  
+    xmlhttp.open (method, url , false);  
+    xmlhttp.setRequestHeader ("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");  
+    xmlhttp.setRequestHeader ("Content-Length", data.length);  
+    xmlhttp.send (null);  
+    if (xmlhttp.Status = 200) return xmlhttp.responseText;  
+}  
+	var s  = httpGet("http://localhost:8080/getUser", "GET", "do=GET");
+	alert(s);
+  document.write (s);  
+
+</script>
+</html>
