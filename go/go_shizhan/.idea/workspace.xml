@@ -2,83 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e66d582-fa03-476d-a78e-1daed7e67145" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user1.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user1.imageset/user1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user2.imageset/user2@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user3.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Assets.xcassets/user3.imageset/user3.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackview/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewTests/_6_stackviewTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewUITests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/06_stackview/06_stackviewUITests/_6_stackviewUITests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayout/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutTests/c5_autolayoutTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutUITests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c5_autolayout/c5_autolayoutUITests/c5_autolayoutUITests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant@2x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Assets.xcassets/restaurant.imageset/restaurant@3x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableview/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewTests/c8_tableviewTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewUITests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c8_tableview/c8_tableviewUITests/c8_tableviewUITests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant@2x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Assets.xcassets/restaurant.imageset/restaurant@3x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/FoodUITableViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/RestrauntTableViewCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableview/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewTests/c9_customize_tableviewTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewUITests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../iOS/begingiOS12/c9_customize_tableview/c9_customize_tableviewUITests/c9_customize_tableviewUITests.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test1_Array.go" beforeDir="false" afterPath="$PROJECT_DIR$/Test1_Array.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iOS/iOS_Programming6/Chapter_1/Chapter_1.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/iOS_Programming6/Chapter_1/Chapter_1.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrent/TestBase3.go" beforeDir="false" afterPath="$PROJECT_DIR$/concurrent/TestBase3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrent/Test_Channel1.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,25 +15,25 @@
     <session id="393601502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="28" />
+          <entry key="go" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="28" />
+          <entry key="Go" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -133,11 +58,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test1_Array.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="423">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/concurrent/TestChannel0.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/concurrent/TestBase3.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/concurrent/TestBase2.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/concurrent/TestChannel1.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -192,7 +145,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -203,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,10 +163,16 @@
               <item name="go_shizhan" type="b2602c69:ProjectViewProjectNode" />
               <item name="go_shizhan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="go_shizhan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go_shizhan" type="462c0819:PsiDirectoryNode" />
+              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build Test1_Array.go">
+  <component name="RunManager" selected="Go Build.go build TestChannel2.go">
     <configuration name="go build Test1_Array.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go_shizhan" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -278,7 +236,7 @@
       <module name="go_shizhan" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/concurrent/Test_Channel1.go" />
+      <filePath value="$PROJECT_DIR$/concurrent/TestChannel1.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -291,19 +249,19 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build Test1_Array.go" />
-        <item itemvalue="Go Build.go build Test_Channel1.go" />
         <item itemvalue="Go Build.go build TestChannel2.go" />
+        <item itemvalue="Go Build.go build Test_Channel1.go" />
+        <item itemvalue="Go Build.go build Test1_Array.go" />
         <item itemvalue="Go Build.go build TestMap.go" />
         <item itemvalue="Go Build.go build TestReflection.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16309012" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16523606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -442,9 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#14#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -455,9 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4136">
           <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
-          <folding>
-            <element signature="e#173#240#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -509,7 +461,27 @@
     <entry file="file://$PROJECT_DIR$/Test1_Array.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concurrent/TestBase3.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concurrent/TestBase2.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concurrent/TestChannel0.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concurrent/TestChannel1.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
         </state>
       </provider>
     </entry>

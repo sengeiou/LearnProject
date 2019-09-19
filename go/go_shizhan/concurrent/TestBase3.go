@@ -11,6 +11,10 @@ var wg sync.WaitGroup
 
 
 func main(){
+
+	numCPU := runtime.NumCPU
+	fmt.Printf("%d",numCPU)
+
 	wg.Add(2)
 
 	go incCounter(1)
