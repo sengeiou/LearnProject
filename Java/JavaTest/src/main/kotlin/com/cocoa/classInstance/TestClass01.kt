@@ -1,6 +1,9 @@
 package com.cocoa.classInstance
 
 class Bird{
+
+    //除了延迟初始化，不然就要指定属性的默认值
+//    var age : Int
     val name : String = "bird"
 
     fun fly(){
