@@ -2,11 +2,16 @@ void main(){
       // dart 数字类型 分 int 和 double 类型
 
       var x = 1;
-      var y = 1.2;
+      var y = 1.2183;
       
       // 这里很奇怪，不能赋值给 const one
       var one = int.parse('1');
       var r1 = double.parse('1.2');
+
+
+      print("the y toString is ${y.toStringAsFixed(2)}");
+
+      // var error  = int.parse("xxx");  //报错    
 
       print("the result is $one $r1");
 
