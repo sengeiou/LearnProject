@@ -1,6 +1,4 @@
-package com.cocoa.book.c3
-
-import com.cocoa.book.c2.name
+package com.cocoa.classInstance
 
 class Bird{
     val name : String = "bird"
@@ -11,7 +9,7 @@ class Bird{
 }
 class Dog(var name : String = "wangwang", val age : Int = 0)
 
-class Person(name :String = "cocoa", age : Int = 0){
+class Person1(name :String = "cocoa", age : Int = 0){
 
     var name1 : String   = name   // 构造方法的参数不带 val 和 val ，则可以在这里调用，只有两个地方
     var age1 : Int = age
@@ -79,8 +77,8 @@ fun main(){
     d.name = "cocoa"
     println(d.name)
 
-    val p  = Person()
-    var p1  = Person(name = "cocoa",age = 12)
+    val p  = Person1()
+    var p1  = Person1(name = "cocoa", age = 12)
     println(p.toString())
     println(p1)
 
@@ -88,6 +86,6 @@ fun main(){
     println(p1.lateName)
 
 
-    val c = Car(name="audi") // 执行代码，发现输出 init constructor 4
+    val c = Car(name = "audi") // 执行代码，发现输出 init constructor 4
     println(c.num)
 }

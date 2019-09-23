@@ -27,7 +27,16 @@ class A{
   void baz(){}
 }
 
+
+
+test(String name ,{age :123}){
+   return name + age.toString();
+}
+
 void main(List<String> args){
+
+      print(test("cocoa",age:12));
+
       //dart functons.dart params1 params2
       print("the main function params is $args");
 
