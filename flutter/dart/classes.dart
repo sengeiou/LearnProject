@@ -57,7 +57,7 @@ class Logger{
   bool mute = false;
 
   Logger._internal(this.name);
-
+  // 工厂方法构造函数
   factory Logger(num len){
       return new Logger._internal(len.toString());    
   }
