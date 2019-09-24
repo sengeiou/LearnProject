@@ -16,7 +16,7 @@ public class main {
             e.printStackTrace();
         }
         // 砂夹石的
-        System.out.println("can find any more!");
+        System.out.println("can 胜多负少的 any more!");
 
         TestParent  parent = new TestParent();
         parent.setAge(12);
@@ -40,15 +40,15 @@ public class main {
         }
 
 
-        String strDateFormat = "yyyy-MM-dd";
-        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-        Date date = sdf.parse("2017-1-1");
-        System.out.println(date.getDate());
-
-        String str1="2018-7-5";
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
-        System.out.println(parse);
+//        String strDateFormat = "yyyy-MM-dd";
+//        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+//        Date date = sdf.parse("2017-1-1");
+//        System.out.println(date.getDate());
+//
+//        String str1="2018-7-5";
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
+//        System.out.println(parse);
 
 
 
