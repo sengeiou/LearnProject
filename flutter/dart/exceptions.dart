@@ -23,6 +23,15 @@ void main(){
       }finally{
           print("finally 中的代码，不管有没有出现异常都会执行！！");
       }
+
+      try{
+          var name ;
+          func2(name);
+      }catch(e){
+          print("$e");
+      }
+
+
      
 }
 
@@ -39,3 +48,11 @@ void test1(){
 
 // 定义异常
 void func1() => throw new UnimplementedError();
+
+void func2( String name){
+    if (name == null){
+        throw "name is empty";
+    }
+    print("$name");
+}
+

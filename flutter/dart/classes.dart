@@ -52,6 +52,19 @@ class Point {
 
 }
 
+class Logger{
+  final String name;
+  bool mute = false;
+
+  Logger._internal(this.name);
+  // 工厂方法构造函数
+  factory Logger(num len){
+      return new Logger._internal(len.toString());    
+  }
+}
+
+
+
 
 class Person{
   String firstName;
@@ -211,4 +224,11 @@ void main(){
         const red = ColorXX.red;
         print("the color name is ${red.name}");
         ColorXX.println("THIS IS STATIC METHOD");
+
+        Point p12;
+
+        print("p12 x  = ${p12?.x}");
+
+
+
 }

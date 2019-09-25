@@ -3,12 +3,19 @@ package main
 import (
 	"fmt"
 )
+/**
+1. slice 由三部分组成，一个指向数组的指针，长度和容量
+2. slice 类型一般写成 []T ，没有固定的长度
+3. 长度对应 slice 中元素的数目，长度不能超过容量，容量一般是从slice的开始位置到底层数据的结尾位置
+4. cap  和 len 用来获取 slice 的容量和长度
+5. slice 为引用类型 （如果多个slice 指向相同底层数组，改变值会影响别的slice）
+6. go 语言实战中指出，数组作为方法参数传递时会产生拷贝，影响内存，而指针则可以解决这个问题，但是修改指针同时会改变原数组，slice 则可以解决这两个问题
+7. 每次扩容时，容量是原来的2倍
+
+*/
+
 
 func main() {
-
-	// var s1 []int
-	// fmt.Println(s1)
-
 	// // slice  本身不是数组，底层指向数组
 	// // slice 为引用类型 （如果多个slice 指向相同底层数组，改变值会影响别的slice）
 	// // slice 可以直接创建（ 用make()创建 ） 或 从底层数组生成
@@ -48,12 +55,45 @@ func main() {
 
 	// 测试1 20170119
 
-	slice := make([]string, 5, 5)
+	array1 := [...]int{1,2,3,4,5,6,7,8,9}
+	
+	
+	slice := make([]int, 5, 5)      // make 创建切片
+	slice1 := array1[2: len(array1)]   // 从数组创建切片
+	
+	var nilSlice []int         // nil 切片
+	emptySlice := make([]int,0)	 // 空切片
+	fmt.Println(nilSlice)
+	fmt.Println(emptySlice)
 
-	fmt.Println(cap(slice))
-	fmt.Println(len(slice))
 
-	// 创建 nil 的 切片
+	fmt.Println("the slice1 =")
+	fmt.Println(slice1)
+	fmt.Printf("the slice1 length %d and cap is %d \n", len(slice1), cap(slice1))
+
+	for index := 0; index < 4; index++ {
+		// 使用append 的时候，会自动增加长度和容量
+		slice1 =  append(slice1, index)
+	}
+	fmt.Println(slice1)
+	fmt.Printf("the slice1 length %d and cap is %d \n", len(slice1), cap(slice1))
+
+	slice1[2] = 99999
+	
+	fmt.Println("change slice1 发现原数组无变化，只有slice 自己变了")
+	fmt.Println(array1)
+    fmt.Println(slice1)
+	
+	// 两个切片相加
+	newSlice1 := append(slice1, slice1...)
+	fmt.Println("the newSlice1 is ")
+	fmt.Println(newSlice1)
+	fmt.Printf("the newSlice length %d and cap is %d \n", len(newSlice1), cap(newSlice1))
+	
+
+	fmt.Println("-------------------------------------------------")		
+
+	fmt.Println(slice)
 
 	var s []int //注意和数组的区别，数组必须制定长度[10]或者[...]
 
@@ -62,10 +102,6 @@ func main() {
 	array := [10]int{}
 
 	fmt.Println(array)
-
-	//ss := make(array, 10) //array is not a type  不能这么写
-
-	// 如果要从一个数组生成slice  可以这么写
 
 	ss := array[0:len(array)]
 	sss := array[0:9]
