@@ -1,4 +1,9 @@
+import sys 
+print(sys.version)
+print(sys.version_info)
+
 str =  "Hello %s"
+
 name = (12)
 
 print(str % name)
@@ -20,4 +25,3 @@ print(name.split("O"))
 #strip
 stripStr = "  cocoa   " 
 print(stripStr.strip())
-

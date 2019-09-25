@@ -1,5 +1,10 @@
 import UIKit
 
+var name : String = "cocoa"
+print(name)
+
+
+
 // 多个参数的函数
 func greet(person:String , alreadyGreeted : Bool) -> String {
     if alreadyGreeted {
