@@ -90,6 +90,20 @@ func main() {
 	fmt.Println(newSlice1)
 	fmt.Printf("the newSlice length %d and cap is %d \n", len(newSlice1), cap(newSlice1))
 	
+	// 创建切片时的三个索引
+	tSlice := array1[2:3:4]   
+	fmt.Println("the three index slice")
+	fmt.Println(tSlice)     
+	// 长度 = 3-2  容量 = 4-2
+	fmt.Printf("the tSlice length %d and cap is %d \n", len(tSlice), cap(tSlice))
+
+	// 便利 切片， 其中value 只是一个拷贝，每次的地址都一样
+	for index, value := range slice1 {
+		fmt.Printf("index = %d , value = %d , value addr = %p , slice addr =%p \n", index, value, &value ,&slice1[index]);
+	}	
+
+	tSlice  = test(tSlice)
+	fmt.Println(tSlice)
 
 	fmt.Println("-------------------------------------------------")		
 
@@ -121,4 +135,10 @@ func main() {
 	fmt.Println(cap(sss)) //-->20
 	fmt.Println(len(sss)) //-->12
 
+}
+
+
+// 切片的大小是24个字节，所以即使原数组很大，在进行方法传递时，拷贝的切片永远都是24个字节
+func test(slice []int) []int{
+	return arr
 }
