@@ -58,6 +58,23 @@ void main(){
       double b12 = 1.2;
       String name  = "123";
       bool b = true;
-      
 
+      print("the a is num ${a is num}");
+
+      var p = new Person("cocoa");
+      print("the p .name ${(p as Person).name}");
+
+      // 
+      print("name type != string ${name is! String}");
+
+       // 类型转换会报错 
+      // var result = a1 as Person;
+      // print("the a1 as Person ${result}");
+      // print("the a1 .name ${(a1 as Person).name}");
+}
+
+
+class  Person{
+      String name;
+      Person(this.name);
 }
