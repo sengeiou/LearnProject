@@ -3,6 +3,10 @@ package com.cocoa.classInstance
 fun main() {
     val su = Su("cocoa")
     println(su.name)
+
+    val t1 = Test0x121jsh()
+    t1.foo()
+
 }
 
 fun packageFun(a: String): String {
@@ -35,7 +39,6 @@ class Child : MyInterface {
         }
 
     override fun bar() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 }
@@ -55,16 +58,17 @@ class Su(override val firstName: String) : Person0x123 {
 
 interface A {
     fun foo() {
-        print("A")
+        println("print for interface a")
     }
 }
 
 interface B {
     fun foo() {
-        print("b")
+        println("print for interface b")
     }
 }
 
+// 解决接口覆盖冲突
 class Test0x121jsh : A, B {
 
     override fun foo() {
