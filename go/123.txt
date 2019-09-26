@@ -3,4 +3,5 @@
     1.2  下一期深入 slice
 
 
-2.    
+2.  go map       190926
+    2.1 map 是引用类型，初始化 make(map[T]T)
