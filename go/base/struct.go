@@ -9,7 +9,7 @@ package main
 2. 创建机构对象
 	2.1   var t T
 	2.2  t := new(T)   等同于     t *T    t = new (T)
-	2.3  t := &T{field:xxx}  结构体字面量   // 必须要再一行内
+	2.3  t := &T{field:xxx}  结构体字面量   
 
 
 */
@@ -40,13 +40,39 @@ func (p *Person) test(){
 	fmt.Printf("person name %s \n",p.name)
 }
 
+func A(p *Person) {
+	p.name = "A"
+	fmt.Println(p)
+}
+
+
+
+type Human struct {
+	age int
+}
+
+type Chinese struct{
+	Human    // go 中的嵌套类型
+	name string
+}
+
 
 func main() {
 	// new test start
-	p := &Person{name: "cocoa",age :12,book : &Books{"title","auth",12}}
+	p := &Person{ 
+		name: "cocoa",
+		age :12,
+		book : &Books{"title","auth",12},
+	}
 	fmt.Println(p)
-	p.test();
+	p.test()
 
+
+	// go 语言中，切片，映射，通道，接口和函数类型是 引用类型
+
+	// 嵌套类型的初始化
+	h := Chinese{name:"cocoa", Human:Human{age:12}}  
+	fmt.Println(h)
 
 	// new test end
 
