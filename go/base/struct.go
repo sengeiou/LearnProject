@@ -9,7 +9,7 @@ package main
 2. 创建机构对象
 	2.1   var t T
 	2.2  t := new(T)   等同于     t *T    t = new (T)
-	2.3  t := &T{field:xxx}  结构体字面量
+	2.3  t := &T{field:xxx}  结构体字面量   // 必须要再一行内
 
 
 */
@@ -29,7 +29,27 @@ type SuperBooks struct {
 	book  Books
 }
 
+
+type Person struct{
+	name string 
+	age int
+	book *Books
+}
+
+func (p *Person) test(){
+	fmt.Printf("person name %s \n",p.name)
+}
+
+
 func main() {
+	// new test start
+	p := &Person{name: "cocoa",age :12,book : &Books{"title","auth",12}}
+	fmt.Println(p)
+	p.test();
+
+
+	// new test end
+
 
 	var book1 Books
 
