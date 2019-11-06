@@ -16,5 +16,18 @@ int main()
     free(p);
     p = NULL;
 
+    int strLength = 5;
+    char* s = (char*)malloc(sizeof(char)* strLength);
+    int count  = 0;
+    while(count < strLength){
+        *(s+count) = 'a';
+        count++;
+    }
+    printf("the str is %s \n",s);
+
+    free(s);
+    s = NULL;
+
+
     return EXIT_SUCCESS;
 }
