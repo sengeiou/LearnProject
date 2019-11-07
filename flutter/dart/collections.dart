@@ -34,6 +34,8 @@ void main(){
     set.add(4);
     set.add(5);
 
+    print("the set type is ${set.runtimeType}");
+
     print(set);
 
     var m = {
