@@ -10,6 +10,7 @@ package main
 	2.1   var t T
 	2.2  t := new(T)   等同于     t *T    t = new (T)
 	2.3  t := &T{field:xxx}  结构体字面量   
+3. 顺序初始化时，每一个变量都必须必初始化，如果用 key:value 初始化，则不用每一个变量都初始化
 
 
 */
