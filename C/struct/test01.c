@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/socket.h>
 
 
 struct person
@@ -29,5 +30,8 @@ int main()
     free(p->name);
     free(p);
     p = NULL;
+
+   int result =  socket(AF_INET,SOCK_STREAM,9999);
+    printf("the result is %d \n", result);
     return EXIT_SUCCESS;
 }
