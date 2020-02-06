@@ -1,25 +1,50 @@
 <template>
   <div class="app">
     <h1>page2</h1>
+    <div>
+      {{ name }}
+    </div>
+    <div>
+      {{ count }}
+    </div>
+
+    <div>
+      从属性访问$store.getters.doneList ===》 {{ $store.getters.doneList }}
+    </div>
+    <h3>从辅助函数...mapGetters(['doneList'])中获取的 ===》{{ doneList }}</h3>
+
+    <button @click="countAdd">countAdd</button>
+    <button @click="countPlus">countPlus</button>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters ,mapMutations} from "vuex";
+
 export default {
   name: "page2",
+  computed: {
+    name() {
+      return this.msg.replace("Vue", "cocoa");
+    },
+    ...mapGetters(["doneList"]),
+    ...mapState(["count"]) // ... 扩展符号
+  },
   data() {
     return {
       msg: "Welcome to Your Vue.js App"
     };
   },
   created: function() {
+     this.$store.commit('countPlus')
   },
   methods: {
-    xxx( x = 22, y = 10) {
-      return x + y
+    ...mapMutations(['countPlus']),
+    countAdd(){
+      this.$store.commit('countPlus')
     }
   }
-}
+};
 </script>
 
 <style>

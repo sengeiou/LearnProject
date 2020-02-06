@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+   
     <div><router-link :to="{ name: 'page1', params: {  }}">Page1</router-link></div>
     <div><router-link :to="{ name: 'page2', params: {  }}">Page2</router-link></div>
   </div>
@@ -7,7 +8,10 @@
 
 <script>
 export default {
-  name: 'index'
+  name: 'index',
+  mounted(){
+    // store.commit('increment')
+  }
 }
 </script>
 
