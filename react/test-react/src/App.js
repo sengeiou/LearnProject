@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ListComponent from './List.js'
+
+
 
 function getName(){
   return 'cocoa'
@@ -34,10 +37,18 @@ class Text extends React.Component{
      clearInterval(this.timerId)
   }
 
+  handleClick(e){
+    alert("component has been clicked! and this = "+this.state.date  + "   and e="+e)
+  }
 
 
   render(){
-    return <h1>this is customer text {this.state.date.toLocaleTimeString()}</h1>
+    if(this.props.isLogin){
+      return <h1 onClick={(e) => this.handleClick(e)}>this is customer text {this.state.date.toLocaleTimeString()}</h1>
+    }else{
+      return <div>no login</div>
+    }
+
   }
 }
 
@@ -58,7 +69,11 @@ function App() {
         >
           {getName()}
         </a>
-        <Text ></Text>
+        <Text isLogin={true}></Text>
+        <Text isLogin={false}></Text>
+
+        <ListComponent></ListComponent>
+
       </header>
     </div>
   );
