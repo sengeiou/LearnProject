@@ -7,7 +7,7 @@ int main()
     // *(str+1) = 'c';  // 错误
 
     printf("%p \n", str);
-    printf("%p \n ", str1);   // str 和 str2 的地址是一样的
+    printf("%p \n", str1);   // str 和 str2 的地址是一样的
 
     printf("%s \n", str);
 }
