@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/ex16.c.o"
   "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/main.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/main.c.o"
-  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/test.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

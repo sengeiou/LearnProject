@@ -70,29 +70,29 @@ CMakeFiles/Test2.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Test2.dir/main.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/main.c -o CMakeFiles/Test2.dir/main.c.s
 
-CMakeFiles/Test2.dir/test.c.o: CMakeFiles/Test2.dir/flags.make
-CMakeFiles/Test2.dir/test.c.o: ../test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Test2.dir/test.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Test2.dir/test.c.o   -c /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.c
+CMakeFiles/Test2.dir/ex16.c.o: CMakeFiles/Test2.dir/flags.make
+CMakeFiles/Test2.dir/ex16.c.o: ../ex16.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Test2.dir/ex16.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Test2.dir/ex16.c.o   -c /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c
 
-CMakeFiles/Test2.dir/test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Test2.dir/test.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.c > CMakeFiles/Test2.dir/test.c.i
+CMakeFiles/Test2.dir/ex16.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Test2.dir/ex16.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c > CMakeFiles/Test2.dir/ex16.c.i
 
-CMakeFiles/Test2.dir/test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Test2.dir/test.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.c -o CMakeFiles/Test2.dir/test.c.s
+CMakeFiles/Test2.dir/ex16.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Test2.dir/ex16.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c -o CMakeFiles/Test2.dir/ex16.c.s
 
 # Object files for target Test2
 Test2_OBJECTS = \
 "CMakeFiles/Test2.dir/main.c.o" \
-"CMakeFiles/Test2.dir/test.c.o"
+"CMakeFiles/Test2.dir/ex16.c.o"
 
 # External object files for target Test2
 Test2_EXTERNAL_OBJECTS =
 
 Test2: CMakeFiles/Test2.dir/main.c.o
-Test2: CMakeFiles/Test2.dir/test.c.o
+Test2: CMakeFiles/Test2.dir/ex16.c.o
 Test2: CMakeFiles/Test2.dir/build.make
 Test2: CMakeFiles/Test2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Test2"

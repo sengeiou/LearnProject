@@ -123,6 +123,33 @@ Test2/fast:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/build
 .PHONY : Test2/fast
 
+ex16.o: ex16.c.o
+
+.PHONY : ex16.o
+
+# target to build an object file
+ex16.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/ex16.c.o
+.PHONY : ex16.c.o
+
+ex16.i: ex16.c.i
+
+.PHONY : ex16.i
+
+# target to preprocess a source file
+ex16.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/ex16.c.i
+.PHONY : ex16.c.i
+
+ex16.s: ex16.c.s
+
+.PHONY : ex16.s
+
+# target to generate assembly for a file
+ex16.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/ex16.c.s
+.PHONY : ex16.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,33 +177,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/main.c.s
 .PHONY : main.c.s
 
-test.o: test.c.o
-
-.PHONY : test.o
-
-# target to build an object file
-test.c.o:
-	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/test.c.o
-.PHONY : test.c.o
-
-test.i: test.c.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/test.c.s
-.PHONY : test.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Test2"
+	@echo "... ex16.o"
+	@echo "... ex16.i"
+	@echo "... ex16.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 .PHONY : help
 
 

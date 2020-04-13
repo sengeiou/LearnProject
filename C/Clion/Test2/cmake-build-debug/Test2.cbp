@@ -78,13 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c">
+			<Option target="Test2"/>
+		</Unit>
+		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.h">
+			<Option target="Test2"/>
+		</Unit>
 		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/main.c">
-			<Option target="Test2"/>
-		</Unit>
-		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.c">
-			<Option target="Test2"/>
-		</Unit>
-		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.h">
 			<Option target="Test2"/>
 		</Unit>
 		<Unit filename="/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/CMakeLists.txt">

@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/main.c
+/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c
+stdlib.h
+-
 stdio.h
 -
-test.h
-/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.h
-
-/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/test.h
+string.h
+-
+assert.h
+-
 
