@@ -26,12 +26,12 @@ int main() {
     int total = sum(p, p+7);
     printf("the sum is %d \n", total );
 
-
+    printf("the size of  pointer %lu \n", sizeof(char*));
     return 0;
 }
 
 void test1(const int arr[] ){
-    arr[0] += 1
+//    arr[0] += 1
 }
 
 
