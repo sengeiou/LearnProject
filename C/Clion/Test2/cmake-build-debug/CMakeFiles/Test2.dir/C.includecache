@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+assert.h
+-
+
