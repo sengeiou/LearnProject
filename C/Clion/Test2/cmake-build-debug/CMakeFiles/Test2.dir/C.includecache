@@ -6,21 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/ex16.c
-stdlib.h
--
+/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.c
 stdio.h
 -
-string.h
--
-assert.h
--
-
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/ex16.h
-
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/main.c
-stdio.h
--
-ex16.h
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/ex16.h
 

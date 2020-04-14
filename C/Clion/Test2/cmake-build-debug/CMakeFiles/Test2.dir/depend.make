@@ -5,4 +5,7 @@ CMakeFiles/Test2.dir/ex16.c.o: ../ex16.c
 
 CMakeFiles/Test2.dir/main.c.o: ../ex16.h
 CMakeFiles/Test2.dir/main.c.o: ../main.c
+CMakeFiles/Test2.dir/main.c.o: ../string.h
+
+CMakeFiles/Test2.dir/string.c.o: ../string.c
 

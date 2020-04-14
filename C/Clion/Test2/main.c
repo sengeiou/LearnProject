@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "ex16.h"
+#include "string.h"
 #define VALUE 10
 
 #define MAX(a,b) ((a > b) ? (a) : (b))
@@ -39,8 +40,8 @@ int main() {
 //
 //    printf("the size of  pointer %lu \n", sizeof(char*));
 
-    test();
-
+//    test();
+    string_main();
     return 0;
 }
 

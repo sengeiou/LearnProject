@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Test2.dir/ex16.c.o"
   "CMakeFiles/Test2.dir/main.c.o"
+  "CMakeFiles/Test2.dir/string.c.o"
   "Test2.exe"
   "Test2.pdb"
   "libTest2.dll.a"

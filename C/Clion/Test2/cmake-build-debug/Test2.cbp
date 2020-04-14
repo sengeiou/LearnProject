@@ -83,6 +83,12 @@
 		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/main.c">
 			<Option target="Test2"/>
 		</Unit>
+		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.c">
+			<Option target="Test2"/>
+		</Unit>
+		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.h">
+			<Option target="Test2"/>
+		</Unit>
 		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
