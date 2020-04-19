@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2
+CMAKE_SOURCE_DIR = /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-de
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ Test2: cmake_check_build_system
 Test2/fast:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/build
 .PHONY : Test2/fast
+
+const01/const01.o: const01/const01.c.o
+
+.PHONY : const01/const01.o
+
+# target to build an object file
+const01/const01.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.o
+.PHONY : const01/const01.c.o
+
+const01/const01.i: const01/const01.c.i
+
+.PHONY : const01/const01.i
+
+# target to preprocess a source file
+const01/const01.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.i
+.PHONY : const01/const01.c.i
+
+const01/const01.s: const01/const01.c.s
+
+.PHONY : const01/const01.s
+
+# target to generate assembly for a file
+const01/const01.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.s
+.PHONY : const01/const01.c.s
 
 ex16.o: ex16.c.o
 
@@ -177,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/main.c.s
 .PHONY : main.c.s
 
+memory/memory.o: memory/memory.c.o
+
+.PHONY : memory/memory.o
+
+# target to build an object file
+memory/memory.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.o
+.PHONY : memory/memory.c.o
+
+memory/memory.i: memory/memory.c.i
+
+.PHONY : memory/memory.i
+
+# target to preprocess a source file
+memory/memory.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.i
+.PHONY : memory/memory.c.i
+
+memory/memory.s: memory/memory.c.s
+
+.PHONY : memory/memory.s
+
+# target to generate assembly for a file
+memory/memory.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.s
+.PHONY : memory/memory.c.s
+
 string.o: string.c.o
 
 .PHONY : string.o
@@ -211,14 +265,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Test2"
 	@echo "... edit_cache"
+	@echo "... Test2"
+	@echo "... const01/const01.o"
+	@echo "... const01/const01.i"
+	@echo "... const01/const01.s"
 	@echo "... ex16.o"
 	@echo "... ex16.i"
 	@echo "... ex16.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... memory/memory.o"
+	@echo "... memory/memory.i"
+	@echo "... memory/memory.s"
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"

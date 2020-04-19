@@ -4,11 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/ex16.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/ex16.c.o"
-  "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/main.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/main.c.o"
-  "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/string.c.o"
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/const01/const01.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/const01/const01.c.o"
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/ex16.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/ex16.c.o"
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/main.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/main.c.o"
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/memory/memory.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/memory/memory.c.o"
+  "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/string.c" "/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/string.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

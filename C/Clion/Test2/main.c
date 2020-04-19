@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "ex16.h"
 #include "string.h"
+
+#include "const01/const01.h"
+#include "memory/memory.h"
+
 #define VALUE 10
 
 #define MAX(a,b) ((a > b) ? (a) : (b))
@@ -15,6 +19,14 @@ int sum(int *start ,int *end){
 
 int getArraySize(int arr[]){
     printf("the size of arr %d \n", sizeof arr);
+}
+
+int calcLen (char* c){
+    char *p = c;
+    while ( *c != "\0"){
+        c++;
+    }
+    return c - p;
 }
 int main() {
 //    printf("Hello, World!\n");
@@ -41,13 +53,18 @@ int main() {
 //    printf("the size of  pointer %lu \n", sizeof(char*));
 
 //    test();
-    string_main();
+//    string_main();
+
+//    char c[] = "cocoa";
+//    int result = calcLen(c);
+//    printf("the len is %d", result);
+
+
+    memory_main();
+
     return 0;
 }
 
-void test1(const int arr[] ){
-//    arr[0] += 1
-}
 
 
 

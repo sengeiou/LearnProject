@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.c
+/Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/memory/memory.c
 stdio.h
+-
+stdlib.h
+-
+string.h
 -
 
