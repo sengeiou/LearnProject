@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2
+CMAKE_SOURCE_DIR = /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cma
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/Administrator/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/junshen/Documents/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ Test2: cmake_check_build_system
 Test2/fast:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/build
 .PHONY : Test2/fast
+
+advanced/string01.o: advanced/string01.c.o
+
+.PHONY : advanced/string01.o
+
+# target to build an object file
+advanced/string01.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.o
+.PHONY : advanced/string01.c.o
+
+advanced/string01.i: advanced/string01.c.i
+
+.PHONY : advanced/string01.i
+
+# target to preprocess a source file
+advanced/string01.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.i
+.PHONY : advanced/string01.c.i
+
+advanced/string01.s: advanced/string01.c.s
+
+.PHONY : advanced/string01.s
+
+# target to generate assembly for a file
+advanced/string01.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.s
+.PHONY : advanced/string01.c.s
 
 const01/const01.o: const01/const01.c.o
 
@@ -265,8 +292,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... Test2"
+	@echo "... edit_cache"
+	@echo "... advanced/string01.o"
+	@echo "... advanced/string01.i"
+	@echo "... advanced/string01.s"
 	@echo "... const01/const01.o"
 	@echo "... const01/const01.i"
 	@echo "... const01/const01.s"

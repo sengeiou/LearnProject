@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "ex16.h"
 #include "string.h"
-
+#include "advanced/string01.h"
+#include <stdlib.h>
 #include "const01/const01.h"
 #include "memory/memory.h"
 
@@ -55,14 +56,17 @@ int main() {
 //    test();
 //    string_main();
 
+    string01_main();
+
+    return EXIT_SUCCESS;
+
+
 //    char c[] = "cocoa";
 //    int result = calcLen(c);
 //    printf("the len is %d", result);
 
 
     memory_main();
-
-    return 0;
 }
 
 
