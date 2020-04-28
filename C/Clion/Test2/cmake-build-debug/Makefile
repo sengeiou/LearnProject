@@ -150,6 +150,33 @@ advanced/string01.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.s
 .PHONY : advanced/string01.c.s
 
+const01/const01.o: const01/const01.c.o
+
+.PHONY : const01/const01.o
+
+# target to build an object file
+const01/const01.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.o
+.PHONY : const01/const01.c.o
+
+const01/const01.i: const01/const01.c.i
+
+.PHONY : const01/const01.i
+
+# target to preprocess a source file
+const01/const01.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.i
+.PHONY : const01/const01.c.i
+
+const01/const01.s: const01/const01.c.s
+
+.PHONY : const01/const01.s
+
+# target to generate assembly for a file
+const01/const01.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/const01/const01.c.s
+.PHONY : const01/const01.c.s
+
 ex16.o: ex16.c.o
 
 .PHONY : ex16.o
@@ -204,6 +231,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/main.c.s
 .PHONY : main.c.s
 
+memory/memory.o: memory/memory.c.o
+
+.PHONY : memory/memory.o
+
+# target to build an object file
+memory/memory.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.o
+.PHONY : memory/memory.c.o
+
+memory/memory.i: memory/memory.c.i
+
+.PHONY : memory/memory.i
+
+# target to preprocess a source file
+memory/memory.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.i
+.PHONY : memory/memory.c.i
+
+memory/memory.s: memory/memory.c.s
+
+.PHONY : memory/memory.s
+
+# target to generate assembly for a file
+memory/memory.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.s
+.PHONY : memory/memory.c.s
+
 string.o: string.c.o
 
 .PHONY : string.o
@@ -243,12 +297,18 @@ help:
 	@echo "... advanced/string01.o"
 	@echo "... advanced/string01.i"
 	@echo "... advanced/string01.s"
+	@echo "... const01/const01.o"
+	@echo "... const01/const01.i"
+	@echo "... const01/const01.s"
 	@echo "... ex16.o"
 	@echo "... ex16.i"
 	@echo "... ex16.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... memory/memory.o"
+	@echo "... memory/memory.i"
+	@echo "... memory/memory.s"
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"

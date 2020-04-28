@@ -2,8 +2,9 @@
 #include "ex16.h"
 #include "string.h"
 #include "advanced/string01.h"
-#include <string.h>
 #include <stdlib.h>
+#include "const01/const01.h"
+#include "memory/memory.h"
 
 #define VALUE 10
 
@@ -19,6 +20,14 @@ int sum(int *start ,int *end){
 
 int getArraySize(int arr[]){
     printf("the size of arr %d \n", sizeof arr);
+}
+
+int calcLen (char* c){
+    char *p = c;
+    while ( *c != "\0"){
+        c++;
+    }
+    return c - p;
 }
 int main() {
 //    printf("Hello, World!\n");
@@ -46,14 +55,20 @@ int main() {
 
 //    test();
 //    string_main();
+
     string01_main();
 
     return EXIT_SUCCESS;
+
+
+//    char c[] = "cocoa";
+//    int result = calcLen(c);
+//    printf("the len is %d", result);
+
+
+    memory_main();
 }
 
-void test1(const int arr[] ){
-//    arr[0] += 1
-}
 
 
 
