@@ -3,6 +3,7 @@ package com.cocoa.testjetpack
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.ArrayMap
 import androidx.databinding.ViewDataBinding
 import com.cocoa.testjetpack.bean.Handler
 import com.cocoa.testjetpack.bean.User
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() ,Runnable{
         binding?.handler = Handler()
         setContentView(binding?.root)
         Thread(this).start()
+
+        val array = ArrayMap<String,String>()
+        array.put("123","123123")
+
     }
 
     override fun run() {

@@ -123,6 +123,33 @@ Test2/fast:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/build
 .PHONY : Test2/fast
 
+advanced/string01.o: advanced/string01.c.o
+
+.PHONY : advanced/string01.o
+
+# target to build an object file
+advanced/string01.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.o
+.PHONY : advanced/string01.c.o
+
+advanced/string01.i: advanced/string01.c.i
+
+.PHONY : advanced/string01.i
+
+# target to preprocess a source file
+advanced/string01.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.i
+.PHONY : advanced/string01.c.i
+
+advanced/string01.s: advanced/string01.c.s
+
+.PHONY : advanced/string01.s
+
+# target to generate assembly for a file
+advanced/string01.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/advanced/string01.c.s
+.PHONY : advanced/string01.c.s
+
 ex16.o: ex16.c.o
 
 .PHONY : ex16.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Test2"
 	@echo "... edit_cache"
+	@echo "... advanced/string01.o"
+	@echo "... advanced/string01.i"
+	@echo "... advanced/string01.s"
 	@echo "... ex16.o"
 	@echo "... ex16.i"
 	@echo "... ex16.s"

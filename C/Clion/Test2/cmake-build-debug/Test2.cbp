@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/advanced/string01.c">
+			<Option target="Test2"/>
+		</Unit>
+		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/advanced/string01.h">
+			<Option target="Test2"/>
+		</Unit>
 		<Unit filename="/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/ex16.c">
 			<Option target="Test2"/>
 		</Unit>

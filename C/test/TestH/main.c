@@ -4,7 +4,11 @@
 #include "index.h"
 
 int main(){
-    printf("hahahah");
-    Menu();
+    // printf("hahahah");
+    // Menu();
+
+    char* p = "Heell";
+    p[1] = 'a';
+
     return EXIT_SUCCESS;
 }
