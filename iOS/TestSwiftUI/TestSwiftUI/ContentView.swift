@@ -10,9 +10,45 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        ZStack {
+            BackCardView()
+                .background(Color("card4"))
+                .cornerRadius(20)
+                .shadow(radius: 20)
+                .offset(x: 0.0, y: -40.0)
+                .scaleEffect(0.9)
+                .rotationEffect(.degrees(10))
+                .rotation3DEffect(Angle(degrees: 10), axis: (x: 10.0, y: 5.0, z: 0.0))
+                .blendMode(.hardLight)
+            
+            
+            BackCardView()
+                .background(Color("card3"))
+                .cornerRadius(20)
+                .shadow(radius: 20)
+                .offset(x: 0.0, y: -20.0)
+                .scaleEffect(0.95)
+                .rotationEffect(.degrees(5))
+                .rotation3DEffect(Angle(degrees: 5), axis: (x: 10.0, y: 0.0, z: 0.0))
+                .blendMode(.hardLight)
+            
+            CardView()
+                .blendMode(.hardLight)
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+struct CardView : View {
+    var body: some View {
         VStack {
             HStack {
-                VStack {
+                VStack(alignment: .leading){
                     Text("Hello, World!")
                         .font(.title)
                         .foregroundColor(Color.white)
@@ -31,8 +67,12 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct BackCardView: View {
+    var body: some View {
+        VStack {
+            Text("123").frame(width: 340, height: 220, alignment: .center)
+        }.frame(width: 340.0, height: 220.0)
+            
+            
     }
 }
