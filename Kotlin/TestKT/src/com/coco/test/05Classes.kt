@@ -15,6 +15,11 @@ open class Base(val name : String){
 class Derived (name : String , val lastName : String)
     :Base(name.capitalize().also { println("Argument for base ${it}") }){
 
+
+//    constructor(age : Int){
+//
+//    }
+
     init {
         println("Initializing Derived")
     }
@@ -22,14 +27,6 @@ class Derived (name : String , val lastName : String)
     override val size: Int
         = (super.size + lastName.length).also { println("Initializing size in Derived ${it}") }
 }
-
-
-
-
-
-
-
-
 fun main() {
     var p = Person("cocoa")
     println(p)

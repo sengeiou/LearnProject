@@ -24,7 +24,7 @@ int getArraySize(int arr[]){
 
 int calcLen (char* c){
     char *p = c;
-    while ( *c != "\0"){
+    while ( *c != '\0'){  // 注意是单引号，已经犯过错
         c++;
     }
     return c - p;
@@ -58,7 +58,12 @@ int main() {
 
     string01_main();
 
-    return EXIT_SUCCESS;
+      char* c = "Hello,world";
+      int result  = calcLen(c);
+      printf("the len is %d \n", result);
+
+
+       return EXIT_SUCCESS;
 
 
 //    char c[] = "cocoa";
