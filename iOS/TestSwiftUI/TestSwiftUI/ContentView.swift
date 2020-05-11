@@ -11,10 +11,15 @@ import SwiftUI
 struct ContentView: View {
     
     @State var show  = false
+    @State var viewState = CGSize.zero
+    @State var showCard = false
+    @State var bottomState = CGSize.zero
     
     var body: some View {
         ZStack {
             TitleView()
+                .offset(y: showCard ? -100 : 0)
+                .opacity(showCard ?  0.2 : 1)
                 .blur(radius: show ? 20 : 0)
                 .animation(.default)
 
@@ -23,6 +28,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .shadow(radius: 20)
                 .offset(x: 0.0, y: show ? -250 : -40.0)
+                .offset(x: viewState.width, y: viewState.height)
                 .scaleEffect(0.9)
                 .rotationEffect(.degrees(show ? 0 : 10))
                 .rotation3DEffect(Angle(degrees: show ? 0 : 10), axis: (x: 10.0, y: 5.0, z: 0.0))
@@ -35,6 +41,7 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .shadow(radius: 20)
                 .offset(x: 0.0, y: show ? -130 : -20.0)
+                .offset(x: viewState.width, y: viewState.height)
                 .scaleEffect(0.95)
                 .rotationEffect(.degrees(show ?0:5))
                 .rotation3DEffect(Angle(degrees: show ? 0 : 5), axis: (x: 10.0, y: 0.0, z: 0.0))
@@ -43,16 +50,49 @@ struct ContentView: View {
 
             
             CardView()
+                .background(Color.black)
+                .frame(width: showCard ? 375 : 340.0, height: 220.0)
+                .cornerRadius(showCard ? 30 : 20)
+                .offset(x: viewState.width, y: viewState.height)
                 .blendMode(.hardLight)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0))
                 .onTapGesture {
-                    self.show.toggle()
+                    self.showCard.toggle()
+                    
             }
+            .gesture(DragGesture().onChanged{ value in
+                self.viewState = value.translation
+                self.show = true
+            }.onEnded{ value in
+                self.viewState = .zero
+                self.show = false
+            })
+//            Text("\(bottomState.height)").offset(y: -300)
+            
+//            Image(systemName: "gear").offset(y: -300)
+            
             
             BottomCardView()
+                .offset(x: 0.0, y: showCard ? 360 : 1000)
+                .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
-                .animation(.default)
+                .animation(.linear)
+                .gesture(DragGesture().onChanged{value in
+                    self.bottomState = value.translation
+                    }
+                .onEnded{value in
+                    if(self.bottomState.height > 100){
+                        self.showCard = false
+                    }
+                    
+                    if(self.bottomState.height < -100){
+                        self.bottomState.height = -200
+                    }else{
+                        self.bottomState = .zero
+                    }
+                }
+                )
             
-                
         }
     }
 }
@@ -80,9 +120,7 @@ struct CardView : View {
             Image("Card1").resizable().aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 110 , alignment: .top)
         }
-        .background(Color.black)
-        .frame(width: 340.0, height: 220.0)
-        .cornerRadius(20)
+        
     }
 }
 
@@ -127,6 +165,6 @@ struct BottomCardView: View {
         .background(Color.white)
         .cornerRadius(30.0)
         .shadow(radius: 20)
-        .offset(x: 0.0, y: 500.0)
+        
     }
 }
