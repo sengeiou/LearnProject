@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/main.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/main.c.o"
   "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/memory/memory.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/memory/memory.c.o"
   "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/string.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/string.c.o"
+  "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/variable/test1.c" "/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/variable/test1.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

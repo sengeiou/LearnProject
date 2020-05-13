@@ -13,8 +13,11 @@ CMakeFiles/Test2.dir/main.c.o: ../ex16.h
 CMakeFiles/Test2.dir/main.c.o: ../main.c
 CMakeFiles/Test2.dir/main.c.o: ../memory/memory.h
 CMakeFiles/Test2.dir/main.c.o: ../string.h
+CMakeFiles/Test2.dir/main.c.o: ../variable/test1.h
 
 CMakeFiles/Test2.dir/memory/memory.c.o: ../memory/memory.c
 
 CMakeFiles/Test2.dir/string.c.o: ../string.c
+
+CMakeFiles/Test2.dir/variable/test1.c.o: ../variable/test1.c
 

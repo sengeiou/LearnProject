@@ -285,6 +285,33 @@ string.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/string.c.s
 .PHONY : string.c.s
 
+variable/test1.o: variable/test1.c.o
+
+.PHONY : variable/test1.o
+
+# target to build an object file
+variable/test1.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/variable/test1.c.o
+.PHONY : variable/test1.c.o
+
+variable/test1.i: variable/test1.c.i
+
+.PHONY : variable/test1.i
+
+# target to preprocess a source file
+variable/test1.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/variable/test1.c.i
+.PHONY : variable/test1.c.i
+
+variable/test1.s: variable/test1.c.s
+
+.PHONY : variable/test1.s
+
+# target to generate assembly for a file
+variable/test1.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/variable/test1.c.s
+.PHONY : variable/test1.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +339,9 @@ help:
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"
+	@echo "... variable/test1.o"
+	@echo "... variable/test1.i"
+	@echo "... variable/test1.s"
 .PHONY : help
 
 

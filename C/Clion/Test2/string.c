@@ -8,7 +8,7 @@
 void string_main() {
     char *name1 = "cocoa";
     char *name2 = "cocoa";
-    const char *name3 = "cocoa=name3";
+    const char *name3 = "cocoa123";
     printf("the pointer name1 = %p \n", name1);
     printf("the pointer name2 = %p \n", name2);
     printf("the char of name1 %c \n", *name1);

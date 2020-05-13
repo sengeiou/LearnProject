@@ -5,30 +5,36 @@
 #include <stdlib.h>
 #include "const01/const01.h"
 #include "memory/memory.h"
+#include "variable/test1.h"
 
 #define VALUE 10
 
-#define MAX(a,b) ((a > b) ? (a) : (b))
-int sum(int *start ,int *end){
+#define MAX(a, b) ((a > b) ? (a) : (b))
+
+extern int  global_b;
+
+
+int sum(int *start, int *end) {
     int total = 0;
-    while( start < end){
-        total += *start ;
-        start ++;
+    while (start < end) {
+        total += *start;
+        start++;
     }
     return total;
 }
 
-int getArraySize(int arr[]){
+int getArraySize(int arr[]) {
     printf("the size of arr %d \n", sizeof arr);
 }
 
-int calcLen (char* c){
+int calcLen(char *c) {
     char *p = c;
-    while ( *c != '\0'){  // 注意是单引号，已经犯过错
+    while (*c != '\0') {  // 注意是单引号，已经犯过错
         c++;
     }
     return c - p;
 }
+
 int main() {
 //    printf("Hello, World!\n");
 //    printf("this is ten %d \n", VALUE);
@@ -58,12 +64,16 @@ int main() {
 
     string01_main();
 
-      char* c = "Hello,world";
-      int result  = calcLen(c);
-      printf("the len is %d \n", result);
+
+    char *c = "Hello,world";
+    int result = calcLen(c);
+    printf("the len is %d \n", result);
 
 
-       return EXIT_SUCCESS;
+    test1_main();
+    printf("the global_b used at main.c  global_b = %d \n",global_b);
+
+    return EXIT_SUCCESS;
 
 
 //    char c[] = "cocoa";
