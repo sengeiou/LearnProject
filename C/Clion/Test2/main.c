@@ -73,15 +73,13 @@ int main() {
     test1_main();
     printf("the global_b used at main.c  global_b = %d \n",global_b);
 
-    return EXIT_SUCCESS;
-
-
-//    char c[] = "cocoa";
-//    int result = calcLen(c);
-//    printf("the len is %d", result);
 
 
     memory_main();
+
+    printf("zhengenguo: woshishabi \n");
+
+    return EXIT_SUCCESS;
 }
 
 
