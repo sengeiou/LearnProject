@@ -1,19 +1,27 @@
-
 import React, { Component } from "react";
-import logo from "src/pages/react-multi.png"
-export default class Nav extends Component {
+import logo from "src/pages/react-multi.png";
 
-	render() {
-		return (
-			<div className="menu columns">
-				<div className="column is-2 logo"><img  src={logo} /></div>
-				<div className="columns column nav is-8">
-					<div className="nav-item"><a href= "/">Home</a></div>
-					<div className="nav-item"><a href= "/todo">Todo</a></div>
-					<div className="nav-item"><a href= "https://github.com/leinov/webpack-react-multi-page/">Github</a></div>
-				</div>
-				<div className="column is-2"></div>
-	    </div>
-		);
-	}
+function Test(props) {
+  return <h1>Hello world {props.name}</h1>;
+}
+
+function ListView() {
+  const numbers = [1, 2, 3, 4, 5];
+  const listItems = numbers.map((number) => <li key={number}>{number * number}</li>);
+  return listItems;
+}
+
+export default class Nav extends Component {
+  render() {
+    return (
+      <div className="menu columns">
+        <div className="column is-2 logo">
+          <img src={logo} />
+        </div>
+        <Test name="cocoa"></Test>
+        <ListView></ListView>
+        <div className="column is-2"></div>
+      </div>
+    );
+  }
 }
