@@ -11,34 +11,49 @@ import SwiftUI
 struct UpdateList: View {
     var body: some View {
         NavigationView {
-            List(updateList) { item in
-                
-                NavigationLink(destination: Text("123")) {
-                    
-                    HStack(alignment: .top) {
+            List {
+                ForEach(updateList) { item in
+                    NavigationLink(destination: UpdateDetailView(update: item)) {
                         
-                        Image(item.image)
-                            .resizable()
-                            .frame(width: 100 , height : 100)
-                            .aspectRatio(contentMode: .fit)
-                            .background(Color.black)
-                            .cornerRadius(20)
+                        HStack(alignment: .top) {
+                            
+                            Image(item.image)
+                                .resizable()
+                                .frame(width: 100 , height : 100)
+                                .aspectRatio(contentMode: .fit)
+                                .background(Color.black)
+                                .cornerRadius(20)
 
-                        
-                        VStack(alignment: .leading) {
-                            Text(item.title)
-                                .font(.system(size: 20, weight: .bold, design: .default))
-                            Text(item.text)
-                                .font(.system(.subheadline, design: .default))
-                                .lineLimit(2)
+                            
+                            VStack(alignment: .leading) {
+                                Text(item.title)
+                                    .font(.system(size: 20, weight: .bold, design: .default))
+                                Text(item.text)
+                                    .font(.system(.subheadline, design: .default))
+                                    .lineLimit(2)
+                            }
                         }
+                        
                     }
+                }
+                .onDelete{ index in
                     
                 }
             }
             .navigationBarTitle(
                 Text("title")
             )
+            .navigationBarItems(leading: Button(action: {
+                
+            }) {
+                Text("add item")
+                    .font(.system(size: 20, weight: .bold, design: .default))
+            }, trailing: Button(action: {
+                
+            }) {
+                Text("del item")
+            })
+            
         }
     }
 }
