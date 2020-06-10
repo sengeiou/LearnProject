@@ -15,12 +15,8 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="menu columns">
-        <div className="column is-2 logo">
           <img src={logo} />
-        </div>
-        <Test name="cocoa"></Test>
-        <ListView></ListView>
-        <div className="column is-2"></div>
+          <div>Learn React</div>
       </div>
     );
   }
