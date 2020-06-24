@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/variable/test1.c
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/advanced/string01.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/const01/const01.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/ex16.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/main.c
 stdio.h
 -
+ex16.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/ex16.h
+string.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.h
+advanced/string01.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/advanced/string01.h
+stdlib.h
+-
+const01/const01.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/const01/const01.h
+memory/memory.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.h
+variable/test1.h
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/variable/test1.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.h
+
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/variable/test1.h
 

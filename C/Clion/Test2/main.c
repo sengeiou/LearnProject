@@ -79,6 +79,11 @@ int main() {
 
     printf("zhengenguo: woshishabi \n");
 
+    double* d = malloc(sizeof(double));
+    *d = 12.1;
+    free(d);
+
+
     return EXIT_SUCCESS;
 }
 
