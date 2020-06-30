@@ -1,0 +1,6 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="index"><text>Hello world!</text>
+        <button catchtap="onClick">{{isToggleOn ? 'on' : 'off'}}</button>
+        <welcome compid="{{$compid__23}}"></welcome><text>{{anonymousState__temp}}</text>
+    </view>
+</block>
