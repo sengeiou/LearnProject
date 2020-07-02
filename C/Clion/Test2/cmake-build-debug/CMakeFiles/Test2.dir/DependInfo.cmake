@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/ex16.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/ex16.c.o"
   "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/main.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/main.c.o"
   "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/memory/memory.c.o"
+  "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/pretreatment/pretreatment.c.o"
   "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/string.c.o"
   "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/variable/test1.c" "/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/cmake-build-debug/CMakeFiles/Test2.dir/variable/test1.c.o"
   )

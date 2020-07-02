@@ -258,6 +258,33 @@ memory/memory.c.s:
 	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/memory/memory.c.s
 .PHONY : memory/memory.c.s
 
+pretreatment/pretreatment.o: pretreatment/pretreatment.c.o
+
+.PHONY : pretreatment/pretreatment.o
+
+# target to build an object file
+pretreatment/pretreatment.c.o:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/pretreatment/pretreatment.c.o
+.PHONY : pretreatment/pretreatment.c.o
+
+pretreatment/pretreatment.i: pretreatment/pretreatment.c.i
+
+.PHONY : pretreatment/pretreatment.i
+
+# target to preprocess a source file
+pretreatment/pretreatment.c.i:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/pretreatment/pretreatment.c.i
+.PHONY : pretreatment/pretreatment.c.i
+
+pretreatment/pretreatment.s: pretreatment/pretreatment.c.s
+
+.PHONY : pretreatment/pretreatment.s
+
+# target to generate assembly for a file
+pretreatment/pretreatment.c.s:
+	$(MAKE) -f CMakeFiles/Test2.dir/build.make CMakeFiles/Test2.dir/pretreatment/pretreatment.c.s
+.PHONY : pretreatment/pretreatment.c.s
+
 string.o: string.c.o
 
 .PHONY : string.o
@@ -336,6 +363,9 @@ help:
 	@echo "... memory/memory.o"
 	@echo "... memory/memory.i"
 	@echo "... memory/memory.s"
+	@echo "... pretreatment/pretreatment.o"
+	@echo "... pretreatment/pretreatment.i"
+	@echo "... pretreatment/pretreatment.s"
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"

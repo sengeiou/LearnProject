@@ -13,10 +13,13 @@ CMakeFiles/Test2.dir/main.c.o
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/ex16.h
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/main.c
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.h
+ /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.h
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.h
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/variable/test1.h
 CMakeFiles/Test2.dir/memory/memory.c.o
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.c
+CMakeFiles/Test2.dir/pretreatment/pretreatment.c.o
+ /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.c
 CMakeFiles/Test2.dir/string.c.o
  /cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.c
 CMakeFiles/Test2.dir/variable/test1.c.o

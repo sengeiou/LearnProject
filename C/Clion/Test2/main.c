@@ -6,6 +6,7 @@
 #include "const01/const01.h"
 #include "memory/memory.h"
 #include "variable/test1.h"
+#include "pretreatment/pretreatment.h"
 
 #define VALUE 10
 
@@ -62,7 +63,7 @@ int main() {
 //    test();
 //    string_main();
 
-    string01_main();
+//    string01_main();
 
 
     char *c = "Hello,world";
@@ -74,15 +75,9 @@ int main() {
     printf("the global_b used at main.c  global_b = %d \n",global_b);
 
 
-
     memory_main();
 
-    printf("zhengenguo: woshishabi \n");
-
-    double* d = malloc(sizeof(double));
-    *d = 12.1;
-    free(d);
-
+    pre_main();
 
     return EXIT_SUCCESS;
 }

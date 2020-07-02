@@ -101,6 +101,12 @@
 		<Unit filename="/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/memory/memory.h">
 			<Option target="Test2"/>
 		</Unit>
+		<Unit filename="/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.c">
+			<Option target="Test2"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.h">
+			<Option target="Test2"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/string.c">
 			<Option target="Test2"/>
 		</Unit>
