@@ -8,16 +8,26 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
     
     var list : Array<Int?> = []
     
     @Binding var showProfile : Bool
     @State var showUpdate : Bool = false
+    var width = UIScreen.main.bounds.width
+    
+    
 
     var body: some View {
         
        VStack{
+        
+        Text("--")
+            .background(Color.red)
+            .frame(width: 100, height: 100)
+        
         HStack(alignment: .center) {
                 Text("Watching")
                     .font(.system(size: 20, weight: .bold))
@@ -33,14 +43,25 @@ struct HomeView: View {
                     .clipShape(Circle())
                         .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 0)
                 }
-                
                 .sheet(isPresented: $showUpdate){
-                    ContentView()
+                    UpdateList()
                 }
                 
             }.padding(.top,100)
             .padding(.horizontal, 20)
-         
+        
+        HStack {
+            RingView(width: 100, height: 100, precent: 90, show: $showUpdate)
+                .animation(Animation.easeInOut.delay(0.3))
+            
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(100)
+        .modifier(ShadowModifier())
+        
+        
+        
             
         ScrollView(.horizontal, showsIndicators: false) {
             HStack (spacing: 30) {
@@ -90,6 +111,9 @@ struct SecctionView: View {
         .cornerRadius(20)
     }
 }
+
+
+
 
 
 struct Section : Identifiable{

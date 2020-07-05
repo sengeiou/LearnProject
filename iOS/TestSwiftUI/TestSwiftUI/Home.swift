@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct Home: View {
     
     @State var showProfile = false
@@ -15,7 +16,7 @@ struct Home: View {
     
     var body: some View {
         ZStack {
-            Color.gray.edgesIgnoringSafeArea(.all)
+//            Color.gray.edgesIgnoringSafeArea(.all)
             
             HomeView(showProfile: $showProfile)
             .padding(.top,44)
@@ -37,9 +38,9 @@ struct Home: View {
                 .onTapGesture {
                     self.showProfile.toggle()
             }
+         
         }
-            
-
+        
     }
 }
 

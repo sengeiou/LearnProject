@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		8D28AC5C247D4D22008C3426 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC5B247D4D21008C3426 /* HomeView.swift */; };
 		8D28AC5E248699F3008C3426 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC5D248699F3008C3426 /* UpdateList.swift */; };
 		8D28AC6024894367008C3426 /* UpdateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC5F24894367008C3426 /* UpdateDetailView.swift */; };
+		8D28AC62248A9967008C3426 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC61248A9967008C3426 /* UpdateStore.swift */; };
+		8D28AC64248AA7F9008C3426 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC63248AA7F9008C3426 /* TabBar.swift */; };
+		8D28AC66248D0D58008C3426 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D28AC65248D0D58008C3426 /* RingView.swift */; };
 		8D33760C246C258500EEEEBE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33760B246C258500EEEEBE /* Home.swift */; };
 		8D93F893244C6C9800DC870D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93F892244C6C9800DC870D /* AppDelegate.swift */; };
 		8D93F895244C6C9800DC870D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93F894244C6C9800DC870D /* SceneDelegate.swift */; };
@@ -21,6 +24,10 @@
 		8D93F8A2244C6C9E00DC870D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D93F8A0244C6C9E00DC870D /* LaunchScreen.storyboard */; };
 		8D93F8AD244C6C9E00DC870D /* TestSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93F8AC244C6C9E00DC870D /* TestSwiftUITests.swift */; };
 		8D93F8B8244C6C9E00DC870D /* TestSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93F8B7244C6C9E00DC870D /* TestSwiftUIUITests.swift */; };
+		8DCE13A6248D4BF900985857 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8DCE13A5248D4BF900985857 /* Alamofire */; };
+		8DCE13A8248E860000985857 /* SwiftUITest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE13A7248E860000985857 /* SwiftUITest1.swift */; };
+		8DCE13AC248FBF3A00985857 /* SwiftUITest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE13AB248FBF3A00985857 /* SwiftUITest2.swift */; };
+		8DCE13AE2497A3BE00985857 /* ShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE13AD2497A3BE00985857 /* ShadowModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,9 @@
 		8D28AC5B247D4D21008C3426 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D28AC5D248699F3008C3426 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		8D28AC5F24894367008C3426 /* UpdateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailView.swift; sourceTree = "<group>"; };
+		8D28AC61248A9967008C3426 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		8D28AC63248AA7F9008C3426 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		8D28AC65248D0D58008C3426 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		8D33760B246C258500EEEEBE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		8D93F88F244C6C9800DC870D /* TestSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D93F892244C6C9800DC870D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +71,9 @@
 		8D93F8B3244C6C9E00DC870D /* TestSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D93F8B7244C6C9E00DC870D /* TestSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwiftUIUITests.swift; sourceTree = "<group>"; };
 		8D93F8B9244C6C9E00DC870D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DCE13A7248E860000985857 /* SwiftUITest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITest1.swift; sourceTree = "<group>"; };
+		8DCE13AB248FBF3A00985857 /* SwiftUITest2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITest2.swift; sourceTree = "<group>"; };
+		8DCE13AD2497A3BE00985857 /* ShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCE13A6248D4BF900985857 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +125,7 @@
 		8D93F891244C6C9800DC870D /* TestSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8D28AC61248A9967008C3426 /* UpdateStore.swift */,
 				8D93F892244C6C9800DC870D /* AppDelegate.swift */,
 				8D93F894244C6C9800DC870D /* SceneDelegate.swift */,
 				8D93F899244C6C9800DC870D /* ContentView.swift */,
@@ -124,6 +139,11 @@
 				8D93F89D244C6C9E00DC870D /* Preview Content */,
 				8D28AC5D248699F3008C3426 /* UpdateList.swift */,
 				8D28AC5F24894367008C3426 /* UpdateDetailView.swift */,
+				8D28AC63248AA7F9008C3426 /* TabBar.swift */,
+				8D28AC65248D0D58008C3426 /* RingView.swift */,
+				8DCE13A7248E860000985857 /* SwiftUITest1.swift */,
+				8DCE13AB248FBF3A00985857 /* SwiftUITest2.swift */,
+				8DCE13AD2497A3BE00985857 /* ShadowModifier.swift */,
 			);
 			path = TestSwiftUI;
 			sourceTree = "<group>";
@@ -170,6 +190,9 @@
 			dependencies = (
 			);
 			name = TestSwiftUI;
+			packageProductDependencies = (
+				8DCE13A5248D4BF900985857 /* Alamofire */,
+			);
 			productName = TestSwiftUI;
 			productReference = 8D93F88F244C6C9800DC870D /* TestSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 8D93F886244C6C9800DC870D;
+			packageReferences = (
+				8DCE13A4248D4BF900985857 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8D93F890244C6C9800DC870D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,13 +311,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCE13AE2497A3BE00985857 /* ShadowModifier.swift in Sources */,
+				8DCE13AC248FBF3A00985857 /* SwiftUITest2.swift in Sources */,
+				8DCE13A8248E860000985857 /* SwiftUITest1.swift in Sources */,
+				8D28AC66248D0D58008C3426 /* RingView.swift in Sources */,
 				8D041F572467E16E00A8768A /* MenuView.swift in Sources */,
 				8D28AC6024894367008C3426 /* UpdateDetailView.swift in Sources */,
 				8D28AC5C247D4D22008C3426 /* HomeView.swift in Sources */,
 				8D28AC5E248699F3008C3426 /* UpdateList.swift in Sources */,
 				8D93F893244C6C9800DC870D /* AppDelegate.swift in Sources */,
 				8D93F898244C6C9800DC870D /* TestSwiftUI.xcdatamodeld in Sources */,
+				8D28AC62248A9967008C3426 /* UpdateStore.swift in Sources */,
 				8D93F89A244C6C9800DC870D /* ContentView.swift in Sources */,
+				8D28AC64248AA7F9008C3426 /* TabBar.swift in Sources */,
 				8D33760C246C258500EEEEBE /* Home.swift in Sources */,
 				8D93F895244C6C9800DC870D /* SceneDelegate.swift in Sources */,
 			);
@@ -620,6 +652,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DCE13A4248D4BF900985857 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitee.com/Nealios/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DCE13A5248D4BF900985857 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DCE13A4248D4BF900985857 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8D93F896244C6C9800DC870D /* TestSwiftUI.xcdatamodeld */ = {

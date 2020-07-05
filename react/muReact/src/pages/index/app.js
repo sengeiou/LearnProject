@@ -8,6 +8,13 @@
 import React, { Component } from "react";
 import Nav from "component/nav";
 import Footer from "component/footer"
+
+class ListView extends Component{
+	render(){
+		return  <div class="test">1123123</div>
+	}
+}
+
 export default class App extends Component {
 	render() {
 		return (
@@ -15,7 +22,7 @@ export default class App extends Component {
 				<Nav />
 				<div className="main index column is-8">
 					
-
+				<ListView></ListView>
 
 				</div>
 				<Footer />
