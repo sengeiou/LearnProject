@@ -3,4 +3,4 @@ project(Test2 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Test2 main.c ex16.c ex16.h string.h string.c advanced/string01.h advanced/string01.c const01/const01.h const01/const01.c memory/memory.h memory/memory.c variable/test1.h variable/test1.c)
+add_executable(Test2 main.c ex16.c ex16.h string.h string.c advanced/string01.h advanced/string01.c const01/const01.h const01/const01.c memory/memory.h memory/memory.c variable/test1.h variable/test1.c pretreatment/pretreatment.c pretreatment/pretreatment.h)

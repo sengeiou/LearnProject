@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/Test2/variable/test1.c
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/pretreatment.c
 stdio.h
--
+/cygdrive/d/cocoa/LearnProject/C/Clion/Test2/pretreatment/stdio.h
 
