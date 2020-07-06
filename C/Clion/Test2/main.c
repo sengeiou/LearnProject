@@ -63,21 +63,21 @@ int main() {
 //    test();
 //    string_main();
 
-//    string01_main();
+    string01_main();
 
 
-    char *c = "Hello,world";
-    int result = calcLen(c);
-    printf("the len is %d \n", result);
-
-
-    test1_main();
-    printf("the global_b used at main.c  global_b = %d \n",global_b);
-
-
-    memory_main();
-
-    pre_main();
+//    char *c = "Hello,world";
+//    int result = calcLen(c);
+//    printf("the len is %d \n", result);
+//
+//
+//    test1_main();
+//    printf("the global_b used at main.c  global_b = %d \n",global_b);
+//
+//
+//    memory_main();
+//
+//    pre_main();
 
     return EXIT_SUCCESS;
 }
