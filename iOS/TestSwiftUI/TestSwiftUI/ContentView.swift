@@ -72,7 +72,7 @@ struct ContentView: View {
 //            Image(systemName: "gear").offset(y: -300)
             
             
-            BottomCardView()
+            BottomCardView(show: $showCard)
                 .offset(x: 0.0, y: showCard ? 360 : 1000)
                 .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
@@ -92,6 +92,9 @@ struct ContentView: View {
                     }
                 }
                 )
+            
+//            SwiftUITest1()
+            
             
         }
     }
@@ -150,6 +153,10 @@ struct TitleView: View {
 }
 
 struct BottomCardView: View {
+    
+    
+    @Binding var show : Bool
+    
     var body: some View {
         VStack(spacing: 20.0){
             Rectangle()
@@ -158,7 +165,11 @@ struct BottomCardView: View {
                 .opacity(0.2)
             
             Text("Swift is a fantastic way to write software, whether it’s for phones, desktops, servers, or anything else that runs code. It’s a safe, fast, and interactive programming language that combines the best in modern language thinking with wisdom from the wider Apple engineering culture and the diverse contributions from its open-source community. The compiler is optimized for performance and the language is optimized for development, without compromising on either.")
-                .font(.subheadline)
+                .font(.system(size: 18, weight: .light, design: .default))
+            
+            RingView(width: 150, height: 150, precent: 90, show: $show)
+                .animation(Animation.easeInOut.delay(0.3))
+            
             Spacer()
         }
         .padding()

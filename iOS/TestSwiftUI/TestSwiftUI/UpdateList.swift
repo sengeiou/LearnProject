@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct UpdateList: View {
+    
+    @ObservedObject var store : UpdateStore = UpdateStore()
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(updateList) { item in
+                ForEach(store.updates) { item in
                     NavigationLink(destination: UpdateDetailView(update: item)) {
                         
                         HStack(alignment: .top) {
@@ -37,7 +40,7 @@ struct UpdateList: View {
                     }
                 }
                 .onDelete{ index in
-                    
+                    self.store.updates.remove(at: index.first!)
                 }
             }
             .navigationBarTitle(
@@ -48,11 +51,7 @@ struct UpdateList: View {
             }) {
                 Text("add item")
                     .font(.system(size: 20, weight: .bold, design: .default))
-            }, trailing: Button(action: {
-                
-            }) {
-                Text("del item")
-            })
+            }, trailing: EditButton())
             
         }
     }
@@ -82,4 +81,3 @@ let updateList  = [
     Update(title: "Switf UI", text: "Welcome to the Swift community. Together we are working to build a programming language to empower everyone to turn their ideas into apps on any platform.", image: "Card2", date: "jan 1")
 
 ]
-

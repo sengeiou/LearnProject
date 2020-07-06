@@ -1,3 +1,4 @@
+
 /********************************
  * @file: home page
  * @desc: overview react multi page app
@@ -9,6 +10,10 @@ import React, { Component } from "react";
 import Nav from "component/nav";
 import Footer from "component/footer"
 
+class ListView extends Component{
+	render(){
+		return  <div class="test">1123123</div>
+	}
 
 class Clock extends Component{
 
@@ -79,6 +84,9 @@ export default class App extends Component {
 			<div>
 				<Nav />
 				<div className="main index column is-8">
+					
+				<ListView></ListView>
+
 					 <Clock />
 				</div>
 				<Footer />
