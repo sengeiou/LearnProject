@@ -38,7 +38,10 @@ function fail(){
     return new Error("something failed")
 }
 
-declare function create(o: object | null): void;
+function create(o: object | null): void{
+
+}
+
 create({name:'cocoa'})
 
 
