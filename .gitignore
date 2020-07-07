@@ -86,6 +86,9 @@ captures/
 ### C template
 # Prerequisites
 *.d
+cmake-build-debug/
+
+
 
 # Object files
 *.o

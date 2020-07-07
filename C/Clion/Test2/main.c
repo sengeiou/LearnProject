@@ -63,7 +63,7 @@ int main() {
 //    test();
 //    string_main();
 
-    string01_main();
+//    string01_main();
 
 
 //    char *c = "Hello,world";
@@ -77,7 +77,7 @@ int main() {
 //
 //    memory_main();
 //
-//    pre_main();
+    pre_main();
 
     return EXIT_SUCCESS;
 }
