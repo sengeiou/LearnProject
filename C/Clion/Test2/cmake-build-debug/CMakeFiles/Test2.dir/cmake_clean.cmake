@@ -7,9 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Test2.dir/pretreatment/pretreatment.c.o"
   "CMakeFiles/Test2.dir/string.c.o"
   "CMakeFiles/Test2.dir/variable/test1.c.o"
-  "Test2.exe"
+  "Test2"
   "Test2.pdb"
-  "libTest2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
