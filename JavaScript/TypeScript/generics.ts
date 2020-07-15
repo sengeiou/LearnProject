@@ -22,17 +22,69 @@ console.log(typeof out3);
 
 
 
-interface Logger{
-    name : string
-}
+// interface Logger{
+//     name : string
+// }
 
-function doLog<T extends Logger>( log : T ) : T{
-    console.log(log.name);
-    return log;
-}
+// function doLog<T extends Logger>( log : T ) : T{
+//     console.log(log.name);
+//     return log;
+// }
 
-doLog({name:'cocoa',age:123});
+// doLog({name:'cocoa',age:123});
 
 
 //在泛型里使用类类型  没看懂啊！！！
+
+
+function test<T>(t: T):T{
+    return t
+}
+
+
+let t1: <T>(t: T) => T = test;
+
+let myIdentity: <T>(arg: T) => T = test;
+
+
+// 泛型接口
+
+interface ITest{
+    <T>(arg: T): T
+}
+
+
+var t2 : ITest = test
+
+
+
+// 泛型类
+
+class GenericNumber<T>{
+
+    test(t: T){
+        console.log(t);
+    }
+
+}
+
+let g1 = new GenericNumber<Number>()
+g1.test(1123)
+// g1.test("12312312")   //error
+
+
+
+
+//在泛型约束中使用类型参数
+function gerericsTypeParams<T,K>(obj : T ,key : K){
+        
+}
+
+
+
+
+
+
+
+
 
