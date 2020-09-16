@@ -28,8 +28,9 @@ fun main() {
     println("${indexResult}")
 
 
-
-
+    var mutableList  = mutableListOf<String>("11", "22", "3", "444")
+    mutableList.sort()  // sort在原来的集合上排序
+    mutableList.sorted()  // sorted 返回新的排序集合
 
 
 }
