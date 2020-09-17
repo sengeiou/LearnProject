@@ -25,4 +25,4 @@ add_executable(Test2
     ex16.h
     main.c
     string.c
-    string.h jiqiao/jiqiao.c jiqiao/jiqiao.h)
+    string.h jiqiao/jiqiao.c jiqiao/jiqiao.h memory/test.h memory/test.c)

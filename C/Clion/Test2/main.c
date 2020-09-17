@@ -75,11 +75,11 @@ int main() {
 //    printf("the global_b used at main.c  global_b = %d \n",global_b);
 //
 //
-//    memory_main();
+    memory_main();
 //
 //    pre_main();
 
-    jiqiao_main();
+//    jiqiao_main();
 
     return EXIT_SUCCESS;
 }

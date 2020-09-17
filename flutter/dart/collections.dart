@@ -3,6 +3,10 @@ void main(){
 
     List list1 = [1,2,3];
 
+    var list3 = List<int>();
+    list3.add(11);
+    print(list3);
+
     var list2 = new List();
     list2.add(1);
 
@@ -27,16 +31,22 @@ void main(){
     print(list2.join("--"));
 
 
-    var set  = new Set();
+    var set  = Set<int>();
     set.add(1);
     set.add(1);
     set.add(3);
     set.add(4);
     set.add(5);
 
+
+
     print("the set type is ${set.runtimeType}");
 
     print(set);
+
+    var set2 = {1,2,3};
+
+    print(set2);
 
     var m = {
       'age': 12

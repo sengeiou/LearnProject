@@ -6,3 +6,7 @@
 #define TEST2_TEST_H
 
 #endif //TEST2_TEST_H
+
+void testGrobal();
+
+
