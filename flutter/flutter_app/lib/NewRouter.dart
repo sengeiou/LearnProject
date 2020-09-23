@@ -34,6 +34,18 @@ class _CounterWidgetState extends State<CounterWidget> {
     });
   }
 
+  void closeAndSend() {
+    var gifts = {
+      // Key:    Value
+      'name': 'cocoa',
+      'age': '11'
+    };
+
+    Navigator.pop(context, gifts);
+    // Navigator.
+  }
+
+
   @override
   void initState() {
     super.initState();
@@ -47,7 +59,6 @@ class _CounterWidgetState extends State<CounterWidget> {
             padding: EdgeInsets.all(10.0),
             child: Column(
       verticalDirection: VerticalDirection.up,
-
       children: [
         Image(
             image: NetworkImage(
@@ -60,6 +71,10 @@ class _CounterWidgetState extends State<CounterWidget> {
           textAlign: TextAlign.center,
           maxLines: 1,
           style: TextStyle(color: Colors.red),
+        ),
+        FlatButton(
+          onPressed: closeAndSend,
+          child: Text("close and send name"),
         ),
         FlatButton(
           onPressed: pressed,
