@@ -39,7 +39,7 @@ struct CourseView: View {
                 
                 Spacer()
                 
-                Image(uiImage: #imageLiteral(resourceName: "Logo1"))
+                Image(uiImage: #imageLiteral(resourceName: "Logo1")).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             }
             Spacer()
             

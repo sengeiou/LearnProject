@@ -77,7 +77,8 @@ int main() {
 //
 //    memory_main();
 //
-    pre_main();
+//    pre_main();
+
 
     return EXIT_SUCCESS;
 }
