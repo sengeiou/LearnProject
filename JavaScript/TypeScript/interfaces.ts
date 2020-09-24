@@ -186,6 +186,120 @@ let readonlyArray : ReadonlyArray<number> = [1,2,3]
 // readonlyArray[1] = 10  // error
 
 
+interface SquareConfig{
+    name?: string;
+    age?: Number;
+}
+
+function test0x2( config: SquareConfig){
+    console.log(config);
+}
+
+// test0x2({age12312:12, name:"cocoa"})  // 这样的写法，即使age 是可选的，也不能没有这个属性
+
+
+// 可以绕开这样的检测
+
+test0x2({age12312:123, name:"cocoa"} as SquareConfig)
+
+
+// 函数类型
+
+interface searchFun{
+    (name: string, age: number) : string;
+}
+
+let search1 : searchFun ;
+search1 = function(name: string , age: number) : string{
+    let str = `the name = ${name} the age = ${age}`
+    console.log(str)
+    return  str
+}
+
+search1("cocoa",18)
+
+
+interface StringArray{
+    [index : number] : string   // index 是一种索引，类型是数字
+}
+
+var sa : StringArray;
+sa = ["1","2","3"]
+
+// function test0x3(sa : StringArray){
+//     console.log(sa.lenght);    
+// }
+
+// TypeScript支持两种索引签名：字符串和数字
+
+
+
+
+// 类类型
+
+interface ClockInterface{
+    date: Date
+    setTime(date: Date);
+}
+
+class Clock implements ClockInterface{
+    setTime(date: Date) {
+       this.date = date
+    }
+    date: Date
+}
+
+
+//类静态部分与实例部分的区别   没看懂
+
+
+
+// 继承接口
+// 接口也是可以继承自一个或多个接口，多个用逗号隔开
+interface Shape{
+    name: string
+}
+
+interface Square extends Shape{
+    color: string
+}
+
+let sp = <Square>{}
+sp.color="red"
+sp.name="sp"
+
+
+
+
+// class Control {
+//     private state: any;
+// }
+
+// interface SelectableControl extends Control {
+//     select(): void;
+// }
+
+// class Button extends Control implements SelectableControl {
+//     select() { }
+// }
+
+// class TextBox extends Control {
+//     select() { }
+// }
+
+// // 错误：“Image”类型缺少“state”属性。
+// class Image implements SelectableControl {
+//     select() { }
+// }
+
+class Location {
+
+}
+
+
+
+
+
 
 
 

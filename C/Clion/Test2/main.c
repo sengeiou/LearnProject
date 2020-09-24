@@ -7,7 +7,7 @@
 #include "memory/memory.h"
 #include "variable/test1.h"
 #include "pretreatment/pretreatment.h"
-
+#include "jiqiao/jiqiao.h"
 #define VALUE 10
 
 #define MAX(a, b) ((a > b) ? (a) : (b))
@@ -75,10 +75,11 @@ int main() {
 //    printf("the global_b used at main.c  global_b = %d \n",global_b);
 //
 //
-//    memory_main();
+    memory_main();
 //
 //    pre_main();
 
+//    jiqiao_main();
 
     return EXIT_SUCCESS;
 }

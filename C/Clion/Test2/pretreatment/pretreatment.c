@@ -7,6 +7,9 @@
 
 #define PRINT_TWO printf("THIS IS PRINT FROMA #define %d\n",TWO)
 #define DIV(X,Y) ((X*Y)/2)
+#define FOUR 2*2
+#define SPACE_FOUR 2 * 2
+
 
 void pre_main(){
 
@@ -18,7 +21,11 @@ void pre_main(){
     PRINT_TWO;
     printf("use #defined function DIV = %d\n", DIV(1,2));
 
+    const int a  = 100;
+    const int b  = a * 2;
+    const int B = TWO * 2;
 
-
+    printf("the four = %d \n",FOUR);
+    printf("the not_four= %d\n", SPACE_FOUR);
 
 }

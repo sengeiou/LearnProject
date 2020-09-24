@@ -1,5 +1,4 @@
 
-
 void printNumber(num number) =>
     print("the number is $number");
     // print("123");
@@ -7,6 +6,7 @@ void printNumber(num number) =>
 enableFlags({bool bold : false, bool hidden: true}){
     print("the params bold is $bold and the hidden is $hidden");
 }
+
 
 printElement(element){
   print("$element");
