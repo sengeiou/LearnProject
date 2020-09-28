@@ -1,0 +1,3 @@
+/mnt/d/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/rebuild_cache.dir
+/mnt/d/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/Test1.dir
+/mnt/d/cocoa/LearnProject/C/Cmake/test1/CMakeFiles/edit_cache.dir
