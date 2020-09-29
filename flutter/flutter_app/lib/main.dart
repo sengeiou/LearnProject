@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/NewRouter.dart';
 import 'package:dio/dio.dart';
 
+import 'TestContainer.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -53,6 +55,17 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+
+class Item{
+    String title;
+    StatelessWidget router;
+    Item(String title, StatelessWidget router){
+      this.title = title;
+      this.router = router;
+    }
+}
+
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -90,46 +103,60 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+
+  List<Item> dataList  = [
+          Item("Container", TestContainer())
+  ];
+
   List<Widget> getList() {
     var list = List<Widget>();
-    for (var i = 0; i < 30; i++) {
-      list.add(Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Container(
-                decoration: BoxDecoration(color: Colors.grey),
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      child: Image(
-                          image: NetworkImage(
-                              "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
-                          width: 50,
-                          height: 50),
-                      borderRadius: BorderRadius.circular(50),
+    for (var i = 0; i < dataList.length; i++) {
+      var iItem = dataList[i];
+
+      list.add(InkWell(
+          onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return iItem.router;
+                  })).then((value) => print("----${value}"));
+          },
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    decoration: BoxDecoration(color: Colors.grey),
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                          child: Image(
+                              fit: BoxFit.fill,
+                              image: NetworkImage(
+                                  "https://s5.mogucdn.com/mlcdn/c45406/200929_292ce18g9750j4dhcb5cj955h5alk_1080x1670.jpg_600x999.v1c96.81.webp"),
+                              width: 50,
+                              height: 50),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        Expanded(
+                            flex: 1,
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                                child: Text(
+                                    iItem.title))),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: Text(
+                            "this is item ${i}",
+                            style: TextStyle(
+                                color: Colors.black45,
+                                fontSize: 20,
+                                backgroundColor: Colors.blue),
+                          ),
+                        )
+                      ],
                     ),
-                    Expanded(
-                        flex: 1,
-                        child: Padding(
-                            padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                            child:
-                                Text("123123123123123123123123123123123123"))),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: Text(
-                        "this is item ${i}",
-                        style: TextStyle(
-                            color: Colors.black45,
-                            fontSize: 20,
-                            backgroundColor: Colors.blue),
-                      ),
-                    )
-                  ],
-                ),
-              ))));
+                  )))));
     }
     return list;
   }
