@@ -1,9 +1,9 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/NewRouter.dart';
 import 'package:dio/dio.dart';
 
+import 'Test2.dart';
 import 'TestContainer.dart';
 
 void main() {
@@ -105,7 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   List<Item> dataList  = [
-          Item("Container", TestContainer())
+          Item("Container", TestContainer()),
+    Item("Test2", Test2())
   ];
 
   List<Widget> getList() {
