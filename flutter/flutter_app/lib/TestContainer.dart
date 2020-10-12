@@ -7,7 +7,10 @@ class TestContainer extends StatelessWidget {
     // throw UnimplementedError();
     return Scaffold(
       appBar: AppBar(
-        title: Text("this is title"),
+        title: Text("this is title"), 
+          actions:[
+                  FlatButton(onPressed: (){}, child: Text("add"))  
+          ]
       ),
       body: Center(child: CounterWidget()),
     );
@@ -50,42 +53,39 @@ class _CounterWidgetState extends State<CounterWidget> {
     super.initState();
     initCounter = widget.ininCounter;
   }
+  List<String> _list = [
+    '盗墓笔记',
+    '鬼吹灯',
+    '这个书名是凑的',
+    '藏海花',
+    '这个书名是凑的',
+    '藏海花',
+    '沙海',
+    '藏海花',
+    '这个书名是凑的',
+    '藏海花'
+  ];
+
+
+  List<Widget> getWrapBtn(){
+    return _list.map((e) => FlatButton(onPressed: (){}, child: Text(e,
+      style: TextStyle(
+            backgroundColor: Colors.green
+      ),
+    ))).toList();
+
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 12),
-          child: Text("EdgeInsets.symmetric(vertical: 12)"),
-        ),
-        Padding(
-          padding: EdgeInsets.all(12),
-          child: Text("EdgeInsets.all(12)"),
-        ),
-        ConstrainedBox(
-            constraints: BoxConstraints(minWidth: double.infinity),
-            child: Container(
-              decoration: new BoxDecoration(
-                color: Colors.grey,
-              ),
-              child: Text(
-                "1123123123",
-                textAlign: TextAlign.left,
-                style: TextStyle(),
-              ),
-            )),
-        SizedBox(
-          width: 90,
-          height: 90,
-          child: Container(
-            color: Colors.green,
-            child: Text(
-              "123",
-              style: TextStyle(),
-            ),
-          ),
+        Row(
+          children: [Text("测试 row 中直接嵌套text ，过长会报错")],
         ),
         Padding(
             padding: EdgeInsets.all(20),
@@ -105,7 +105,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             ),
             Expanded(
               child: Text(
-                "123123",
+                "123123123123123123123123123123",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 22),
               ),
@@ -144,20 +144,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             padding: EdgeInsets.all(20),
             child: Text("****wrap 的另一个作用，当剩余的空间放不下子组件时，会自动换行")),
         Wrap(
-          children: [
-            Text(
-              "this is tag1",
-              style: TextStyle(fontSize: 32, color: Colors.red),
-            ),
-            Text(
-              "this is tag2123123",
-              style: TextStyle(fontSize: 32, color: Colors.red),
-            ),
-            Text(
-              "this is tag3",
-              style: TextStyle(fontSize: 32, color: Colors.red),
-            )
-          ],
+          children: getWrapBtn(),
         ),
         Padding(padding: EdgeInsets.all(20), child: Text("****下面介绍层叠布局")),
         Container(
@@ -174,7 +161,38 @@ class _CounterWidgetState extends State<CounterWidget> {
               )
             ],
           ),
-        )
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 12),
+          child: Text("测试padding EdgeInsets.symmetric(vertical: 12)"),
+        ),
+        Padding(
+          padding: EdgeInsets.all(12),
+          child: Text("测试padding EdgeInsets.all(12)"),
+        ),
+        ConstrainedBox(
+            constraints: BoxConstraints(minWidth: double.infinity),
+            child: Container(
+              decoration: new BoxDecoration(
+                color: Colors.grey,
+              ),
+              child: Text(
+                "1123123123",
+                textAlign: TextAlign.left,
+                style: TextStyle(),
+              ),
+            )),
+        SizedBox(
+          width: 90,
+          height: 90,
+          child: Container(
+            color: Colors.green,
+            child: Text(
+              "123",
+              style: TextStyle(),
+            ),
+          ),
+        ),
       ],
     ));
   }
