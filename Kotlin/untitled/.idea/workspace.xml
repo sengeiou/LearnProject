@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="649da595-ffbf-47ba-ba43-f724125d8de1" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/ContentView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/s.entitlements" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/s/sApp.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/sTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/sTests/sTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/sUITests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../iOS/s/sUITests/sUITests.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/Clion/Test2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/Clion/Test2/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../C/testArrayPointer.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../C/testArrayPointer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/classes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/classes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaScript/TypeScript/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/CourseList.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../../iOS/TestSwiftUI/TestSwiftUI/CourseList.swift" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1gBYU21EHTZPNAdAI1CDVrumL5X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="649da595-ffbf-47ba-ba43-f724125d8de1" name="默认的" comment="" />
+      <created>1597589464991</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597589464991</updated>
+      <workItem from="1597589473070" duration="566000" />
+      <workItem from="1597590045254" duration="128000" />
+      <workItem from="1597590178530" duration="39000" />
+      <workItem from="1597590361351" duration="379000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="497" y="114" key="new project wizard" timestamp="1597590123082">
+      <screen x="0" y="25" width="1920" height="959" />
+    </state>
+    <state x="497" y="114" key="new project wizard/0.25.1920.959@0.25.1920.959" timestamp="1597590123082" />
+  </component>
+</project>

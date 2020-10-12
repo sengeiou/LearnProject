@@ -1,7 +1,7 @@
 // import 'dart:html';
 
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 import 'Test2.dart';
 import 'TestContainer.dart';
@@ -55,16 +55,15 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+class Item {
+  String title;
+  StatelessWidget router;
 
-class Item{
-    String title;
-    StatelessWidget router;
-    Item(String title, StatelessWidget router){
-      this.title = title;
-      this.router = router;
-    }
+  Item(String title, StatelessWidget router) {
+    this.title = title;
+    this.router = router;
+  }
 }
-
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -103,9 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-
-  List<Item> dataList  = [
-          Item("Container", TestContainer()),
+  List<Item> dataList = [
+    Item("Container", TestContainer()),
     Item("Test2", Test2())
   ];
 
@@ -115,10 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
       var iItem = dataList[i];
 
       list.add(InkWell(
-          onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return iItem.router;
-                  })).then((value) => print("----${value}"));
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return iItem.router;
+            })).then((value) => print("----${value}"));
           },
           child: Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -143,8 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             flex: 1,
                             child: Padding(
                                 padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                                child: Text(
-                                    iItem.title))),
+                                child: Text(iItem.title))),
                         Padding(
                           padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Text(
