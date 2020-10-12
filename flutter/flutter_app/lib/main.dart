@@ -3,7 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import 'Test2.dart';
+import 'MediaUI.dart';
 import 'TestContainer.dart';
 import 'TestEvent.dart';
 
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Item> dataList = [
     Item("Container", TestContainer()),
-    Item("Test2", Test2()),
+    Item("MediaUI", MediaUI()),
     Item("TestEvent", TestEvent())
   ];
 
