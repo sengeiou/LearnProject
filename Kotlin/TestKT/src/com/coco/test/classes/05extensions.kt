@@ -6,6 +6,8 @@ fun MutableList<Int>.swap(index: Int, index1: Int) {
     this[index1] = temp
 }
 
+//如果一个类定义有一个成员函数与一个扩展函数，而这两个函数又有相同的接收者类型、 相同的名字，并且都适用给定的参数，这种情况总是取成员函数
+
 class Example {
     fun test() {
         println("class method")
@@ -15,6 +17,12 @@ class Example {
 fun Example.test() {
     println("extensions metho")
 }
+
+fun Example.test(i:Int){
+    this.test()
+    println("this is from test(i)")
+}
+
 
 //  可控接收者
 fun Any?.toString(): String {
@@ -36,6 +44,11 @@ fun main() {
     println(intList)
 
     Example().test()
+
+    //
+    println("Example().test(1)\n")
+    Example().test(1)
+
 
     var name: String? = ""
     println(name.toString())
