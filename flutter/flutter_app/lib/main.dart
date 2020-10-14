@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'MediaUI.dart';
+import 'TestAsset.dart';
 import 'TestContainer.dart';
 import 'TestEvent.dart';
 void main() {
@@ -84,7 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Item> dataList = [
     Item("Container", TestContainer()),
     Item("MediaUI", MediaUI()),
-    Item("TestEvent", TestEvent())
+    Item("TestEvent", TestEvent()),
+    Item("TestAsset", TestAsset())
   ];
 
   List<Widget> getList() {

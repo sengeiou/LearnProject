@@ -46,8 +46,15 @@ class _ContentState extends State<Content> {
             top: _top,
             left: _left,
             child: GestureDetector(
-              child: Text("123${_left}"),
+              child: Text("123123123${_left}"),
               onPanUpdate: (DragUpdateDetails details) {
+
+
+                // DefaultAssetBundle.of(context).loadString("files/test1.json").then((value) =>
+                //     print("---DefaultAssetBundle---${value}")
+                // );
+
+
                 print("onpanupdte ${details.delta.dx}");
                 setState(() {
                   _left += details.delta.dx;
