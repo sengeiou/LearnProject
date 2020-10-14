@@ -152,7 +152,7 @@ class _CounterWidgetState extends State<CounterWidget> {
           child: Stack(
             children: [
               Text(
-                "this is xxxxxx 1",
+                "this is xxxxxx 123",
                 style: TextStyle(fontSize: 12, color: Colors.red),
               ),
               Text(
