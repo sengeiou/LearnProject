@@ -2,13 +2,17 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'MediaUI.dart';
 import 'TestAsset.dart';
 import 'TestContainer.dart';
 import 'TestEvent.dart';
+import 'TestLocalCache.dart';
 void main() {
+
   runApp(MyApp());
+  SharedPreferences.setMockInitialValues({}); // set initial values here if desired
 }
 
 class MyApp extends StatelessWidget {
@@ -86,7 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Item("Container", TestContainer()),
     Item("MediaUI", MediaUI()),
     Item("TestEvent", TestEvent()),
-    Item("TestAsset", TestAsset())
+    Item("TestAsset", TestAsset()),
+    Item("TestLocalCache", TestLocalCache())
   ];
 
   List<Widget> getList() {

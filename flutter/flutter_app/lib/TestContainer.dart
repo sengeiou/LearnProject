@@ -7,11 +7,8 @@ class TestContainer extends StatelessWidget {
     // throw UnimplementedError();
     return Scaffold(
       appBar: AppBar(
-        title: Text("this is title"), 
-          actions:[
-                  FlatButton(onPressed: (){}, child: Text("add"))  
-          ]
-      ),
+          title: Text("this is title"),
+          actions: [FlatButton(onPressed: () {}, child: Text("add"))]),
       body: Center(child: CounterWidget()),
     );
   }
@@ -53,6 +50,7 @@ class _CounterWidgetState extends State<CounterWidget> {
     super.initState();
     initCounter = widget.ininCounter;
   }
+
   List<String> _list = [
     '盗墓笔记',
     '鬼吹灯',
@@ -66,18 +64,16 @@ class _CounterWidgetState extends State<CounterWidget> {
     '藏海花'
   ];
 
-
-  List<Widget> getWrapBtn(){
-    return _list.map((e) => FlatButton(onPressed: (){}, child: Text(e,
-      style: TextStyle(
-            backgroundColor: Colors.green
-      ),
-    ))).toList();
-
+  List<Widget> getWrapBtn() {
+    return _list
+        .map((e) => FlatButton(
+            onPressed: () {},
+            child: Text(
+              e,
+              style: TextStyle(backgroundColor: Colors.green),
+            )))
+        .toList();
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -193,6 +189,16 @@ class _CounterWidgetState extends State<CounterWidget> {
             ),
           ),
         ),
+        Row(
+          children: [
+            Text("123"),
+            Expanded(
+              child: Text(""),
+            ),
+            Text("123"),
+            Spacer(flex: 3)
+          ],
+        )
       ],
     ));
   }
