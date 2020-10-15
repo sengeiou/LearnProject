@@ -10,9 +10,7 @@ import 'TestContainer.dart';
 import 'TestEvent.dart';
 import 'TestLocalCache.dart';
 void main() {
-
   runApp(MyApp());
-  SharedPreferences.setMockInitialValues({}); // set initial values here if desired
 }
 
 class MyApp extends StatelessWidget {
