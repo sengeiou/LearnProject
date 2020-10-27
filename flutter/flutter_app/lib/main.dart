@@ -39,9 +39,9 @@ class MyHomePage extends StatefulWidget {
 
 class Item {
   String title;
-  StatelessWidget router;
+  Widget router;
 
-  Item(String title, StatelessWidget router) {
+  Item(String title, Widget router) {
     this.title = title;
     this.router = router;
   }
