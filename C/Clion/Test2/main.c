@@ -2,7 +2,6 @@
 #include "ex16.h"
 #include "string.h"
 #include "advanced/string01.h"
-#include <stdlib.h>
 #include "const01/const01.h"
 #include "memory/memory.h"
 #include "variable/test1.h"
@@ -35,6 +34,14 @@ int calcLen(char *c) {
     }
     return c - p;
 }
+
+
+struct Action{
+    int id;
+    int position;
+};
+
+
 
 int main() {
 //    printf("Hello, World!\n");
@@ -75,11 +82,37 @@ int main() {
 //    printf("the global_b used at main.c  global_b = %d \n",global_b);
 //
 //
-    memory_main();
+//    memory_main();
 //
 //    pre_main();
 
 //    jiqiao_main();
+
+
+    int num = 2;
+    struct Action *actions = (struct Action*) malloc(sizeof(struct Action) * num);
+
+
+    struct Action a1={2,2500};
+    struct Action a2={1,2500};
+
+    actions= &a1;
+    actions++;
+
+    actions=&a2;
+    actions--;
+
+
+
+    for (uint8_t i = 0; i < 2; i++) { //循环填充舵机ID和对应目标位置
+        printf("the p address  = %d \n", actions->id);
+        printf("the p address  = %d \n", actions->position);
+
+        actions++;
+    }
+
+
+
 
     return EXIT_SUCCESS;
 }
