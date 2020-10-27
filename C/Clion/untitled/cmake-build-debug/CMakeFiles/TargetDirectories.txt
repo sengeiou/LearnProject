@@ -1,3 +1,0 @@
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-/cygdrive/e/F/cocoa/LearnProject/C/Clion/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
