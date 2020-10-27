@@ -1,8 +1,9 @@
 #include <iostream>
-
+#include "src/pointer.h"
 
 using  namespace  std;
 
+//https://www.bilibili.com/video/BV1et411b73Z?p=60
 
 int compare(int x , int y){
     return x  - y;
@@ -16,7 +17,7 @@ void change(int x ){
 int main() {
 
 
-    cout << "Hello, World!" << std::endl;
+    test();
 
     int yaml[3];
     yaml[0] = 10;
@@ -30,6 +31,17 @@ int main() {
     int a  =  222;
     change(a);
     cout << a << endl;
+
+
+    int x = 10;
+    int *p = &x;
+    cout<< p <<endl;
+    cout<< *p <<endl;
+    cout<< &x <<endl;
+    cout<< sizeof(p) <<endl;
+    cout<< sizeof(*p) <<endl;
+    cout<< sizeof(int*) <<endl;
+    cout<< sizeof(int) <<endl;
 
 
     return 0;
