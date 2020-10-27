@@ -13,16 +13,14 @@ void main() {
   var hashCode = i1.hashCode;
   print("the hashcode is $hashCode");
 
-  var address  = "zhejiang";
+  var address = "zhejiang";
   print("address hashcode is ${address.hashCode}");
 
-  var a2 = int.parse("10");  
-  double d2 = double .parse("00.99-");
-
+  var a2 = int.parse("10");
+  double d2 = double.parse("00.99-");
 
   print("the a2 is ${a2}");
   print("the d2 is ${d2}");
-
 
   // int i2 = 10.00;  // double 类型不能赋值int  会报错
 
@@ -31,19 +29,14 @@ void main() {
 
   int count;
 
-  print("未初始化的变量具有 null 的初始值。即使数字类型变量最初为 null ，因为数字是对象。$count");  
-  
+  print("未初始化的变量具有 null 的初始值。即使数字类型变量最初为 null ，因为数字是对象。$count");
 
   print("${1 + 2}");
 
   final age = 12;
   const p1 = "123";
 
-
-
   int a1a = 12;
 
-  int a2a  = 13;
-
-
-  }
+  int a2a = 13;
+}
