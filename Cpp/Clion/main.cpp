@@ -1,6 +1,7 @@
 #include <iostream>
 #include "src/pointer.h"
 #include "src/class/class1.h"
+#include "src/struct/struct01.h"
 #include "src/reference/reference.h"
 using  namespace  std;
 
@@ -12,9 +13,9 @@ int main() {
 //    test();
 //    testClass();
 
-    referenceTest();
+//    referenceTest();
 
-
+      struct01Test();
 
     return 0;
 }
