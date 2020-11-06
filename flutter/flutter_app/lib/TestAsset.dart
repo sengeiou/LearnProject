@@ -83,7 +83,8 @@ class _ContentState extends State<Content> {
           "images/dribbble4.png",
           width: 100,
           height: 100,
-        )
+        ),
+        FadeInImage()
       ],
     );
   }

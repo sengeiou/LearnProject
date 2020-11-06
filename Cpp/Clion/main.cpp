@@ -9,8 +9,8 @@ using  namespace  std;
 int main() {
 
 
-//    test();
-    testClass();
+    test();
+//    testClass();
 
 
     return 0;

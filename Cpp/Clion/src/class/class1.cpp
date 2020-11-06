@@ -33,7 +33,9 @@ public:
         mName = "default";
         mAge = 0;
     }
-
+    ~Person(){
+        cout<<"person has release!!"<<endl;
+    }
 
 };
 
@@ -41,6 +43,11 @@ public:
 void Person::save(){
    cout<< mName <<endl;
 };
+
+
+int compare(int a , int* p){
+    return  a > *p ? a : *p;
+}
 
 
 
@@ -60,5 +67,8 @@ void  testClass(){
 
     cout<<newP.getName()<<endl;
 
+    int a  = 10;
+    int b = 11;
+    cout<<"the max number is "<<compare(a, &b) <<endl;
 
 }
