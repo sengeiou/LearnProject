@@ -53,7 +53,8 @@ L
 
 ma     标记 mark a
 'a     回到 mark a
-
+:marks!     显示所有的标记
+:delmarks a    删除指定标记
 
 
 

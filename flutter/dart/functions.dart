@@ -1,4 +1,7 @@
 
+// import '';
+
+
 void printNumber(num number) =>
     print("the number is $number");
     // print("123");
@@ -33,7 +36,16 @@ test(String name ,{age :123}){
    return name + age.toString();
 }
 
+
+test1({String key , int age : 0 }){
+
+}
+
+
 void main(List<String> args){
+
+      test1(age: 1,key: "123");
+
 
       print(test("cocoa",age:12));
 
