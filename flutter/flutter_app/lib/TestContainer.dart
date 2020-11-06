@@ -13,7 +13,7 @@ class _ScaffoldRouteState extends State<TestContainer> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    // TODO: implement Content
     // throw UnimplementedError();
     return Scaffold(
       drawer: Drawer(
@@ -38,7 +38,7 @@ class _ScaffoldRouteState extends State<TestContainer> {
       appBar: AppBar(
           title: Text("this is title"),
           actions: [FlatButton(onPressed: () {}, child: Text("add"))]),
-      body: Center(child: currentIndex == 1 ? counterWidget : Content()),
+      body: Center(child: currentIndex == 0 ? counterWidget : Content()),
     );
   }
 }
@@ -111,8 +111,19 @@ class _CounterWidgetState extends State<CounterWidget> {
     return SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              color: Colors.red,
+              height: 50,
+              child: Align(
+                alignment:Alignment.topCenter,
+                child: Text("测试Align"),
+              ),
+            ),
+            Center(
+                child: Text("测试Center"),
+            ),
             Row(
-              children: [Text("测试 row 中直接嵌套text ，过长会报错")],
+              children: [Text("测试 row 中直接嵌套text ，过长会报错1231231231123123")],
             ),
             Padding(
                 padding: EdgeInsets.all(20),

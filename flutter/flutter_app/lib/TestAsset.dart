@@ -84,7 +84,7 @@ class _ContentState extends State<Content> {
           width: 100,
           height: 100,
         ),
-        FadeInImage()
+        // FadeInImage()
       ],
     );
   }
