@@ -1,7 +1,7 @@
 #include <iostream>
 #include "src/pointer.h"
 #include "src/class/class1.h"
-
+#include "src/reference/reference.h"
 using  namespace  std;
 
 //https://www.bilibili.com/video/BV1et411b73Z?p=60
@@ -9,8 +9,11 @@ using  namespace  std;
 int main() {
 
 
-    test();
+//    test();
 //    testClass();
+
+    referenceTest();
+
 
 
     return 0;
