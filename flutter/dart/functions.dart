@@ -6,7 +6,8 @@ void printNumber(num number) =>
     print("the number is $number");
     // print("123");
 
-enableFlags({bool bold : false, bool hidden: true}){
+// 默认参数
+enableFlags({bool bold = false, bool hidden = true}){   // 不推荐使用  key : value , 用 = 代替
     print("the params bold is $bold and the hidden is $hidden");
 }
 
@@ -32,12 +33,12 @@ class A{
 
 
 
-test(String name ,{age :123}){
+test(String name ,{age = 123}){
    return name + age.toString();
 }
 
 
-test1({String key , int age : 0 }){
+test1({String key , int age = 0 }){
 
 }
 
