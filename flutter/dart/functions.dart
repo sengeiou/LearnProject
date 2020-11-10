@@ -1,74 +1,64 @@
-
 // import '';
 
-
-void printNumber(num number) =>
-    print("the number is $number");
-    // print("123");
+void printNumber(num number) => print("the number is $number");
+// print("123");
 
 // 默认参数
-enableFlags({bool bold = false, bool hidden = true}){   // 不推荐使用  key : value , 用 = 代替
-    print("the params bold is $bold and the hidden is $hidden");
+enableFlags({bool bold = false, bool hidden = true}) {
+  // 不推荐使用  key : value , 用 = 代替
+  print("the params bold is $bold and the hidden is $hidden");
 }
 
-
-printElement(element){
+printElement(element) {
   print("$element");
 }
 
-Function makeAdder(num addBy){
-  return (num i ) => addBy + i;
+Function makeAdder(num addBy) {
+  return (num i) => addBy + i;
 }
 
-
-
-foo(){
+foo() {
   print("this is foo");
 }
 
-class A{
-  static void bar(){}
-  void baz(){}
+class A {
+  static void bar() {}
+  void baz() {}
 }
 
-
-
-test(String name ,{age = 123}){
-   return name + age.toString();
+test(String name, {age = 123}) {
+  return name + age.toString();
 }
 
+test1({String key, int age = 0}) {}
 
-test1({String key , int age = 0 }){
+void main(List<String> args) {
+  test1(age: 1, key: "123");
 
-}
+  print(test("cocoa", age: 12));
 
+  //dart functons.dart params1 params2
+  print("the main function params is $args");
 
-void main(List<String> args){
+  printNumber(12);
+  enableFlags();
+  //把一个函数当做参数传给另一个函数
+  var list = [1, 2, 3];
+  list.forEach(printElement);
 
-      test1(age: 1,key: "123");
+  var add2 = makeAdder(2);
 
+  //匿名方法
+  list.forEach((item) {
+    print("the item(${item}) + 2  = ${add2(item)}");
+  });
 
-      print(test("cocoa",age:12));
+  var x = foo;
+  x();
 
-      //dart functons.dart params1 params2
-      print("the main function params is $args");
+  var testList = List.generate(20, (index) {
+    return index * index;
+  });
 
-
-      printNumber(12);
-      enableFlags();    
-      //把一个函数当做参数传给另一个函数
-      var list = [1,2,3];
-      list.forEach(printElement);
-
-
-      var add2 = makeAdder(2);
-
-      //匿名方法
-      list.forEach((item){
-        print("the item(${item}) + 2  = ${add2(item)}");
-      });
-
-      var x = foo;
-      x();
-
+  print(testList);
 }

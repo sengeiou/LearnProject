@@ -64,8 +64,6 @@ class Logger{
 }
 
 
-
-
 class Person{
   String firstName;
   Person.fromJson(Map data){

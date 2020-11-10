@@ -26,6 +26,23 @@ class VedioMode{
 var v1  = VedioMode()
 var v2 = VedioMode()
 
+// print("\(v1.unsafeAddressOf())")
+
+// print("\(&v1)")
+// func change( v : VedioMode){
+// 	print("\(&v)")	
+// }
+// change(v1)
+
+func returnMult()->( min: Int, max : Int)?{
+	return (1,2)	
+}
+
+let tuples = returnMult();
+if let t = tuples {
+	print("\(t)")
+}
+
 print("\(v1 === v2)")
 
 

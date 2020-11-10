@@ -25,11 +25,16 @@ class _ContentState extends State<Content> {
   PointerEvent _event;
   double _top = 0.0;
   double _left = 0.0;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _toast();
+  }
+
   void _toast({msg = "131"}) {
-
-
-
-
     Fluttertoast.showToast(
         msg: msg,
         toastLength: Toast.LENGTH_SHORT,

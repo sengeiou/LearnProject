@@ -304,11 +304,12 @@ class _CounterWidgetState extends State<CounterWidget> {
                         color: Color.fromARGB(255, 255, 238, 234),
                         borderRadius: BorderRadius.all(Radius.circular(10.0))),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Image.asset("images/question.png",
                             width: 20, height: 20),
                         Text(
-                          "该条码在系统中绑定了3个SKU，请仔细核对后再操作",
+                          "该条码在系统中绑定了3个SKU，请仔细核对后再操作112312313123",
                           style: TextStyle(fontSize: 10),
                         ),
                       ],
