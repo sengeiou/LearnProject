@@ -26,7 +26,6 @@ class _ContentState extends State<Content> {
   double _top = 0.0;
   double _left = 0.0;
 
-
   @override
   void initState() {
     // TODO: implement initState
