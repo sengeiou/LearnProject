@@ -13,6 +13,9 @@ class Point {
   // }
 
   Point(this.x,this.y);
+
+
+
    //构造函数不会继承  
   //Default constructors（默认构造函数）
   //如果你没有定义构造函数，则会有个默认构造函数。 默认构造函数没有参数，并且会调用超类的 没有参数的构造函数。
@@ -46,7 +49,6 @@ class Point {
 
 
   // Getters and setters
-
   
 
 
@@ -175,6 +177,13 @@ void main(){
 
       var pNull;  
       pNull?.x = 10; // 类似可选类型的操作, ? 避免对象为null 时报错
+
+
+      // var p2 = const Point(1, 1);
+      
+      if(p1 is Person){
+        print("${(p1 as Person).firstName}");
+      }
 
 
       print("the point is ${p1}");
