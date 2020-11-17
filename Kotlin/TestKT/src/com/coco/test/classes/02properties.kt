@@ -35,10 +35,10 @@ class PersonOx12 {
 
     lateinit var  thread : Thread
 
-
-    fun setUp(){
-        this.thread = Thread.currentThread()
-    }
+//
+//    fun setUp(){
+//        this.thread = Thread.currentThread()
+//    }
 
 
 }
@@ -51,9 +51,14 @@ fun main() {
     var person = PersonOx12("cocoa")
     println("person isEmpty ${person.isEmpty}")
     person.count = 12
-    print("person count = ${person.count}")
+    println("person count = ${person.count}")
 
-    println("${PersonOx12::thread}")
+
+
+
+
+    println("${person.thread  == null}")
+//    println("${PersonOx12::thread}")
 
 
 }

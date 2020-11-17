@@ -11,7 +11,7 @@ import kotlin.coroutines.CoroutineContext
 fun main(){
     GlobalScope.launch {
         delay(1000L)
-        println("阿国在学协程！！！")
+        println("123")
     }
     println("？？？？")
     Thread.sleep(2000L)
