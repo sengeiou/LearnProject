@@ -9,7 +9,7 @@ import 'TestAsset.dart';
 import 'TestContainer.dart';
 import 'TestEvent.dart';
 import 'TestLocalCache.dart';
-
+import 'TestWillPopScope.dart';
 
 // mock data  https://github.com/postbird/FlutterHelloWorld/blob/master/demo1/lib/mock/list.dart
 
@@ -94,7 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Item("MediaUI", MediaUI()),
     Item("TestEvent", TestEvent()),
     Item("TestAsset", TestAsset()),
-    Item("TestLocalCache", TestLocalCache())
+    Item("TestLocalCache", TestLocalCache()),
+    Item("TestWillPopScope", TestWillPopScope())
   ];
 
   List<Widget> getList() {
