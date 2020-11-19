@@ -3,7 +3,7 @@
 #include <string.h>
 
 typedef struct Sds SDS;
-
+//https://github.com/redis/redis/blob/unstable/src/sds.c
 struct Sds {
     int len;
     int free;
