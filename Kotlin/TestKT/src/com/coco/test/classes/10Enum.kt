@@ -21,6 +21,9 @@ fun main(){
         println("---foreach---${i}")
     }
 
+    val b1 = BBB.valueOf("B1");
+    println("-----${b1}");
+
 
 
 }
